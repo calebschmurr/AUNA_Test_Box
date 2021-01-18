@@ -1,0 +1,8 @@
+Setup Command:
+
+1:23.I;24.I;25.I;26.I;27.I;28.O;!
+
+Setup Output Loop Command:
+
+2:1.4500!
+
