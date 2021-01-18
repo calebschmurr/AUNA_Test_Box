@@ -88,25 +88,25 @@ class Frame(wx.Frame):
                 if self.PinsConfigured:
                     #Receive and check pin inputs
                     #Cycle through all pin inputs, and update the status of the display as configured.
-                    if self.PinControl.SerialLine.PinsList.getPinValue(54)>0:
+                    if self.PinControl.SerialLine.PinsList.getPinValue(54)>900:
                         self.Blower_Speed_Display.Value = "Speed 1"
-                    elif self.PinControl.SerialLine.PinsList.getPinValue(55)>0:
+                    elif self.PinControl.SerialLine.PinsList.getPinValue(55)>900:
                         self.Blower_Speed_Display.Value = "Speed 2"
-                    elif self.PinControl.SerialLine.PinsList.getPinValue(56)>0:
+                    elif self.PinControl.SerialLine.PinsList.getPinValue(56)>900:
                         self.Blower_Speed_Display.Value = "Speed 3"
                     else:
                         self.Blower_Speed_Display.Value = "Speed 0"
                     
 
-                    if self.PinControl.SerialLine.PinsList.getPinValue(57)>0:
+                    if self.PinControl.SerialLine.PinsList.getPinValue(57)>900:
                         self.AC_SW_Display.Value = "On"
                     else:
                         self.AC_SW_Display.Value = "Off"
-                    if self.PinControl.SerialLine.PinsList.getPinValue(58)>0:
+                    if self.PinControl.SerialLine.PinsList.getPinValue(58)>900:
                         self.Louver_Setting.Value = "Head"
-                    elif self.PinControl.SerialLine.PinsList.getPinValue(59)>0:
+                    elif self.PinControl.SerialLine.PinsList.getPinValue(59)>900:
                         self.Louver_Setting.Value = "Defrost"
-                    elif self.PinControl.SerialLine.PinsList.getPinValue(60)>0:
+                    elif self.PinControl.SerialLine.PinsList.getPinValue(60)>900:
                         self.Louver_Setting.Value = "Feet&Defrost"
                     else:
                         self.Louver_Setting.Value = "Head&Feet"
@@ -134,7 +134,6 @@ class Frame(wx.Frame):
         #59:A5 is Air Flap Sig 2
         #60:A6 is Air Flap Sig3
         #61:A7 is WV Poti Sig
-        #
 
 
 class MyApp(wx.App):
