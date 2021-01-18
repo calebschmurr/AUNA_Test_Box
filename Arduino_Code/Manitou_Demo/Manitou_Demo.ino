@@ -22,7 +22,11 @@ int outputTime;
 PinsList pin_list;
 
 
-
+/*
+ * PinValSender - this is what is used to send back
+ * a signal that contains the registered pins info.
+ * 
+ */
 class PinValSender : public VariableTimedAction {
 
   private:
@@ -87,7 +91,6 @@ void setup() {
     
   }
   Serial.println("Open2.\n");
-
 }
 
 
