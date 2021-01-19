@@ -4,9 +4,7 @@ Store the pin list:
 Keep track of active pins by name
 Each pin also has associated properties: Input or Output, Pin Number, Value.
 
-
 '''
-
 
 class pin:
     pin_number=0
@@ -174,5 +172,3 @@ class PinsList:
                 #If yes, then change the value.
 
         #Update UI?
-
-    

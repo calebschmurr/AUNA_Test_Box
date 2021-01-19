@@ -11,13 +11,11 @@ import PinControlUI
 
 import time
 
-
 # begin wxGlade: dependencies
 # end wxGlade
 
 # begin wxGlade: extracode
 # end wxGlade
-
 
 class Frame(wx.Frame):
     def __init__(self, *args, **kwds):
@@ -81,7 +79,6 @@ class Frame(wx.Frame):
 
 # end of class Frame
 
-
     def UpdateLoop(self):
         while(True):
             if self.PinControl.SerialLine.alive.isSet():
@@ -110,7 +107,6 @@ class Frame(wx.Frame):
                         self.Louver_Setting.Value = "Feet&Defrost"
                     else:
                         self.Louver_Setting.Value = "Head&Feet"
-                    
                     
                     self.Temperature_Status.Value = str(self.PinControl.SerialLine.PinsList.getPinValue(61))
                     

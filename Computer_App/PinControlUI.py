@@ -1042,6 +1042,21 @@ class Pin_Control(wx.Frame):
     def ExternalChangePinStatus(self, pin, status):
         self.SerialLine.PinsList.ChangePinValue(self, pin, status)
 
+    #ExternalStartSerial - start the serial comms port from outside.  Update UI Accordingly.
+    def ExternalStartSerial(self, mode, rate=9600):
+        pass
+
+    #ExternalStopSerial - stop the serial comms port from outside class.  Update UI accordingly.
+    def ExternalStopSerial(self):
+        pass
+
+#getPinValue - easier method
+#to get and return a specific pin value.
+
+    def getPinValue(self, pin):
+        return self.SerialLine.PinsList.getPinValue(pin)
+
+
 class MyApp(wx.App):
     def OnInit(self):
         self.Main_Window = Pin_Control(None, wx.ID_ANY, "")
