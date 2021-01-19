@@ -111,17 +111,33 @@ class MainWindow(wx.Frame):
         #Load up combo box.
         preferred_index = -1
         self.Port_Connect.Clear()
-        for n in self.
-        self.PortComboBox.SetSelection(preferred_index)
+        for n, (portname, desc, hwid) in enumerate(sorted(PinControlUI.SerialComm.serial.tools.list_ports.comports())):
+            self.Port_Connect.Append(u'{} - {}'.format(portname, desc))
+            
+        self.Port_Connect.SetSelection(preferred_index)
 
+        self.__attach_events()
 
-        self.PortConnect()
+    def __attach_events(self):
+
+        self.Connect_Button.Bind(wx.EVT_BUTTON, self.ConnectPort)
+        self.ShowPinUI_Button.Bind(wx.EVT_BUTTON, self.showPinUI)
+
+        #self.PortConnect()
 
     #loadTests - load in the test procedures located in test folder.
     #Then populate the list with them.
     def loadTests(self):
         pass
 
+    def ConnectPort(self, events):
+        self.PinControl.ExternalStartSerial(self.Port_Connect.GetSelection())
+        #Disable the connect button.
+
+    def showPinUI(self, events):
+        self.PinControl.Show()
+        #TODO: Change the PinControlUI to be able to be 'closed', made
+        #not visible anymore and then able to be made visible again.
 
 
 ##################################################################################################################################################################
