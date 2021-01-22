@@ -8,6 +8,7 @@
 
 
 import wx
+from pathlib import Path
 
 import PinControlUI
 
@@ -34,7 +35,7 @@ class MainWindow(wx.Frame):
 
         Tab_Sizer = wx.BoxSizer(wx.VERTICAL)
 
-        self.List_Of_Tests = wx.ListBox(self.Load_Existing_Test_Tab, wx.ID_ANY, choices=["choice 1"])
+        self.List_Of_Tests = wx.ListBox(self.Load_Existing_Test_Tab, wx.ID_ANY)
         self.List_Of_Tests.SetMinSize((500, 200))
         Tab_Sizer.Add(self.List_Of_Tests, 0, 0, 0)
 
@@ -106,6 +107,9 @@ class MainWindow(wx.Frame):
 
 #### To be placed under init of MainWindowUI ############################################################################################################
 ##########################################################################################################################################################
+        
+        
+
         self.PinControl = PinControlUI.Pin_Control(None, wx.ID_ANY, "")
         
         #Load up combo box.
@@ -115,8 +119,8 @@ class MainWindow(wx.Frame):
             self.Port_Connect.Append(u'{} - {}'.format(portname, desc))
             
         self.Port_Connect.SetSelection(preferred_index)
-
         self.__attach_events()
+        self.loadTests()
 
     def __attach_events(self):
 
@@ -128,7 +132,16 @@ class MainWindow(wx.Frame):
     #loadTests - load in the test procedures located in test folder.
     #Then populate the list with them.
     def loadTests(self):
-        pass
+        p = Path('.') #Using pathlib - replacement of os.
+        p2 = p / "Tests"
+        if p2.exists():
+            for x in p2.iterdir():
+                if x.is_dir():
+                    self.List_Of_Tests.Append(x.name)
+        else:
+            print("error - Tests directory not found.")            
+
+        
 
     def ConnectPort(self, events):
         self.PinControl.ExternalStartSerial(self.Port_Connect.GetSelection())
