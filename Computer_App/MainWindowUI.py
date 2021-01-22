@@ -27,7 +27,7 @@ class MainWindow(wx.Frame):
         self.SetSize((1200, 800))
         self.SetTitle("AUNA Testing Software")        
 
-
+        self.OpenFile = False
         self.Notebook = wx.Notebook(self, wx.ID_ANY)
 
         self.Load_Existing_Test_Tab = wx.Panel(self.Notebook, wx.ID_ANY)
@@ -108,7 +108,7 @@ class MainWindow(wx.Frame):
 #### To be placed under init of MainWindowUI ############################################################################################################
 ##########################################################################################################################################################
         
-        
+        self.stopClose = False
 
         self.PinControl = PinControlUI.Pin_Control(None, wx.ID_ANY, "")
         
@@ -126,7 +126,7 @@ class MainWindow(wx.Frame):
 
         self.Connect_Button.Bind(wx.EVT_BUTTON, self.ConnectPort)
         self.ShowPinUI_Button.Bind(wx.EVT_BUTTON, self.showPinUI)
-
+        self.Bind(wx.EVT_CLOSE, self.OnClose)
         #self.PortConnect()
 
     #loadTests - load in the test procedures located in test folder.
@@ -152,6 +152,15 @@ class MainWindow(wx.Frame):
         #TODO: Change the PinControlUI to be able to be 'closed', made
         #not visible anymore and then able to be made visible again.
 
+    def OnClose(self, event):
+        if self.stopClose:
+            if wx.MessageBox("File has not been saved, continue closing?", "Please confirm below.", wx.ICON_QUESTION | wx.YES_NO) != wx.YES:
+                event.veto()
+                return
+
+        self.PinControl.stopUIThread()
+        self.PinControl.closeSelf()
+        self.Destroy()
 
 ##################################################################################################################################################################
 

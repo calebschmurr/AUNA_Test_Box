@@ -893,6 +893,7 @@ class Pin_Control(wx.Frame):
         self.Stop_Connection_Button.Bind(wx.EVT_BUTTON, self.StopSerialComms)
         self.Show_Serial_Monitor.Bind(wx.EVT_BUTTON, self.StartSerialMonitor)
 
+        self.Bind(wx.EVT_CLOSE, self.OnClose)
     # end of class Pin_Control
 
     def getOnCheck(self, arg):
@@ -974,6 +975,7 @@ class Pin_Control(wx.Frame):
     def startUIThread(self):
         self.thread = threading.Thread(target=self.UpdateUIThread)
         self.thread.setDaemon(True)
+        self.thread.daemon = True
         self.alive.set()
         self.thread.start()
         print("Started UI Thread.")
@@ -982,8 +984,16 @@ class Pin_Control(wx.Frame):
         if self.thread is not None:
             print("Stopping thread.")
             self.alive.clear()
+            time.sleep(0.5)
             self.thread.join()
             self.thread = None
+            print("Thread stopped")
+
+    def closeSelf(self):
+        self.Destroy()
+
+    def OnClose(self, event):
+        self.Show(False)
 
     def UpdateUIThread(self):
         while self.alive.isSet():
