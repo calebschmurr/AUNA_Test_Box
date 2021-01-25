@@ -990,6 +990,7 @@ class Pin_Control(wx.Frame):
             print("Thread stopped")
 
     def closeSelf(self):
+        self.stopUIThread()
         self.Destroy()
 
     def OnClose(self, event):
@@ -1010,7 +1011,14 @@ class Pin_Control(wx.Frame):
             if self.SerialLine.alive.isSet():
                 self.Connection_Status_Display.ChangeValue("Connected")
             else:
-                self.Connection_Status_Display.ChangeValue("Disconnected")
+                try:
+                    #For some reason this part is causing the issue.
+                    if self.alive.isSet():  
+                        self.Connection_Status_Display.ChangeValue("Disconnected")
+                except:
+                    print("couldn't change last value thats fine tho.")
+
+        print("done executing.")
 
 
     def StartSerialMonitor(self, events):

@@ -158,9 +158,10 @@ class MainWindow(wx.Frame):
                 event.veto()
                 return
 
-        self.PinControl.stopUIThread()
+        #self.PinControl.stopUIThread()
         self.PinControl.closeSelf()
         self.Destroy()
+        exit(0)
 
 ##################################################################################################################################################################
 

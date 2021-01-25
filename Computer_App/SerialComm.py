@@ -46,6 +46,7 @@ class SerialHandler():
     def startReceiverThread(self):
         self.thread = threading.Thread(target=self.receiverThread)
         self.thread.setDaemon(True)
+        self.thread.daemon = True
         self.alive.set()    #Alive stuff is pretty much copied from the wxTerminal example.
         self.thread.start()
         self.serial.rts = True
