@@ -127,6 +127,7 @@ class MainWindow(wx.Frame):
         self.Connect_Button.Bind(wx.EVT_BUTTON, self.ConnectPort)
         self.ShowPinUI_Button.Bind(wx.EVT_BUTTON, self.showPinUI)
         self.Bind(wx.EVT_CLOSE, self.OnClose)
+        self.Load_Test.Bind(wx.EVT_BUTTON, self.LoadTestPushed)
         #self.PortConnect()
 
     #loadTests - load in the test procedures located in test folder.
@@ -138,6 +139,7 @@ class MainWindow(wx.Frame):
             for x in p2.iterdir():
                 if x.is_dir():
                     self.List_Of_Tests.Append(x.name)
+
         else:
             print("error - Tests directory not found.")            
 
@@ -162,6 +164,29 @@ class MainWindow(wx.Frame):
         self.PinControl.closeSelf()
         self.Destroy()
         exit(0)
+
+    #Load in the files for the test sequence.
+    def loadTestSequence(path):
+        #Get a list of all files within the test folder
+        #Find the .txt, then parse in as json
+        #Load the rest of the images, store in image container.
+        #Need to make a class to contain it.
+        pass
+
+
+    #Load the Test selected, or say no test selected/display test error.
+    def LoadTestPushed(self, event):
+        #On load of test, open the test tab.
+        if (self.List_Of_Tests.GetSelection()==-1):
+            wx.MessageBox("Nothing selected.  No action able to be performed", "No Selected Test",  wx.OK | wx.ICON_INFORMATION)
+            return
+        #Initiate loading test in new tab.
+        #Switch tab
+        self.Notebook.SetSelection(1)
+        loadTestSequence(self.List_Of_Tests.GetStringSelection())
+
+
+    
 
 ##################################################################################################################################################################
 
