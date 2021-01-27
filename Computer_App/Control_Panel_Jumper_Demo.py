@@ -93,7 +93,6 @@ class Frame(wx.Frame):
                         self.Blower_Speed_Display.Value = "Speed 3"
                     else:
                         self.Blower_Speed_Display.Value = "Speed 0"
-                    
 
                     if self.PinControl.SerialLine.PinsList.getPinValue(57)>900:
                         self.AC_SW_Display.Value = "On"

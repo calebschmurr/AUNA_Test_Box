@@ -9,8 +9,14 @@
 
 import wx
 from pathlib import Path
+from pathlib import PurePath
 
 import PinControlUI
+
+import TestSequence
+
+import logging
+logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
 
 # begin wxGlade: dependencies
 # end wxGlade
@@ -122,6 +128,9 @@ class MainWindow(wx.Frame):
         self.__attach_events()
         self.loadTests()
 
+
+        self.test = None #Currently loaded test
+
     def __attach_events(self):
 
         self.Connect_Button.Bind(wx.EVT_BUTTON, self.ConnectPort)
@@ -139,11 +148,9 @@ class MainWindow(wx.Frame):
             for x in p2.iterdir():
                 if x.is_dir():
                     self.List_Of_Tests.Append(x.name)
-
         else:
             print("error - Tests directory not found.")            
 
-        
 
     def ConnectPort(self, events):
         self.PinControl.ExternalStartSerial(self.Port_Connect.GetSelection())
@@ -166,13 +173,25 @@ class MainWindow(wx.Frame):
         exit(0)
 
     #Load in the files for the test sequence.
-    def loadTestSequence(path):
+    def loadTestSequence(self, path):
         #Get a list of all files within the test folder
+        if path.exists():
+            logging.info("path exists")
+            for x in path.iterdir():
+                if x.is_file():
+                    logging.debug("x is file")
+                    if x.suffix == '.txt':
+                        logging.debug("txt file found.")
+                        self.test = TestSequence.TestSequence(self.PinControl.SerialLine.PinsList, x)
+                    if x.suffix == '.png' or x.suffix == '.jpg' or x.suffix == '.bmp':
+                        #If the suffix is an image,
+                        pass
+        else:
+            print("Error  - file not found/path does not exist.")
+
         #Find the .txt, then parse in as json
         #Load the rest of the images, store in image container.
         #Need to make a class to contain it.
-        pass
-
 
     #Load the Test selected, or say no test selected/display test error.
     def LoadTestPushed(self, event):
@@ -183,12 +202,13 @@ class MainWindow(wx.Frame):
         #Initiate loading test in new tab.
         #Switch tab
         self.Notebook.SetSelection(1)
-        loadTestSequence(self.List_Of_Tests.GetStringSelection())
+        p = Path('.')
+        p = p/"Tests"/self.List_Of_Tests.GetStringSelection()
+        logging.debug(p)
+        self.loadTestSequence(p)
+        logging.info(self.test.exportJsonFile())
 
-
-    
-
-##################################################################################################################################################################
+###############################################################################################################################################
 
 # end of class MainWindow
 

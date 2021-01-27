@@ -10,11 +10,13 @@ class pin:
     pin_number=0
     mode='I'
     value=0
+    description = ""
 
-    def __init__(self, num, mode, value):
+    def __init__(self, num, mode, value, description=""):
         self.pin_number = num
         self.mode = mode
         self.value = value
+        self.description = description
 
     def getValue(self):
         return self.value
@@ -22,6 +24,8 @@ class pin:
         return self.mode
     def getPinNumber(self):
         return int(self.pin_number)
+    def getDescription(self):
+        return self.description
 
     def setValue(self, value):
         if self.mode=='I':
@@ -37,12 +41,12 @@ class PinsList:
     #addPin() - method to add pin values.
     #Pretty simple addPin method.
 
-    def addPin(self, num, mode, val=0):
+    def addPin(self, num, mode, val=0, desc=""):
         #Check to see if pin already exists:
         for x in self.PinList:
             if x.getPinNumber()==num:
                 return False
-        self.PinList.append(pin(num, mode, val))
+        self.PinList.append(pin(num, mode, val, desc))
         return True
 
     #removePin() - method to remove a pin from the internal pin list.
