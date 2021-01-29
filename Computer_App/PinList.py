@@ -5,10 +5,12 @@ Keep track of active pins by name
 Each pin also has associated properties: Input or Output, Pin Number, Value.
 
 '''
+import json
 
+#mode: 0 is input, 1 is output.
 class pin:
     pin_number=0
-    mode='I'
+    mode=0
     value=0
     description = ""
 
@@ -28,11 +30,17 @@ class pin:
         return self.description
 
     def setValue(self, value):
-        if self.mode=='I':
+        if self.mode==0:
             self.value = value
             return True
         #Throw error - pin not the right value.
         return False
+
+    def getDict(self):
+        return {"pin": self.pin_number, "mode": self.mode, "description": self.description}
+
+   # def getJson(self):
+  #      return json.dumps({"pin": self.pin_number, "mode": self.mode, "description": self.description})
 
 
 class PinsList:
@@ -110,7 +118,10 @@ class PinsList:
                 output+="0"
                 output+=f"{x.getPinNumber()}"
             output+="."
-            output+=x.getMode()
+            if x.getMode()==0:
+                output+="I"
+            else:
+                output+="O"
             output+=";"
         output+="!"
         return output
@@ -123,7 +134,7 @@ class PinsList:
     def changePinOutputVal(self):
         output="3:"
         for x in self.PinList:
-            if x.getMode()=="O":
+            if x.getMode()==1:
                 if x.getPinNumber()<10:
                     output+="0"
                 output+=str(x.getPinNumber())
@@ -176,3 +187,9 @@ class PinsList:
                 #If yes, then change the value.
 
         #Update UI?
+    def getDict(self):
+        output = {"pins":[]}
+        for x in self.PinList:
+            output["pins"].append(x.getDict())
+        
+        return output

@@ -229,7 +229,6 @@ class Pin_Control(wx.Frame):
         #TODO: Assign pin A as pin 8.  Everytime A appears, replace w/ 8
 
         #Note:: Analog input pins begin w/ A.  Replaced with 8 for the purposes of this program.
-
         # begin wxGlade: Pin_Control.__set_properties
         self.SetTitle("Test Box Pin Control")
         self.Stop_Connection_Button.Enable(False)
@@ -905,13 +904,12 @@ class Pin_Control(wx.Frame):
                 if int(arg)<22:
                     sel = 1
                 else:
-                    sel = eval("self.Pin_{}_Mode_Box.GetSelection()".format(arg))
-                
+                    sel = eval("self.Pin_{}_Mode_Box.GetSelection()".format(arg)) 
                 if sel==0:
-                    self.SerialLine.PinsList.addPin(arg,'I')
+                    self.SerialLine.PinsList.addPin(arg,0)
                     print("Added pin {} as input".format(arg))
                 else:
-                    self.SerialLine.PinsList.addPin(arg,'O')
+                    self.SerialLine.PinsList.addPin(arg,1)
                     print("Added pin {} as output".format(arg))
             else:
                 print("removing pin {}".format(arg))
@@ -927,7 +925,7 @@ class Pin_Control(wx.Frame):
         print("Updating pin output values")
         #TODO: Comb through all pins, update their values.
         for x in self.SerialLine.PinsList.PinList:
-            if x.mode=='O':
+            if x.mode==1:
                 x.value = float(eval('self.Pin_{}_Status.GetValue()'.format(x.pin_number)))
         self.SerialLine.ChangeOutputPinValue()
 
@@ -965,7 +963,7 @@ class Pin_Control(wx.Frame):
         #Redraw all status based on inputs from PinsList
         #This only updates based on inputs.
         for x in self.SerialLine.PinsList.PinList:
-            if x.mode=='I':
+            if x.mode==0:
                 #For each input, change the status box.
                 #self.Pin_22_Status.SetValue(x.value)
                 #print("Updating {} on UI".format(x.pin_number))
@@ -1039,9 +1037,9 @@ class Pin_Control(wx.Frame):
         exec("self.Pin_{}_Status.SetValue(str(input))".format(pin))
         #self.Pin_24_Enable.SetValue(self, True)
         if pintype==0:
-            self.SerialLine.PinsList.addPin(pin, 'I', input)
+            self.SerialLine.PinsList.addPin(pin, 0, input)
         else:
-            self.SerialLine.PinsList.addPin(pin, 'O', input)
+            self.SerialLine.PinsList.addPin(pin, 1, input)
         print("External pin {} added as {}".format(pin, pintype))
         
 #

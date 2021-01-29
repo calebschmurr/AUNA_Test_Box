@@ -47,7 +47,7 @@ x = {
     
     {"number": 1, "description": "Speed1", "image":"/img1.jpg",
     "pin_check": [{"pin":54, "check_code":1, "value":600}],
-    "error": "Error ate Stage 1 - Blower Speed to 1."},
+    "error": "Error at Stage 1 - Blower Speed to 1."},
     
     {"number": 2, "description": "Speed2", "image":"/img2.jpg",
     "pin_check": [{"pin":54, "check_code":0, "value":600}, 
