@@ -33,7 +33,7 @@ x = {
     #All other changes to the pin statuses will be modifications starting from the
     #'default condition.
 
-    "tests" : [{"number": 0, "description":"Starting", "image":"/img0.jpg",
+    "tests" : [{"number": 0, "description":"Starting", "image":"/img0.png",
     "pin_check": [{"pin" : 54, "check_code": 0, "value": 600},
     {"pin" : 55, "check_code": 0, "value": 600},
     {"pin" : 56, "check_code": 0, "value": 600},
@@ -45,46 +45,46 @@ x = {
     ],
     "error": "Error at Stage 0 - Initialization.  No changes, default state."},
     
-    {"number": 1, "description": "Speed1", "image":"/img1.jpg",
+    {"number": 1, "description": "Speed1", "image":"/img1.png",
     "pin_check": [{"pin":54, "check_code":1, "value":600}],
     "error": "Error at Stage 1 - Blower Speed to 1."},
     
-    {"number": 2, "description": "Speed2", "image":"/img2.jpg",
+    {"number": 2, "description": "Speed2", "image":"/img2.png",
     "pin_check": [{"pin":54, "check_code":0, "value":600}, 
         {"pin":55,"check_code":1, "value":600}],
     "error": "Error at Stage 2 - Blower Speed to 2."},
     
-    {"number": 3, "description": "Speed3", "image":"/img3.jpg",
+    {"number": 3, "description": "Speed3", "image":"/img3.png",
     "pin_check": [{"pin":55, "check_code":0, "value":600}, 
         {"pin":56,"check_code":1, "value":600}],
     "error": "Error at Stage 3 - Blower Speed to 3."},
     
 
     #Test 4 - checking poti value for coldest poti setting.
-    {"number": 4, "description": "WV_Poti", "image":"/img4.jpg",
+    {"number": 4, "description": "WV_Poti", "image":"/img4.png",
     "pin_check": [{"pin":56, "check_code":0, "value":600}, 
         {"pin":61,"check_code":0, "value":400}],
     "error": "Error at Stage 4 - Poti to coldest."},    
 
-    {"number": 5, "description": "WV_Poti_Hot", "image":"/img5.jpg",
+    {"number": 5, "description": "WV_Poti_Hot", "image":"/img5.png",
     "pin_check": [ {"pin":61,"check_code":1, "value":900}],
     "error": "Error at Stage 5 - Poti to hottest."},
 
-    {"number": 6, "description": "Louver_Head", "image":"/img6.jpg",
+    {"number": 6, "description": "Louver_Head", "image":"/img6.png",
     "pin_check": [ {"pin":58,"check_code":1, "value":600}],
     "error": "Error at Stage 6 - Louvers to Head pos."},
     
-    {"number": 7, "description": "Louver_Defrost", "image":"/img7.jpg",
+    {"number": 7, "description": "Louver_Defrost", "image":"/img7.png",
     "pin_check": [{"pin":58, "check_code":0, "value":600}, 
         {"pin":59,"check_code":1, "value":600}],
     "error": "Error at Stage 7 - Louver move to Defrost position."},
 
-    {"number": 8, "description": "Louver_Defrost_Foot", "image":"/img8.jpg",
+    {"number": 8, "description": "Louver_Defrost_Foot", "image":"/img8.png",
     "pin_check": [{"pin":59, "check_code":0, "value":600}, 
         {"pin":60,"check_code":1, "value":600}],
     "error": "Error at Stage 8 - Louver move to Defrost & Foot Position position."},
 
-    {"number": 9, "description": "AC_SW", "image":"/img9.jpg",
+    {"number": 9, "description": "AC_SW", "image":"/img9.png",
     "pin_check": [{"pin":60, "check_code":0, "value":600}, 
         {"pin":54,"check_code":1, "value":600},
         {"pin":57,"check_code":1, "value":600}],

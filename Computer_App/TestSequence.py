@@ -53,6 +53,7 @@ class testStage:
     imgpath = ""
     error = ""
     testPins = []
+    FolderPath = None
 
 
     def __init__(self, number, description, imgpath, pin_checks, error, RealPinsList):
@@ -79,6 +80,13 @@ class testStage:
         logging.debug("Full dictionary:")
         logging.debug(x)
         return x
+
+
+    #Check each pin in the pin check, make sure it matches status.
+    def passPinCheck(self):
+        
+
+        return True
 
 
 class TestSequence:
@@ -129,7 +137,7 @@ class TestSequence:
         return (self.current_test+1)<len(self.testStages)
 
     def getNumStages(self):
-        return len(self.testStages)
+        return len(self.testStages)-1
 
     #This is facts baby.
     def exportJsonFile(self):
