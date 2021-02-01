@@ -196,9 +196,9 @@ class MainWindow(wx.Frame):
             logging.info("path exists")
             for x in path.iterdir():
                 if x.is_file():
-                    logging.debug("x is file")
+                    #logging.debug("x is file")
                     if x.suffix == '.txt':
-                        logging.debug("txt file found.")
+                        #logging.debug("txt file found.")
                         self.test = TestSequence.TestSequence(self.PinControl.SerialLine.PinsList, x)
                     if x.suffix == '.png' or x.suffix == '.jpg' or x.suffix == '.bmp':
                         #If the suffix is an image,
@@ -266,7 +266,9 @@ class MainWindow(wx.Frame):
         pass
 
     def finishTest(self):
-        pass
+        wx.MessageBox("Test finished - passed.", "Test Passed",  wx.OK | wx.ICON_INFORMATION)
+        self.testActive = False
+        self.Notebook.SetSelection(0)
 
 ###############################################################################################################################################
 
