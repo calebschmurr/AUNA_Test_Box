@@ -16,7 +16,6 @@ import PinControlUI
 import TestSequence
 
 import logging
-logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
 
 # begin wxGlade: dependencies
 # end wxGlade
@@ -39,60 +38,60 @@ class MainWindow(wx.Frame):
         self.Load_Existing_Test_Tab = wx.Panel(self.Notebook, wx.ID_ANY)
         self.Notebook.AddPage(self.Load_Existing_Test_Tab, "Load Test")
 
-        Tab_Sizer = wx.BoxSizer(wx.VERTICAL)
+        self.Tab_Sizer = wx.BoxSizer(wx.VERTICAL)
 
         self.List_Of_Tests = wx.ListBox(self.Load_Existing_Test_Tab, wx.ID_ANY)
         self.List_Of_Tests.SetMinSize((500, 200))
-        Tab_Sizer.Add(self.List_Of_Tests, 0, 0, 0)
+        self.Tab_Sizer.Add(self.List_Of_Tests, 0, 0, 0)
 
         self.Load_Test = wx.Button(self.Load_Existing_Test_Tab, wx.ID_ANY, "Load Test")
-        Tab_Sizer.Add(self.Load_Test, 0, 0, 0)
+        self.Tab_Sizer.Add(self.Load_Test, 0, 0, 0)
 
-        sizer_1 = wx.BoxSizer(wx.HORIZONTAL)
-        Tab_Sizer.Add(sizer_1, 1, wx.EXPAND, 0)
+        self.sizer_1 = wx.BoxSizer(wx.HORIZONTAL)
+        self.Tab_Sizer.Add(self.sizer_1, 1, wx.EXPAND, 0)
 
-        COM_Port_Label = wx.StaticText(self.Load_Existing_Test_Tab, wx.ID_ANY, "Serial Port:")
-        sizer_1.Add(COM_Port_Label, 0, 0, 0)
+        self.COM_Port_Label = wx.StaticText(self.Load_Existing_Test_Tab, wx.ID_ANY, "Serial Port:")
+        self.sizer_1.Add(self.COM_Port_Label, 0, 0, 0)
 
         self.Port_Connect = wx.ComboBox(self.Load_Existing_Test_Tab, wx.ID_ANY, choices=[], style=wx.CB_DROPDOWN)
-        sizer_1.Add(self.Port_Connect, 0, 0, 0)
+        self.sizer_1.Add(self.Port_Connect, 0, 0, 0)
 
         self.Connect_Button = wx.Button(self.Load_Existing_Test_Tab, wx.ID_ANY, "Connect")
-        sizer_1.Add(self.Connect_Button, 0, 0, 0)
+        self.sizer_1.Add(self.Connect_Button, 0, 0, 0)
 
         self.Disconnect_Button = wx.Button(self.Load_Existing_Test_Tab, wx.ID_ANY, "Disconnect")
-        sizer_1.Add(self.Disconnect_Button, 0, 0, 0)
+        self.sizer_1.Add(self.Disconnect_Button, 0, 0, 0)
 
         self.ShowPinUI_Button = wx.Button(self.Load_Existing_Test_Tab, wx.ID_ANY, "Show Pin UI")
-        Tab_Sizer.Add(self.ShowPinUI_Button, 0, 0, 0)
+        self.Tab_Sizer.Add(self.ShowPinUI_Button, 0, 0, 0)
 
         self.Test_Tab = wx.Panel(self.Notebook, wx.ID_ANY)
         self.Notebook.AddPage(self.Test_Tab, "Test")
 
-        Test_Tab_Sizer = wx.BoxSizer(wx.VERTICAL)
+        self.Test_Tab_Sizer = wx.BoxSizer(wx.VERTICAL)
 
-        Current_Test_Label = wx.StaticText(self.Test_Tab, wx.ID_ANY, "Current Test:")
-        Test_Tab_Sizer.Add(Current_Test_Label, 0, 0, 0)
+        self.Current_Test_Label = wx.StaticText(self.Test_Tab, wx.ID_ANY, "Current Test:")
+        self.Test_Tab_Sizer.Add(self.Current_Test_Label, 0, 0, 0)
 
-        Next_Step_Image = wx.StaticBitmap(self.Test_Tab, wx.ID_ANY, wx.Bitmap("C:\\Users\\USER\\Documents\\Test_Box\\AUNA_Test_Box\\Computer_App\\demo_img.png", wx.BITMAP_TYPE_ANY))
-        Test_Tab_Sizer.Add(Next_Step_Image, 0, 0, 0)
+        self.Next_Step_Image = wx.StaticBitmap(self.Test_Tab, wx.ID_ANY, wx.Bitmap("C:\\Users\\USER\\Documents\\Test_Box\\AUNA_Test_Box\\Computer_App\\demo_img.png", wx.BITMAP_TYPE_ANY))
+        self.Test_Tab_Sizer.Add(self.Next_Step_Image, 0, 0, 0)
 
-        Test_Status_Sizer = wx.BoxSizer(wx.HORIZONTAL)
-        Test_Tab_Sizer.Add(Test_Status_Sizer, 1, wx.EXPAND, 0)
+        self.Test_Status_Sizer = wx.BoxSizer(wx.HORIZONTAL)
+        self.Test_Tab_Sizer.Add(self.Test_Status_Sizer, 1, wx.EXPAND, 0)
 
-        label_2 = wx.StaticText(self.Test_Tab, wx.ID_ANY, "Status:")
-        Test_Status_Sizer.Add(label_2, 0, 0, 0)
+        self.Test_Status_Label = wx.StaticText(self.Test_Tab, wx.ID_ANY, "Status:")
+        self.Test_Status_Sizer.Add(self.Test_Status_Label, 0, 0, 0)
 
-        label_3 = wx.StaticText(self.Test_Tab, wx.ID_ANY, "Operation:")
-        Test_Status_Sizer.Add(label_3, 0, 0, 0)
+        self.Stage_Description_Label = wx.StaticText(self.Test_Tab, wx.ID_ANY, "Operation:")
+        self.Test_Status_Sizer.Add(self.Stage_Description_Label, 0, 0, 0)
 
         self.Next_Step_Button = wx.Button(self.Test_Tab, wx.ID_ANY, "Next Step")
-        Test_Status_Sizer.Add(self.Next_Step_Button, 0, 0, 0)
+        self.Test_Status_Sizer.Add(self.Next_Step_Button, 0, 0, 0)
 
         self.New_Test_Initiator_Tab = wx.Panel(self.Notebook, wx.ID_ANY)
         self.Notebook.AddPage(self.New_Test_Initiator_Tab, "New Test")
 
-        Creator_Sizer = wx.BoxSizer(wx.VERTICAL)
+        self.Creator_Sizer = wx.BoxSizer(wx.VERTICAL)
 
         self.New_Test_Creator = wx.Panel(self.Notebook, wx.ID_ANY)
         self.Notebook.AddPage(self.New_Test_Creator, "New Test Creator")
@@ -100,11 +99,11 @@ class MainWindow(wx.Frame):
         self.Result_Viewer = wx.Panel(self.Notebook, wx.ID_ANY)
         self.Notebook.AddPage(self.Result_Viewer, "Result Viewer")
 
-        self.New_Test_Initiator_Tab.SetSizer(Creator_Sizer)
+        self.New_Test_Initiator_Tab.SetSizer(self.Creator_Sizer)
 
-        self.Test_Tab.SetSizer(Test_Tab_Sizer)
+        self.Test_Tab.SetSizer(self.Test_Tab_Sizer)
 
-        self.Load_Existing_Test_Tab.SetSizer(Tab_Sizer)
+        self.Load_Existing_Test_Tab.SetSizer(self.Tab_Sizer)
 
         self.Layout()
         # end wxGlade
@@ -114,7 +113,10 @@ class MainWindow(wx.Frame):
 #### To be placed under init of MainWindowUI ############################################################################################################
 ##########################################################################################################################################################
         
+        logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
+
         self.stopClose = False
+        self.testActive = False
 
         self.PinControl = PinControlUI.Pin_Control(None, wx.ID_ANY, "")
         
@@ -130,6 +132,7 @@ class MainWindow(wx.Frame):
 
 
         self.test = None #Currently loaded test
+        self.currentStage = None #Currently loaded stage.
 
     def __attach_events(self):
 
@@ -137,6 +140,7 @@ class MainWindow(wx.Frame):
         self.ShowPinUI_Button.Bind(wx.EVT_BUTTON, self.showPinUI)
         self.Bind(wx.EVT_CLOSE, self.OnClose)
         self.Load_Test.Bind(wx.EVT_BUTTON, self.LoadTestPushed)
+        self.Next_Step_Button.Bind(wx.EVT_BUTTON, self.nextStepPushed)
         #self.PortConnect()
 
     #loadTests - load in the test procedures located in test folder.
@@ -172,7 +176,7 @@ class MainWindow(wx.Frame):
         self.Destroy()
         exit(0)
 
-    #Load in the files for the test sequence.
+    #Load in the files for the test sequence after button click.
     def loadTestSequence(self, path):
         #Get a list of all files within the test folder
         if path.exists():
@@ -201,12 +205,43 @@ class MainWindow(wx.Frame):
             return
         #Initiate loading test in new tab.
         #Switch tab
-        self.Notebook.SetSelection(1)
         p = Path('.')
         p = p/"Tests"/self.List_Of_Tests.GetStringSelection()
         logging.debug(p)
         self.loadTestSequence(p)
-        logging.info(self.test.exportJsonFile())
+        #logging.info(self.test.exportJsonFile())
+        self.Notebook.SetSelection(1)
+        self.testActive = True
+        self.startTest()
+
+
+    #next step pushed
+    def nextStepPushed(self, event):
+        if self.testActive:
+            if self.test.isNextTest():
+                self.loadNextTestStage()
+            else:
+                self.finishTest()
+        
+
+
+    def startTest(self):
+        self.Current_Test_Label.SetLabel("Current Test: {}".format(self.test.name))
+        self.loadNextTestStage()
+
+    def loadNextTestStage(self):
+        self.currentStage = self.test.getNextTest()
+        #Load in the image
+
+        #Load in the test stage number, and adjust the status below
+        self.Test_Status_Label.SetLabel("Stage {} out of {}".format(self.test.current_test, self.test.getNumStages()))
+        #Change Operation to say Description.
+        self.Stage_Description_Label.SetLabel("{}".format(self.currentStage.description))
+        pass
+
+    def finishTest(self):
+        pass
+
 
 ###############################################################################################################################################
 

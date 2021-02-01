@@ -5,10 +5,10 @@ import json
 import logging
 
 #Below - enable logging.
-#logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
+logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
 
 #Below - get rid of all log messages.
-logging.basicConfig(format='%(asctime)s - %(levelname)s - %(message)s')
+#logging.basicConfig(format='%(asctime)s - %(levelname)s - %(message)s')
 
 
 
@@ -122,8 +122,14 @@ class TestSequence:
         else:
             return False
 
+    def getCurrentTest(self):
+        return self.testStages[self.current_test]
+
     def isNextTest(self):
         return (self.current_test+1)<len(self.testStages)
+
+    def getNumStages(self):
+        return len(self.testStages)
 
     #This is facts baby.
     def exportJsonFile(self):
