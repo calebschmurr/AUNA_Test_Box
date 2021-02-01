@@ -18,6 +18,12 @@ import logging
 
 from pathlib import Path
 
+#Change current directory to location of python file.
+#Need to do this to load in tests properly.
+import os
+os.chdir(os.path.dirname(os.path.abspath(__file__)))
+
+
 ###########################################################################
 ##################Finish Importing Logging#################################
 
@@ -262,9 +268,7 @@ class MainWindow(wx.Frame):
     def finishTest(self):
         pass
 
-
 ###############################################################################################################################################
-
 
 # end of class MainWindow
 
