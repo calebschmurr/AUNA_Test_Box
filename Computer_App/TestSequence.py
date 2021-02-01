@@ -3,7 +3,14 @@ import PinList
 import json
 
 import logging
-logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
+
+#Below - enable logging.
+#logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
+
+#Below - get rid of all log messages.
+logging.basicConfig(format='%(asctime)s - %(levelname)s - %(message)s')
+
+
 
 class testPin:
     number = 0
@@ -49,6 +56,7 @@ class testStage:
 
 
     def __init__(self, number, description, imgpath, pin_checks, error, RealPinsList):
+        self.testPins.clear()
         self.number = number
         self.description = description
         self.imgpath = imgpath
