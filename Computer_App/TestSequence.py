@@ -10,8 +10,6 @@ logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %
 #Below - get rid of all log messages.
 #logging.basicConfig(format='%(asctime)s - %(levelname)s - %(message)s')
 
-
-
 class testPin:
     number = 0
     check_code = 0
