@@ -17,6 +17,49 @@ import time
 # begin wxGlade: extracode
 # end wxGlade
 
+'''
+Box Pin Layout - as of 2/8/21 
+X1_1 - AD0 - 54
+X1_2 - AD1 - 55
+X1_3 - AD2 - 56
+X1_4 - AD3 - 57
+X1_5 - AD4 - 58
+X1_6 - AD5 - 59
+X1_7 - AD6 - 60
+X1_8 - AD7 - 61
+X1_9 - AD8 - 62
+X1_10 - AD9 - 63
+X1_11 - AD10 - 64
+X1_12 - AD11 - 65
+X1_13 - PWM2 - ?
+X1_14 - PWM3 - ?
+X1_15 - PWM4 - ?
+X1_16 - PWM5 - ?
+X1_17 - PWM6 - ?
+X1_18 - 5V
+
+
+X2_1 - K1 (12V) - 
+X2_2 - K2 (12V) - 
+X2_3 - K3 (12V) - 
+X2_4 - K4 (12V) -
+X2_5 - K5 (24V) - 
+X2_6 - K6 (24V) - 
+X2_7 - K7 (24V) - 
+X2_8 - K8 (24V)
+
+
+X2_10 - GND
+X2_11 - GND
+X2_12 - GND
+
+
+
+
+'''
+
+
+
 class Pin_Control(wx.Frame):
 
     
