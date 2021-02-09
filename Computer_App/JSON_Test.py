@@ -19,7 +19,7 @@ x = {
      {"pin": 61, "mode":0, "description": "WV Poti Sig"}],
 
     #Pin Check Codes:
-    # -1 - invalid/not to do.
+    # -1 - invalid code/skip.
     # 0 - less than
     # 1 - greater than
     # 2 - equal to

@@ -90,17 +90,17 @@ class testStage:
 class TestSequence:
     name = ""
     description = ""
-    TestPinsList = PinList.PinsList()
+    TestPinsList = PinList.PinsList() #This is the list of pins used in the test.
     testStages = []
     RealPinsList = None #To be defined on init.
     current_test = -1
 
-    def __init__(self, ActualPinsList, FilePath):
-        #On init, parse through pins needed, store in the PinsList.
-        #Parse through each stage, save as a testStage class in testStage list.
+
+    def initialLoadIn(self, ActualPinsList, FilePath):
         self.RealPinsList = ActualPinsList
         self.LoadInTests(FilePath)
         logging.info('Initializing pins list.')
+
 
     def LoadInTests(self, FilePath):
         with open(FilePath) as f:
