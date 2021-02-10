@@ -17,6 +17,8 @@ import logging
 
 from pathlib import Path
 
+from PIL import Image
+
 #Change current directory to location of python file.
 #Need to do this to load in tests properly.
 import os
@@ -619,7 +621,7 @@ class MainWindow(wx.Frame):
         self.clearNewTestValuesButton.Bind(wx.EVT_BUTTON, self.onClearAllValues)
         self.NewTestCreatorPreviousStage.Bind(wx.EVT_BUTTON, self.onNewTestPreviousStage)
         self.NewTestCreatorNextStage.Bind(wx.EVT_BUTTON, self.onNewTestNextStage)
-        self.NewTestCreatorFinishTestButton.Bind(wx.EVT_BUTTON, self.OnNewTestFinishTest)
+        self.NewTestCreatorFinishTestButton.Bind(wx.EVT_BUTTON, self.onNewTestFinishTest)
         self.NewTestCreatorSelectImage.Bind(wx.EVT_BUTTON, self.onNewTestSelectImage)
         #self.PortConnect()
 
@@ -650,6 +652,17 @@ class MainWindow(wx.Frame):
             if wx.MessageBox("File has not been saved, continue closing?", "Please confirm below.", wx.ICON_QUESTION | wx.YES_NO) != wx.YES:
                 event.veto()
                 return
+
+        if self.newTest:
+            if wx.MessageBox("Test not finished being created, abort and delete progress?", "Please choose below.", wx.ICON_QUESTION | wx.YES_NO) != wx.YES:
+                event.veto()
+                return
+            else:
+                #Remove the folder that was created and everything inside it.
+                for x in self.folderPath.iterdir():
+                    x.unlink()
+                self.folderPath.rmdir()
+                
 
         #self.PinControl.stopUIThread()
         self.PinControl.closeSelf()
@@ -764,7 +777,11 @@ class MainWindow(wx.Frame):
 
             #Set up the test creation tab
             self.NewTestCreatorTestName.SetLabelText("Test Name: {}".format(self.test.name))
-        
+
+            #Make a folder for this new test
+            self.folderPath = Path('.') #Using pathlib - replacement of os.
+            self.folderPath = self.folderPath / "Tests" /self.test.name
+            self.folderPath.mkdir()
             self.Notebook.SetSelection(3)
         
         else:
@@ -824,7 +841,12 @@ class MainWindow(wx.Frame):
         #Make sure all necessary values actually exist
         
         #Check for existing img path, and write image to folder.
-        
+        if self.test.currentImgPath:
+            img = Image.open(self.test.currentImgPath)
+            img.save("{}\img{}.png".format(self.folderPath.resolve(),self.test.current_test))
+        else:
+            wx.MessageBox("No image selected, please select an image", "No image selected",  wx.OK | wx.ICON_INFORMATION)
+            return
         #Check for pins having values to check
 
         #Check for 
@@ -836,15 +858,17 @@ class MainWindow(wx.Frame):
 
         #Write the image to folder
         #Increment stage levels
-        pass
+        
 
     def onNewTestPreviousStage(self, event):
         #
         pass
 
     def onNewTestFinishTest(self, event):
-        #
-        pass
+        #Save the test
+        #Reset the variables associated with a new test
+        self.newTest = False
+        
 
     def onResultViewer(self, event):
         #
@@ -853,15 +877,13 @@ class MainWindow(wx.Frame):
 
     def onNewTestSelectImage(self, event):
         #Open a box to select the image for a certain stage.
-        with wx.FileDialog(self, "Open Image", wildcard = "Image Files (*.png, *.jpg)|*.png, *.jpg",
-            style=wx.FD_OPEN | wd.FD_FILE_MUST_EXIST) as fileDialog:
+        with wx.FileDialog(self, "Open Image", wildcard = "Image files (*.png;*.gif;*.jpeg;*.jpg)|*.png;*.gif;*.jpeg;*.jpg",
+            style=wx.FD_OPEN | wx.FD_FILE_MUST_EXIST) as fileDialog:
             if fileDialog.ShowModal() == wx.ID_CANCEL:
                 return
             pathname = fileDialog.GetPath()
             self.test.currentImgPath = pathname
     
-
-
 
 ###############################################################################################################################################
 
