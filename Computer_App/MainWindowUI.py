@@ -528,61 +528,42 @@ class MainWindow(wx.Frame):
         self.TestPinsSizer = wx.GridSizer(7, 4, 0, 0)
         self.NewTestCreatorSizer.Add(self.TestPinsSizer, 1, wx.EXPAND, 0)
 
-        self.TestPinsSizer.Add((0, 0), 0, 0, 0)
+#############################################################################################################################
+################################To be copied over for adding in pins to test creator segment###################################
 
-        self.TestPinsSizer.Add((0, 0), 0, 0, 0)
+        for x in range(1,13):
+            exec("self.PinX1_{}_Stage_Sizer = wx.BoxSizer(wx.HORIZONTAL)".format(x))
+            exec("self.TestPinsSizer.Add(self.PinX1_{}_Stage_Sizer, 1, wx.EXPAND, 0)".format(x))
+            exec("self.PinX1_{}_Stage_Label = wx.StaticText(self.New_Test_Creator, wx.ID_ANY, 'X1_{}')".format(x,x))
+            exec("self.PinX1_{}_Stage_Sizer.Add(self.PinX1_{}_Stage_Label, 0, 0, 0)".format(x,x))
+            exec("self.PinX1_{}_Stage_Mode_Select = wx.ComboBox(self.New_Test_Creator, wx.ID_ANY, choices=['<', '>', '='], style=wx.CB_DROPDOWN)".format(x))
+            exec("self.PinX1_{}_Stage_Mode_Select.SetSelection(-1)".format(x))
+            exec("self.PinX1_{}_Stage_Mode_Select.Enable(False)".format(x))
+            exec("self.PinX1_{}_Stage_Sizer.Add(self.PinX1_{}_Stage_Mode_Select, 0, 0, 0)".format(x,x))
+            exec("self.PinX1_{}_Stage_Value = wx.TextCtrl(self.New_Test_Creator, wx.ID_ANY, '0')".format(x))
+            exec("self.PinX1_{}_Stage_Value.Enable(False)".format(x))
+            exec("self.PinX1_{}_Stage_Sizer.Add(self.PinX1_{}_Stage_Value, 0, 0, 0)".format(x,x))
 
-        self.TestPinsSizer.Add((0, 0), 0, 0, 0)
+        for x in range(13, 18):
+            exec("self.PinX1_{}_Stage_Sizer = wx.BoxSizer(wx.HORIZONTAL)".format(x))
+            exec("self.TestPinsSizer.Add(self.PinX1_{}_Stage_Sizer, 1, wx.EXPAND, 0)".format(x))
+            exec("self.PinX1_{}_Stage_Label = wx.StaticText(self.New_Test_Creator, wx.ID_ANY, 'X1_{}')".format(x,x))
+            exec("self.PinX1_{}_Stage_Sizer.Add(self.PinX1_{}_Stage_Label, 0, 0, 0)".format(x,x))
+            exec("self.PinX1_{}_Stage_Value = wx.TextCtrl(self.New_Test_Creator, wx.ID_ANY, '0')".format(x))
+            exec("self.PinX1_{}_Stage_Value.Enable(False)".format(x))
+            exec("self.PinX1_{}_Stage_Sizer.Add(self.PinX1_{}_Stage_Value, 0, 0, 0)".format(x,x))
 
-        self.TestPinsSizer.Add((0, 0), 0, 0, 0)
+        for x in range(1,9):
+            exec("self.PinX2_{}_Stage_Sizer = wx.BoxSizer(wx.HORIZONTAL)".format(x))
+            exec("self.TestPinsSizer.Add(self.PinX2_{}_Stage_Sizer, 1, wx.EXPAND, 0)".format(x))
+            exec("self.PinX2_{}_Stage_Label = wx.StaticText(self.New_Test_Creator, wx.ID_ANY, 'X2_{}')".format(x,x))
+            exec("self.PinX2_{}_Stage_Sizer.Add(self.PinX2_{}_Stage_Label, 0, 0, 0)".format(x,x))
+            exec("self.PinX2_{}_Stage_Mode_Select = wx.ComboBox(self.New_Test_Creator, wx.ID_ANY, choices=['Off','On'], style=wx.CB_DROPDOWN)".format(x))
+            exec("self.PinX2_{}_Stage_Mode_Select.SetSelection(-1)".format(x))
+            exec("self.PinX2_{}_Stage_Mode_Select.Enable(False)".format(x))
+            exec("self.PinX2_{}_Stage_Sizer.Add(self.PinX2_{}_Stage_Mode_Select, 0, 0, 0)".format(x,x))
 
-        self.TestPinsSizer.Add((0, 0), 0, 0, 0)
-
-        self.TestPinsSizer.Add((0, 0), 0, 0, 0)
-
-        self.TestPinsSizer.Add((0, 0), 0, 0, 0)
-
-        self.TestPinsSizer.Add((0, 0), 0, 0, 0)
-
-        self.TestPinsSizer.Add((0, 0), 0, 0, 0)
-
-        self.TestPinsSizer.Add((0, 0), 0, 0, 0)
-
-        self.TestPinsSizer.Add((0, 0), 0, 0, 0)
-
-        self.TestPinsSizer.Add((0, 0), 0, 0, 0)
-
-        self.TestPinsSizer.Add((0, 0), 0, 0, 0)
-
-        self.TestPinsSizer.Add((0, 0), 0, 0, 0)
-
-        self.TestPinsSizer.Add((0, 0), 0, 0, 0)
-
-        self.TestPinsSizer.Add((0, 0), 0, 0, 0)
-
-        self.TestPinsSizer.Add((0, 0), 0, 0, 0)
-
-        self.TestPinsSizer.Add((0, 0), 0, 0, 0)
-
-        self.TestPinsSizer.Add((0, 0), 0, 0, 0)
-
-        self.TestPinsSizer.Add((0, 0), 0, 0, 0)
-
-        self.TestPinsSizer.Add((0, 0), 0, 0, 0)
-
-        self.TestPinsSizer.Add((0, 0), 0, 0, 0)
-
-        self.TestPinsSizer.Add((0, 0), 0, 0, 0)
-
-        self.TestPinsSizer.Add((0, 0), 0, 0, 0)
-
-        self.TestPinsSizer.Add((0, 0), 0, 0, 0)
-
-        self.TestPinsSizer.Add((0, 0), 0, 0, 0)
-
-        self.TestPinsSizer.Add((0, 0), 0, 0, 0)
-
-        self.TestPinsSizer.Add((0, 0), 0, 0, 0)
+###############################################################################################################################
 
         self.Result_Viewer = wx.Panel(self.Notebook, wx.ID_ANY)
         self.Notebook.AddPage(self.Result_Viewer, "Result Viewer")
@@ -636,6 +617,10 @@ class MainWindow(wx.Frame):
         self.createNewTestButton.Bind(wx.EVT_BUTTON, self.onCreateNewTest)
         self.Notebook.Bind(wx.EVT_NOTEBOOK_PAGE_CHANGED, self.onNotebookPageChange)
         self.clearNewTestValuesButton.Bind(wx.EVT_BUTTON, self.onClearAllValues)
+        self.NewTestCreatorPreviousStage.Bind(wx.EVT_BUTTON, self.onNewTestPreviousStage)
+        self.NewTestCreatorNextStage.Bind(wx.EVT_BUTTON, self.onNewTestNextStage)
+        self.NewTestCreatorFinishTestButton.Bind(wx.EVT_BUTTON, self.OnNewTestFinishTest)
+        self.NewTestCreatorSelectImage.Bind(wx.EVT_BUTTON, self.onNewTestSelectImage)
         #self.PortConnect()
 
     #loadTests - load in the test procedures located in test folder.
@@ -776,9 +761,9 @@ class MainWindow(wx.Frame):
             self.test.name = self.TestNameTextbox.GetValue()
             self.test.description = self.Test_Description.GetValue()
             self.getTestPinsList() #Load in the pins that will be used for this test
-        
-            #Now, set up the test tab with all active pins.
 
+            #Set up the test creation tab
+            self.NewTestCreatorTestName.SetLabelText("Test Name: {}".format(self.test.name))
         
             self.Notebook.SetSelection(3)
         
@@ -787,45 +772,70 @@ class MainWindow(wx.Frame):
         #On create new test - create a new test object,
         #Move to NewTestCreator tab
 
+    #getTestPinsList() -
+    #On creating a new test, this goes through and finds each active pin
+    #that will be used.
+    #Also enables the pins in the stage creation menu.
     def getTestPinsList(self):
         for x in range(1,13):
             if eval("self.PinX1_{}Select.GetSelection()".format(x))!=2:
                 exec("self.test.TestPinsList.addPin({}, self.PinX1_{}Select.GetSelection(), 0, self.PinX1_{}Description.GetValue())".format(x+53, x, x))
-                #Add to the test creator tab.
-                exec("self.PinX1_{}_Stage_Sizer = wx.BoxSizer(wx.HORIZONTAL)".format(x))
-                exec("self.TestPinsSizer.Add(self.PinX1_{}_Stage_Sizer, 1, wx.EXPAND, 0)".format(x))
-                exec("self.PinX1_{}_Stage_Label = wx.StaticText(self.New_Test_Creator, wx.ID_ANY, 'X1_{}')".format(x,x))
-                exec("self.PinX1_{}_Stage_Sizer.Add(self.PinX1_{}_Stage_Label, 0, 0, 0)".format(x,x))
+                exec("self.PinX1_{}_Stage_Mode_Select.Enable(True)".format(x))
+                exec("self.PinX1_{}_Stage_Value.Enable(True)".format(x))
 
-        if eval("self.PinX1_{}Select.GetSelection()".format(12))!=1:
-            exec("self.test.TestPinsList.addPin({}, self.PinX1_{}Select.GetSelection(), 0, self.PinX1_{}Description.GetValue())".format(2, 12, 12))
+                #Add to the test creator tab.
+        if eval("self.PinX1_{}Select.GetSelection()".format(13))!=1:
+            exec("self.test.TestPinsList.addPin({}, self.PinX1_{}Select.GetSelection(), 0, self.PinX1_{}Description.GetValue())".format(2, 13, 13))
+            exec("self.PinX1_{}_Stage_Value.Enable(False)".format(13))
+
         for x in range(14, 18):
             if eval("self.PinX1_{}Select.GetSelection()".format(x))!=1:
                 exec("self.test.TestPinsList.addPin({}, self.PinX1_{}Select.GetSelection(), 0, self.PinX1_{}Description.GetValue())".format(x-11, x, x))
+                exec("self.PinX1_{}_Stage_Value.Enable(True)".format(x))
+
         for z in range(1,9):
             if eval("self.PinX2_{}Select.GetSelection()".format(z))!=1:
-                exec("self.test.TestPinsList.addPin({}, self.PinX2_{}Select.GetSelection(), 0, self.PinX2_{}Description.GetValue())".format(x+21, x, x))
+                exec("self.test.TestPinsList.addPin({}, self.PinX2_{}Select.GetSelection(), 0, self.PinX2_{}Description.GetValue())".format(z+21, z, z))
+                exec("self.PinX2_{}_Stage_Mode_Select.Enable(True)".format(z))
 
-        self.Layout()
-
-    def setupTestCreatorTab(self):
-        
-        pass
 
     def onClearAllValues(self, event):
         #All the values are reset for the new test creator tab
         for x in range(1,14):
             exec("self.PinX1_{}Select.SetSelection(2)".format(x))
             exec("self.PinX1_{}Description.SetValue('Description')".format(x))
+            if x!=13:
+                exec("self.PinX1_{}_Stage_Mode_Select.Enable(False)".format(x))
+            exec("self.PinX1_{}_Stage_Value.Enable(False)".format(x))
         for x in range(14, 18):
             exec("self.PinX1_{}Select.SetSelection(1)".format(x))
             exec("self.PinX1_{}Description.SetValue('Description')".format(x))
+            exec("self.PinX1_{}_Stage_Value.Enable(False)".format(x))
+
         for z in range(1,9):
             exec("self.PinX2_{}Select.SetSelection(1)".format(z))
             exec("self.PinX2_{}Description.SetValue('Description')".format(z))
+            exec("self.PinX2_{}_Stage_Mode_Select.Enable(False)".format(z))
 
+    #onNewTestStage() - when the new test next stage button is clicked.
     def onNewTestNextStage(self, event):
-        #
+        self.test.current_test+=1
+        
+        #Make sure all necessary values actually exist
+        
+        #Check for existing img path, and write image to folder.
+        
+        #Check for pins having values to check
+
+        #Check for 
+
+        
+        #Store all the values into the test stage object
+        
+        self.test.testStages.append(TestSequence.testStage(self.test.current_test, self.NewTestCreatorDescription.GetValue(), self.test.currentImgPath, ))
+
+        #Write the image to folder
+        #Increment stage levels
         pass
 
     def onNewTestPreviousStage(self, event):
@@ -843,7 +853,13 @@ class MainWindow(wx.Frame):
 
     def onNewTestSelectImage(self, event):
         #Open a box to select the image for a certain stage.
-        pass
+        with wx.FileDialog(self, "Open Image", wildcard = "Image Files (*.png, *.jpg)|*.png, *.jpg",
+            style=wx.FD_OPEN | wd.FD_FILE_MUST_EXIST) as fileDialog:
+            if fileDialog.ShowModal() == wx.ID_CANCEL:
+                return
+            pathname = fileDialog.GetPath()
+            self.test.currentImgPath = pathname
+    
 
 
 

@@ -38,7 +38,6 @@ class testPin:
             return self.RealPinsList.getPinValue(self.number) > self.value
         elif self.check_code==2:
             return (self.RealPinsList.getPinValue(self.number) > (self.value - self.EqualValueVariant)) and (self.RealPinsList.getPinValue(self.number) < (self.value + self.EqualValueVariant))
-    #create methods to get all values - not needed
 
     #create methods to change all values as well.
     def getDict(self):
