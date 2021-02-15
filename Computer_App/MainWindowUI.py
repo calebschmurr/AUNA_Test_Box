@@ -854,10 +854,50 @@ class MainWindow(wx.Frame):
         
         #Store all the values into the test stage object
         
-        self.test.testStages.append(TestSequence.testStage(self.test.current_test, self.NewTestCreatorDescription.GetValue(), self.test.currentImgPath, ))
+        self.test.testStages.append(TestSequence.testStage(self.test.current_test, self.NewTestCreatorDescription.GetValue(), self.test.currentImgPath, self.getNewTestCreatorPins(), self.NewTestCreatorErrorMessage.GetValue(), None))
 
         #Write the image to folder
         #Increment stage levels
+        
+    #Return a dict with all pins and values.
+    def getNewTestCreatorPins(self):
+        returnDict = []
+        for x in range(1,13):
+            if eval("self.PinX1_{}_Stage_Value.IsEnabled()".format(x)):
+                if eval("self.PinX1_{}_Stage_Value.GetValue()=='' or self.PinX1_{}_Stage_Mode_Select.GetSelection()==-1".format(x,x)):
+                    #send message that there needs to be a value in this value box before saving
+                    wx.MessageBox("Please check values for pin X1_{} in order to save stage.".format(x), "Check values",  wx.OK | wx.ICON_INFORMATION)
+                else:
+                    returnDict.append(self.getPinObject("X1_{}".format(x)))
+        for x in range(14, 18):
+            if eval("self.PinX1_{}_Stage_Value.IsEnabled()".format(x)):
+                if eval("self.PinX1_{}_Stage_Value.GetValue()==''".format(x)):
+                    #send message that there needs to be a value in this value box before saving
+                    wx.MessageBox("Please check values for pin X1_{} in order to save stage.".format(x), "Check values",  wx.OK | wx.ICON_INFORMATION)
+                else:
+                    returnDict.append(self.getPinObject("X1_{}".format(x)))
+        
+        return returnDict
+
+    def getPinObject(self, PinID):
+        ret = TestSequence.testPin(0,0,0,None)
+        ret.number = self.translateConnectorToPin(PinID)
+        if ret.number>13 or PinID.split("_")[0]=="X2":
+            pass
+        else:
+            ret.check_code = eval("self.Pin{}_Stage_Mode_Select.GetValue()".format(PinID))
+        ret.value = eval("self.Pin{}_Stage_Value.GetValue()".format(PinID))
+        return ret
+
+    def translateConnectorToPin(self, PinID):
+        if int(PinID[1])==1:
+            if int(PinID.split("_")[1])<13:
+                return int(PinID.split("_")[1])+53
+            else:
+                return int(PinID.split("_")[1])-11
+        else:
+            return int(PinID.split("_")[1])+21
+
         
 
     def onNewTestPreviousStage(self, event):
