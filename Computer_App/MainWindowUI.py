@@ -25,6 +25,8 @@ import os
 os.chdir(os.path.dirname(os.path.abspath(__file__)))
 
 
+logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
+
 ###########################################################################
 ##################Finish Importing Logging#################################
 
@@ -882,7 +884,7 @@ class MainWindow(wx.Frame):
     def getPinObject(self, PinID):
         ret = TestSequence.testPin(0,0,0,None)
         ret.number = self.translateConnectorToPin(PinID)
-        if ret.number>13 or PinID.split("_")[0]=="X2":
+        if ret.number<53 or PinID.split("_")[0]=="X2":
             pass
         else:
             ret.check_code = eval("self.Pin{}_Stage_Mode_Select.GetValue()".format(PinID))

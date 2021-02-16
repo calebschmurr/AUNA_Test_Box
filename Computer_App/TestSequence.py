@@ -24,6 +24,13 @@ class testPin:
         self.value = value
         self.RealPinsList = RealPinsList
 
+    #Check to make sure this is OK - not sure if this fix works.
+    #Got an error w/ receiving 2 positional arguments, so make sure this still saves properly.
+    def __getitem__(self, val):
+        return {'number': self.number, 'check_code': self.check_code,
+        'value': self.value, 'RealPinsList': self.RealPinsList}
+
+
     #create method to perform check
     #Pin Check Codes:
     # -1 - invalid/not to do.
@@ -81,7 +88,6 @@ class testStage:
 
     #Check each pin in the pin check, make sure it matches status.
     def passPinCheck(self):
-        
 
         return True
 
@@ -93,7 +99,6 @@ class TestSequence:
     testStages = []
     RealPinsList = None #To be defined on init.
     current_test = -1
-
 
     def initialLoadIn(self, ActualPinsList, FilePath):
         self.RealPinsList = ActualPinsList
