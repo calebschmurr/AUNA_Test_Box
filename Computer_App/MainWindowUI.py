@@ -851,15 +851,17 @@ class MainWindow(wx.Frame):
             return
         #Check for pins having values to check
 
-        #Check for 
-
+        #Check for
         
         #Store all the values into the test stage object
-        
+        #Change this storage up to use the currentStage class??
         self.test.testStages.append(TestSequence.testStage(self.test.current_test, self.NewTestCreatorDescription.GetValue(), self.test.currentImgPath, self.getNewTestCreatorPins(), self.NewTestCreatorErrorMessage.GetValue(), None))
-
-        #Write the image to folder
+        #print(TestSequence.testStage(self.test.current_test, self.NewTestCreatorDescription.GetValue(), self.test.currentImgPath, self.getNewTestCreatorPins(), self.NewTestCreatorErrorMessage.GetValue(), None))
         #Increment stage levels
+        
+        #Clear currentImgPath
+        
+        self.test.currentImgPath = None
         
     #Return a dict with all pins and values.
     def getNewTestCreatorPins(self):
@@ -900,11 +902,32 @@ class MainWindow(wx.Frame):
         else:
             return int(PinID.split("_")[1])+21
 
+    def translatePinToConnector(self, PinNumber):
+        if PinNumber>53:
+            return "X1_{}".format(PinNumber-53)
+        elif PinNumber>21:
+            return "X2_{}".format(PinNumber-21)
+        return "X1_{}".format(PinNumber+11)
+        
         
 
     def onNewTestPreviousStage(self, event):
+        #First check if there is a previous stage
+        if self.test.current_test==0:
+            wx.MessageBox("Currently at the starting test stage, there are no previous tests to choose from.", "No Previous Tests",  wx.OK | wx.ICON_INFORMATION)
+            return
+        
+        #If not, save current test stage:
+        #skip for now
+
+        #Load in the previous test values:
+        self.test.current_test-=1
+
         #
-        pass
+
+
+
+        
 
     def onNewTestFinishTest(self, event):
         #Save the test
