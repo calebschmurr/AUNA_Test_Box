@@ -19,16 +19,15 @@ class testPin:
     EqualValueVariant = 100
 
     def __init__(self, pin, check_code, value, RealPinsList):
-        self.number = pin
+        print("on init testPin number: {}".format(pin))
+        self.pin = pin
         self.check_code = check_code
         self.value = value
         self.RealPinsList = RealPinsList
 
-    #Check to make sure this is OK - not sure if this fix works.
-    #Got an error w/ receiving 2 positional arguments, so make sure this still saves properly.
+    
     def __getitem__(self, val):
-        return {'number': self.number, 'check_code': self.check_code,
-        'value': self.value, 'RealPinsList': self.RealPinsList}
+        return getattr(self,val)
 
 
     #create method to perform check
@@ -48,8 +47,9 @@ class testPin:
 
     #create methods to change all values as well.
     def getDict(self):
-        return {'pin': self.number, 'check_code': self.check_code,
-        'value': self.value}
+        print("testPin getDict number: {}".format(self.number))
+        return {'pin': self.pin, 'check_code': self.check_code,
+        'value': self.value, 'RealPinsList': self.RealPinsList}
 
 class testStage:
     number = 0
@@ -86,7 +86,7 @@ class testStage:
         return x
 
 
-    #Check each pin in the pin check, make sure it matches status.
+    #Check each pin to make sure it is passing the required check for stage.
     def passPinCheck(self):
 
         return True
