@@ -773,8 +773,10 @@ class MainWindow(wx.Frame):
             self.test = TestSequence.TestSequence()
             self.test.name = self.TestNameTextbox.GetValue()
             self.test.description = self.Test_Description.GetValue()
+            self.test.current_test = 0
             self.getTestPinsList() #Load in the pins that will be used for this test
 
+            self.test.currentImgPath = None
             #Set up the test creation tab
             self.NewTestCreatorTestName.SetLabelText("Test Name: {}".format(self.test.name))
 
@@ -815,7 +817,6 @@ class MainWindow(wx.Frame):
                 exec("self.test.TestPinsList.addPin({}, self.PinX2_{}Select.GetSelection(), 0, self.PinX2_{}Description.GetValue())".format(z+21, z, z))
                 exec("self.PinX2_{}_Stage_Mode_Select.Enable(True)".format(z))
 
-
     def onClearAllValues(self, event):
         #All the values are reset for the new test creator tab
         for x in range(1,14):
@@ -836,8 +837,6 @@ class MainWindow(wx.Frame):
 
     #onNewTestStage() - when the new test next stage button is clicked.
     def onNewTestNextStage(self, event):
-        self.test.current_test+=1
-        
         #Make sure all necessary values actually exist
         #Check for existing img path, and write image to folder.
         if self.test.currentImgPath:
@@ -845,23 +844,32 @@ class MainWindow(wx.Frame):
             img.save("{}\img{}.png".format(self.folderPath.resolve(),self.test.current_test))
         else:
             wx.MessageBox("No image selected, please select an image", "No image selected",  wx.OK | wx.ICON_INFORMATION)
-            return
-        #Check for pins having values to check
+            return 0
         
-        #Check for
+        #Check for pins actually having values.
 
         #Store all the values into the test stage object
         #Change this storage up to use the currentStage class??
-        self.test.testStages.append(TestSequence.testStage(self.test.current_test, self.NewTestCreatorDescription.GetValue(), self.test.currentImgPath, self.getNewTestCreatorPins(), self.NewTestCreatorErrorMessage.GetValue(), None))
-        print("onNewTestNextStage return:")
-        print(self.test.testStages[len(self.test.testStages)-1].getDict())
+
+        #Save Stage - depending on if we are in the last stage or a previous stage, save differently.
+        if self.test.current_test==(len(self.test.testStages)): #Append a new stage
+            self.test.testStages.append(TestSequence.testStage(self.test.current_test, self.NewTestCreatorDescription.GetValue(), self.test.currentImgPath, self.getNewTestCreatorPins(), self.NewTestCreatorErrorMessage.GetValue(), None))
+            self.test.current_test+=1
+            #Clear currentImgPath
+            self.test.currentImgPath = None
+            self.updateNewTestCreatorNumber()
+        else: #Save current stage, load old stage.
+            self.test.testStages[self.test.current_test] = TestSequence.testStage(self.test.current_test, self.NewTestCreatorDescription.GetValue(), self.test.currentImgPath, self.getNewTestCreatorPins(), self.NewTestCreatorErrorMessage.GetValue(), None)
+            #Also, load in the next test status.
+            self.test.current_test+=1
+            self.testCreatorLoadInValues()
+
+        
+
         #Increment stage levels
-        
-        self.NewTestCreatorStageNumber.SetLabelText("Stage: {}/{}".format(self.test.current_test, len(self.test.testStages)))
-        
-        #Clear currentImgPath
-        self.test.currentImgPath = None
-        
+        print("Test stage {} saved.".format(self.test.current_test-1))
+        print(self.test.exportJsonFile())
+
     #Return a dict with all pins and values.
     def getNewTestCreatorPins(self):
         returnDict = []
@@ -888,12 +896,13 @@ class MainWindow(wx.Frame):
 
     def getPinObject(self, PinID):
         ret = TestSequence.testPin(0,0,0,None)
-        ret.number = self.translateConnectorToPin(PinID)
-        if ret.number<53 or PinID.split("_")[0]=="X2":
+        ret.pin = self.translateConnectorToPin(PinID)
+        if ret.pin<53 or PinID.split("_")[0]=="X2":
             pass
         else:
-            ret.check_code = eval("self.Pin{}_Stage_Mode_Select.GetValue()".format(PinID))
+            ret.check_code = eval("self.Pin{}_Stage_Mode_Select.GetSelection()".format(PinID))
         ret.value = eval("self.Pin{}_Stage_Value.GetValue()".format(PinID))
+
         return ret
 
     def translateConnectorToPin(self, PinID):
@@ -912,17 +921,17 @@ class MainWindow(wx.Frame):
             return "X2_{}".format(PinNumber-21)
         return "X1_{}".format(PinNumber+11)
         
-    def setNewTestCreatorPinVal(self, pin):
+    def setNewTestCreatorPinVal(self, pin): #Used in navigating backwards in pin system.
         
-        exec("self.Pin{}_Stage_Value.SetValue({})".format(self.translatePinToConnector(pin['pin']), pin['value']))
+        exec("self.Pin{}_Stage_Value.SetValue(\"{}\")".format(str(self.translatePinToConnector(pin['pin'])), str(pin['value'])))
         
-        #Finish this check here - make sure pin has these parameters.
-        if pin['pin']<53 or pin['pin']>
+        #Finish this check here - make sure this pin is within required values.
+        if pin['pin']>54 or pin['pin']<7:
+            exec("self.Pin{}_Stage_Mode_Select.SetSelection({})".format(str(self.translatePinToConnector(pin['pin'])), str(pin['check_code'])))
+            print("Pin {} set to {}".format(self.translatePinToConnector(pin['pin']), pin['check_code']))
         
-            exec("self.Pin{}_Stage_Mode_Select.SetValue({})".format(self.translatePinToConnector(pin['pin']), pin['check_code']))
-        pass
+        print("Pin {} set to {}".format(str(self.translatePinToConnector(pin['pin'])), str(pin['value'])))
         
-
     def onNewTestPreviousStage(self, event):
         #First check if there is a previous stage
         if self.test.current_test==0:
@@ -930,16 +939,20 @@ class MainWindow(wx.Frame):
             return
         
         #If not, save current test stage:
-        if self.test.current_test>(len(self.test.testStages)-1):
-            self.test.testStages.append(TestSequence.testStage(self.test.current_test, self.NewTestCreatorDescription.GetValue(), self.test.currentImgPath, self.getNewTestCreatorPins(), self.NewTestCreatorErrorMessage.GetValue(), None))
-
-        self.test.testStages[self.test.current_test] = TestSequence.testStage(self.test.current_test, self.NewTestCreatorDescription.GetValue(), self.test.currentImgPath, self.getNewTestCreatorPins(), self.NewTestCreatorErrorMessage.GetValue(), None)
+        #if self.test.current_test>(len(self.test.testStages)-1):
+            #self.test.testStages.append(TestSequence.testStage(self.test.current_test, self.NewTestCreatorDescription.GetValue(), self.test.currentImgPath, self.getNewTestCreatorPins(), self.NewTestCreatorErrorMessage.GetValue(), None))
+        #else:
+        #self.test.testStages[self.test.current_test] = TestSequence.testStage(self.test.current_test, self.NewTestCreatorDescription.GetValue(), self.test.currentImgPath, self.getNewTestCreatorPins(), self.NewTestCreatorErrorMessage.GetValue(), None)
         
         self.test.current_test-=1
-        self.test.testStages[self.test.current_test]
-        
+        #self.test.testStages[self.test.current_test]
+        self.testCreatorLoadInValues();
 
-        #Load in the previous test values:
+       
+        print("Navigated backwards.")
+
+    def testCreatorLoadInValues(self):
+         #Load in the previous test values:
         #Number:
         self.updateNewTestCreatorNumber()
         #Description
@@ -950,23 +963,22 @@ class MainWindow(wx.Frame):
         self.test.currentImgPath = self.test.testStages[self.test.current_test].getDict()['imgpath']
         #All pins and their values
         for z in self.test.testStages[self.test.current_test].getDict()['pin_check']:
-            setNewTestCreatorPinVal(self, z)
+            self.setNewTestCreatorPinVal(z)
 
+        print("Finished loading in previously-made test creator stage {}.".format(self.test.current_test))
+        print(self.test.testStages[self.test.current_test].getDict())
 
     def updateNewTestCreatorNumber(self):
         self.NewTestCreatorStageNumber.SetLabelText("Stage: {}/{}".format(self.test.current_test, len(self.test.testStages)))
-
 
     def onNewTestFinishTest(self, event):
         #Save the test
         #Reset the variables associated with a new test
         self.newTest = False
         
-
     def onResultViewer(self, event):
         #
         pass
-
 
     def onNewTestSelectImage(self, event):
         #Open a box to select the image for a certain stage.
@@ -976,12 +988,8 @@ class MainWindow(wx.Frame):
                 return
             pathname = fileDialog.GetPath()
             self.test.currentImgPath = pathname
-    
 
 ###############################################################################################################################################
-
-
-
 
 class MyApp(wx.App):
     def OnInit(self):

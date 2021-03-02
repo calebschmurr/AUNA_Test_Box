@@ -11,7 +11,7 @@ logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %
 #logging.basicConfig(format='%(asctime)s - %(levelname)s - %(message)s')
 
 class testPin:
-    number = 0
+    pin = 0
     check_code = 0
     value = 0
     RealPinsList = None
@@ -39,15 +39,15 @@ class testPin:
 
     def checkPin(self):
         if self.check_code==0:
-            return self.RealPinsList.getPinValue(self.number) < self.value
+            return self.RealPinsList.getPinValue(self.pin) < self.value
         elif self.check_code==1:
-            return self.RealPinsList.getPinValue(self.number) > self.value
+            return self.RealPinsList.getPinValue(self.pin) > self.value
         elif self.check_code==2:
-            return (self.RealPinsList.getPinValue(self.number) > (self.value - self.EqualValueVariant)) and (self.RealPinsList.getPinValue(self.number) < (self.value + self.EqualValueVariant))
+            return (self.RealPinsList.getPinValue(self.pin) > (self.value - self.EqualValueVariant)) and (self.RealPinsList.getPinValue(self.number) < (self.value + self.EqualValueVariant))
 
     #create methods to change all values as well.
     def getDict(self):
-        print("testPin getDict number: {}".format(self.number))
+        #print("testPin getDict number: {}".format(self.pin))
         return {'pin': self.pin, 'check_code': self.check_code,
         'value': self.value, 'RealPinsList': self.RealPinsList}
 
@@ -59,9 +59,9 @@ class testStage:
     testPins = []
     FolderPath = None
 
-
     def __init__(self, number, description, imgpath, pin_checks, error, RealPinsList):
-        self.testPins.clear()
+        #self.testPins.clear()
+        self.testPins=[]
         self.number = number
         self.description = description
         self.imgpath = imgpath
@@ -71,6 +71,7 @@ class testStage:
     def parsePinChecks(self, pin_checks, RealPinsList):
         for x in pin_checks:
             self.testPins.append(testPin(x['pin'], x['check_code'], x['value'], RealPinsList))
+            print("Pin {} saved w/ value {} and code {}".format(x['pin'], x['value'], x['check_code']))
 
     def getDict(self):
         x = {'number': self.number, 'description': self.description,
@@ -84,7 +85,6 @@ class testStage:
         logging.debug("Full dictionary:")
         logging.debug(x)
         return x
-
 
     #Check each pin to make sure it is passing the required check for stage.
     def passPinCheck(self):
