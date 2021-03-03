@@ -54,17 +54,17 @@ class testPin:
 class testStage:
     number = 0
     description = ""
-    imgpath = ""
+    image = ""
     error = ""
     testPins = []
     FolderPath = None
 
-    def __init__(self, number, description, imgpath, pin_checks, error, RealPinsList):
+    def __init__(self, number, description, image, pin_checks, error, RealPinsList):
         #self.testPins.clear()
         self.testPins=[]
         self.number = number
         self.description = description
-        self.imgpath = imgpath
+        self.image = image
         self.error = error
         self.parsePinChecks(pin_checks, RealPinsList)
 
@@ -75,7 +75,7 @@ class testStage:
 
     def getDict(self):
         x = {'number': self.number, 'description': self.description,
-        'imgpath': self.imgpath, 'error': self.error}
+        'image': self.image, 'error': self.error}
         x['pin_check'] = []
         for z in self.testPins:
             x['pin_check'].append(z.getDict())

@@ -40,7 +40,6 @@ logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %
 
 class MainWindow(wx.Frame):
     def __init__(self, *args, **kwds):
-        # begin wxGlade: MainWindow.__init__
         kwds["style"] = kwds.get("style", 0) | wx.DEFAULT_FRAME_STYLE
         wx.Frame.__init__(self, *args, **kwds)
         self.SetSize((1200, 800))
@@ -484,7 +483,7 @@ class MainWindow(wx.Frame):
         self.NewTestCreatorSizer = wx.BoxSizer(wx.VERTICAL)
 
         self.TestInfoSizer = wx.BoxSizer(wx.HORIZONTAL)
-        self.NewTestCreatorSizer.Add(self.TestInfoSizer, 1, wx.EXPAND, 0)
+        self.NewTestCreatorSizer.Add(self.TestInfoSizer, 0, 0, 0)
 
         self.NewTestCreatorTestName = wx.StaticText(self.New_Test_Creator, wx.ID_ANY, "Test Name:")
         self.NewTestCreatorTestName.SetMinSize((200, 16))
@@ -512,22 +511,28 @@ class MainWindow(wx.Frame):
         self.NewTestCreatorFinishTestButton = wx.Button(self.New_Test_Creator, wx.ID_ANY, "Finish Test")
         self.TestInfoSizer.Add(self.NewTestCreatorFinishTestButton, 1, wx.ALL, 4)
 
-        self.Horizontal_Sizer = wx.BoxSizer(wx.HORIZONTAL)
-        self.NewTestCreatorSizer.Add(self.Horizontal_Sizer, 1, wx.EXPAND, 0)
+        self.TestCreatorCurrentImg = wx.StaticBitmap(self.New_Test_Creator, wx.ID_ANY, wx.NullBitmap)
+        self.NewTestCreatorSizer.Add(self.TestCreatorCurrentImg, 1, 0, 0)
+
+        self.NewTestImageInfoSizer = wx.BoxSizer(wx.HORIZONTAL)
+        self.NewTestCreatorSizer.Add(self.NewTestImageInfoSizer, 0, wx.EXPAND, 0)
 
         self.NewTestCreatorImageLabel = wx.StaticText(self.New_Test_Creator, wx.ID_ANY, "Image:")
-        self.Horizontal_Sizer.Add(self.NewTestCreatorImageLabel, 0, wx.ALL, 5)
+        self.NewTestImageInfoSizer.Add(self.NewTestCreatorImageLabel, 0, wx.ALL, 5)
 
         self.NewTestCreatorSelectImage = wx.Button(self.New_Test_Creator, wx.ID_ANY, "Select Image")
         self.NewTestCreatorSelectImage.SetMinSize((120, 30))
-        self.Horizontal_Sizer.Add(self.NewTestCreatorSelectImage, 0, wx.ALL, 5)
+        self.NewTestImageInfoSizer.Add(self.NewTestCreatorSelectImage, 0, wx.ALL, 5)
 
         self.NewTestCreatorErrorMessageLabel = wx.StaticText(self.New_Test_Creator, wx.ID_ANY, "Error:")
-        self.Horizontal_Sizer.Add(self.NewTestCreatorErrorMessageLabel, 0, wx.ALL, 5)
+        self.NewTestImageInfoSizer.Add(self.NewTestCreatorErrorMessageLabel, 0, wx.ALL, 5)
 
         self.NewTestCreatorErrorMessage = wx.TextCtrl(self.New_Test_Creator, wx.ID_ANY, "")
         self.NewTestCreatorErrorMessage.SetMinSize((600, 23))
-        self.Horizontal_Sizer.Add(self.NewTestCreatorErrorMessage, 0, 0, 0)
+        self.NewTestImageInfoSizer.Add(self.NewTestCreatorErrorMessage, 0, 0, 0)
+
+        self.NewTestCurrentImgPath = wx.StaticText(self.New_Test_Creator, wx.ID_ANY, "Current Img Path : ")
+        self.NewTestCreatorSizer.Add(self.NewTestCurrentImgPath, 0, 0, 0)
 
         self.TestPinsSizer = wx.GridSizer(7, 4, 0, 0)
         self.NewTestCreatorSizer.Add(self.TestPinsSizer, 1, wx.EXPAND, 0)
@@ -630,6 +635,7 @@ class MainWindow(wx.Frame):
     #loadTests - load in the test procedures located in test folder.
     #Then populate the list with them.
     def loadTests(self):
+        self.List_Of_Tests.Clear()
         p = Path('.') #Using pathlib - replacement of os.
         p2 = p / "Tests"
         if p2.exists():
@@ -711,7 +717,6 @@ class MainWindow(wx.Frame):
         self.test.FolderPath = p
         self.startTest()
 
-
     #next step pushed
     def nextStepPushed(self, event):
         if self.testActive:
@@ -726,7 +731,6 @@ class MainWindow(wx.Frame):
                 self.finishTest()
         
 
-
     def startTest(self):
         self.Current_Test_Label.SetLabel("Current Test: {}".format(self.test.name))
         self.loadNextTestStage()
@@ -736,17 +740,16 @@ class MainWindow(wx.Frame):
         #Load in the image
         
         for x in self.test.FolderPath.iterdir():
-            logging.debug("Checking for image {}".format(self.currentStage.imgpath))
+            logging.debug("Checking for image {}".format(self.currentStage.image))
             if x.is_file():
                 logging.debug(x.name)
-                if x.name==self.currentStage.imgpath:
+                if x.name==self.currentStage.image:
                     logging.debug("Found image, updating.")
                     self.Next_Step_Image.SetBitmap(wx.Bitmap(str(x.resolve()), wx.BITMAP_TYPE_ANY))
         #Load in the test stage number, and adjust the status below
         self.Test_Status_Label.SetLabel("Stage {} out of {}".format(self.test.current_test, self.test.getNumStages()))
         #Change Operation to say Description.
         self.Stage_Description_Label.SetLabel("{}".format(self.currentStage.description))
-        pass
 
     def finishTest(self):
         wx.MessageBox("Test finished - passed.", "Test Passed",  wx.OK | wx.ICON_INFORMATION)
@@ -839,10 +842,7 @@ class MainWindow(wx.Frame):
     def onNewTestNextStage(self, event):
         #Make sure all necessary values actually exist
         #Check for existing img path, and write image to folder.
-        if self.test.currentImgPath:
-            img = Image.open(self.test.currentImgPath)
-            img.save("{}\img{}.png".format(self.folderPath.resolve(),self.test.current_test))
-        else:
+        if not self.test.currentImgPath:
             wx.MessageBox("No image selected, please select an image", "No image selected",  wx.OK | wx.ICON_INFORMATION)
             return 0
         
@@ -853,18 +853,16 @@ class MainWindow(wx.Frame):
 
         #Save Stage - depending on if we are in the last stage or a previous stage, save differently.
         if self.test.current_test==(len(self.test.testStages)): #Append a new stage
-            self.test.testStages.append(TestSequence.testStage(self.test.current_test, self.NewTestCreatorDescription.GetValue(), self.test.currentImgPath, self.getNewTestCreatorPins(), self.NewTestCreatorErrorMessage.GetValue(), None))
+            self.test.testStages.append(TestSequence.testStage(self.test.current_test, self.NewTestCreatorDescription.GetValue(), "img{}.png".format(self.test.current_test), self.getNewTestCreatorPins(), self.NewTestCreatorErrorMessage.GetValue(), None))
             self.test.current_test+=1
             #Clear currentImgPath
             self.test.currentImgPath = None
             self.updateNewTestCreatorNumber()
         else: #Save current stage, load old stage.
-            self.test.testStages[self.test.current_test] = TestSequence.testStage(self.test.current_test, self.NewTestCreatorDescription.GetValue(), self.test.currentImgPath, self.getNewTestCreatorPins(), self.NewTestCreatorErrorMessage.GetValue(), None)
+            self.test.testStages[self.test.current_test] = TestSequence.testStage(self.test.current_test, self.NewTestCreatorDescription.GetValue(), "img{}.png".format(self.test.current_test), self.getNewTestCreatorPins(), self.NewTestCreatorErrorMessage.GetValue(), None)
             #Also, load in the next test status.
             self.test.current_test+=1
             self.testCreatorLoadInValues()
-
-        
 
         #Increment stage levels
         print("Test stage {} saved.".format(self.test.current_test-1))
@@ -964,6 +962,9 @@ class MainWindow(wx.Frame):
         #All pins and their values
         for z in self.test.testStages[self.test.current_test].getDict()['pin_check']:
             self.setNewTestCreatorPinVal(z)
+        
+        #Update the image on screen:
+        self.drawNewTestImage()
 
         print("Finished loading in previously-made test creator stage {}.".format(self.test.current_test))
         print(self.test.testStages[self.test.current_test].getDict())
@@ -973,8 +974,17 @@ class MainWindow(wx.Frame):
 
     def onNewTestFinishTest(self, event):
         #Save the test
+        #Dump the JSON file:
+        with open("{}/{}.txt".format(self.folderPath, self.test.name), 'w') as outfile:
+            outfile.write(self.test.exportJsonFile())
+            outfile.close()
         #Reset the variables associated with a new test
+        self.test  = None
+        self.folderPath = None
         self.newTest = False
+        
+        self.loadTests()
+        self.Notebook.SetSelection(0)
         
     def onResultViewer(self, event):
         #
@@ -988,6 +998,21 @@ class MainWindow(wx.Frame):
                 return
             pathname = fileDialog.GetPath()
             self.test.currentImgPath = pathname
+            img = Image.open(self.test.currentImgPath)
+            img.save("{}\img{}.png".format(self.folderPath.resolve(),self.test.current_test))
+        #Also draw image to screen:
+        self.drawNewTestImage()
+
+    def drawNewTestImage(self):
+        for x in self.folderPath.iterdir():
+            logging.debug("Checking for image {}".format("img{}.png".format(self.test.current_test)))
+            if x.is_file():
+                logging.debug(x.name)
+                if x.name=="img{}.png".format(self.test.current_test):
+                    logging.debug("Found image, updating.")
+                    self.TestCreatorCurrentImg.SetBitmap(wx.Bitmap(str(x.resolve()), wx.BITMAP_TYPE_ANY))
+                    self.NewTestCurrentImgPath.SetLabelText("Current Image Path: {}"+str(x.resolve()))
+
 
 ###############################################################################################################################################
 
