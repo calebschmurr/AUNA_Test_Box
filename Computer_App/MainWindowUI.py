@@ -40,6 +40,7 @@ logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %
 
 class MainWindow(wx.Frame):
     def __init__(self, *args, **kwds):
+        # begin wxGlade: MainWindow.__init__
         kwds["style"] = kwds.get("style", 0) | wx.DEFAULT_FRAME_STYLE
         wx.Frame.__init__(self, *args, **kwds)
         self.SetSize((1200, 800))
@@ -52,12 +53,27 @@ class MainWindow(wx.Frame):
 
         self.Tab_Sizer = wx.BoxSizer(wx.VERTICAL)
 
+        self.List_Of_Tests_Label = wx.StaticText(self.Load_Existing_Test_Tab, wx.ID_ANY, "List of Tests found at PATH")
+        self.Tab_Sizer.Add(self.List_Of_Tests_Label, 0, 0, 0)
+
         self.List_Of_Tests = wx.ListBox(self.Load_Existing_Test_Tab, wx.ID_ANY, choices=["choice 1"])
         self.List_Of_Tests.SetMinSize((500, 200))
         self.Tab_Sizer.Add(self.List_Of_Tests, 0, 0, 0)
 
+        self.Test_Options_Sizer = wx.BoxSizer(wx.HORIZONTAL)
+        self.Tab_Sizer.Add(self.Test_Options_Sizer, 1, wx.EXPAND, 0)
+
         self.Load_Test = wx.Button(self.Load_Existing_Test_Tab, wx.ID_ANY, "Load Test")
-        self.Tab_Sizer.Add(self.Load_Test, 0, 0, 0)
+        self.Test_Options_Sizer.Add(self.Load_Test, 0, 0, 0)
+
+        self.Modify_Test_Button = wx.Button(self.Load_Existing_Test_Tab, wx.ID_ANY, "Modify Test")
+        self.Test_Options_Sizer.Add(self.Modify_Test_Button, 0, 0, 0)
+
+        self.Delete_Test_Button = wx.Button(self.Load_Existing_Test_Tab, wx.ID_ANY, "Delete Test")
+        self.Test_Options_Sizer.Add(self.Delete_Test_Button, 0, 0, 0)
+
+        self.Start_New_Test_Button = wx.Button(self.Load_Existing_Test_Tab, wx.ID_ANY, "New Test")
+        self.Test_Options_Sizer.Add(self.Start_New_Test_Button, 0, 0, 0)
 
         self.Com_Sizer = wx.BoxSizer(wx.HORIZONTAL)
         self.Tab_Sizer.Add(self.Com_Sizer, 1, wx.EXPAND, 0)
@@ -102,6 +118,9 @@ class MainWindow(wx.Frame):
 
         self.Next_Step_Button = wx.Button(self.Test_Tab, wx.ID_ANY, "Next Step")
         self.Test_Status_Sizer.Add(self.Next_Step_Button, 0, 0, 0)
+
+        self.Close_Current_Test_Button = wx.Button(self.Test_Tab, wx.ID_ANY, "Close Test")
+        self.Test_Status_Sizer.Add(self.Close_Current_Test_Button, 0, 0, 0)
 
         self.New_Test_Initiator_Tab = wx.Panel(self.Notebook, wx.ID_ANY)
         self.Notebook.AddPage(self.New_Test_Initiator_Tab, "New Test")
@@ -645,7 +664,6 @@ class MainWindow(wx.Frame):
         else:
             print("error - Tests directory not found.")            
 
-
     def ConnectPort(self, events):
         self.PinControl.ExternalStartSerial(self.Port_Connect.GetSelection())
         #Disable the connect button.
@@ -717,6 +735,31 @@ class MainWindow(wx.Frame):
         self.test.FolderPath = p
         self.startTest()
 
+    def modifyTestPushed(self, event):
+        #Load in a test to be modified with new test creator tab.
+        pass
+
+    def DeleteTestPushed(self, event):
+        if (self.List_Of_Tests.GetSelection()==-1):
+            wx.MessageBox("Nothing selected.  No action able to be performed", "No Selected Test",  wx.OK | wx.ICON_INFORMATION)
+            return
+        else:
+            if wx.MessageBox("Are you sure you want to delete test {}?".format(self.List_Of_Tests.GetStringSelection()), "Delete test?",  wx.ICON_QUESTION | wx.YES_NO) != wx.YES:
+                event.veto()
+                return
+        #Find and delete directory and all contents.
+
+        p = Path('.')
+        p = p/"Tests"/self.List_Of_Tests.GetStringSelection()
+        for x in self.p.iterdir():
+            x.unlink()
+        self.p.rmdir()
+
+
+    def NewTestPushed(self, event):
+        #Move to the New Test page.
+        self.Notebook.SetSelection(2)
+
     #next step pushed
     def nextStepPushed(self, event):
         if self.testActive:
@@ -729,6 +772,15 @@ class MainWindow(wx.Frame):
                     pass
             else:
                 self.finishTest()
+
+    def CloseTestPushed(self, event):
+        if wx.MessageBox("Test is not completed, close test and disregard progress?", "Please confirm below.", wx.ICON_QUESTION | wx.YES_NO) != wx.YES:
+            event.veto()
+            return
+        
+        self.testActive = False
+        p = None
+        self.test = None
         
 
     def startTest(self):
@@ -763,6 +815,14 @@ class MainWindow(wx.Frame):
             if not self.newTest:
                 wx.MessageBox("No test being created - please create a new test before creating stages.", "No Test Creation in Progress",  wx.OK | wx.ICON_INFORMATION)
                 self.Notebook.SetSelection(2)
+        elif self.Notebook.GetSelection()==1:
+            if not self.testActive:
+                wx.MessageBox("No test is selected - please select a test from List of Tests in 'Load Test' tab.", "No test selected.",  wx.OK | wx.ICON_INFORMATION)
+                self.Notebook.SetSelection(0)     
+        elif self.Notebook.GetSelection()==2:
+            if self.testActive:
+                wx.MessageBox("Test is currently active - cannot create new test.  Please close current test before creating a test.", "Cannot create new test.", wx.OK | wx.ICON_INFORMATION)
+
         #Check to see if a new test is being created,
         #if not then move new test away.
     
