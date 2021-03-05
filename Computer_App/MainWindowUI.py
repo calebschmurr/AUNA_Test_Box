@@ -53,7 +53,7 @@ class MainWindow(wx.Frame):
 
         self.Tab_Sizer = wx.BoxSizer(wx.VERTICAL)
 
-        self.List_Of_Tests_Label = wx.StaticText(self.Load_Existing_Test_Tab, wx.ID_ANY, "List of Tests found at PATH")
+        self.List_Of_Tests_Label = wx.StaticText(self.Load_Existing_Test_Tab, wx.ID_ANY, "List of PATH")
         self.Tab_Sizer.Add(self.List_Of_Tests_Label, 0, 0, 0)
 
         self.List_Of_Tests = wx.ListBox(self.Load_Existing_Test_Tab, wx.ID_ANY, choices=["choice 1"])
@@ -649,6 +649,9 @@ class MainWindow(wx.Frame):
         self.NewTestCreatorNextStage.Bind(wx.EVT_BUTTON, self.onNewTestNextStage)
         self.NewTestCreatorFinishTestButton.Bind(wx.EVT_BUTTON, self.onNewTestFinishTest)
         self.NewTestCreatorSelectImage.Bind(wx.EVT_BUTTON, self.onNewTestSelectImage)
+        self.Modify_Test_Button.Bind(wx.EVT_BUTTON, self.modifyTestPushed)
+        self.Delete_Test_Button.Bind(wx.EVT_BUTTON, self.DeleteTestPushed)
+        self.Start_New_Test_Button.Bind(wx.EVT_BUTTON, self.NewTestPushed)
         #self.PortConnect()
 
     #loadTests - load in the test procedures located in test folder.
@@ -658,6 +661,7 @@ class MainWindow(wx.Frame):
         p = Path('.') #Using pathlib - replacement of os.
         p2 = p / "Tests"
         if p2.exists():
+            self.List_Of_Tests_Label.SetLabelText("List of tests found at {}".format(p2.resolve()))
             for x in p2.iterdir():
                 if x.is_dir():
                     self.List_Of_Tests.Append(x.name)
@@ -737,6 +741,24 @@ class MainWindow(wx.Frame):
 
     def modifyTestPushed(self, event):
         #Load in a test to be modified with new test creator tab.
+        if (self.List_Of_Tests.GetSelection()==-1):
+            wx.MessageBox("Nothing selected.  No action able to be performed", "No Selected Test",  wx.OK | wx.ICON_INFORMATION)
+            return
+        #Initiate loading test in new tab.
+        #Switch tab
+        p = Path('.')
+        p = p/"Tests"/self.List_Of_Tests.GetStringSelection()
+
+        logging.debug(p)
+        self.loadTestSequence(p)
+        self.newTest = True
+        self.test.current_test = 0
+        self.folderPath = Path('.') #Using pathlib - replacement of os.
+        self.folderPath = self.folderPath / "Tests" /self.test.name
+        self.testCreatorLoadInValues()
+
+        #Set the active tab to tbe the test creator tab
+        self.Notebook.SetSelection(3)
         pass
 
     def DeleteTestPushed(self, event):
@@ -747,20 +769,20 @@ class MainWindow(wx.Frame):
             if wx.MessageBox("Are you sure you want to delete test {}?".format(self.List_Of_Tests.GetStringSelection()), "Delete test?",  wx.ICON_QUESTION | wx.YES_NO) != wx.YES:
                 event.veto()
                 return
+            
         #Find and delete directory and all contents.
-
         p = Path('.')
         p = p/"Tests"/self.List_Of_Tests.GetStringSelection()
         for x in self.p.iterdir():
             x.unlink()
         self.p.rmdir()
+        self.loadTests()
 
 
     def NewTestPushed(self, event):
         #Move to the New Test page.
         self.Notebook.SetSelection(2)
 
-    #next step pushed
     def nextStepPushed(self, event):
         if self.testActive:
             if self.test.isNextTest():
@@ -1018,7 +1040,7 @@ class MainWindow(wx.Frame):
         #Error
         self.NewTestCreatorErrorMessage.SetValue(self.test.testStages[self.test.current_test].getDict()['error'])
         #Image path
-        self.test.currentImgPath = self.test.testStages[self.test.current_test].getDict()['imgpath']
+        self.test.currentImgPath = self.test.testStages[self.test.current_test].getDict()['image']
         #All pins and their values
         for z in self.test.testStages[self.test.current_test].getDict()['pin_check']:
             self.setNewTestCreatorPinVal(z)
