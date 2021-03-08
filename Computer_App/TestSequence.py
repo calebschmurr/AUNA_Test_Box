@@ -93,12 +93,16 @@ class testStage:
 
 
 class TestSequence:
-    name = ""
-    description = ""
-    TestPinsList = PinList.PinsList() #This is the list of pins used in the test.
-    testStages = []
-    RealPinsList = None #To be defined on init.
-    current_test = -1
+
+
+    def __init__(self):
+        self.name = ""
+        self.description = ""
+        self.TestPinsList = None
+        self.TestPinsList = PinList.PinsList()
+        self.testStages = []
+        self.RealPinsList = None
+        self.current_test = -1
 
     def initialLoadIn(self, ActualPinsList, FilePath):
         self.RealPinsList = ActualPinsList
@@ -117,7 +121,13 @@ class TestSequence:
         except:
             print("Error parsing in name or description.")
         
+        #Reset TestPinsList, and testStages
+        self.testStages.clear()
+        self.TestPinsList = None
+        self.TestPinsList = PinList.PinsList()
+        
         #Mode pin setting:  0 = input, 1=output.
+
         for x in testData['pins']:
             self.TestPinsList.addPin(x['pin'], x['mode'], 0, x['description'])
             #logging.debug("Adding pin")

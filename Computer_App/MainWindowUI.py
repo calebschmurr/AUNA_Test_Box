@@ -614,9 +614,12 @@ class MainWindow(wx.Frame):
         
         logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
 
-        self.stopClose = False
-        self.testActive = False
-        self.newTest = False
+        #Modes - 0 = nothing active
+        # 1 - active test being tested
+        # 2 - new test being created.
+        # 3 - modifying old test.
+        self.current_mode = 0
+
 
         self.PinControl = PinControlUI.Pin_Control(None, wx.ID_ANY, "")
         
@@ -652,6 +655,7 @@ class MainWindow(wx.Frame):
         self.Modify_Test_Button.Bind(wx.EVT_BUTTON, self.modifyTestPushed)
         self.Delete_Test_Button.Bind(wx.EVT_BUTTON, self.DeleteTestPushed)
         self.Start_New_Test_Button.Bind(wx.EVT_BUTTON, self.NewTestPushed)
+        self.Close_Current_Test_Button.Bind(wx.EVT_BUTTON, self.CloseTestPushed)
         #self.PortConnect()
 
     #loadTests - load in the test procedures located in test folder.
@@ -678,12 +682,12 @@ class MainWindow(wx.Frame):
         #not visible anymore and then able to be made visible again.
 
     def OnClose(self, event):
-        if self.stopClose:
+        if self.current_mode!=0:
             if wx.MessageBox("File has not been saved, continue closing?", "Please confirm below.", wx.ICON_QUESTION | wx.YES_NO) != wx.YES:
                 event.veto()
                 return
 
-        if self.newTest:
+        if self.current_mode==2:
             if wx.MessageBox("Test not finished being created, abort and delete progress?", "Please choose below.", wx.ICON_QUESTION | wx.YES_NO) != wx.YES:
                 event.veto()
                 return
@@ -693,7 +697,15 @@ class MainWindow(wx.Frame):
                     x.unlink()
                 self.folderPath.rmdir()
                 
+        if self.current_mode==3:
+            if wx.MessageBox("Test not finished being modified, abort and write current progress?", "Please choose below.", wx.ICON_QUESTION | wx.YES_NO) != wx.YES:
+                event.veto()
+                return
+            else:
+                #Save the changes in a json file.
+                self.saveTest()
 
+            
         #self.PinControl.stopUIThread()
         self.PinControl.closeSelf()
         self.Destroy()
@@ -734,9 +746,9 @@ class MainWindow(wx.Frame):
         logging.debug(p)
         self.loadTestSequence(p)
         #logging.info(self.test.exportJsonFile())
-        self.Notebook.SetSelection(1)
-        self.testActive = True
+        self.current_mode = 1
         self.test.FolderPath = p
+        self.Notebook.SetSelection(1)
         self.startTest()
 
     def modifyTestPushed(self, event):
@@ -751,7 +763,7 @@ class MainWindow(wx.Frame):
 
         logging.debug(p)
         self.loadTestSequence(p)
-        self.newTest = True
+        self.current_mode = 3
         self.test.current_test = 0
         self.folderPath = Path('.') #Using pathlib - replacement of os.
         self.folderPath = self.folderPath / "Tests" /self.test.name
@@ -759,7 +771,6 @@ class MainWindow(wx.Frame):
 
         #Set the active tab to tbe the test creator tab
         self.Notebook.SetSelection(3)
-        pass
 
     def DeleteTestPushed(self, event):
         if (self.List_Of_Tests.GetSelection()==-1):
@@ -778,13 +789,12 @@ class MainWindow(wx.Frame):
         self.p.rmdir()
         self.loadTests()
 
-
     def NewTestPushed(self, event):
         #Move to the New Test page.
         self.Notebook.SetSelection(2)
 
     def nextStepPushed(self, event):
-        if self.testActive:
+        if self.current_mode==1:
             if self.test.isNextTest():
                 if self.currentStage.passPinCheck():
                     self.loadNextTestStage()
@@ -800,10 +810,10 @@ class MainWindow(wx.Frame):
             event.veto()
             return
         
-        self.testActive = False
+        self.current_mode = 0
         p = None
         self.test = None
-        
+        self.Notebook.SetSelection(0) #Go back to default
 
     def startTest(self):
         self.Current_Test_Label.SetLabel("Current Test: {}".format(self.test.name))
@@ -827,30 +837,34 @@ class MainWindow(wx.Frame):
 
     def finishTest(self):
         wx.MessageBox("Test finished - passed.", "Test Passed",  wx.OK | wx.ICON_INFORMATION)
-        self.testActive = False
+        self.test = None
+        self.folderPath = None
+        self.current_mode = 0
+        self.currentStage = None
+        print(self.test)
         self.Notebook.SetSelection(0)
 
 
 #####################Handling test creation#########################
     def onNotebookPageChange(self, event):
         if self.Notebook.GetSelection()==3:
-            if not self.newTest:
+            if not self.current_mode==2:
                 wx.MessageBox("No test being created - please create a new test before creating stages.", "No Test Creation in Progress",  wx.OK | wx.ICON_INFORMATION)
                 self.Notebook.SetSelection(2)
         elif self.Notebook.GetSelection()==1:
-            if not self.testActive:
+            if self.current_mode==0:
                 wx.MessageBox("No test is selected - please select a test from List of Tests in 'Load Test' tab.", "No test selected.",  wx.OK | wx.ICON_INFORMATION)
                 self.Notebook.SetSelection(0)     
         elif self.Notebook.GetSelection()==2:
-            if self.testActive:
+            if self.current_mode==1:
                 wx.MessageBox("Test is currently active - cannot create new test.  Please close current test before creating a test.", "Cannot create new test.", wx.OK | wx.ICON_INFORMATION)
 
         #Check to see if a new test is being created,
         #if not then move new test away.
     
     def onCreateNewTest(self, event):
-        if not self.newTest:
-            self.newTest = True
+        if self.current_mode==0:
+            self.current_mode = 2
 
             #Make a new test object,
             #Store in the pins used, name and description.
@@ -882,17 +896,15 @@ class MainWindow(wx.Frame):
     #Also enables the pins in the stage creation menu.
     def getTestPinsList(self):
         for x in range(1,13):
-            if eval("self.PinX1_{}Select.GetSelection()".format(x))!=2:
+            if eval("self.PinX1_{}Select.GetSelection()".format(x))==0:
                 exec("self.test.TestPinsList.addPin({}, self.PinX1_{}Select.GetSelection(), 0, self.PinX1_{}Description.GetValue())".format(x+53, x, x))
                 exec("self.PinX1_{}_Stage_Mode_Select.Enable(True)".format(x))
                 exec("self.PinX1_{}_Stage_Value.Enable(True)".format(x))
+            elif eval("self.PinX1_{}Select.GetSelection()".format(x))==1:
+                exec("self.test.TestPinsList.addPin({}, self.PinX1_{}Select.GetSelection(), 0, self.PinX1_{}Description.GetValue())".format(x+53, x, x))
+                exec("self.PinX1_{}_Stage_Value.Enable(True)".format(x))
 
-                #Add to the test creator tab.
-        if eval("self.PinX1_{}Select.GetSelection()".format(13))!=1:
-            exec("self.test.TestPinsList.addPin({}, self.PinX1_{}Select.GetSelection(), 0, self.PinX1_{}Description.GetValue())".format(2, 13, 13))
-            exec("self.PinX1_{}_Stage_Value.Enable(False)".format(13))
-
-        for x in range(14, 18):
+        for x in range(13, 18):
             if eval("self.PinX1_{}Select.GetSelection()".format(x))!=1:
                 exec("self.test.TestPinsList.addPin({}, self.PinX1_{}Select.GetSelection(), 0, self.PinX1_{}Description.GetValue())".format(x-11, x, x))
                 exec("self.PinX1_{}_Stage_Value.Enable(True)".format(x))
@@ -1057,16 +1069,20 @@ class MainWindow(wx.Frame):
     def onNewTestFinishTest(self, event):
         #Save the test
         #Dump the JSON file:
+        self.saveTest()
+        #Reset the variables associated with a new test
+        self.test = None
+        self.folderPath = None
+        self.current_mode = 0
+        self.currentStage = None
+
+        self.loadTests()
+        self.Notebook.SetSelection(0)
+
+    def saveTest(self):
         with open("{}/{}.txt".format(self.folderPath, self.test.name), 'w') as outfile:
             outfile.write(self.test.exportJsonFile())
             outfile.close()
-        #Reset the variables associated with a new test
-        self.test  = None
-        self.folderPath = None
-        self.newTest = False
-        
-        self.loadTests()
-        self.Notebook.SetSelection(0)
         
     def onResultViewer(self, event):
         #
