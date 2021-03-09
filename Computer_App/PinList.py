@@ -9,13 +9,13 @@ import json
 
 #mode: 0 is input, 1 is output.
 class pin:
-    pin_number=0
+    pin=0
     mode=0
     value=0
     description = ""
 
     def __init__(self, num, mode, value, description=""):
-        self.pin_number = num
+        self.pin = num
         self.mode = mode
         self.value = value
         self.description = description
@@ -25,7 +25,7 @@ class pin:
     def getMode(self):
         return self.mode
     def getPinNumber(self):
-        return int(self.pin_number)
+        return int(self.pin)
     def getDescription(self):
         return self.description
 
@@ -37,7 +37,7 @@ class pin:
         return False
 
     def getDict(self):
-        return {"pin": self.pin_number, "mode": self.mode, "description": self.description}
+        return {"pin": self.pin, "mode": self.mode, "description": self.description}
 
    # def getJson(self):
   #      return json.dumps({"pin": self.pin_number, "mode": self.mode, "description": self.description})

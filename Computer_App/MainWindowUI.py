@@ -782,8 +782,8 @@ class MainWindow(wx.Frame):
                 return
             
         #Find and delete directory and all contents.
-        p = Path('.')
-        p = p/"Tests"/self.List_Of_Tests.GetStringSelection()
+        self.p = Path('.')
+        self.p = self.p/"Tests"/self.List_Of_Tests.GetStringSelection()
         for x in self.p.iterdir():
             x.unlink()
         self.p.rmdir()
@@ -848,8 +848,8 @@ class MainWindow(wx.Frame):
 #####################Handling test creation#########################
     def onNotebookPageChange(self, event):
         if self.Notebook.GetSelection()==3:
-            if not self.current_mode==2:
-                wx.MessageBox("No test being created - please create a new test before creating stages.", "No Test Creation in Progress",  wx.OK | wx.ICON_INFORMATION)
+            if not (self.current_mode==2 or self.current_mode==3):
+                wx.MessageBox("No test being created or modified - please create a new test before creating stages.", "No Test Creation in Progress",  wx.OK | wx.ICON_INFORMATION)
                 self.Notebook.SetSelection(2)
         elif self.Notebook.GetSelection()==1:
             if self.current_mode==0:
@@ -865,7 +865,6 @@ class MainWindow(wx.Frame):
     def onCreateNewTest(self, event):
         if self.current_mode==0:
             self.current_mode = 2
-
             #Make a new test object,
             #Store in the pins used, name and description.
 
@@ -939,7 +938,6 @@ class MainWindow(wx.Frame):
         if not self.test.currentImgPath:
             wx.MessageBox("No image selected, please select an image", "No image selected",  wx.OK | wx.ICON_INFORMATION)
             return 0
-        
         #Check for pins actually having values.
 
         #Store all the values into the test stage object
@@ -952,11 +950,13 @@ class MainWindow(wx.Frame):
             #Clear currentImgPath
             self.test.currentImgPath = None
             self.updateNewTestCreatorNumber()
+            self.drawNewTestImage()
         else: #Save current stage, load old stage.
             self.test.testStages[self.test.current_test] = TestSequence.testStage(self.test.current_test, self.NewTestCreatorDescription.GetValue(), "img{}.png".format(self.test.current_test), self.getNewTestCreatorPins(), self.NewTestCreatorErrorMessage.GetValue(), None)
             #Also, load in the next test status.
             self.test.current_test+=1
             self.testCreatorLoadInValues()
+            self.drawNewTestImage()
 
         #Increment stage levels
         print("Test stage {} saved.".format(self.test.current_test-1))
@@ -965,9 +965,9 @@ class MainWindow(wx.Frame):
     #Return a dict with all pins and values.
     def getNewTestCreatorPins(self):
         returnDict = []
-        for x in range(1,13):
+        for x in range(1,14):
             if eval("self.PinX1_{}_Stage_Value.IsEnabled()".format(x)):
-                if eval("self.PinX1_{}_Stage_Value.GetValue()=='' or self.PinX1_{}_Stage_Mode_Select.GetSelection()==-1".format(x,x)):
+                if eval("self.PinX1_{}_Stage_Value.GetValue()==''".format(x,x)):
                     #send message that there needs to be a value in this value box before saving
                     wx.MessageBox("Please check values for pin X1_{} in order to save stage.".format(x), "Check values",  wx.OK | wx.ICON_INFORMATION)
                 else:
@@ -979,6 +979,14 @@ class MainWindow(wx.Frame):
                     wx.MessageBox("Please check values for pin X1_{} in order to save stage.".format(x), "Check values",  wx.OK | wx.ICON_INFORMATION)
                 else:
                     returnDict.append(self.getPinObject("X1_{}".format(x)))
+
+        for x in range(1, 9):
+            if eval("self.PinX2_{}_Stage_Mode_Select.IsEnabled()".format(x)):
+                if eval("self.PinX2_{}_Stage_Mode_Select.GetValue()==''".format(x)):
+                    wx.MessageBox("Please check values for pin X2_{} in order to save stage.".format(x), "Check values",  wx.OK | wx.ICON_INFORMATION)
+                else:
+                    returnDict.append(self.getPinObject("X2_{}".format(x)))
+        
         
         print("getNewTestCreatorPinsReturn:")
         for z in returnDict:
@@ -993,7 +1001,8 @@ class MainWindow(wx.Frame):
             pass
         else:
             ret.check_code = eval("self.Pin{}_Stage_Mode_Select.GetSelection()".format(PinID))
-        ret.value = eval("self.Pin{}_Stage_Value.GetValue()".format(PinID))
+        if not PinID.split("_")[0]=="X2":
+            ret.value = eval("self.Pin{}_Stage_Value.GetValue()".format(PinID))
 
         return ret
 
@@ -1015,12 +1024,15 @@ class MainWindow(wx.Frame):
         
     def setNewTestCreatorPinVal(self, pin): #Used in navigating backwards in pin system.
         
-        exec("self.Pin{}_Stage_Value.SetValue(\"{}\")".format(str(self.translatePinToConnector(pin['pin'])), str(pin['value'])))
+        #Check to see if this stage value should be set - make sure it's not an X2 first.
+        if not (pin['pin']>21 and pin['pin']<30):
+            exec("self.Pin{}_Stage_Value.SetValue(\"{}\")".format(str(self.translatePinToConnector(pin['pin'])), str(pin['value'])))
         
         #Finish this check here - make sure this pin is within required values.
-        if pin['pin']>54 or pin['pin']<7:
+        if pin['pin']>21:
+            print("Pin {} is {}".format(pin['pin'], self.translatePinToConnector(pin['pin'])))
             exec("self.Pin{}_Stage_Mode_Select.SetSelection({})".format(str(self.translatePinToConnector(pin['pin'])), str(pin['check_code'])))
-            print("Pin {} set to {}".format(self.translatePinToConnector(pin['pin']), pin['check_code']))
+            print("Pin {} set to code {}".format(self.translatePinToConnector(pin['pin']), pin['check_code']))
         
         print("Pin {} set to {}".format(str(self.translatePinToConnector(pin['pin'])), str(pin['value'])))
         
@@ -1043,6 +1055,19 @@ class MainWindow(wx.Frame):
        
         print("Navigated backwards.")
 
+    def enableModifyTestPins(self):
+        for z in self.test.TestPinsList.PinList:
+            if z.pin>53:
+                if z.mode==0: #Input
+                    exec("self.Pin{}_Stage_Mode_Select.Enable(True)".format(self.translatePinToConnector(z.pin)))
+                    exec("self.Pin{}_Stage_Value.Enable(True)".format(self.translatePinToConnector(z.pin)))
+                else:
+                    exec("self.Pin{}_Stage_Value.Enable(True)".format(self.translatePinToConnector(z.pin)))
+            elif z.pin<7:
+                exec("self.Pin{}_Stage_Value.Enable(True)".format(self.translatePinToConnector(z.pin)))
+            elif z.pin<30:
+                exec("self.Pin{}_Stage_Mode_Select.Enable(True)".format(self.translatePinToConnector(z.pin)))
+
     def testCreatorLoadInValues(self):
          #Load in the previous test values:
         #Number:
@@ -1054,6 +1079,10 @@ class MainWindow(wx.Frame):
         #Image path
         self.test.currentImgPath = self.test.testStages[self.test.current_test].getDict()['image']
         #All pins and their values
+
+        #Enable the pins that are used for this test:
+        self.enableModifyTestPins()
+
         for z in self.test.testStages[self.test.current_test].getDict()['pin_check']:
             self.setNewTestCreatorPinVal(z)
         
@@ -1109,7 +1138,12 @@ class MainWindow(wx.Frame):
                 if x.name=="img{}.png".format(self.test.current_test):
                     logging.debug("Found image, updating.")
                     self.TestCreatorCurrentImg.SetBitmap(wx.Bitmap(str(x.resolve()), wx.BITMAP_TYPE_ANY))
-                    self.NewTestCurrentImgPath.SetLabelText("Current Image Path: {}"+str(x.resolve()))
+                    self.NewTestCurrentImgPath.SetLabelText("Current Image Path: "+str(x.resolve()))
+                    return 0            
+        self.NewTestCurrentImgPath.SetLabelText("Current Image Path: None")
+        self.TestCreatorCurrentImg.ClearBackground()
+
+
 
 
 ###############################################################################################################################################

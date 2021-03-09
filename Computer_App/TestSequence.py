@@ -24,11 +24,9 @@ class testPin:
         self.check_code = check_code
         self.value = value
         self.RealPinsList = RealPinsList
-
     
     def __getitem__(self, val):
         return getattr(self,val)
-
 
     #create method to perform check
     #Pin Check Codes:
@@ -48,8 +46,10 @@ class testPin:
     #create methods to change all values as well.
     def getDict(self):
         #print("testPin getDict number: {}".format(self.pin))
+
+        #3-9-2021:: Removed the RealPinsList from this getDict.
         return {'pin': self.pin, 'check_code': self.check_code,
-        'value': self.value, 'RealPinsList': self.RealPinsList}
+        'value': self.value}
 
 class testStage:
     number = 0
@@ -164,11 +164,13 @@ class TestSequence:
         
         logging.debug("testPinsList Dict:  ")
         for x in self.TestPinsList.PinList:
-            #logging.debug(x.getDict())
+            print(x.getDict())
             pass
-        logging.debug("done.")
+        print("done.")
         
         for x in self.testStages:
             output['tests'].append(x.getDict())
+            print(x.getDict())
+        print("Done - testStages Append")
 
         return json.dumps(output)
