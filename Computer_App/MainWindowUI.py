@@ -997,7 +997,7 @@ class MainWindow(wx.Frame):
     def getPinObject(self, PinID):
         ret = TestSequence.testPin(0,0,0,None)
         ret.pin = self.translateConnectorToPin(PinID)
-        if ret.pin<53 or PinID.split("_")[0]=="X2":
+        if ret.pin<22:
             pass
         else:
             ret.check_code = eval("self.Pin{}_Stage_Mode_Select.GetSelection()".format(PinID))
