@@ -88,7 +88,9 @@ class testStage:
 
     #Check each pin to make sure it is passing the required check for stage.
     def passPinCheck(self):
-
+        for z in self.testPins:
+            if not z.checkPin():
+                return False
         return True
 
 

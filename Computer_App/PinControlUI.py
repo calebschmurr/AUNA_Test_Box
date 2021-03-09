@@ -80,6 +80,7 @@ class Pin_Control(wx.Frame):
         wx.Frame.__init__(self, *args, **kwds)
         self.SetSize((1349, 593))
         self.Baud_Rate_Combo_Box = wx.ComboBox(self, wx.ID_ANY, choices=["9600", "19200", "38400", "57600", "115200"], style=wx.CB_DROPDOWN)
+        self.Baud_Rate_Combo_Box.SetSelection(0)
         self.PortComboBox = wx.ComboBox(self, wx.ID_ANY, choices=[], style=0)
         self.Connection_Status_Display = wx.TextCtrl(self, wx.ID_ANY, "")
         self.Start_Connection_Button = wx.Button(self, wx.ID_ANY, "Start Connection")
@@ -969,7 +970,7 @@ class Pin_Control(wx.Frame):
         #TODO: Comb through all pins, update their values.
         for x in self.SerialLine.PinsList.PinList:
             if x.mode==1:
-                x.value = float(eval('self.Pin_{}_Status.GetValue()'.format(x.pin_number)))
+                x.value = float(eval('self.Pin_{}_Status.GetValue()'.format(x.pin)))
         self.SerialLine.ChangeOutputPinValue()
 
     def ConfigOutputTime(self, events):
@@ -1010,7 +1011,7 @@ class Pin_Control(wx.Frame):
                 #For each input, change the status box.
                 #self.Pin_22_Status.SetValue(x.value)
                 #print("Updating {} on UI".format(x.pin_number))
-                exec("self.Pin_{}_Status.SetValue(str(x.value))".format(x.pin_number))
+                exec("self.Pin_{}_Status.SetValue(str(x.value))".format(x.pin))
                 #TODO: Test this.        
 
     def startUIThread(self):
@@ -1066,6 +1067,17 @@ class Pin_Control(wx.Frame):
         self.SerialMonitor.Show()
         self.SerialMonitor.active = True
 
+    def externalResetPins(self):
+        #22-69
+        for x in range(22, 70):
+            exec("self.Pin_{}_Enable.SetValue(False)".format(x))
+            exec("self.Pin_{}_Mode_Box.SetSelection(-1)".format(x))
+            exec("self.Pin_{}_Status.SetValue(\"\")".format(x))
+        for x in range(2, 14):
+            exec("self.Pin_{}_Enable.SetValue(False)".format(x))
+            exec("self.Pin_{}_Status.SetValue(\"\")".format(x))
+
+
 #'''
 #External AddPin - 
 #Method to add a pin to the PinsList,
@@ -1076,7 +1088,9 @@ class Pin_Control(wx.Frame):
 
     def externalAddPin(self, pin, pintype, input=0):
         exec("self.Pin_{}_Enable.SetValue(True)".format(pin))
-        exec("self.Pin_{}_Mode_Box.SetSelection(pintype)".format(pin))
+        #Make sure the proper box exists for this first.
+        if (pin>21):
+            exec("self.Pin_{}_Mode_Box.SetSelection(pintype)".format(pin))
         exec("self.Pin_{}_Status.SetValue(str(input))".format(pin))
         #self.Pin_24_Enable.SetValue(self, True)
         if pintype==0:
@@ -1104,11 +1118,11 @@ class Pin_Control(wx.Frame):
     #ExternalStartSerial - start the serial comms port from outside.  Update UI Accordingly.
     def ExternalStartSerial(self, port_num, rate=9600):
         self.PortComboBox.SetSelection(port_num)
-        self.StartSerialComms()
+        self.StartSerialComms(None)
 
     #ExternalStopSerial - stop the serial comms port from outside class.  Update UI accordingly.
     def ExternalStopSerial(self):
-        self.StopSerialComms()
+        self.StopSerialComms(None)
 
 #getPinValue - easier method
 #to get and return a specific pin value.

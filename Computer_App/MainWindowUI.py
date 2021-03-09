@@ -44,7 +44,7 @@ class MainWindow(wx.Frame):
         kwds["style"] = kwds.get("style", 0) | wx.DEFAULT_FRAME_STYLE
         wx.Frame.__init__(self, *args, **kwds)
         self.SetSize((1200, 800))
-        self.SetTitle("frame")
+        self.SetTitle("Aurora NA Test Software")
 
         self.Notebook = wx.Notebook(self, wx.ID_ANY)
 
@@ -53,7 +53,7 @@ class MainWindow(wx.Frame):
 
         self.Tab_Sizer = wx.BoxSizer(wx.VERTICAL)
 
-        self.List_Of_Tests_Label = wx.StaticText(self.Load_Existing_Test_Tab, wx.ID_ANY, "List of PATH")
+        self.List_Of_Tests_Label = wx.StaticText(self.Load_Existing_Test_Tab, wx.ID_ANY, "List of Tests found at PATH")
         self.Tab_Sizer.Add(self.List_Of_Tests_Label, 0, 0, 0)
 
         self.List_Of_Tests = wx.ListBox(self.Load_Existing_Test_Tab, wx.ID_ANY, choices=["choice 1"])
@@ -90,6 +90,9 @@ class MainWindow(wx.Frame):
         self.Disconnect_Button = wx.Button(self.Load_Existing_Test_Tab, wx.ID_ANY, "Disconnect")
         self.Com_Sizer.Add(self.Disconnect_Button, 0, 0, 0)
 
+        self.Refresh_Serial_Button = wx.Button(self.Load_Existing_Test_Tab, wx.ID_ANY, "Refresh")
+        self.Com_Sizer.Add(self.Refresh_Serial_Button, 0, 0, 0)
+
         self.ShowPinUI_Button = wx.Button(self.Load_Existing_Test_Tab, wx.ID_ANY, "Show Pin UI")
         self.Tab_Sizer.Add(self.ShowPinUI_Button, 0, 0, 0)
 
@@ -101,7 +104,7 @@ class MainWindow(wx.Frame):
         self.Current_Test_Label = wx.StaticText(self.Test_Tab, wx.ID_ANY, "Current Test:")
         self.Test_Tab_Sizer.Add(self.Current_Test_Label, 0, 0, 0)
 
-        self.Next_Step_Image = wx.StaticBitmap(self.Test_Tab, wx.ID_ANY, wx.Bitmap("C:\\Users\\USER\\Documents\\Test_Box\\AUNA_Test_Box\\Computer_App\\demo_img.png", wx.BITMAP_TYPE_ANY))
+        self.Next_Step_Image = wx.StaticBitmap(self.Test_Tab, wx.ID_ANY, wx.Bitmap(1000, 500))
         self.Next_Step_Image.SetMinSize((1000, 500))
         self.Test_Tab_Sizer.Add(self.Next_Step_Image, 0, 0, 0)
 
@@ -520,12 +523,15 @@ class MainWindow(wx.Frame):
         self.TestInfoSizer.Add(self.NewTestCreatorDescription, 0, 0, 0)
 
         self.NewTestCreatorPreviousStage = wx.Button(self.New_Test_Creator, wx.ID_ANY, "Previous Stage")
-        self.NewTestCreatorPreviousStage.SetMinSize((150, 23))
-        self.TestInfoSizer.Add(self.NewTestCreatorPreviousStage, 0, wx.ALL, 4)
+        self.NewTestCreatorPreviousStage.SetMinSize((110, 23))
+        self.TestInfoSizer.Add(self.NewTestCreatorPreviousStage, 1, wx.ALL, 4)
 
         self.NewTestCreatorNextStage = wx.Button(self.New_Test_Creator, wx.ID_ANY, "Next Stage")
-        self.NewTestCreatorNextStage.SetMinSize((140, 23))
-        self.TestInfoSizer.Add(self.NewTestCreatorNextStage, 0, wx.ALL, 4)
+        self.NewTestCreatorNextStage.SetMinSize((110, 23))
+        self.TestInfoSizer.Add(self.NewTestCreatorNextStage, 1, wx.ALL, 4)
+
+        self.Delete_Stage_Button = wx.Button(self.New_Test_Creator, wx.ID_ANY, "Delete Stage")
+        self.TestInfoSizer.Add(self.Delete_Stage_Button, 1, wx.ALL, 4)
 
         self.NewTestCreatorFinishTestButton = wx.Button(self.New_Test_Creator, wx.ID_ANY, "Finish Test")
         self.TestInfoSizer.Add(self.NewTestCreatorFinishTestButton, 1, wx.ALL, 4)
@@ -623,7 +629,7 @@ class MainWindow(wx.Frame):
 
         self.PinControl = PinControlUI.Pin_Control(None, wx.ID_ANY, "")
         
-        #Load up combo box.
+        #Load up ports combo box.
         preferred_index = -1
         self.Port_Connect.Clear()
         for n, (portname, desc, hwid) in enumerate(sorted(PinControlUI.SerialComm.serial.tools.list_ports.comports())):
@@ -633,7 +639,6 @@ class MainWindow(wx.Frame):
         self.__attach_events()
         self.loadTests()
 
-
         self.test = None #Currently loaded test
         self.currentStage = None #Currently loaded stage.
         
@@ -641,6 +646,7 @@ class MainWindow(wx.Frame):
     def __attach_events(self):
 
         self.Connect_Button.Bind(wx.EVT_BUTTON, self.ConnectPort)
+        self.Disconnect_Button.Bind(wx.EVT_BUTTON, self.DisconnectSerialPushed)
         self.ShowPinUI_Button.Bind(wx.EVT_BUTTON, self.showPinUI)
         self.Bind(wx.EVT_CLOSE, self.OnClose)
         self.Load_Test.Bind(wx.EVT_BUTTON, self.LoadTestPushed)
@@ -656,6 +662,8 @@ class MainWindow(wx.Frame):
         self.Delete_Test_Button.Bind(wx.EVT_BUTTON, self.DeleteTestPushed)
         self.Start_New_Test_Button.Bind(wx.EVT_BUTTON, self.NewTestPushed)
         self.Close_Current_Test_Button.Bind(wx.EVT_BUTTON, self.CloseTestPushed)
+        self.Delete_Stage_Button.Bind(wx.EVT_BUTTON, self.onNewTestDeleteStage)
+        self.Refresh_Serial_Button.Bind(wx.EVT_BUTTON, self.ReloadSerialPorts)
         #self.PortConnect()
 
     #loadTests - load in the test procedures located in test folder.
@@ -674,7 +682,12 @@ class MainWindow(wx.Frame):
 
     def ConnectPort(self, events):
         self.PinControl.ExternalStartSerial(self.Port_Connect.GetSelection())
+        self.Connect_Button.Enable(False)
         #Disable the connect button.
+    
+    def DisconnectSerialPushed(self, events):
+        self.PinControl.ExternalStopSerial()
+        self.Connect_Button.Enable(True)
 
     def showPinUI(self, events):
         self.PinControl.Show()
@@ -732,6 +745,14 @@ class MainWindow(wx.Frame):
         #Find the .txt, then parse in as json
         #Load the rest of the images, store in image container.
         #Need to make a class to contain it.
+
+    def ReloadSerialPorts(self, event):
+        preferred_index = -1
+        self.Port_Connect.Clear()
+        for n, (portname, desc, hwid) in enumerate(sorted(PinControlUI.SerialComm.serial.tools.list_ports.comports())):
+            self.Port_Connect.Append(u'{} - {}'.format(portname, desc))
+            
+        self.Port_Connect.SetSelection(preferred_index)
 
     #Load the Test selected, or say no test selected/display test error.
     def LoadTestPushed(self, event):
@@ -817,7 +838,16 @@ class MainWindow(wx.Frame):
 
     def startTest(self):
         self.Current_Test_Label.SetLabel("Current Test: {}".format(self.test.name))
+        #Initialize Pins
+        self.InitializePins()
+        #Check if connected to Serial or not:
+
         self.loadNextTestStage()
+
+    def InitializePins(self):
+        self.PinControl.externalResetPins()
+        for x in self.test.TestPinsList.PinList:
+            self.PinControl.externalAddPin(x.getDict()['pin'], x.getDict()['mode'], x.getDict()['value'])
 
     def loadNextTestStage(self):
         self.currentStage = self.test.getNextTest()
@@ -962,6 +992,15 @@ class MainWindow(wx.Frame):
         print("Test stage {} saved.".format(self.test.current_test-1))
         print(self.test.exportJsonFile())
 
+    def onNewTestDeleteStage(self, event):
+        #Delete stage
+        #Increment backwards.
+        self.onNewTestPreviousStage(None)
+        self.test.testStages.pop(self.test.current_test+1)
+        self.updateNewTestCreatorNumber()
+        self.testCreatorLoadInValues()
+        self.drawNewTestImage()
+
     #Return a dict with all pins and values.
     def getNewTestCreatorPins(self):
         returnDict = []
@@ -997,7 +1036,7 @@ class MainWindow(wx.Frame):
     def getPinObject(self, PinID):
         ret = TestSequence.testPin(0,0,0,None)
         ret.pin = self.translateConnectorToPin(PinID)
-        if ret.pin<22:
+        if ret.pin<53:
             pass
         else:
             ret.check_code = eval("self.Pin{}_Stage_Mode_Select.GetSelection()".format(PinID))
@@ -1142,8 +1181,6 @@ class MainWindow(wx.Frame):
                     return 0            
         self.NewTestCurrentImgPath.SetLabelText("Current Image Path: None")
         self.TestCreatorCurrentImg.ClearBackground()
-
-
 
 
 ###############################################################################################################################################

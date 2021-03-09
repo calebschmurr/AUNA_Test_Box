@@ -37,7 +37,7 @@ class pin:
         return False
 
     def getDict(self):
-        return {"pin": self.pin, "mode": self.mode, "description": self.description}
+        return {"pin": self.pin, "mode": self.mode, "description": self.description, "value":self.value}
 
    # def getJson(self):
   #      return json.dumps({"pin": self.pin_number, "mode": self.mode, "description": self.description})
