@@ -979,6 +979,14 @@ class Pin_Control(wx.Frame):
 
     def ResetPins(self, events):
         #Remove all pins from list, and clear all their stored values.
+        for x in range(22, 70):
+            exec("self.Pin_{}_Enable.SetValue(False)".format(x))
+            exec("self.Pin_{}_Mode_Box.SetSelection(-1)".format(x))
+            exec("self.Pin_{}_Status.SetValue(\"\")".format(x))
+        for x in range(2, 14):
+            exec("self.Pin_{}_Enable.SetValue(False)".format(x))
+            exec("self.Pin_{}_Status.SetValue(\"\")".format(x))
+        
         print("Performing pin reset")
         self.SerialLine.resetPins()
 
@@ -1069,13 +1077,7 @@ class Pin_Control(wx.Frame):
 
     def externalResetPins(self):
         #22-69
-        for x in range(22, 70):
-            exec("self.Pin_{}_Enable.SetValue(False)".format(x))
-            exec("self.Pin_{}_Mode_Box.SetSelection(-1)".format(x))
-            exec("self.Pin_{}_Status.SetValue(\"\")".format(x))
-        for x in range(2, 14):
-            exec("self.Pin_{}_Enable.SetValue(False)".format(x))
-            exec("self.Pin_{}_Status.SetValue(\"\")".format(x))
+        self.ResetPins(None)
 
 
 #'''

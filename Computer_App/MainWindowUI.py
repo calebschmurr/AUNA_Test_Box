@@ -848,6 +848,10 @@ class MainWindow(wx.Frame):
         self.PinControl.externalResetPins()
         for x in self.test.TestPinsList.PinList:
             self.PinControl.externalAddPin(x.getDict()['pin'], x.getDict()['mode'], x.getDict()['value'])
+        #Start sending back pin status:
+        
+        self.PinControl.ConfigurePinIO(None)
+        self.PinControl.ConfigOutputTime(None)
 
     def loadNextTestStage(self):
         self.currentStage = self.test.getNextTest()
