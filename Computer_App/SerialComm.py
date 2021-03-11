@@ -26,7 +26,7 @@ class SerialHandler():
         self.serial = serial.Serial()
         self.alive = threading.Event()
         self.thread = None
-        self.serial.timeout = 0.2
+        self.serial.timeout = 0.1
 
         self.UI_Update_Flag = False
 
@@ -64,7 +64,7 @@ class SerialHandler():
 
     def receiverThread(self):
         while self.alive.isSet():
-            time.sleep(0.3)
+            time.sleep(0.2)
             b=self.serial.read(self.serial.in_waiting or 1).decode('UTF-8', 'replace')
             if b:
                 self.PinsList.parseInputInfo(b)
@@ -100,6 +100,7 @@ class SerialHandler():
         try:
             self.serial.open()
             self.startReceiverThread()
+            time.sleep(1.5)
             return True
         except serial.SerialException as e:
             with wx.MessageDialog(self, str(e), "Serial Port Error", wx.OK | wx.ICON_ERROR)as dlg:
@@ -117,6 +118,8 @@ class SerialHandler():
             print("Error stopping connection.")
         return True
 
+    def getSerialActive(self):
+        return self.serial.isOpen()
 
 #Send the serial comm line.
 

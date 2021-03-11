@@ -54,8 +54,6 @@ X2_11 - GND
 X2_12 - GND
 
 
-
-
 '''
 
 
@@ -1131,6 +1129,9 @@ class Pin_Control(wx.Frame):
 
     def getPinValue(self, pin):
         return self.SerialLine.PinsList.getPinValue(pin)
+
+    def getSerialActive(self):
+        return self.SerialLine.getSerialActive()
 
 
 class MyApp(wx.App):

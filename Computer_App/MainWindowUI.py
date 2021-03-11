@@ -13,6 +13,8 @@ import SerialMonitor
 import TestSequence
 import PinControlUI
 
+import time
+
 import logging
 
 from pathlib import Path
@@ -79,19 +81,22 @@ class MainWindow(wx.Frame):
         self.Tab_Sizer.Add(self.Com_Sizer, 1, wx.EXPAND, 0)
 
         self.COM_Port_Label = wx.StaticText(self.Load_Existing_Test_Tab, wx.ID_ANY, "Serial Port:")
-        self.Com_Sizer.Add(self.COM_Port_Label, 0, 0, 0)
+        self.Com_Sizer.Add(self.COM_Port_Label, 0, wx.ALL, 3)
 
         self.Port_Connect = wx.ComboBox(self.Load_Existing_Test_Tab, wx.ID_ANY, choices=[], style=wx.CB_DROPDOWN)
-        self.Com_Sizer.Add(self.Port_Connect, 0, 0, 0)
+        self.Com_Sizer.Add(self.Port_Connect, 0, wx.ALL, 1)
 
         self.Connect_Button = wx.Button(self.Load_Existing_Test_Tab, wx.ID_ANY, "Connect")
-        self.Com_Sizer.Add(self.Connect_Button, 0, 0, 0)
+        self.Com_Sizer.Add(self.Connect_Button, 0, wx.ALL, 1)
 
         self.Disconnect_Button = wx.Button(self.Load_Existing_Test_Tab, wx.ID_ANY, "Disconnect")
-        self.Com_Sizer.Add(self.Disconnect_Button, 0, 0, 0)
+        self.Com_Sizer.Add(self.Disconnect_Button, 0, wx.ALL, 1)
 
         self.Refresh_Serial_Button = wx.Button(self.Load_Existing_Test_Tab, wx.ID_ANY, "Refresh")
-        self.Com_Sizer.Add(self.Refresh_Serial_Button, 0, 0, 0)
+        self.Com_Sizer.Add(self.Refresh_Serial_Button, 0, wx.ALL, 1)
+
+        self.Serial_Enabled_Checkbox = wx.CheckBox(self.Load_Existing_Test_Tab, wx.ID_ANY, "Ignore Serial")
+        self.Com_Sizer.Add(self.Serial_Enabled_Checkbox, 0, wx.ALL, 3)
 
         self.ShowPinUI_Button = wx.Button(self.Load_Existing_Test_Tab, wx.ID_ANY, "Show Pin UI")
         self.Tab_Sizer.Add(self.ShowPinUI_Button, 0, 0, 0)
@@ -626,7 +631,6 @@ class MainWindow(wx.Frame):
         # 3 - modifying old test.
         self.current_mode = 0
 
-
         self.PinControl = PinControlUI.Pin_Control(None, wx.ID_ANY, "")
         
         #Load up ports combo box.
@@ -644,7 +648,6 @@ class MainWindow(wx.Frame):
         
 
     def __attach_events(self):
-
         self.Connect_Button.Bind(wx.EVT_BUTTON, self.ConnectPort)
         self.Disconnect_Button.Bind(wx.EVT_BUTTON, self.DisconnectSerialPushed)
         self.ShowPinUI_Button.Bind(wx.EVT_BUTTON, self.showPinUI)
@@ -720,6 +723,7 @@ class MainWindow(wx.Frame):
 
             
         #self.PinControl.stopUIThread()
+        self.DisconnectSerialPushed(None)
         self.PinControl.closeSelf()
         self.Destroy()
         exit(0)
@@ -760,6 +764,18 @@ class MainWindow(wx.Frame):
         if (self.List_Of_Tests.GetSelection()==-1):
             wx.MessageBox("Nothing selected.  No action able to be performed", "No Selected Test",  wx.OK | wx.ICON_INFORMATION)
             return
+        if ((not self.Serial_Enabled_Checkbox.GetValue()) and self.Port_Connect.GetSelection()==-1):
+            wx.MessageBox("No Serial port selected - please select one before loading test, or disable serial comm.", "Serial Error", wx.OK | wx.ICON_INFORMATION)
+            return
+
+        #If Serial is enabled, and not connected, connect serial.
+        if not self.Serial_Enabled_Checkbox.GetValue():
+            if not self.PinControl.getSerialActive():
+                self.ConnectPort(None) #Activate serial line, disable.
+                #Wait a second.
+                time.sleep(0.2)
+
+
         #Initiate loading test in new tab.
         #Switch tab
         p = Path('.')
@@ -817,12 +833,15 @@ class MainWindow(wx.Frame):
     def nextStepPushed(self, event):
         if self.current_mode==1:
             if self.test.isNextTest():
-                if self.currentStage.passPinCheck():
-                    self.loadNextTestStage()
-                else:
+                if not self.Serial_Enabled_Checkbox.GetValue():
+                    if self.currentStage.passPinCheck():
+                        self.loadNextTestStage()
+                    else:    
                     #Does not pass check
                     #Code this in.
-                    pass
+                        pass
+                else:
+                    self.loadNextTestStage()
             else:
                 self.finishTest()
 
@@ -838,6 +857,7 @@ class MainWindow(wx.Frame):
 
     def startTest(self):
         self.Current_Test_Label.SetLabel("Current Test: {}".format(self.test.name))
+
         #Initialize Pins
         self.InitializePins()
         #Check if connected to Serial or not:
@@ -845,13 +865,14 @@ class MainWindow(wx.Frame):
         self.loadNextTestStage()
 
     def InitializePins(self):
-        self.PinControl.externalResetPins()
+        if not self.Serial_Enabled_Checkbox.GetValue():
+            self.PinControl.externalResetPins()
         for x in self.test.TestPinsList.PinList:
             self.PinControl.externalAddPin(x.getDict()['pin'], x.getDict()['mode'], x.getDict()['value'])
         #Start sending back pin status:
-        
-        self.PinControl.ConfigurePinIO(None)
-        self.PinControl.ConfigOutputTime(None)
+        if not self.Serial_Enabled_Checkbox.GetValue():
+            self.PinControl.ConfigurePinIO(None)
+            self.PinControl.ConfigOutputTime(None)
 
     def loadNextTestStage(self):
         self.currentStage = self.test.getNextTest()
@@ -877,7 +898,6 @@ class MainWindow(wx.Frame):
         self.currentStage = None
         print(self.test)
         self.Notebook.SetSelection(0)
-
 
 #####################Handling test creation#########################
     def onNotebookPageChange(self, event):
@@ -1185,7 +1205,6 @@ class MainWindow(wx.Frame):
                     return 0            
         self.NewTestCurrentImgPath.SetLabelText("Current Image Path: None")
         self.TestCreatorCurrentImg.ClearBackground()
-
 
 ###############################################################################################################################################
 
