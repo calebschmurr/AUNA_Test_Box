@@ -30,7 +30,7 @@ class pin:
         return self.description
 
     def setValue(self, value):
-        if self.mode==0:
+        if self.mode:
             self.value = value
             return True
         #Throw error - pin not the right value.

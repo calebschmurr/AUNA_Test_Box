@@ -836,12 +836,20 @@ class MainWindow(wx.Frame):
                 if not self.Serial_Enabled_Checkbox.GetValue():
                     if self.currentStage.passPinCheck():
                         self.loadNextTestStage()
-                    else:    
+                        self.serialUpdatePinOutput()
+                    else:
+                        if wx.MessageBox("Pins do not pass pin check.  Error w/ pins.  Continue?", "Pins do not pass check.", wx.ICON_QUESTION | wx.YES_NO) != wx.YES:
+                            return
+                        self.loadNextTestStage()
+                        if not self.Serial_Enabled_Checkbox.GetValue():
+                            self.serialUpdatePinOutput()
+
+                            self.PinControl.UpdatePinOutput(None)
                     #Does not pass check
                     #Code this in.
-                        pass
                 else:
                     self.loadNextTestStage()
+                    self.serialUpdatePinOutput()
             else:
                 self.finishTest()
 
@@ -857,27 +865,43 @@ class MainWindow(wx.Frame):
 
     def startTest(self):
         self.Current_Test_Label.SetLabel("Current Test: {}".format(self.test.name))
-
         #Initialize Pins
         self.InitializePins()
         #Check if connected to Serial or not:
-
         self.loadNextTestStage()
 
     def InitializePins(self):
         if not self.Serial_Enabled_Checkbox.GetValue():
             self.PinControl.externalResetPins()
+            time.sleep(0.4)
         for x in self.test.TestPinsList.PinList:
             self.PinControl.externalAddPin(x.getDict()['pin'], x.getDict()['mode'], x.getDict()['value'])
         #Start sending back pin status:
         if not self.Serial_Enabled_Checkbox.GetValue():
             self.PinControl.ConfigurePinIO(None)
+            time.sleep(2.0) #Have to wait for 2.0 seconds for some reason... 
+            #Rework serial comms speed at one point.
             self.PinControl.ConfigOutputTime(None)
+
+    def isOutputPin(self, pin):
+        for x in self.test.TestPinsList.PinList:
+            if (x.getPinNumber()==pin.pin):
+                #If is output pin, return true.
+
 
     def loadNextTestStage(self):
         self.currentStage = self.test.getNextTest()
-        #Load in the image
         
+        #Update the pins in the PinControlUI.
+        for x in self.currentStage.testPins:
+            #If the pin is an output pin on the testpins list:
+            if self.isOutputPin(x):
+                #FINISH THIS
+        
+                self.PinControl.ExternalChangePinStatus()
+
+
+        #Load in the image
         for x in self.test.FolderPath.iterdir():
             logging.debug("Checking for image {}".format(self.currentStage.image))
             if x.is_file():
@@ -889,6 +913,15 @@ class MainWindow(wx.Frame):
         self.Test_Status_Label.SetLabel("Stage {} out of {}".format(self.test.current_test, self.test.getNumStages()))
         #Change Operation to say Description.
         self.Stage_Description_Label.SetLabel("{}".format(self.currentStage.description))
+
+    def serialUpdatePinOutput(self):
+        for x in self.test.TestPinsList.PinList:
+            print("Pin {} is mode {}".format(x.getPinNumber(), x.getMode()))
+            if x.getMode()==1: #Here - issue with properly updating?
+                #self.PinControl.ExternalChangePinStatus(x.getPinNumber(), x.getValue())
+                print("Class SerialUpdatePinOutput::  Pin {} set to {}".format(x.getPinNumber(), x.getValue()))
+        self.PinControl.UpdatePinOutput(None)
+        time.sleep(0.5)
 
     def finishTest(self):
         wx.MessageBox("Test finished - passed.", "Test Passed",  wx.OK | wx.ICON_INFORMATION)
@@ -964,7 +997,7 @@ class MainWindow(wx.Frame):
 
         for z in range(1,9):
             if eval("self.PinX2_{}Select.GetSelection()".format(z))!=1:
-                exec("self.test.TestPinsList.addPin({}, self.PinX2_{}Select.GetSelection(), 0, self.PinX2_{}Description.GetValue())".format(z+21, z, z))
+                exec("self.test.TestPinsList.addPin({}, self.PinX2_{}Select.GetSelection()+1, 0, self.PinX2_{}Description.GetValue())".format(z+21, z, z))
                 exec("self.PinX2_{}_Stage_Mode_Select.Enable(True)".format(z))
 
     def onClearAllValues(self, event):
@@ -1066,7 +1099,8 @@ class MainWindow(wx.Frame):
             ret.check_code = eval("self.Pin{}_Stage_Mode_Select.GetSelection()".format(PinID))
         if not PinID.split("_")[0]=="X2":
             ret.value = eval("self.Pin{}_Stage_Value.GetValue()".format(PinID))
-
+        else:
+            ret.value = int(not eval("self.Pin{}_Stage_Mode_Select.GetSelection()".format(PinID))) #Invert the on/off value of testbox.
         return ret
 
     def translateConnectorToPin(self, PinID):
