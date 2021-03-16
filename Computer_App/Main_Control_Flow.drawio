@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2021-03-16T18:04:38.478Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.82 Safari/537.36" etag="A6M9MRJ9d9K5gbW2MNL7" version="14.4.8" type="github">
+<mxfile host="app.diagrams.net" modified="2021-03-16T18:05:23.217Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.82 Safari/537.36" etag="EJ6bh4fNogbi1KDjzvak" version="14.4.8" type="github">
   <diagram id="C5RBs43oDa-KdzZeNtuy" name="Page-1">
     <mxGraphModel dx="1422" dy="762" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -57,10 +57,19 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="OSazqYn0YOGiJcbv6HIh-14" value="End Startup Loop" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
-          <mxGeometry x="105" y="700" width="70" height="30" as="geometry" />
+          <mxGeometry x="110" y="770" width="70" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="OSazqYn0YOGiJcbv6HIh-20" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="OSazqYn0YOGiJcbv6HIh-15" target="OSazqYn0YOGiJcbv6HIh-19">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="OSazqYn0YOGiJcbv6HIh-15" value="Attach Event Commands to all UI elements" style="whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
           <mxGeometry x="85" y="584.5" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="OSazqYn0YOGiJcbv6HIh-21" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="OSazqYn0YOGiJcbv6HIh-19" target="OSazqYn0YOGiJcbv6HIh-14">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="OSazqYn0YOGiJcbv6HIh-19" value="Load Presaved Tests" style="whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="85" y="670" width="120" height="60" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
