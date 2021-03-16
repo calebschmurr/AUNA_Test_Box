@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2021-03-16T18:07:21.234Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.82 Safari/537.36" etag="IPwxCtZ2zEwLR5RVgukW" version="14.4.8" type="github">
+<mxfile host="app.diagrams.net" modified="2021-03-16T18:08:46.158Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.82 Safari/537.36" etag="quNeftjXiWV4TXKEx_Eg" version="14.4.8" type="github">
   <diagram id="C5RBs43oDa-KdzZeNtuy" name="Page-1">
     <mxGraphModel dx="1422" dy="762" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -70,6 +70,9 @@
         </mxCell>
         <mxCell id="OSazqYn0YOGiJcbv6HIh-19" value="Load Old Tests" style="whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
           <mxGeometry x="85" y="670" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="OSazqYn0YOGiJcbv6HIh-27" value="Initialize Global Vars" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="300" y="90" width="74" height="30" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
