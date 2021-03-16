@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2021-03-16T18:08:46.158Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.82 Safari/537.36" etag="quNeftjXiWV4TXKEx_Eg" version="14.4.8" type="github">
+<mxfile host="app.diagrams.net" modified="2021-03-16T18:10:27.438Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.82 Safari/537.36" etag="VrVBu3U5Mf_r-G5CxQQM" version="14.4.8" type="github">
   <diagram id="C5RBs43oDa-KdzZeNtuy" name="Page-1">
     <mxGraphModel dx="1422" dy="762" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -20,6 +20,9 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="OSazqYn0YOGiJcbv6HIh-6" value="Label" style="edgeLabel;resizable=0;html=1;align=center;verticalAlign=middle;" connectable="0" vertex="1" parent="OSazqYn0YOGiJcbv6HIh-5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="OSazqYn0YOGiJcbv6HIh-29" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="OSazqYn0YOGiJcbv6HIh-7" target="OSazqYn0YOGiJcbv6HIh-10">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="OSazqYn0YOGiJcbv6HIh-7" value="Initiate all pins in Test Creator Tab&lt;br&gt;(Using for loops)" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
@@ -56,8 +59,8 @@
             <mxPoint x="430" y="470" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="OSazqYn0YOGiJcbv6HIh-14" value="End Startup Loop" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
-          <mxGeometry x="110" y="770" width="70" height="30" as="geometry" />
+        <mxCell id="OSazqYn0YOGiJcbv6HIh-14" value="End Startup Loop, Wait for User Input" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="105" y="770" width="80" height="50" as="geometry" />
         </mxCell>
         <mxCell id="OSazqYn0YOGiJcbv6HIh-20" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="OSazqYn0YOGiJcbv6HIh-15" target="OSazqYn0YOGiJcbv6HIh-19">
           <mxGeometry relative="1" as="geometry" />
@@ -73,6 +76,15 @@
         </mxCell>
         <mxCell id="OSazqYn0YOGiJcbv6HIh-27" value="Initialize Global Vars" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
           <mxGeometry x="300" y="90" width="74" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="OSazqYn0YOGiJcbv6HIh-28" value="Set Current_Mode = 0&lt;br&gt;Set CurrentTest = None&lt;br&gt;Set CurrentStage = None&lt;br&gt;PinControl = new PinControlUI" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="239" y="160" width="196" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="OSazqYn0YOGiJcbv6HIh-30" value="" style="endArrow=classic;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="OSazqYn0YOGiJcbv6HIh-27" target="OSazqYn0YOGiJcbv6HIh-28">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="155" y="360" as="sourcePoint" />
+            <mxPoint x="155" y="400" as="targetPoint" />
+          </mxGeometry>
         </mxCell>
       </root>
     </mxGraphModel>
