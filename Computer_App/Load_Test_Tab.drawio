@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2021-03-16T18:50:16.259Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.82 Safari/537.36" etag="hWHj9PtEKQLyVE4L5gyC" version="14.4.8" type="github">
+<mxfile host="app.diagrams.net" modified="2021-03-16T18:52:43.191Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.82 Safari/537.36" etag="9wEN-bKP7gfioZI2Fh-c" version="14.4.8" type="github">
   <diagram id="6a731a19-8d31-9384-78a2-239565b7b9f0" name="Page-1">
     <mxGraphModel dx="1422" dy="762" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" background="#ffffff" math="0" shadow="0">
       <root>
@@ -22,7 +22,7 @@
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="tTzITee3SI3V6Dp85nhz-59" value="If Index of SelectedTest !=-1" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="55" y="170" width="80" height="80" as="geometry" />
+          <mxGeometry x="47.5" y="170" width="95" height="80" as="geometry" />
         </mxCell>
         <mxCell id="tTzITee3SI3V6Dp85nhz-72" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="tTzITee3SI3V6Dp85nhz-60" target="tTzITee3SI3V6Dp85nhz-70">
           <mxGeometry relative="1" as="geometry" />
@@ -41,6 +41,33 @@
         </mxCell>
         <mxCell id="tTzITee3SI3V6Dp85nhz-70" value="End Loop" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.terminator;whiteSpace=wrap;" vertex="1" parent="1">
           <mxGeometry x="360" y="180" width="100" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="tTzITee3SI3V6Dp85nhz-75" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="tTzITee3SI3V6Dp85nhz-73" target="tTzITee3SI3V6Dp85nhz-74">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="tTzITee3SI3V6Dp85nhz-73" value="LoadTest(string test)" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.start_2;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="620" y="30" width="100" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="tTzITee3SI3V6Dp85nhz-77" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="tTzITee3SI3V6Dp85nhz-74" target="tTzITee3SI3V6Dp85nhz-76">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="tTzITee3SI3V6Dp85nhz-74" value="P2 = self.path / &quot;tests&quot; / test" style="whiteSpace=wrap;html=1;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="610" y="170" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="tTzITee3SI3V6Dp85nhz-79" value="No" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="tTzITee3SI3V6Dp85nhz-76" target="tTzITee3SI3V6Dp85nhz-78">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="tTzITee3SI3V6Dp85nhz-81" value="Yes" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="tTzITee3SI3V6Dp85nhz-76" target="tTzITee3SI3V6Dp85nhz-80">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="tTzITee3SI3V6Dp85nhz-76" value="If p2.Exists" style="rhombus;whiteSpace=wrap;html=1;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="630" y="250" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="tTzITee3SI3V6Dp85nhz-78" value="return False" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.terminator;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="780" y="260" width="100" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="tTzITee3SI3V6Dp85nhz-80" value="" style="whiteSpace=wrap;html=1;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="610" y="370" width="120" height="60" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
