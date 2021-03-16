@@ -625,27 +625,24 @@ class MainWindow(wx.Frame):
         
         logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
 
+
+        self.initiateGlobalVars()
+        self.ReloadSerialPorts(None)
+        self.__attach_events()
+        self.loadTests()
+        
+
+    def initiateGlobalVars(self):
         #Modes - 0 = nothing active
         # 1 - active test being tested
         # 2 - new test being created.
         # 3 - modifying old test.
         self.current_mode = 0
-
-        self.PinControl = PinControlUI.Pin_Control(None, wx.ID_ANY, "")
-        
-        #Load up ports combo box.
-        preferred_index = -1
-        self.Port_Connect.Clear()
-        for n, (portname, desc, hwid) in enumerate(sorted(PinControlUI.SerialComm.serial.tools.list_ports.comports())):
-            self.Port_Connect.Append(u'{} - {}'.format(portname, desc))
-            
-        self.Port_Connect.SetSelection(preferred_index)
-        self.__attach_events()
-        self.loadTests()
-
         self.test = None #Currently loaded test
         self.currentStage = None #Currently loaded stage.
-        
+        self.PinControl = PinControlUI.Pin_Control(None, wx.ID_ANY, "")
+        self.path = Path('.')
+
 
     def __attach_events(self):
         self.Connect_Button.Bind(wx.EVT_BUTTON, self.ConnectPort)
@@ -671,10 +668,9 @@ class MainWindow(wx.Frame):
 
     #loadTests - load in the test procedures located in test folder.
     #Then populate the list with them.
-    def loadTests(self):
+    def loadTests(self): 
         self.List_Of_Tests.Clear()
-        p = Path('.') #Using pathlib - replacement of os.
-        p2 = p / "Tests"
+        p2 = self.path / "Tests"
         if p2.exists():
             self.List_Of_Tests_Label.SetLabelText("List of tests found at {}".format(p2.resolve()))
             for x in p2.iterdir():
@@ -755,7 +751,6 @@ class MainWindow(wx.Frame):
         self.Port_Connect.Clear()
         for n, (portname, desc, hwid) in enumerate(sorted(PinControlUI.SerialComm.serial.tools.list_ports.comports())):
             self.Port_Connect.Append(u'{} - {}'.format(portname, desc))
-            
         self.Port_Connect.SetSelection(preferred_index)
 
     #Load the Test selected, or say no test selected/display test error.
@@ -887,7 +882,8 @@ class MainWindow(wx.Frame):
         for x in self.test.TestPinsList.PinList:
             if (x.getPinNumber()==pin.pin):
                 #If is output pin, return true.
-
+                #Unfinished.
+                return False
 
     def loadNextTestStage(self):
         self.currentStage = self.test.getNextTest()
