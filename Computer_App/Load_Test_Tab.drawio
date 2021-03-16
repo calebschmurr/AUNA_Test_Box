@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2021-03-16T19:23:29.391Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.82 Safari/537.36" etag="QciZ7e6kl9kolXQB5_-F" version="14.4.8" type="github" pages="4">
+<mxfile host="app.diagrams.net" modified="2021-03-16T19:23:54.605Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.82 Safari/537.36" etag="ArCbiE0pvTnpwWF_tyU-" version="14.4.8" type="github" pages="4">
   <diagram id="6a731a19-8d31-9384-78a2-239565b7b9f0" name="Load_Test_Button">
     <mxGraphModel dx="1422" dy="762" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" background="#ffffff" math="0" shadow="0">
       <root>
@@ -149,6 +149,9 @@
         </mxCell>
         <mxCell id="UficYF0TFEuOsEOERnPV-30" value="End Loop" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.terminator;whiteSpace=wrap;" vertex="1" parent="1">
           <mxGeometry x="45" y="1020" width="100" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="UficYF0TFEuOsEOERnPV-33" value="ConnectSerial()" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.start_2;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="980" y="30" width="100" height="100" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
