@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2021-03-16T17:55:14.490Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.82 Safari/537.36" etag="81rQsjMxFccBJRxEDtr4" version="14.4.8" type="github">
+<mxfile host="app.diagrams.net" modified="2021-03-16T17:58:42.507Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.82 Safari/537.36" etag="gGTmFFfdK-6BkJdMyEqp" version="14.4.8" type="github">
   <diagram id="C5RBs43oDa-KdzZeNtuy" name="Page-1">
     <mxGraphModel dx="1422" dy="762" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -7,7 +7,7 @@
         <mxCell id="OSazqYn0YOGiJcbv6HIh-0" value="Program Startup" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
           <mxGeometry x="120" y="50" width="40" height="20" as="geometry" />
         </mxCell>
-        <mxCell id="OSazqYn0YOGiJcbv6HIh-2" value="Init - Code from WXGlade" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+        <mxCell id="OSazqYn0YOGiJcbv6HIh-2" value="Init - Code from WXGlade (Initializig all elements of GUI)" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
           <mxGeometry x="85" y="170" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="OSazqYn0YOGiJcbv6HIh-4" value="Startup" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
@@ -20,6 +20,19 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="OSazqYn0YOGiJcbv6HIh-6" value="Label" style="edgeLabel;resizable=0;html=1;align=center;verticalAlign=middle;" connectable="0" vertex="1" parent="OSazqYn0YOGiJcbv6HIh-5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="OSazqYn0YOGiJcbv6HIh-7" value="Initiate all pins in Test Creator Tab&lt;br&gt;(Using for loops)" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="82.5" y="280" width="125" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="OSazqYn0YOGiJcbv6HIh-8" value="" style="endArrow=classic;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="OSazqYn0YOGiJcbv6HIh-2" target="OSazqYn0YOGiJcbv6HIh-7">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="155" y="130" as="sourcePoint" />
+            <mxPoint x="155" y="240" as="targetPoint" />
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="OSazqYn0YOGiJcbv6HIh-9" value="Label" style="edgeLabel;resizable=0;html=1;align=center;verticalAlign=middle;" connectable="0" vertex="1" parent="OSazqYn0YOGiJcbv6HIh-8">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
       </root>
