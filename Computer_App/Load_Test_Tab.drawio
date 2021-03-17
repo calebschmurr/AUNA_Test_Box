@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2021-03-17T13:52:12.031Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.90 Safari/537.36" etag="VJaCVmT0-5NeHjKQTg2i" version="14.4.8" type="github" pages="4">
+<mxfile host="app.diagrams.net" modified="2021-03-17T13:52:48.350Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.90 Safari/537.36" etag="wNyCT-x5HgobIixQKd6p" version="14.4.8" type="github" pages="4">
   <diagram id="6a731a19-8d31-9384-78a2-239565b7b9f0" name="Load_Test_Button">
     <mxGraphModel dx="1278" dy="580" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" background="#ffffff" math="0" shadow="0">
       <root>
@@ -230,8 +230,8 @@
         <mxCell id="VLrwDN9U09hXujgsO5i5-3" value="For X in TestPinsList" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;strokeWidth=2;" vertex="1" parent="1">
           <mxGeometry x="990" y="820" width="120" height="80" as="geometry" />
         </mxCell>
-        <mxCell id="VLrwDN9U09hXujgsO5i5-5" value="" style="whiteSpace=wrap;html=1;strokeWidth=2;" vertex="1" parent="1">
-          <mxGeometry x="990" y="950" width="120" height="60" as="geometry" />
+        <mxCell id="VLrwDN9U09hXujgsO5i5-5" value="PinControl.UpdatePin(X)" style="whiteSpace=wrap;html=1;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="980" y="950" width="140" height="60" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
