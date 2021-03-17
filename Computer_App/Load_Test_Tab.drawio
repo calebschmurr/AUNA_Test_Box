@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2021-03-17T14:07:50.162Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.90 Safari/537.36" etag="uYiXb_rRJgn7hojowO1l" version="14.4.8" type="github" pages="4">
+<mxfile host="app.diagrams.net" modified="2021-03-17T14:17:13.082Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.90 Safari/537.36" etag="Fv08FX4jekkWKmYAz3fg" version="14.4.8" type="github" pages="4">
   <diagram id="6a731a19-8d31-9384-78a2-239565b7b9f0" name="Load_Test_Button">
     <mxGraphModel dx="1504" dy="615" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" background="#ffffff" math="0" shadow="0">
       <root>
@@ -266,6 +266,24 @@
         </mxCell>
         <mxCell id="VLrwDN9U09hXujgsO5i5-17" value="End Loop" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.terminator;whiteSpace=wrap;" vertex="1" parent="1">
           <mxGeometry x="1010" y="1190" width="100" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="VLrwDN9U09hXujgsO5i5-21" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="VLrwDN9U09hXujgsO5i5-19" target="VLrwDN9U09hXujgsO5i5-20">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="VLrwDN9U09hXujgsO5i5-19" value="LoadfNextTestStage()" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.start_2;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="1350" y="410" width="140" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="VLrwDN9U09hXujgsO5i5-23" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="VLrwDN9U09hXujgsO5i5-20" target="VLrwDN9U09hXujgsO5i5-22">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="VLrwDN9U09hXujgsO5i5-20" value="self.currentStage = self.test.getNextTest()" style="whiteSpace=wrap;html=1;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="1360" y="570" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="VLrwDN9U09hXujgsO5i5-22" value="" style="whiteSpace=wrap;html=1;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="1360" y="660" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="VLrwDN9U09hXujgsO5i5-24" value="For loading in the next test for the Tester." style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="1">
+          <mxGeometry x="1305" y="390" width="230" height="20" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
