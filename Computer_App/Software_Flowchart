@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2021-03-19T14:42:02.712Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.90 Safari/537.36" etag="pDWm3OYGPAUZbcYyXvQD" version="14.4.9" type="github" pages="5">
+<mxfile host="app.diagrams.net" modified="2021-03-19T14:46:22.657Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.90 Safari/537.36" etag="kn3Ur25JuZX5Yq37ZTt0" version="14.4.9" type="github" pages="5">
   <diagram id="c79iFraRc1DbxDd-72CT" name="Startup">
     <mxGraphModel dx="1278" dy="580" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
@@ -539,11 +539,14 @@
         <mxCell id="zyAhgqpcMAbRngAJx9lP-1" value="Modify Test Pushed" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="690" y="70" width="100" height="40" as="geometry" />
         </mxCell>
+        <mxCell id="LPBpEWImnqGwP8VPUr_H-12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="zyAhgqpcMAbRngAJx9lP-2" target="LPBpEWImnqGwP8VPUr_H-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
         <mxCell id="zyAhgqpcMAbRngAJx9lP-2" value="Delete Test Pushed" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="1190" y="70" width="100" height="40" as="geometry" />
+          <mxGeometry x="1285" y="70" width="100" height="40" as="geometry" />
         </mxCell>
         <mxCell id="zyAhgqpcMAbRngAJx9lP-4" value="New Test Pushed" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="1520" y="70" width="100" height="40" as="geometry" />
+          <mxGeometry x="1770" y="70" width="100" height="40" as="geometry" />
         </mxCell>
         <mxCell id="zyAhgqpcMAbRngAJx9lP-9" value="Yes" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="zyAhgqpcMAbRngAJx9lP-5" target="zyAhgqpcMAbRngAJx9lP-8" edge="1">
           <mxGeometry relative="1" as="geometry" />
@@ -619,6 +622,63 @@
         </mxCell>
         <mxCell id="ZAbw-5D2otTnbcILlSKV-5" value="End Loop" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.terminator;whiteSpace=wrap;" vertex="1" parent="1">
           <mxGeometry x="690" y="890" width="100" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="LPBpEWImnqGwP8VPUr_H-1" value="Yes" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="LPBpEWImnqGwP8VPUr_H-3" target="LPBpEWImnqGwP8VPUr_H-5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="LPBpEWImnqGwP8VPUr_H-2" value="No" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="LPBpEWImnqGwP8VPUr_H-3" target="LPBpEWImnqGwP8VPUr_H-10">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="LPBpEWImnqGwP8VPUr_H-3" value="If&amp;nbsp; CurrentMode!=0" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1280" y="145" width="110" height="107.5" as="geometry" />
+        </mxCell>
+        <mxCell id="LPBpEWImnqGwP8VPUr_H-4" value="No" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="LPBpEWImnqGwP8VPUr_H-5" target="LPBpEWImnqGwP8VPUr_H-7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="LPBpEWImnqGwP8VPUr_H-14" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="LPBpEWImnqGwP8VPUr_H-5" target="LPBpEWImnqGwP8VPUr_H-13">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="LPBpEWImnqGwP8VPUr_H-5" value="If Index of SelectedTest !=-1" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1285" y="293.25" width="100" height="95" as="geometry" />
+        </mxCell>
+        <mxCell id="LPBpEWImnqGwP8VPUr_H-6" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="LPBpEWImnqGwP8VPUr_H-7" target="LPBpEWImnqGwP8VPUr_H-8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="LPBpEWImnqGwP8VPUr_H-7" value="Messagebox:&amp;nbsp; No Test Selected" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1440" y="300.75" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="LPBpEWImnqGwP8VPUr_H-8" value="End Loop" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.terminator;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="1620" y="310.75" width="100" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="LPBpEWImnqGwP8VPUr_H-9" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="LPBpEWImnqGwP8VPUr_H-10" target="LPBpEWImnqGwP8VPUr_H-11">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="LPBpEWImnqGwP8VPUr_H-10" value="Messagebox:&amp;nbsp; Error - not able to load test, current test in progress, or creating test." style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1440" y="152.5" width="150" height="95" as="geometry" />
+        </mxCell>
+        <mxCell id="LPBpEWImnqGwP8VPUr_H-11" value="End Loop" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.terminator;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="1620" y="170" width="100" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="LPBpEWImnqGwP8VPUr_H-16" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="LPBpEWImnqGwP8VPUr_H-13" target="LPBpEWImnqGwP8VPUr_H-15">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="LPBpEWImnqGwP8VPUr_H-13" value="Set Path to be Directory Path" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1275" y="440" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="LPBpEWImnqGwP8VPUr_H-18" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="LPBpEWImnqGwP8VPUr_H-15" target="LPBpEWImnqGwP8VPUr_H-17">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="LPBpEWImnqGwP8VPUr_H-15" value="Unlink and Delete Directory" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1275" y="530" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="LPBpEWImnqGwP8VPUr_H-20" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="LPBpEWImnqGwP8VPUr_H-17" target="LPBpEWImnqGwP8VPUr_H-19">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="LPBpEWImnqGwP8VPUr_H-17" value="Reload Tests" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1275" y="620" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="LPBpEWImnqGwP8VPUr_H-19" value="End Loop" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.terminator;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="1285" y="720" width="100" height="60" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
