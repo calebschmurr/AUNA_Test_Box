@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2021-03-17T14:37:42.957Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.90 Safari/537.36" etag="pWHMGio2PSfqraEzWHqQ" version="14.4.8" type="github" pages="4">
+<mxfile host="app.diagrams.net" modified="2021-03-19T17:34:08.914Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.90 Safari/537.36" etag="yKVK-7fHmFuZTmzVYS15" version="14.4.9" type="github" pages="4">
   <diagram id="6a731a19-8d31-9384-78a2-239565b7b9f0" name="Load_Test_Button">
-    <mxGraphModel dx="1504" dy="615" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" background="#ffffff" math="0" shadow="0">
+    <mxGraphModel dx="1278" dy="580" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" background="#ffffff" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -215,7 +215,7 @@
         <mxCell id="ir7IwgKp179g5_XmWtsQ-3" value="if ignoreSerial.isChecked()" style="rhombus;whiteSpace=wrap;html=1;strokeWidth=2;" parent="1" vertex="1">
           <mxGeometry x="730" y="790" width="200" height="130" as="geometry" />
         </mxCell>
-        <mxCell id="VLrwDN9U09hXujgsO5i5-14" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="ir7IwgKp179g5_XmWtsQ-5" target="VLrwDN9U09hXujgsO5i5-7">
+        <mxCell id="VLrwDN9U09hXujgsO5i5-14" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="ir7IwgKp179g5_XmWtsQ-5" target="VLrwDN9U09hXujgsO5i5-7" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="ir7IwgKp179g5_XmWtsQ-5" value="PinControl.ResetBox" style="whiteSpace=wrap;html=1;strokeWidth=2;" parent="1" vertex="1">
@@ -224,16 +224,16 @@
         <mxCell id="ir7IwgKp179g5_XmWtsQ-9" value="End Loop" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="770" y="960" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="VLrwDN9U09hXujgsO5i5-16" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="VLrwDN9U09hXujgsO5i5-7" target="VLrwDN9U09hXujgsO5i5-15">
+        <mxCell id="VLrwDN9U09hXujgsO5i5-16" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="VLrwDN9U09hXujgsO5i5-7" target="VLrwDN9U09hXujgsO5i5-15" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="VLrwDN9U09hXujgsO5i5-7" value="PinControl.ConfigPinIO()" style="whiteSpace=wrap;html=1;strokeWidth=2;" vertex="1" parent="1">
+        <mxCell id="VLrwDN9U09hXujgsO5i5-7" value="PinControl.ConfigPinIO()" style="whiteSpace=wrap;html=1;strokeWidth=2;" parent="1" vertex="1">
           <mxGeometry x="985" y="950" width="150" height="70" as="geometry" />
         </mxCell>
-        <mxCell id="VLrwDN9U09hXujgsO5i5-9" value="If X exists" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="VLrwDN9U09hXujgsO5i5-10" target="VLrwDN9U09hXujgsO5i5-11">
+        <mxCell id="VLrwDN9U09hXujgsO5i5-9" value="If X exists" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="VLrwDN9U09hXujgsO5i5-10" target="VLrwDN9U09hXujgsO5i5-11" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="VLrwDN9U09hXujgsO5i5-13" value="X Does Not Exist" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="VLrwDN9U09hXujgsO5i5-10" target="ir7IwgKp179g5_XmWtsQ-3">
+        <mxCell id="VLrwDN9U09hXujgsO5i5-13" value="X Does Not Exist" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="VLrwDN9U09hXujgsO5i5-10" target="ir7IwgKp179g5_XmWtsQ-3" edge="1">
           <mxGeometry x="-0.6721" relative="1" as="geometry">
             <Array as="points">
               <mxPoint x="1180" y="590" />
@@ -243,10 +243,10 @@
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="VLrwDN9U09hXujgsO5i5-10" value="For X in TestPinsList" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;strokeWidth=2;" vertex="1" parent="1">
+        <mxCell id="VLrwDN9U09hXujgsO5i5-10" value="For X in TestPinsList" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;strokeWidth=2;" parent="1" vertex="1">
           <mxGeometry x="1000" y="550" width="120" height="80" as="geometry" />
         </mxCell>
-        <mxCell id="VLrwDN9U09hXujgsO5i5-12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="VLrwDN9U09hXujgsO5i5-11" target="VLrwDN9U09hXujgsO5i5-10">
+        <mxCell id="VLrwDN9U09hXujgsO5i5-12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="VLrwDN9U09hXujgsO5i5-11" target="VLrwDN9U09hXujgsO5i5-10" edge="1">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
               <mxPoint x="1060" y="750" />
@@ -255,46 +255,46 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="VLrwDN9U09hXujgsO5i5-11" value="PinControl.UpdatePin(X)" style="whiteSpace=wrap;html=1;strokeWidth=2;" vertex="1" parent="1">
+        <mxCell id="VLrwDN9U09hXujgsO5i5-11" value="PinControl.UpdatePin(X)" style="whiteSpace=wrap;html=1;strokeWidth=2;" parent="1" vertex="1">
           <mxGeometry x="990" y="670" width="140" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="VLrwDN9U09hXujgsO5i5-18" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="VLrwDN9U09hXujgsO5i5-15" target="VLrwDN9U09hXujgsO5i5-17">
+        <mxCell id="VLrwDN9U09hXujgsO5i5-18" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="VLrwDN9U09hXujgsO5i5-15" target="VLrwDN9U09hXujgsO5i5-17" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="VLrwDN9U09hXujgsO5i5-15" value="PinControl.ConfigOutputTime()" style="whiteSpace=wrap;html=1;strokeWidth=2;" vertex="1" parent="1">
+        <mxCell id="VLrwDN9U09hXujgsO5i5-15" value="PinControl.ConfigOutputTime()" style="whiteSpace=wrap;html=1;strokeWidth=2;" parent="1" vertex="1">
           <mxGeometry x="970" y="1060" width="180" height="90" as="geometry" />
         </mxCell>
-        <mxCell id="VLrwDN9U09hXujgsO5i5-17" value="End Loop" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.terminator;whiteSpace=wrap;" vertex="1" parent="1">
+        <mxCell id="VLrwDN9U09hXujgsO5i5-17" value="End Loop" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.terminator;whiteSpace=wrap;" parent="1" vertex="1">
           <mxGeometry x="1010" y="1190" width="100" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="VLrwDN9U09hXujgsO5i5-36" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="VLrwDN9U09hXujgsO5i5-19" target="VLrwDN9U09hXujgsO5i5-35">
+        <mxCell id="VLrwDN9U09hXujgsO5i5-36" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="VLrwDN9U09hXujgsO5i5-19" target="VLrwDN9U09hXujgsO5i5-35" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="VLrwDN9U09hXujgsO5i5-19" value="TestingLoadNextTestStage()" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.start_2;whiteSpace=wrap;" vertex="1" parent="1">
-          <mxGeometry x="1357.5" y="450" width="175" height="140" as="geometry" />
+        <mxCell id="VLrwDN9U09hXujgsO5i5-19" value="TestingLoadNextTestStage()" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.start_2;whiteSpace=wrap;" parent="1" vertex="1">
+          <mxGeometry x="1357.5" y="450" width="175" height="110" as="geometry" />
         </mxCell>
-        <mxCell id="VLrwDN9U09hXujgsO5i5-20" value="currentStage = test.getNextTest()" style="whiteSpace=wrap;html=1;strokeWidth=2;" vertex="1" parent="1">
+        <mxCell id="VLrwDN9U09hXujgsO5i5-20" value="currentStage = test.getNextTest()" style="whiteSpace=wrap;html=1;strokeWidth=2;" parent="1" vertex="1">
           <mxGeometry x="1387.5" y="980" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="VLrwDN9U09hXujgsO5i5-24" value="For loading in the next test for the Tester." style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="1">
+        <mxCell id="VLrwDN9U09hXujgsO5i5-24" value="For loading in the next test for the Tester." style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" parent="1" vertex="1">
           <mxGeometry x="1330" y="430" width="230" height="20" as="geometry" />
         </mxCell>
-        <mxCell id="VLrwDN9U09hXujgsO5i5-29" value="Yes" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="VLrwDN9U09hXujgsO5i5-26" target="VLrwDN9U09hXujgsO5i5-20">
+        <mxCell id="VLrwDN9U09hXujgsO5i5-29" value="Yes" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="VLrwDN9U09hXujgsO5i5-26" target="VLrwDN9U09hXujgsO5i5-20" edge="1">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="1447.5" y="975" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="VLrwDN9U09hXujgsO5i5-31" value="No" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="VLrwDN9U09hXujgsO5i5-26" target="VLrwDN9U09hXujgsO5i5-30">
+        <mxCell id="VLrwDN9U09hXujgsO5i5-31" value="No" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="VLrwDN9U09hXujgsO5i5-26" target="VLrwDN9U09hXujgsO5i5-30" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="VLrwDN9U09hXujgsO5i5-26" value="if test.isNextTestStage()" style="rhombus;whiteSpace=wrap;html=1;strokeWidth=2;" vertex="1" parent="1">
+        <mxCell id="VLrwDN9U09hXujgsO5i5-26" value="if test.isNextTestStage()" style="rhombus;whiteSpace=wrap;html=1;strokeWidth=2;" parent="1" vertex="1">
           <mxGeometry x="1372.5" y="840" width="145" height="90" as="geometry" />
         </mxCell>
-        <mxCell id="VLrwDN9U09hXujgsO5i5-30" value="FinishTest" style="whiteSpace=wrap;html=1;strokeWidth=2;" vertex="1" parent="1">
+        <mxCell id="VLrwDN9U09hXujgsO5i5-30" value="FinishTest" style="whiteSpace=wrap;html=1;strokeWidth=2;" parent="1" vertex="1">
           <mxGeometry x="1562.5" y="855" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="VLrwDN9U09hXujgsO5i5-35" value="" style="whiteSpace=wrap;html=1;strokeWidth=2;" vertex="1" parent="1">
-          <mxGeometry x="1385" y="640" width="120" height="60" as="geometry" />
+        <mxCell id="VLrwDN9U09hXujgsO5i5-35" value="" style="whiteSpace=wrap;html=1;strokeWidth=2;" parent="1" vertex="1">
+          <mxGeometry x="1385" y="595" width="120" height="60" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
