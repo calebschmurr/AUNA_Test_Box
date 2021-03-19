@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2021-03-19T17:34:08.914Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.90 Safari/537.36" etag="yKVK-7fHmFuZTmzVYS15" version="14.4.9" type="github" pages="4">
+<mxfile host="app.diagrams.net" modified="2021-03-19T13:47:39.808Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.90 Safari/537.36" etag="GEeP8D9gISu7tJWKhEw4" version="14.4.9" type="github" pages="4">
   <diagram id="6a731a19-8d31-9384-78a2-239565b7b9f0" name="Load_Test_Button">
-    <mxGraphModel dx="1278" dy="580" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" background="#ffffff" math="0" shadow="0">
+    <mxGraphModel dx="1826" dy="829" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" background="#ffffff" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -40,7 +40,7 @@
         <mxCell id="UficYF0TFEuOsEOERnPV-29" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="tTzITee3SI3V6Dp85nhz-68" target="UficYF0TFEuOsEOERnPV-28" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="tTzITee3SI3V6Dp85nhz-68" value="loadNextTestStage()" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
+        <mxCell id="tTzITee3SI3V6Dp85nhz-68" value="TestLoadNextTestStage()" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="35" y="830" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="tTzITee3SI3V6Dp85nhz-70" value="End Loop" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.terminator;whiteSpace=wrap;" parent="1" vertex="1">
@@ -267,17 +267,17 @@
         <mxCell id="VLrwDN9U09hXujgsO5i5-17" value="End Loop" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.terminator;whiteSpace=wrap;" parent="1" vertex="1">
           <mxGeometry x="1010" y="1190" width="100" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="VLrwDN9U09hXujgsO5i5-36" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="VLrwDN9U09hXujgsO5i5-19" target="VLrwDN9U09hXujgsO5i5-35" edge="1">
+        <mxCell id="4qJs14EnjsBW2q6rUhw--2" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="VLrwDN9U09hXujgsO5i5-19" target="4qJs14EnjsBW2q6rUhw--1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="VLrwDN9U09hXujgsO5i5-19" value="TestingLoadNextTestStage()" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.start_2;whiteSpace=wrap;" parent="1" vertex="1">
-          <mxGeometry x="1357.5" y="450" width="175" height="110" as="geometry" />
+          <mxGeometry x="1977.5" y="85" width="175" height="110" as="geometry" />
         </mxCell>
         <mxCell id="VLrwDN9U09hXujgsO5i5-20" value="currentStage = test.getNextTest()" style="whiteSpace=wrap;html=1;strokeWidth=2;" parent="1" vertex="1">
           <mxGeometry x="1387.5" y="980" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="VLrwDN9U09hXujgsO5i5-24" value="For loading in the next test for the Tester." style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" parent="1" vertex="1">
-          <mxGeometry x="1330" y="430" width="230" height="20" as="geometry" />
+          <mxGeometry x="1950" y="65" width="230" height="20" as="geometry" />
         </mxCell>
         <mxCell id="VLrwDN9U09hXujgsO5i5-29" value="Yes" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="VLrwDN9U09hXujgsO5i5-26" target="VLrwDN9U09hXujgsO5i5-20" edge="1">
           <mxGeometry relative="1" as="geometry">
@@ -293,14 +293,35 @@
         <mxCell id="VLrwDN9U09hXujgsO5i5-30" value="FinishTest" style="whiteSpace=wrap;html=1;strokeWidth=2;" parent="1" vertex="1">
           <mxGeometry x="1562.5" y="855" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="VLrwDN9U09hXujgsO5i5-35" value="" style="whiteSpace=wrap;html=1;strokeWidth=2;" parent="1" vertex="1">
-          <mxGeometry x="1385" y="595" width="120" height="60" as="geometry" />
+        <mxCell id="xgTwKoVUgox3UEpMl9ew-4" value="No" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="xgTwKoVUgox3UEpMl9ew-1" target="xgTwKoVUgox3UEpMl9ew-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="xgTwKoVUgox3UEpMl9ew-1" value="If IgnoreSerial.IsChecked" style="rhombus;whiteSpace=wrap;html=1;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="2000" y="644.13" width="125" height="125" as="geometry" />
+        </mxCell>
+        <mxCell id="xgTwKoVUgox3UEpMl9ew-3" value="" style="whiteSpace=wrap;html=1;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="2005" y="795" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="4qJs14EnjsBW2q6rUhw--5" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="4qJs14EnjsBW2q6rUhw--1" target="4qJs14EnjsBW2q6rUhw--4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="4qJs14EnjsBW2q6rUhw--1" value="For x Pins Set Pin Value in PinControl" style="whiteSpace=wrap;html=1;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="2005" y="230" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="4qJs14EnjsBW2q6rUhw--7" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="4qJs14EnjsBW2q6rUhw--4" target="4qJs14EnjsBW2q6rUhw--6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="4qJs14EnjsBW2q6rUhw--4" value="UpdateTestImageAndLabels" style="whiteSpace=wrap;html=1;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="1997.5" y="360" width="135" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="4qJs14EnjsBW2q6rUhw--6" value="" style="whiteSpace=wrap;html=1;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="2005" y="480" width="120" height="60" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
   <diagram id="oTMPqpchAL877kF9N_FF" name="Test_Tab">
-    <mxGraphModel dx="1422" dy="762" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" math="0" shadow="0">
+    <mxGraphModel dx="1278" dy="580" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" math="0" shadow="0">
       <root>
         <mxCell id="KdpddDH9nwrAEuhVS6P6-0" />
         <mxCell id="KdpddDH9nwrAEuhVS6P6-1" parent="KdpddDH9nwrAEuhVS6P6-0" />
