@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2021-03-19T14:08:54.351Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.90 Safari/537.36" etag="vEpI0WU98Ka0wV7VpUTe" version="14.4.9" type="github" pages="4">
+<mxfile host="app.diagrams.net" modified="2021-03-19T14:11:08.466Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.90 Safari/537.36" etag="ToHEExUuc8DjcvbeEoSd" version="14.4.9" type="github" pages="4">
   <diagram id="6a731a19-8d31-9384-78a2-239565b7b9f0" name="Load_Test_Button">
     <mxGraphModel dx="1826" dy="829" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" background="#ffffff" math="0" shadow="0">
       <root>
@@ -329,10 +329,51 @@
     </mxGraphModel>
   </diagram>
   <diagram id="oTMPqpchAL877kF9N_FF" name="Test_Tab">
-    <mxGraphModel dx="1278" dy="580" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" math="0" shadow="0">
+    <mxGraphModel dx="-322" dy="580" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" math="0" shadow="0">
       <root>
         <mxCell id="KdpddDH9nwrAEuhVS6P6-0" />
         <mxCell id="KdpddDH9nwrAEuhVS6P6-1" parent="KdpddDH9nwrAEuhVS6P6-0" />
+        <mxCell id="YlXNsWhmcFPXiTCZ0Dzl-0" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="KdpddDH9nwrAEuhVS6P6-1" source="YlXNsWhmcFPXiTCZ0Dzl-1" target="YlXNsWhmcFPXiTCZ0Dzl-9">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="YlXNsWhmcFPXiTCZ0Dzl-1" value="TestingLoadNextTestStage()" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.start_2;whiteSpace=wrap;" vertex="1" parent="KdpddDH9nwrAEuhVS6P6-1">
+          <mxGeometry x="1977.5" y="85" width="175" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="YlXNsWhmcFPXiTCZ0Dzl-2" value="For loading in the next test for the Tester." style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="KdpddDH9nwrAEuhVS6P6-1">
+          <mxGeometry x="1950" y="65" width="230" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="YlXNsWhmcFPXiTCZ0Dzl-3" value="No" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="KdpddDH9nwrAEuhVS6P6-1" source="YlXNsWhmcFPXiTCZ0Dzl-5" target="YlXNsWhmcFPXiTCZ0Dzl-7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="YlXNsWhmcFPXiTCZ0Dzl-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="KdpddDH9nwrAEuhVS6P6-1" source="YlXNsWhmcFPXiTCZ0Dzl-5" target="YlXNsWhmcFPXiTCZ0Dzl-12">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="YlXNsWhmcFPXiTCZ0Dzl-5" value="If IgnoreSerial.IsChecked" style="rhombus;whiteSpace=wrap;html=1;strokeWidth=2;" vertex="1" parent="KdpddDH9nwrAEuhVS6P6-1">
+          <mxGeometry x="2003.13" y="515" width="125" height="125" as="geometry" />
+        </mxCell>
+        <mxCell id="YlXNsWhmcFPXiTCZ0Dzl-6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="KdpddDH9nwrAEuhVS6P6-1" source="YlXNsWhmcFPXiTCZ0Dzl-7" target="YlXNsWhmcFPXiTCZ0Dzl-12">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="YlXNsWhmcFPXiTCZ0Dzl-7" value="PinControl.ChangePinValues" style="whiteSpace=wrap;html=1;strokeWidth=2;" vertex="1" parent="KdpddDH9nwrAEuhVS6P6-1">
+          <mxGeometry x="2152.5" y="650" width="157.5" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="YlXNsWhmcFPXiTCZ0Dzl-8" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="KdpddDH9nwrAEuhVS6P6-1" source="YlXNsWhmcFPXiTCZ0Dzl-9" target="YlXNsWhmcFPXiTCZ0Dzl-11">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="YlXNsWhmcFPXiTCZ0Dzl-9" value="For x Pins Set Pin Value in PinControl" style="whiteSpace=wrap;html=1;strokeWidth=2;" vertex="1" parent="KdpddDH9nwrAEuhVS6P6-1">
+          <mxGeometry x="2005" y="230" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="YlXNsWhmcFPXiTCZ0Dzl-10" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="KdpddDH9nwrAEuhVS6P6-1" source="YlXNsWhmcFPXiTCZ0Dzl-11" target="YlXNsWhmcFPXiTCZ0Dzl-5">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="2065" y="480" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="YlXNsWhmcFPXiTCZ0Dzl-11" value="UpdateTestImageAndLabels" style="whiteSpace=wrap;html=1;strokeWidth=2;" vertex="1" parent="KdpddDH9nwrAEuhVS6P6-1">
+          <mxGeometry x="1981.25" y="360" width="168.75" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="YlXNsWhmcFPXiTCZ0Dzl-12" value="Return True" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.terminator;whiteSpace=wrap;" vertex="1" parent="KdpddDH9nwrAEuhVS6P6-1">
+          <mxGeometry x="2015" y="800" width="100" height="60" as="geometry" />
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
