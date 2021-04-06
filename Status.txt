@@ -3,6 +3,6 @@ Project Status and Goals:
 Goal for 4/6/21:
  - Update the Serial Communication System - make it faster, use a different baud rate,
  read up on Arduino site about Serial comms.
-
+ (DONE) - Serial is made faster.
 
 4/6/21 Timecard: 9:00 AM - 10:50 AM.

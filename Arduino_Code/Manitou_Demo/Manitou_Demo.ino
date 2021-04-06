@@ -135,24 +135,19 @@ void serialEvent(){ //This is automatically called at the end of the loop,
  * 
  */
 int configureSetup(){
-    Serial.println("ConfigureSetup Called.");
-    Serial.println(inputArray[0]);
-    Serial.println(inputArray);
-      if(inputArray[0]){
-        Serial.print("input var:");
-        Serial.println(inputArray);
 
-      if(inputArray[0]=='0'){
+
+    if (inputArray[0] == '0'){
       //Reset - clear active pins, clear pin list, etc.
-       if(Debug){
+      if (Debug){
           Serial.println("Reset called.");
-         }
+      }
       
-    pin_list.clear_pin_list();
+      pin_list.clear_pin_list();
       delay(10);
       
-    } else if(inputArray[0]=='1'){
-      if(Debug){
+    } else if (inputArray[0] == '1'){
+      if (Debug) {
         Serial.println("Setup Pins command called.");
         Serial.println(inputArray);
       }
@@ -166,7 +161,7 @@ int configureSetup(){
       i = 0;
       
       //While the input is not terminating parse input:
-      while(inputArray[loc]!='!'){
+      while (inputArray[loc] != '!'){
         //Start off getting the pin number:
         pin_num[0] = inputArray[loc];
         pin_num[1] = inputArray[loc+1];
@@ -174,69 +169,71 @@ int configureSetup(){
         loc+=4;
         u_pin_num = atoi(pin_num);
         
-        if(Debug){
+        if (Debug) {
           Serial.print("Pin_num: ");
           Serial.println(pin_num);
         }
         //Get the length of the pin type parameters
         pinTypeLen = 0;
-        while(inputArray[loc]!=';'){
+        while (inputArray[loc] != ';'){
           loc++;
           pinTypeLen++;
         }
-        if(Debug){
+
+        if (Debug) {
           Serial.print("PinTypeLen: ");
           Serial.println(pinTypeLen);
         }
         
         //Store the pin type.
-        for(i = 1; i<pinTypeLen+1; i++){
+        for (i = 1; i < pinTypeLen + 1; i++) {
           pin_type[pinTypeLen-i] = inputArray[loc-i];
         }
-        if(Debug){
+        if (Debug) {
           Serial.print("Pin_Type: ");
           Serial.println(pin_type);
         }
         //PinMode assignment based on pin_type
-        if(pin_type[0]=='I'){
+        if (pin_type[0] == 'I') {
             //Check to see if digital or analog:
 
-          if(u_pin_num>=54 && u_pin_num<=69){
-            pinMode(u_pin_num,INPUT_PULLUP);
-            pin_list.add_pin(u_pin_num,PinAnalogInput);
-            if(Debug){
+          if (u_pin_num >= 54 && u_pin_num <= 69){
+            pinMode(u_pin_num, INPUT_PULLUP);
+            pin_list.add_pin(u_pin_num, PinAnalogInput);
+            if (Debug) {
               Serial.print("Pin ");
               Serial.print(u_pin_num);
               Serial.print(" is set to Analog Input.\n");
             }
-          }else{
-            pinMode(u_pin_num,INPUT_PULLUP);
-            pin_list.add_pin(u_pin_num,PinDigitalInput);
-            if(Debug){
+          } else {
+            pinMode(u_pin_num, INPUT_PULLUP);
+            pin_list.add_pin(u_pin_num, PinDigitalInput);
+            if (Debug) {
               Serial.print("Pin ");
               Serial.print(u_pin_num);
               Serial.print(" is set to Digital Input.\n");
             }
           }
 
-        }else if (pin_type[0] == 'O'){
-              pinMode(u_pin_num,OUTPUT);
+        } else if (pin_type[0] == 'O'){
+              pinMode(u_pin_num, OUTPUT);
              // add_pin(&activePinsListSize, activePinsList, atoi(pin_num),0);
-              pin_list.add_pin(u_pin_num,PinOutput);
-            if(Debug){
+              pin_list.add_pin(u_pin_num, PinOutput);
+            if (Debug) {
               Serial.print("Pin ");
               Serial.print(u_pin_num);
               Serial.print(" is set to Output.\n");
-              }
+            }
+
         }else {
           //ERROR CASE
           Serial.println("Error - improper values given.");
           break;
         }
-        //Reset information:
+        //Reset Iterators.
         memset(pin_num, 0, sizeof pin_num);
         memset(pin_type, 0, sizeof pin_type);
-       loc++;
+        loc++;
       }
 
     /*
@@ -253,14 +250,14 @@ int configureSetup(){
     Serial.println(pin_list.getPinMode(i));
   }
   Serial.println("Pins Listed.");
-  
 
 //Finish listing pins.
-      
-  }else if(inputArray[0]=='2'){
+
+
+  } else if (inputArray[0] == '2'){
    //Setup output Command:
     //2:1.4500!
-    if(Debug){
+    if (Debug) {
         Serial.println("Setup Output Called");
         Serial.println(inputArray);
     }
@@ -274,34 +271,34 @@ int configureSetup(){
     //Serial.println(atoi(inputChar));
      output_mode = atoi(inputChar);
      loc=4; //loc=4
-     while(inputArray[loc]!='!'){
+     while (inputArray[loc] != '!') {
           loc++;
           sizeofTime++;
-          if(loc>1200){
+          if (loc > 1200) {
             Serial.println("Error - command too long.");
             break;
           }
      }
-     for(i = 1; i<sizeofTime+1; i++){
-      if(Debug){
+     for (i = 1; i < sizeofTime+1; i++){
+      if (Debug) {
         Serial.println(inputArray[loc-i]);
       }
-        inputChar[0] = inputArray[loc-i];
-        outputTime += (atoi(inputChar) * pow(10,i-1))+1; //For some reason, have to include +1 on the operation, otherwise time var does not update properly.
-        if(Debug){
+      inputChar[0] = inputArray[loc-i];
+      outputTime += (atoi(inputChar) * pow(10,i-1))+1; //For some reason, have to include +1 on the operation, otherwise time var does not update properly.
+      if (Debug) {
           Serial.print("pow: ");
           Serial.println(pow(10,i-1));
           Serial.println(outputTime);
           Serial.println("restart_loop");
         }
      }
-     if(output_mode){
+     if (output_mode) {
       PinValueSender.start(outputTime);
-     }else{
+     } else {
       PinValueSender.stop();
      }
      
-     if(1){
+     if (Debug) {
         Serial.print("Output Mode: ");
         Serial.print(output_mode);
         Serial.print(", and output time: ");
@@ -318,7 +315,7 @@ int configureSetup(){
  * 
  */
 
-   } else if(inputArray[0]=='3'){
+   } else if (inputArray[0] == '3'){
       //Control output variables - determine which ones should be output.
       Serial.println("Case 3");
       Serial.println("Configure output value of a pin.");
@@ -332,7 +329,7 @@ int configureSetup(){
       i = 0;
       
       //While the input is not terminating parse input:
-      while(inputArray[loc]!='!'){
+      while (inputArray[loc] != '!'){
         //Start off getting the pin number:
         pin_num[0] = inputArray[loc];
         pin_num[1] = inputArray[loc+1];  
@@ -345,16 +342,16 @@ int configureSetup(){
         //Determine if the pin selected is a valid output pin.
         
         //cycle through active pins.           
-          if(pin_list.getPinIndex(new_pin_num)!=-1){
+          if (pin_list.getPinIndex(new_pin_num) != -1){
              //Pin is a valid output pin.
-             if(new_pin_num>1&&new_pin_num<14){
+             if(new_pin_num > 1 && new_pin_num < 14){
                //New pin is PWM
                analogWrite(new_pin_num, new_pin_val);
                
-             } else if (new_pin_num>21&&new_pin_num<70){
+             } else if (new_pin_num > 21 && new_pin_num < 70){
               //New pin is standard GPIO
               Serial.println(new_pin_val);
-                if(new_pin_val>0){
+                if(new_pin_val > 0){
                   digitalWrite(new_pin_num, HIGH);
                   Serial.println("Pin ");
                   Serial.println(new_pin_num);
@@ -380,7 +377,7 @@ int configureSetup(){
     } else {
     Serial.println("Command not recognized.");
   }
- }
+ 
     //Clear the values of input.
   inputArray = "";
   stringComplete = false;
