@@ -56,21 +56,21 @@ class PinValSender : public VariableTimedAction {
     //Also TODO: For parsing input values of pins, change the size of the input to be 3 chars.
     //Initialize the send-back code:
     Serial.print("#1;");
-    for(i = 0; i<pin_list.getNumberActivePins(); i++){
+    for (i = 0; i < pin_list.getNumberActivePins(); i++) {
       //Check to see what type of pin it is: output or input.
-      if(pin_list.getIfInputPin(i)){
+      if (pin_list.getIfInputPin(i)) {
         //If pin is input, then print the value to Serial.
-       if(pin_list.getPinNumber(i)<10){
+       if (pin_list.getPinNumber(i)<10) {
           Serial.print("0");
           Serial.print(pin_list.getPinNumber(i));
         }else{
           Serial.print(pin_list.getPinNumber(i));
         }
         Serial.print(":");
-        if(pin_list.getPinMode(i)==PinAnalogInput){
+        if (pin_list.getPinMode(i) == PinAnalogInput) {
           Serial.print(analogRead(pin_list.getPinNumber(i)));
           Serial.print(",");
-        }else if (pin_list.getPinMode(i)==PinDigitalInput){
+        } else if (pin_list.getPinMode(i) == PinDigitalInput){
           Serial.print(digitalRead(pin_list.getPinNumber(i)));
           Serial.print(",");
         }
