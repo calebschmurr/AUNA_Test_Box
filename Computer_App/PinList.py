@@ -92,13 +92,13 @@ class PinsList:
     def getPinsStartOutputCmd(self, time):
         output = "2:1."
         output+=str(time)
-        output+="!"
+        output+="!\n"
         return output
 
     #getPinsEndOutputCmd() - 
     #Return value that tells the output to stop sending cmd.
     def getPinsEndOutputCmd(self):
-        return "2:0.0!"
+        return "2:0.0!\n"
 
     #getPinsInitializeCmd() - 
     #Return the pins initialize cmd.
@@ -123,7 +123,7 @@ class PinsList:
             else:
                 output+="O"
             output+=";"
-        output+="!"
+        output+="!\n"
         return output
         
     def getPinsResetCmd(self):
@@ -145,7 +145,7 @@ class PinsList:
                     output+="0"
                 output+=str(int(x.getValue()))
                 output+=","
-        output+="!"
+        output+="!\n"
         return output
 
 #parseInputInfo() - method to 

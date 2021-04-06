@@ -9,8 +9,9 @@
 
 //https://www.arduino.cc/en/Tutorial/BuiltInExamples/SerialEvent
 
-char inputArrayVal[200];
-char * inputArray = inputArrayVal;
+//char inputArrayVal[200];
+//char * inputArray = inputArrayVal;
+String inputArray;
 bool stringComplete = false;
 
 int i = 0;
@@ -86,7 +87,7 @@ public:
 PinValSender PinValueSender;
 
 void setup() {
-
+  inputArray.reserve(200);
   Serial.begin(115200);
 
   while(!Serial){
@@ -134,11 +135,14 @@ void serialEvent(){ //This is automatically called at the end of the loop,
  * 
  */
 int configureSetup(){
+    Serial.println("ConfigureSetup Called.");
+    Serial.println(inputArray[0]);
+    Serial.println(inputArray);
       if(inputArray[0]){
         Serial.print("input var:");
         Serial.println(inputArray);
 
-   if(inputArray[0]=='0'){
+      if(inputArray[0]=='0'){
       //Reset - clear active pins, clear pin list, etc.
        if(Debug){
           Serial.println("Reset called.");
@@ -378,6 +382,6 @@ int configureSetup(){
   }
  }
     //Clear the values of input.
-  memset(inputArray, 0, sizeof inputArray);
+  inputArray = "";
   stringComplete = false;
 }
