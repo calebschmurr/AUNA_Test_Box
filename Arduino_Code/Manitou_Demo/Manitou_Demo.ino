@@ -4,15 +4,18 @@
 #include <math.h>
 
 //Declare input array of size 200;
+//For Serial input:  
+
+
+//https://www.arduino.cc/en/Tutorial/BuiltInExamples/SerialEvent
+
 char inputArrayVal[200];
 char * inputArray = inputArrayVal;
-char swCase;
-char cin;
-int availableBytes;
+bool stringComplete = false;
 
 int i = 0;
 
-int Debug = 1;
+int Debug = 1; //Debug Level.
 unsigned loc;
 int output_mode;
 int outputTime;
@@ -83,10 +86,9 @@ public:
 PinValSender PinValueSender;
 
 void setup() {
-  // put your setup code here, to run once:
-  Serial.begin(9600);
-  delay(500);
-  Serial.println("Open.\n");
+
+  Serial.begin(115200);
+
   while(!Serial){
     
   }
@@ -96,21 +98,28 @@ void setup() {
 
 void loop() {
   // put your main code here, to run repeatedly:
-  i = 0;
-  while(Serial.available()>0){
-    if(Serial.peek() != 10){
 
-      inputArray[i] = Serial.read();
-      inputArray[i+1] = '\0';
-      i++;
-    }else{
-       Serial.read();
-     }
-     delay(10);
-  }
-    configureSetup();
+    if (stringComplete){
+      configureSetup();
+    }
+
     VariableTimedAction::updateActions();
-    delay(10);
+
+      //Automatically Called: serialEvent();
+}
+
+
+void serialEvent(){ //This is automatically called at the end of the loop, 
+  while (Serial.available()){
+    char inChar = (char)Serial.read();
+    //Add it to the input string:
+    inputArray += inChar;
+    //If terminated, set a flag so the mainloop can read in the string:
+    if (inChar == '\n') {
+      stringComplete = true;
+    }
+  }
+
 }
 
 
@@ -257,11 +266,9 @@ int configureSetup(){
 
     //Need output mode, time for output.
     inputChar[0] = inputArray[loc];
-    delay(1);
     //Serial.println(inputChar);
     //Serial.println(atoi(inputChar));
      output_mode = atoi(inputChar);
-     delay(5);
      loc=4; //loc=4
      while(inputArray[loc]!='!'){
           loc++;
@@ -276,9 +283,7 @@ int configureSetup(){
         Serial.println(inputArray[loc-i]);
       }
         inputChar[0] = inputArray[loc-i];
-        delay(2);
         outputTime += (atoi(inputChar) * pow(10,i-1))+1; //For some reason, have to include +1 on the operation, otherwise time var does not update properly.
-        delay(1);
         if(Debug){
           Serial.print("pow: ");
           Serial.println(pow(10,i-1));
@@ -374,5 +379,5 @@ int configureSetup(){
  }
     //Clear the values of input.
   memset(inputArray, 0, sizeof inputArray);
-  delay(10); //add in update delay.
+  stringComplete = false;
 }
