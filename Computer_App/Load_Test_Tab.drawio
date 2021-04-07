@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2021-04-07T13:04:57.488Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.114 Safari/537.36" etag="d1FZ4Tmf1iMbzZMmAoGN" version="14.5.8" type="github" pages="5">
+<mxfile host="app.diagrams.net" modified="2021-04-07T13:06:40.877Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.114 Safari/537.36" etag="0EhW3gc5NuCcWeqTllqx" version="14.5.8" type="github" pages="5">
   <diagram id="6a731a19-8d31-9384-78a2-239565b7b9f0" name="Main_Tab">
     <mxGraphModel dx="2130" dy="967" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" background="#ffffff" math="0" shadow="0">
       <root>
@@ -556,14 +556,32 @@
       <root>
         <mxCell id="UUAGUkRDnq5GgsOfPD1d-0" />
         <mxCell id="UUAGUkRDnq5GgsOfPD1d-1" parent="UUAGUkRDnq5GgsOfPD1d-0" />
+        <mxCell id="S2ykcz1s9A8HHphM6mGy-0" value="Create New Test" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.start_2;whiteSpace=wrap;" vertex="1" parent="UUAGUkRDnq5GgsOfPD1d-1">
+          <mxGeometry x="90" y="80" width="100" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="S2ykcz1s9A8HHphM6mGy-1" value="Clear All Values" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.start_2;whiteSpace=wrap;" vertex="1" parent="UUAGUkRDnq5GgsOfPD1d-1">
+          <mxGeometry x="520" y="80" width="100" height="100" as="geometry" />
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
   <diagram id="_egIpCoBASKqLesXLy-j" name="New_Test_Creator_Tab">
-    <mxGraphModel dx="1422" dy="762" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" math="0" shadow="0">
+    <mxGraphModel dx="2130" dy="967" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" math="0" shadow="0">
       <root>
         <mxCell id="siutL4MeuASW3l7Rrboq-0" />
         <mxCell id="siutL4MeuASW3l7Rrboq-1" parent="siutL4MeuASW3l7Rrboq-0" />
+        <mxCell id="K7I6_SABRs4AaiCzW05l-0" value="Previous Stage" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.start_2;whiteSpace=wrap;" vertex="1" parent="siutL4MeuASW3l7Rrboq-1">
+          <mxGeometry x="50" y="20" width="100" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="K7I6_SABRs4AaiCzW05l-1" value="Next Stage" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.start_2;whiteSpace=wrap;" vertex="1" parent="siutL4MeuASW3l7Rrboq-1">
+          <mxGeometry x="570" y="20" width="100" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="K7I6_SABRs4AaiCzW05l-2" value="Delete Stage" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.start_2;whiteSpace=wrap;" vertex="1" parent="siutL4MeuASW3l7Rrboq-1">
+          <mxGeometry x="1240" y="20" width="100" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="K7I6_SABRs4AaiCzW05l-3" value="Finish Test" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.start_2;whiteSpace=wrap;" vertex="1" parent="siutL4MeuASW3l7Rrboq-1">
+          <mxGeometry x="1940" y="20" width="100" height="100" as="geometry" />
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
