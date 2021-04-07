@@ -19,7 +19,18 @@ Make sure tests are closed, and box is reset after running a test.
 4/7/21 Timecard: 8:00 AM - 10:30 AM
 Goals:
  - Finish Diagramming (1 hour) 8AM-9AM.  This took all morning.
- - Make sure tests are closed on test Finish (30 min)
- - Create methods/protocol for connecting/disconnecting from Elegoo (3 hrs)
+ - Make sure tests are closed on test Finish (30 min) (Done)
+ - Create methods/protocol for connecting/disconnecting from Elegoo (3 hrs) (DONE)
 1:30 - 2:30 PM
 3:00PM to 5:00 PM
+
+TODO: Fix the Pin Checking error on the Relay Test example.
+
+Design the voltage divider for digital and analog input from 12V down to 5V.
+Design the inner test box, wiring.
+Design a box in Solidworks for the system.
+
+Test the system w/ 12V Supply.
+
+Look at certain connectors.
+
