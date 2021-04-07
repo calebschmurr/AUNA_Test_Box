@@ -679,20 +679,6 @@ class MainWindow(wx.Frame):
         else:
             print("error - Tests directory not found.")            
 
-    def ConnectPort(self, events):
-        self.PinControl.ExternalStartSerial(self.Port_Connect.GetSelection())
-        self.Connect_Button.Enable(False)
-        #Disable the connect button.
-    
-    def DisconnectSerialPushed(self, events):
-        self.PinControl.ExternalStopSerial()
-        self.Connect_Button.Enable(True)
-
-    def showPinUI(self, events):
-        self.PinControl.Show()
-        #TODO: Change the PinControlUI to be able to be 'closed', made
-        #not visible anymore and then able to be made visible again.
-
     def OnClose(self, event):
         if self.current_mode!=0:
             if wx.MessageBox("File has not been saved, continue closing?", "Please confirm below.", wx.ICON_QUESTION | wx.YES_NO) != wx.YES:
@@ -705,9 +691,10 @@ class MainWindow(wx.Frame):
                 return
             else:
                 #Remove the folder that was created and everything inside it.
-                for x in self.folderPath.iterdir():
+                for x in self.test.folderPath.iterdir():
                     x.unlink()
                 self.folderPath.rmdir()
+                #TODO: Delete test object.
                 
         if self.current_mode==3:
             if wx.MessageBox("Test not finished being modified, abort and write current progress?", "Please choose below.", wx.ICON_QUESTION | wx.YES_NO) != wx.YES:
@@ -731,31 +718,40 @@ class MainWindow(wx.Frame):
             logging.info("path exists")
             for x in path.iterdir():
                 if x.is_file():
-                    #logging.debug("x is file")
+                    logging.debug("x is file")
                     if x.suffix == '.txt':
-                        #logging.debug("txt file found.")
+                        logging.debug("txt file found.")
                         self.test = TestSequence.TestSequence()
-                        self.test.initialLoadIn(self.PinControl.SerialLine.PinsList, x)
-                    if x.suffix == '.png' or x.suffix == '.jpg' or x.suffix == '.bmp':
-                        #If the suffix is an image,
-                        pass
+                        if not self.test.initialLoadIn(self.PinControl.SerialLine.PinsList, x):  #If this fails, does not return true, error.
+                            return False
+                        else:
+                            logging.info("Test loaded.")
+                    else:
+                        logging.debug("Txt file not found.")
+            return True
         else:
             print("Error  - file not found/path does not exist.")
+            return False
 
         #Find the .txt, then parse in as json
-        #Load the rest of the images, store in image container.
-        #Need to make a class to contain it.
+        #If fails, return False.  loadTestSequence failed.
 
-    def ReloadSerialPorts(self, event):
+
         preferred_index = -1
         self.Port_Connect.Clear()
         for n, (portname, desc, hwid) in enumerate(sorted(PinControlUI.SerialComm.serial.tools.list_ports.comports())):
             self.Port_Connect.Append(u'{} - {}'.format(portname, desc))
         self.Port_Connect.SetSelection(preferred_index)
 
+#######################################################################################################################################
+############################          Main Tab Control Buttons         ################################################################
+#######################################################################################################################################
     #Load the Test selected, or say no test selected/display test error.
     def LoadTestPushed(self, event):
-        #On load of test, open the test tab.
+        #Verify program is in mode 0:
+        if self.current_mode!=0:
+            wx.MessageBox("Error - Not able to load test, current test in progress or creating test.", "Unable to load",  wx.OK | wx.ICON_INFORMATION)
+            return
         if (self.List_Of_Tests.GetSelection()==-1):
             wx.MessageBox("Nothing selected.  No action able to be performed", "No Selected Test",  wx.OK | wx.ICON_INFORMATION)
             return
@@ -776,35 +772,50 @@ class MainWindow(wx.Frame):
         p = Path('.')
         p = p/"Tests"/self.List_Of_Tests.GetStringSelection()
         logging.debug(p)
-        self.loadTestSequence(p)
+        if not self.loadTestSequence(p):
+            print("Error loading test.")
         #logging.info(self.test.exportJsonFile())
+        self.test.folderPath = p
         self.current_mode = 1
-        self.test.FolderPath = p
         self.Notebook.SetSelection(1)
         self.startTest()
 
+
     def modifyTestPushed(self, event):
         #Load in a test to be modified with new test creator tab.
+
+        #Check if program is in mode 0:
+        if self.current_mode!=0:
+            wx.MessageBox("Error - Not able to modify test, current test in progress or already creating test.", "Unable to modify",  wx.OK | wx.ICON_INFORMATION)
+            return False
+
         if (self.List_Of_Tests.GetSelection()==-1):
             wx.MessageBox("Nothing selected.  No action able to be performed", "No Selected Test",  wx.OK | wx.ICON_INFORMATION)
-            return
+            return False
         #Initiate loading test in new tab.
         #Switch tab
         p = Path('.')
         p = p/"Tests"/self.List_Of_Tests.GetStringSelection()
 
         logging.debug(p)
-        self.loadTestSequence(p)
+        if not self.loadTestSequence(p):
+            wx.MessageBox("Unable to modify test, error loading test.", "Error loading test",  wx.OK | wx.ICON_INFORMATION)
+            return False
+
         self.current_mode = 3
         self.test.current_test = 0
-        self.folderPath = Path('.') #Using pathlib - replacement of os.
-        self.folderPath = self.folderPath / "Tests" /self.test.name
+        self.test.folderPath = p
         self.testCreatorLoadInValues()
 
         #Set the active tab to tbe the test creator tab
         self.Notebook.SetSelection(3)
 
     def DeleteTestPushed(self, event):
+
+        if self.current_mode!=0:
+            wx.MessageBox("Error - Not able to delete test, current test in progress or creating test.", "Unable to delete",  wx.OK | wx.ICON_INFORMATION)
+            return
+
         if (self.List_Of_Tests.GetSelection()==-1):
             wx.MessageBox("Nothing selected.  No action able to be performed", "No Selected Test",  wx.OK | wx.ICON_INFORMATION)
             return
@@ -825,24 +836,53 @@ class MainWindow(wx.Frame):
         #Move to the New Test page.
         self.Notebook.SetSelection(2)
 
+
+    def ConnectPort(self, events):
+        self.PinControl.ExternalStartSerial(self.Port_Connect.GetSelection())
+        self.Connect_Button.Enable(False)
+        #Disable the connect button.
+    
+    def DisconnectSerialPushed(self, events):
+        self.PinControl.ExternalStopSerial()
+        self.Connect_Button.Enable(True)
+
+    def ReloadSerialPorts(self, event):
+        preferred_index = -1
+        self.Port_Connect.Clear()
+        for n, (portname, desc, hwid) in enumerate(sorted(PinControlUI.SerialComm.serial.tools.list_ports.comports())):
+            self.Port_Connect.Append(u'{} - {}'.format(portname, desc))
+            if desc.find("Mega") != -1:
+                preferred_index = self.Port_Connect.GetCount() - 1
+        self.Port_Connect.SetSelection(preferred_index)
+
+    def showPinUI(self, events):
+        self.PinControl.Show()
+        #TODO: Change the PinControlUI to be able to be 'closed', made
+        #not visible anymore and then able to be made visible again.
+
+#######################################################################################################################################
+############################         End Main Tab Control Buttons         #############################################################
+#######################################################################################################################################
+
+
+#######################################################################################################################################
+################################         Test Tab Control Buttons         #############################################################
+#######################################################################################################################################
+
     def nextStepPushed(self, event):
         if self.current_mode==1:
             if self.test.isNextTest():
-                if not self.Serial_Enabled_Checkbox.GetValue():
-                    if self.currentStage.passPinCheck():
-                        self.loadNextTestStage()
-                        self.serialUpdatePinOutput()
-                    else:
+                if not self.Serial_Enabled_Checkbox.GetValue(): #If not ignoring serial:
+                    if not self.currentStage.passPinCheck():  #If not passing pin check
                         if wx.MessageBox("Pins do not pass pin check.  Error w/ pins.  Continue?", "Pins do not pass check.", wx.ICON_QUESTION | wx.YES_NO) != wx.YES:
-                            return
-                        self.loadNextTestStage()
-                        if not self.Serial_Enabled_Checkbox.GetValue():
-                            self.serialUpdatePinOutput()
-
-                            self.PinControl.UpdatePinOutput(None)
+                            return #Not continuing.
+                    #Continuing
+                    self.loadNextTestStage() #Load next stage
+                    self.serialUpdatePinOutput() #Update the pin values for the next stage.
+                    self.PinControl.UpdatePinOutput(None) #Send the update command to the Elegoo.
                     #Does not pass check
                     #Code this in.
-                else:
+                else: #If ignoring serial
                     self.loadNextTestStage()
                     self.serialUpdatePinOutput()
             else:
@@ -853,10 +893,13 @@ class MainWindow(wx.Frame):
             event.veto()
             return
         
-        self.current_mode = 0
-        p = None
-        self.test = None
-        self.Notebook.SetSelection(0) #Go back to default
+        self.clearCurrentTest()
+        self.DisconnectSerialPushed(None) #Disconnect serial on test close.
+
+#######################################################################################################################################
+################################        End Test Tab Control Buttons         ##########################################################
+#######################################################################################################################################
+
 
     def startTest(self):
         self.Current_Test_Label.SetLabel("Current Test: {}".format(self.test.name))
@@ -867,14 +910,14 @@ class MainWindow(wx.Frame):
 
     def InitializePins(self):
         if not self.Serial_Enabled_Checkbox.GetValue():
-            self.PinControl.externalResetPins()
-            time.sleep(0.4)
+            #self.PinControl.externalResetPins()
+            time.sleep(1.0)
         for x in self.test.TestPinsList.PinList:
             self.PinControl.externalAddPin(x.getDict()['pin'], x.getDict()['mode'], x.getDict()['value'])
         #Start sending back pin status:
         if not self.Serial_Enabled_Checkbox.GetValue():
             self.PinControl.ConfigurePinIO(None)
-            time.sleep(2.0) #Have to wait for 2.0 seconds for some reason... 
+            time.sleep(0.5) #Have to wait for 2.0 seconds for some reason... 
             #Rework serial comms speed at one point.
             self.PinControl.ConfigOutputTime(None)
 
@@ -882,6 +925,8 @@ class MainWindow(wx.Frame):
         for x in self.test.TestPinsList.PinList:
             if (x.getPinNumber()==pin.pin):
                 #If is output pin, return true.
+                if (x.getMode() == 1):
+                    return True
                 #Unfinished.
                 return False
 
@@ -892,13 +937,13 @@ class MainWindow(wx.Frame):
         for x in self.currentStage.testPins:
             #If the pin is an output pin on the testpins list:
             if self.isOutputPin(x):
-                #FINISH THIS
-        
-                self.PinControl.ExternalChangePinStatus()
+                #Change the pin output value:
+                #TODO:  Finish This - below line is not working.
+                self.PinControl.ExternalChangePinStatus(x.pin, x.value)
 
 
         #Load in the image
-        for x in self.test.FolderPath.iterdir():
+        for x in self.test.folderPath.iterdir():
             logging.debug("Checking for image {}".format(self.currentStage.image))
             if x.is_file():
                 logging.debug(x.name)
@@ -921,12 +966,16 @@ class MainWindow(wx.Frame):
 
     def finishTest(self):
         wx.MessageBox("Test finished - passed.", "Test Passed",  wx.OK | wx.ICON_INFORMATION)
+        self.clearCurrentTest()
+        self.DisconnectSerialPushed(None)
+
+    def clearCurrentTest(self):
         self.test = None
-        self.folderPath = None
         self.current_mode = 0
         self.currentStage = None
-        print(self.test)
         self.Notebook.SetSelection(0)
+        #If not ignoring serial, reset Elegoo:
+        #TODO Insert reset protocol here.
 
 #####################Handling test creation#########################
     def onNotebookPageChange(self, event):
@@ -939,15 +988,28 @@ class MainWindow(wx.Frame):
                 wx.MessageBox("No test is selected - please select a test from List of Tests in 'Load Test' tab.", "No test selected.",  wx.OK | wx.ICON_INFORMATION)
                 self.Notebook.SetSelection(0)     
         elif self.Notebook.GetSelection()==2:
-            if self.current_mode==1:
+            if not (self.current_mode==0):
                 wx.MessageBox("Test is currently active - cannot create new test.  Please close current test before creating a test.", "Cannot create new test.", wx.OK | wx.ICON_INFORMATION)
-
+                self.Notebook.SetSelection(0)
         #Check to see if a new test is being created,
         #if not then move new test away.
     
+
+#######################################################################################################################################
+################################        New Test Tab Control Buttons         ##########################################################
+#######################################################################################################################################
+
     def onCreateNewTest(self, event):
         if self.current_mode==0:
+            
+            #Check to make sure this test doesn't already exist:
+            for x in List_Of_Tests:
+                if x == self.TestNameTextbox.GetValue():
+                    wx.MessageBox("Unable to create test - Test with that name already exists!", "Unable to create test",  wx.OK | wx.ICON_INFORMATION)
+                    return False
+            
             self.current_mode = 2
+
             #Make a new test object,
             #Store in the pins used, name and description.
 
@@ -962,15 +1024,37 @@ class MainWindow(wx.Frame):
             self.NewTestCreatorTestName.SetLabelText("Test Name: {}".format(self.test.name))
 
             #Make a folder for this new test
-            self.folderPath = Path('.') #Using pathlib - replacement of os.
-            self.folderPath = self.folderPath / "Tests" /self.test.name
-            self.folderPath.mkdir()
+            self.test.folderPath = Path('.') #Using pathlib - replacement of os.
+            self.test.folderPath = self.test.folderPath / "Tests" /self.test.name
+            self.test.folderPath.mkdir()
             self.Notebook.SetSelection(3)
         
         else:
-            wx.MessageBox("Test already being created.", "Test Creation in Progress.",  wx.OK | wx.ICON_INFORMATION)
+            wx.MessageBox("Unable to create test - testing in progress or need new testing.", "Unable to create test",  wx.OK | wx.ICON_INFORMATION)
         #On create new test - create a new test object,
         #Move to NewTestCreator tab
+
+    def onClearAllValues(self, event):
+        #All the values are reset for the new test creator tab
+        for x in range(1,14):
+            exec("self.PinX1_{}Select.SetSelection(2)".format(x))
+            exec("self.PinX1_{}Description.SetValue('Description')".format(x))
+            if x!=13:
+                exec("self.PinX1_{}_Stage_Mode_Select.Enable(False)".format(x))
+            exec("self.PinX1_{}_Stage_Value.Enable(False)".format(x))
+        for x in range(14, 18):
+            exec("self.PinX1_{}Select.SetSelection(1)".format(x))
+            exec("self.PinX1_{}Description.SetValue('Description')".format(x))
+            exec("self.PinX1_{}_Stage_Value.Enable(False)".format(x))
+
+        for z in range(1,9):
+            exec("self.PinX2_{}Select.SetSelection(1)".format(z))
+            exec("self.PinX2_{}Description.SetValue('Description')".format(z))
+            exec("self.PinX2_{}_Stage_Mode_Select.Enable(False)".format(z))
+
+#######################################################################################################################################
+################################        End New Test Tab Control Buttons         ######################################################
+#######################################################################################################################################
 
     #getTestPinsList() -
     #On creating a new test, this goes through and finds each active pin
@@ -996,23 +1080,11 @@ class MainWindow(wx.Frame):
                 exec("self.test.TestPinsList.addPin({}, self.PinX2_{}Select.GetSelection()+1, 0, self.PinX2_{}Description.GetValue())".format(z+21, z, z))
                 exec("self.PinX2_{}_Stage_Mode_Select.Enable(True)".format(z))
 
-    def onClearAllValues(self, event):
-        #All the values are reset for the new test creator tab
-        for x in range(1,14):
-            exec("self.PinX1_{}Select.SetSelection(2)".format(x))
-            exec("self.PinX1_{}Description.SetValue('Description')".format(x))
-            if x!=13:
-                exec("self.PinX1_{}_Stage_Mode_Select.Enable(False)".format(x))
-            exec("self.PinX1_{}_Stage_Value.Enable(False)".format(x))
-        for x in range(14, 18):
-            exec("self.PinX1_{}Select.SetSelection(1)".format(x))
-            exec("self.PinX1_{}Description.SetValue('Description')".format(x))
-            exec("self.PinX1_{}_Stage_Value.Enable(False)".format(x))
 
-        for z in range(1,9):
-            exec("self.PinX2_{}Select.SetSelection(1)".format(z))
-            exec("self.PinX2_{}Description.SetValue('Description')".format(z))
-            exec("self.PinX2_{}_Stage_Mode_Select.Enable(False)".format(z))
+#######################################################################################################################################
+################################        New Test Creator Tab Control Buttons         ##################################################
+#######################################################################################################################################
+
 
     #onNewTestStage() - when the new test next stage button is clicked.
     def onNewTestNextStage(self, event):
@@ -1020,10 +1092,10 @@ class MainWindow(wx.Frame):
         #Check for existing img path, and write image to folder.
         if not self.test.currentImgPath:
             wx.MessageBox("No image selected, please select an image", "No image selected",  wx.OK | wx.ICON_INFORMATION)
-            return 0
+            return False
         #Check for pins actually having values.
 
-        #Store all the values into the test stage object
+        #Store all the values into the test stag object
         #Change this storage up to use the currentStage class??
 
         #Save Stage - depending on if we are in the last stage or a previous stage, save differently.
@@ -1032,14 +1104,13 @@ class MainWindow(wx.Frame):
             self.test.current_test+=1
             #Clear currentImgPath
             self.test.currentImgPath = None
-            self.updateNewTestCreatorNumber()
-            self.drawNewTestImage()
+
         else: #Save current stage, load old stage.
             self.test.testStages[self.test.current_test] = TestSequence.testStage(self.test.current_test, self.NewTestCreatorDescription.GetValue(), "img{}.png".format(self.test.current_test), self.getNewTestCreatorPins(), self.NewTestCreatorErrorMessage.GetValue(), None)
             #Also, load in the next test status.
             self.test.current_test+=1
             self.testCreatorLoadInValues()
-            self.drawNewTestImage()
+            self.updateNewTestUI()
 
         #Increment stage levels
         print("Test stage {} saved.".format(self.test.current_test-1))
@@ -1050,8 +1121,45 @@ class MainWindow(wx.Frame):
         #Increment backwards.
         self.onNewTestPreviousStage(None)
         self.test.testStages.pop(self.test.current_test+1)
-        self.updateNewTestCreatorNumber()
         self.testCreatorLoadInValues()
+        self.updateNewTestUI()
+
+    def onNewTestPreviousStage(self, event):
+        #First check if there is a previous stage
+        if self.test.current_test==0:
+            wx.MessageBox("Currently at the starting test stage, there are no previous tests to choose from.", "No Previous Stages",  wx.OK | wx.ICON_INFORMATION)
+            return
+        
+        #If not, save current test stage:
+        #if self.test.current_test>(len(self.test.testStages)-1):
+            #self.test.testStages.append(TestSequence.testStage(self.test.current_test, self.NewTestCreatorDescription.GetValue(), self.test.currentImgPath, self.getNewTestCreatorPins(), self.NewTestCreatorErrorMessage.GetValue(), None))
+        #else:
+        #self.test.testStages[self.test.current_test] = TestSequence.testStage(self.test.current_test, self.NewTestCreatorDescription.GetValue(), self.test.currentImgPath, self.getNewTestCreatorPins(), self.NewTestCreatorErrorMessage.GetValue(), None)
+        
+        self.test.current_test-=1
+        #self.test.testStages[self.test.current_test]
+        self.testCreatorLoadInValues()
+       
+        print("Navigated backwards.")
+
+    def onNewTestFinishTest(self, event):
+        #Save the test
+        #Dump the JSON file:
+        self.saveTest()
+        #Reset the variables associated with a new test
+        self.test = None
+        self.current_mode = 0
+        self.currentStage = None
+
+        self.loadTests()
+        self.Notebook.SetSelection(0)
+
+#######################################################################################################################################
+################################        End New Test Creator Tab Control Buttons         ##############################################
+#######################################################################################################################################
+
+    def updateNewTestUI(self):
+        self.updateNewTestCreatorNumber()
         self.drawNewTestImage()
 
     #Return a dict with all pins and values.
@@ -1164,7 +1272,6 @@ class MainWindow(wx.Frame):
     def testCreatorLoadInValues(self):
          #Load in the previous test values:
         #Number:
-        self.updateNewTestCreatorNumber()
         #Description
         self.NewTestCreatorDescription.SetValue(self.test.testStages[self.test.current_test].getDict()['description'])
         #Error
@@ -1188,21 +1295,8 @@ class MainWindow(wx.Frame):
     def updateNewTestCreatorNumber(self):
         self.NewTestCreatorStageNumber.SetLabelText("Stage: {}/{}".format(self.test.current_test, len(self.test.testStages)))
 
-    def onNewTestFinishTest(self, event):
-        #Save the test
-        #Dump the JSON file:
-        self.saveTest()
-        #Reset the variables associated with a new test
-        self.test = None
-        self.folderPath = None
-        self.current_mode = 0
-        self.currentStage = None
-
-        self.loadTests()
-        self.Notebook.SetSelection(0)
-
     def saveTest(self):
-        with open("{}/{}.txt".format(self.folderPath, self.test.name), 'w') as outfile:
+        with open("{}/{}.txt".format(self.test.folderPath, self.test.name), 'w') as outfile:
             outfile.write(self.test.exportJsonFile())
             outfile.close()
         
@@ -1219,12 +1313,12 @@ class MainWindow(wx.Frame):
             pathname = fileDialog.GetPath()
             self.test.currentImgPath = pathname
             img = Image.open(self.test.currentImgPath)
-            img.save("{}\img{}.png".format(self.folderPath.resolve(),self.test.current_test))
+            img.save("{}\img{}.png".format(self.test.folderPath.resolve(), self.test.current_test))
         #Also draw image to screen:
         self.drawNewTestImage()
 
     def drawNewTestImage(self):
-        for x in self.folderPath.iterdir():
+        for x in self.test.folderPath.iterdir():
             logging.debug("Checking for image {}".format("img{}.png".format(self.test.current_test)))
             if x.is_file():
                 logging.debug(x.name)

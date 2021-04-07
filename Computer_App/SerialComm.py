@@ -79,6 +79,9 @@ class SerialHandler():
         print("Writing command: {}".format(self.PinsList.getPinsResetCmd()))
         self.write(self.PinsList.getPinsResetCmd())
 
+    def fullReset(self):
+        self.write(self.PinsList.getFullResetCmd())
+
     def InitializePins(self):
         #Initializing pins
         print("Initializaing pins w/ command {}".format(self.PinsList.getPinsInitializeCmd()))

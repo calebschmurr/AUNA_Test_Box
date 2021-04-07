@@ -95,6 +95,7 @@ void setup() {
   }
   Serial.println("Open2.\n");
 }
+void(* resetFunc) (void) = 0; //Declare reset function.
 
 
 void loop() {
@@ -374,9 +375,12 @@ int configureSetup(){
             Serial.println(" is not an initiated output pin.");
           }
         }
+    } else if (inputArray[0] == '4'){
+      //Perform full reset:
+      resetFunc();
     } else {
-    Serial.println("Command not recognized.");
-  }
+      Serial.println("Command not recognized.");
+    }
  
     //Clear the values of input.
   inputArray = "";

@@ -5,4 +5,21 @@ Goal for 4/6/21:
  read up on Arduino site about Serial comms.
  (DONE) - Serial is made faster.
 
-4/6/21 Timecard: 9:00 AM - 10:50 AM.
+
+Added full reset command (DONE)
+- need to add protocol for disconnecting and reconnecting to Elegoo on reset.
+
+Relay_Test runs correctly.
+Make sure tests are closed, and box is reset after running a test.
+
+4/6/21 Timecard: 9:00 AM - 11:05 AM.
+2:30 PM - 3:30 PM
+
+
+4/7/21 Timecard: 8:00 AM - 10:30 AM
+Goals:
+ - Finish Diagramming (1 hour) 8AM-9AM.  This took all morning.
+ - Make sure tests are closed on test Finish (30 min)
+ - Create methods/protocol for connecting/disconnecting from Elegoo (3 hrs)
+1:30 - 2:30 PM
+3:00PM to 5:00 PM

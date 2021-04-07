@@ -78,7 +78,7 @@ class Pin_Control(wx.Frame):
         wx.Frame.__init__(self, *args, **kwds)
         self.SetSize((1349, 593))
         self.Baud_Rate_Combo_Box = wx.ComboBox(self, wx.ID_ANY, choices=["9600", "19200", "38400", "57600", "115200"], style=wx.CB_DROPDOWN)
-        self.Baud_Rate_Combo_Box.SetSelection(0)
+        self.Baud_Rate_Combo_Box.SetSelection(4)
         self.PortComboBox = wx.ComboBox(self, wx.ID_ANY, choices=[], style=0)
         self.Connection_Status_Display = wx.TextCtrl(self, wx.ID_ANY, "")
         self.Start_Connection_Button = wx.Button(self, wx.ID_ANY, "Start Connection")
@@ -991,6 +991,7 @@ class Pin_Control(wx.Frame):
     def FullReset(self, events):
         #Perform a full reset on all pins.
         print("Performing full reset, clearing pins list and resetting elegoo.")
+        self.SerialLine.fullReset()
 
     def StartSerialComms(self, events):
         #Get the values for the COM port

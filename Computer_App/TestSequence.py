@@ -105,11 +105,15 @@ class TestSequence:
         self.testStages = []
         self.RealPinsList = None
         self.current_test = -1
+        self.folderPath = None
 
     def initialLoadIn(self, ActualPinsList, FilePath):
         self.RealPinsList = ActualPinsList
-        self.LoadInTests(FilePath)
+        if not self.LoadInTests(FilePath):
+            return False
         logging.info('Initializing pins list.')
+        
+        return True
 
 
     def LoadInTests(self, FilePath):
@@ -122,6 +126,7 @@ class TestSequence:
             self.description = testData['description']
         except:
             print("Error parsing in name or description.")
+            return False
         
         #Reset TestPinsList, and testStages
         self.testStages.clear()
@@ -129,13 +134,17 @@ class TestSequence:
         self.TestPinsList = PinList.PinsList()
         
         #Mode pin setting:  0 = input, 1=output.
-
-        for x in testData['pins']:
-            self.TestPinsList.addPin(x['pin'], x['mode'], 0, x['description'])
-            #logging.debug("Adding pin")
-            #logging.debug(x['pin'])
-        for z in testData['tests']:
-            self.testStages.append(testStage(z['number'], z['description'], z['image'], z['pin_check'], z['error'], self.RealPinsList))
+        try:
+            for x in testData['pins']:
+                self.TestPinsList.addPin(x['pin'], x['mode'], 0, x['description'])
+                #logging.debug("Adding pin")
+                #logging.debug(x['pin'])
+            for z in testData['tests']:
+                self.testStages.append(testStage(z['number'], z['description'], z['image'], z['pin_check'], z['error'], self.RealPinsList))
+        except:
+            print("Error parsing in test pins and adding to test stages.")
+            return False    
+        return True
         
     def getNextTest(self):
         if (self.current_test+1)<len(self.testStages):
@@ -153,7 +162,6 @@ class TestSequence:
     def getNumStages(self):
         return len(self.testStages)-1
 
-    #This is facts baby.
     def exportJsonFile(self):
         output={}
         output['name'] = self.name
