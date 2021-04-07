@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2021-04-07T19:44:49.730Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.114 Safari/537.36" etag="bIRdVXO_fDebGuyzCRir" version="14.5.8" type="github" pages="5">
+<mxfile host="app.diagrams.net" modified="2021-04-07T19:55:24.294Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.114 Safari/537.36" etag="5kE4VoTbIn4rR7WYNwaX" version="14.5.8" type="github" pages="5">
   <diagram id="6a731a19-8d31-9384-78a2-239565b7b9f0" name="Main_Tab">
     <mxGraphModel dx="3104" dy="682" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" background="#ffffff" math="0" shadow="0">
       <root>
@@ -502,6 +502,9 @@
         <mxCell id="xI6UoFROLTJsAryazsQp-7" value="Serial Refresh" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.start_2;whiteSpace=wrap;" parent="1" vertex="1">
           <mxGeometry x="840" y="1330" width="100" height="100" as="geometry" />
         </mxCell>
+        <mxCell id="HeSsjSramW9gP6ne_unx-35" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="xI6UoFROLTJsAryazsQp-8" target="HeSsjSramW9gP6ne_unx-34">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
         <mxCell id="xI6UoFROLTJsAryazsQp-8" value="Show Pin UI" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.start_2;whiteSpace=wrap;" parent="1" vertex="1">
           <mxGeometry x="1290" y="1330" width="100" height="100" as="geometry" />
         </mxCell>
@@ -548,9 +551,8 @@
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="820" y="1880" as="targetPoint" />
             <Array as="points">
-              <mxPoint x="770" y="1620" />
-              <mxPoint x="770" y="2060" />
-              <mxPoint x="830" y="2060" />
+              <mxPoint x="750" y="1620" />
+              <mxPoint x="750" y="2060" />
             </Array>
           </mxGeometry>
         </mxCell>
@@ -562,6 +564,9 @@
         </mxCell>
         <mxCell id="HeSsjSramW9gP6ne_unx-19" value="Append to list of ports" style="whiteSpace=wrap;html=1;strokeWidth=2;" vertex="1" parent="1">
           <mxGeometry x="830" y="1710" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="HeSsjSramW9gP6ne_unx-37" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="HeSsjSramW9gP6ne_unx-25" target="HeSsjSramW9gP6ne_unx-36">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="HeSsjSramW9gP6ne_unx-25" value="Set Selection to Preferred Index" style="whiteSpace=wrap;html=1;strokeWidth=2;" vertex="1" parent="1">
           <mxGeometry x="840" y="2030" width="120" height="60" as="geometry" />
@@ -586,6 +591,18 @@
         </mxCell>
         <mxCell id="HeSsjSramW9gP6ne_unx-31" value="Set preferred index to that location in Port_Connect" style="whiteSpace=wrap;html=1;strokeWidth=2;" vertex="1" parent="1">
           <mxGeometry x="830" y="1920" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="HeSsjSramW9gP6ne_unx-39" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="HeSsjSramW9gP6ne_unx-34" target="HeSsjSramW9gP6ne_unx-38">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="HeSsjSramW9gP6ne_unx-34" value="PinControl.show()" style="whiteSpace=wrap;html=1;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="1280" y="1480" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="HeSsjSramW9gP6ne_unx-36" value="End Loop" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.terminator;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="850" y="2130" width="100" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="HeSsjSramW9gP6ne_unx-38" value="End Loop" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.terminator;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="1290" y="1580" width="100" height="60" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
