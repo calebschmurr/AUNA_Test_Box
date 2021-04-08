@@ -48,3 +48,10 @@ CHANGES Required:
 DONE:
  - Changed the Test Creation Menu
   - Chagned the test creation process to display properly.
+ - Fixed the Pin Check Code Issue.
+
+  TODO: Fix the issue with not adjusting the serial port input when the Serial object
+  is connected.
+  When Refresh Serial is hit in the main menu, it doesn't adjust the PinControlUI Serial port.
+
+ - Fix reset on Arduino:  Add ability to clear list, and reset all outputs.

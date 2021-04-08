@@ -895,7 +895,7 @@ class MainWindow(wx.Frame):
     #Return a dict with all pins and values.
     def getNewTestCreatorPins(self):
         returnDict = []
-        for x in range(1,14):
+        for x in range(1,13):
             if eval("self.PinX1_{}_Stage_Value.IsEnabled()".format(x)):
                 if eval("self.PinX1_{}_Stage_Value.GetValue()==''".format(x,x)):
                     #send message that there needs to be a value in this value box before saving
@@ -928,7 +928,7 @@ class MainWindow(wx.Frame):
         ret = TestSequence.testPin(0,0,0,None)
         ret.pin = self.translateConnectorToPin(PinID)
         if ret.pin<53:
-            pass
+            ret.check_code = -1
         else:
             ret.check_code = eval("self.Pin{}_Stage_Mode_Select.GetSelection()".format(PinID))
         if not PinID.split("_")[0]=="X2":

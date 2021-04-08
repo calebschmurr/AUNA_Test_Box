@@ -42,7 +42,7 @@ class testPin:
             return self.RealPinsList.getPinValue(self.pin) > self.value
         elif self.check_code==2:
             return (self.RealPinsList.getPinValue(self.pin) > (self.value - self.EqualValueVariant)) and (self.RealPinsList.getPinValue(self.number) < (self.value + self.EqualValueVariant))
-
+        return True
     #create methods to change all values as well.
     def getDict(self):
         #print("testPin getDict number: {}".format(self.pin))
@@ -90,6 +90,7 @@ class testStage:
     def passPinCheck(self):
         for z in self.testPins:
             if not z.checkPin():
+                print("Error: Pin {} did not pass check.  Code: {}, Value: {}".format(z.pin, z.check_code, z.value))
                 return False
         return True
 
