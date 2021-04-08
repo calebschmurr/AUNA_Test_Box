@@ -163,331 +163,61 @@ class MainWindow(wx.Frame):
         self.Pins_Used_Sizer = wx.GridSizer(7, 4, 0, 0)
         self.Creator_Sizer.Add(self.Pins_Used_Sizer, 2, wx.EXPAND, 0)
 
-        self.PinX1_1_Sizer = wx.BoxSizer(wx.HORIZONTAL)
-        self.Pins_Used_Sizer.Add(self.PinX1_1_Sizer, 1, wx.EXPAND, 0)
+        for x in range(1,13):
+            exec("self.PinX1_{}_Sizer = wx.BoxSizer(wx.HORIZONTAL)".format(x))
+            exec("self.Pins_Used_Sizer.Add(self.PinX1_{}_Sizer, 1, wx.EXPAND, 0)".format(x))
+            exec("self.PinX1_{}Label = wx.StaticText(self.New_Test_Initiator_Tab, wx.ID_ANY, 'X1_{} (Analog {})')".format(x, x, x-1))
+            exec("self.PinX1_{}_Sizer.Add(self.PinX1_{}Label, 0, 0, 0)".format(x,x))
+            exec("self.PinX1_{}Select = wx.ComboBox(self.New_Test_Initiator_Tab, wx.ID_ANY, choices=['Input', 'Unused'], style=wx.CB_DROPDOWN)".format(x))
+            exec("self.PinX1_{}Select.SetSelection(1)".format(x))
+            exec("self.PinX1_{}_Sizer.Add(self.PinX1_{}Select, 0, 0, 0)".format(x,x))
+            exec("self.PinX1_{}Description = wx.TextCtrl(self.New_Test_Initiator_Tab, wx.ID_ANY, 'Description')".format(x))
+            exec("self.PinX1_{}_Sizer.Add(self.PinX1_{}Description, 0, 0, 0)".format(x,x))
+
+        for x in range(13, 15):
+            exec("self.PinX1_{}_Sizer = wx.BoxSizer(wx.HORIZONTAL)".format(x))
+            exec("self.Pins_Used_Sizer.Add(self.PinX1_{}_Sizer, 1, wx.EXPAND, 0)".format(x))
+            exec("self.PinX1_{}Label = wx.StaticText(self.New_Test_Initiator_Tab, wx.ID_ANY, 'X1_{} (Var. Volt {})')".format(x, x, x-12))
+            exec("self.PinX1_{}_Sizer.Add(self.PinX1_{}Label, 0, 0, 0)".format(x,x))
+            exec("self.PinX1_{}Select = wx.ComboBox(self.New_Test_Initiator_Tab, wx.ID_ANY, choices=['Output', 'Unused'], style=wx.CB_DROPDOWN)".format(x))
+            exec("self.PinX1_{}Select.SetSelection(1)".format(x))
+            exec("self.PinX1_{}_Sizer.Add(self.PinX1_{}Select, 0, 0, 0)".format(x,x))
+            exec("self.PinX1_{}Description = wx.TextCtrl(self.New_Test_Initiator_Tab, wx.ID_ANY, 'Description')".format(x))
+            exec("self.PinX1_{}_Sizer.Add(self.PinX1_{}Description, 0, 0, 0)".format(x,x))
+
+        for x in range(15, 19):
+            exec("self.PinX1_{}_Sizer = wx.BoxSizer(wx.HORIZONTAL)".format(x))
+            exec("self.Pins_Used_Sizer.Add(self.PinX1_{}_Sizer, 1, wx.EXPAND, 0)".format(x))
+            exec("self.PinX1_{}Label = wx.StaticText(self.New_Test_Initiator_Tab, wx.ID_ANY, 'X1_{} (PWM Out {})')".format(x, x, x-14))
+            exec("self.PinX1_{}_Sizer.Add(self.PinX1_{}Label, 0, 0, 0)".format(x,x))
+            exec("self.PinX1_{}Select = wx.ComboBox(self.New_Test_Initiator_Tab, wx.ID_ANY, choices=['Output', 'Unused'], style=wx.CB_DROPDOWN)".format(x))
+            exec("self.PinX1_{}Select.SetSelection(1)".format(x))
+            exec("self.PinX1_{}_Sizer.Add(self.PinX1_{}Select, 0, 0, 0)".format(x,x))
+            exec("self.PinX1_{}Description = wx.TextCtrl(self.New_Test_Initiator_Tab, wx.ID_ANY, 'Description')".format(x))
+            exec("self.PinX1_{}_Sizer.Add(self.PinX1_{}Description, 0, 0, 0)".format(x,x))
+
+        for x in range(1, 5):
+            exec("self.PinX2_{}_Sizer = wx.BoxSizer(wx.HORIZONTAL)".format(x))
+            exec("self.Pins_Used_Sizer.Add(self.PinX2_{}_Sizer, 1, wx.EXPAND, 0)".format(x))
+            exec("self.PinX2_{}Label = wx.StaticText(self.New_Test_Initiator_Tab, wx.ID_ANY, 'X2_{} (K{} - 12V)')".format(x, x, x))
+            exec("self.PinX2_{}_Sizer.Add(self.PinX2_{}Label, 0, 0, 0)".format(x,x))
+            exec("self.PinX2_{}Select = wx.ComboBox(self.New_Test_Initiator_Tab, wx.ID_ANY, choices=['Output', 'Unused'], style=wx.CB_DROPDOWN)".format(x))
+            exec("self.PinX2_{}Select.SetSelection(1)".format(x))
+            exec("self.PinX2_{}_Sizer.Add(self.PinX2_{}Select, 0, 0, 0)".format(x,x))
+            exec("self.PinX2_{}Description = wx.TextCtrl(self.New_Test_Initiator_Tab, wx.ID_ANY, 'Description')".format(x))
+            exec("self.PinX2_{}_Sizer.Add(self.PinX2_{}Description, 0, 0, 0)".format(x,x))
+
+        for x in range(5, 9):
+            exec("self.PinX2_{}_Sizer = wx.BoxSizer(wx.HORIZONTAL)".format(x))
+            exec("self.Pins_Used_Sizer.Add(self.PinX2_{}_Sizer, 1, wx.EXPAND, 0)".format(x))
+            exec("self.PinX2_{}Label = wx.StaticText(self.New_Test_Initiator_Tab, wx.ID_ANY, 'X2_{} (K{} - 24V)')".format(x, x, x))
+            exec("self.PinX2_{}_Sizer.Add(self.PinX2_{}Label, 0, 0, 0)".format(x,x))
+            exec("self.PinX2_{}Select = wx.ComboBox(self.New_Test_Initiator_Tab, wx.ID_ANY, choices=['Output', 'Unused'], style=wx.CB_DROPDOWN)".format(x))
+            exec("self.PinX2_{}Select.SetSelection(1)".format(x))
+            exec("self.PinX2_{}_Sizer.Add(self.PinX2_{}Select, 0, 0, 0)".format(x,x))
+            exec("self.PinX2_{}Description = wx.TextCtrl(self.New_Test_Initiator_Tab, wx.ID_ANY, 'Description')".format(x))
+            exec("self.PinX2_{}_Sizer.Add(self.PinX2_{}Description, 0, 0, 0)".format(x,x))
 
-        self.PinX1_1Label = wx.StaticText(self.New_Test_Initiator_Tab, wx.ID_ANY, "X1_1 (Analog 0)")
-        self.PinX1_1_Sizer.Add(self.PinX1_1Label, 0, 0, 0)
-
-        self.PinX1_1Select = wx.ComboBox(self.New_Test_Initiator_Tab, wx.ID_ANY, choices=["Input", "Output", "Unused"], style=wx.CB_DROPDOWN)
-        self.PinX1_1Select.SetSelection(2)
-        self.PinX1_1_Sizer.Add(self.PinX1_1Select, 0, 0, 0)
-
-        self.PinX1_1Description = wx.TextCtrl(self.New_Test_Initiator_Tab, wx.ID_ANY, "Description")
-        self.PinX1_1_Sizer.Add(self.PinX1_1Description, 0, 0, 0)
-
-        self.PinX1_2_Sizer = wx.BoxSizer(wx.HORIZONTAL)
-        self.Pins_Used_Sizer.Add(self.PinX1_2_Sizer, 1, wx.EXPAND, 0)
-
-        self.PinX1_2Label = wx.StaticText(self.New_Test_Initiator_Tab, wx.ID_ANY, "X1_2 (Analog 1)")
-        self.PinX1_2_Sizer.Add(self.PinX1_2Label, 0, 0, 0)
-
-        self.PinX1_2Select = wx.ComboBox(self.New_Test_Initiator_Tab, wx.ID_ANY, choices=["Input", "Output", "Unused"], style=wx.CB_DROPDOWN)
-        self.PinX1_2Select.SetSelection(2)
-        self.PinX1_2_Sizer.Add(self.PinX1_2Select, 0, 0, 0)
-
-        self.PinX1_2Description = wx.TextCtrl(self.New_Test_Initiator_Tab, wx.ID_ANY, "Description")
-        self.PinX1_2_Sizer.Add(self.PinX1_2Description, 0, 0, 0)
-
-        self.PinX1_3_Sizer = wx.BoxSizer(wx.HORIZONTAL)
-        self.Pins_Used_Sizer.Add(self.PinX1_3_Sizer, 1, wx.EXPAND, 0)
-
-        self.PinX1_3Label = wx.StaticText(self.New_Test_Initiator_Tab, wx.ID_ANY, "X1_3 (Analog 2)")
-        self.PinX1_3_Sizer.Add(self.PinX1_3Label, 0, 0, 0)
-
-        self.PinX1_3Select = wx.ComboBox(self.New_Test_Initiator_Tab, wx.ID_ANY, choices=["Input", "Output", "Unused"], style=wx.CB_DROPDOWN)
-        self.PinX1_3Select.SetSelection(2)
-        self.PinX1_3_Sizer.Add(self.PinX1_3Select, 0, 0, 0)
-
-        self.PinX1_3Description = wx.TextCtrl(self.New_Test_Initiator_Tab, wx.ID_ANY, "Description")
-        self.PinX1_3_Sizer.Add(self.PinX1_3Description, 0, 0, 0)
-
-        self.PinX1_4_Sizer = wx.BoxSizer(wx.HORIZONTAL)
-        self.Pins_Used_Sizer.Add(self.PinX1_4_Sizer, 1, wx.EXPAND, 0)
-
-        self.PinX1_4Label = wx.StaticText(self.New_Test_Initiator_Tab, wx.ID_ANY, "X1_4 (Analog 3)")
-        self.PinX1_4_Sizer.Add(self.PinX1_4Label, 0, 0, 0)
-
-        self.PinX1_4Select = wx.ComboBox(self.New_Test_Initiator_Tab, wx.ID_ANY, choices=["Input", "Output", "Unused"], style=wx.CB_DROPDOWN)
-        self.PinX1_4Select.SetSelection(2)
-        self.PinX1_4_Sizer.Add(self.PinX1_4Select, 0, 0, 0)
-
-        self.PinX1_4Description = wx.TextCtrl(self.New_Test_Initiator_Tab, wx.ID_ANY, "Description")
-        self.PinX1_4_Sizer.Add(self.PinX1_4Description, 0, 0, 0)
-
-        self.PinX1_5_Sizer = wx.BoxSizer(wx.HORIZONTAL)
-        self.Pins_Used_Sizer.Add(self.PinX1_5_Sizer, 1, wx.EXPAND, 0)
-
-        self.PinX1_5Label = wx.StaticText(self.New_Test_Initiator_Tab, wx.ID_ANY, "X1_5 (Analog 4)")
-        self.PinX1_5_Sizer.Add(self.PinX1_5Label, 0, 0, 0)
-
-        self.PinX1_5Select = wx.ComboBox(self.New_Test_Initiator_Tab, wx.ID_ANY, choices=["Input", "Output", "Unused"], style=wx.CB_DROPDOWN)
-        self.PinX1_5Select.SetSelection(2)
-        self.PinX1_5_Sizer.Add(self.PinX1_5Select, 0, 0, 0)
-
-        self.PinX1_5Description = wx.TextCtrl(self.New_Test_Initiator_Tab, wx.ID_ANY, "Description")
-        self.PinX1_5_Sizer.Add(self.PinX1_5Description, 0, 0, 0)
-
-        self.PinX1_6_Sizer = wx.BoxSizer(wx.HORIZONTAL)
-        self.Pins_Used_Sizer.Add(self.PinX1_6_Sizer, 1, wx.EXPAND, 0)
-
-        self.PinX1_6Label = wx.StaticText(self.New_Test_Initiator_Tab, wx.ID_ANY, "X1_6 (Analog 5)")
-        self.PinX1_6_Sizer.Add(self.PinX1_6Label, 0, 0, 0)
-
-        self.PinX1_6Select = wx.ComboBox(self.New_Test_Initiator_Tab, wx.ID_ANY, choices=["Input", "Output", "Unused"], style=wx.CB_DROPDOWN)
-        self.PinX1_6_Sizer.Add(self.PinX1_6Select, 0, 0, 0)
-
-        self.PinX1_6Description = wx.TextCtrl(self.New_Test_Initiator_Tab, wx.ID_ANY, "Description")
-        self.PinX1_6_Sizer.Add(self.PinX1_6Description, 0, 0, 0)
-
-        self.PinX1_7_Sizer = wx.BoxSizer(wx.HORIZONTAL)
-        self.Pins_Used_Sizer.Add(self.PinX1_7_Sizer, 1, wx.EXPAND, 0)
-
-        self.PinX1_7Label = wx.StaticText(self.New_Test_Initiator_Tab, wx.ID_ANY, "X1_7 (Analog 6)")
-        self.PinX1_7_Sizer.Add(self.PinX1_7Label, 0, 0, 0)
-
-        self.PinX1_7Select = wx.ComboBox(self.New_Test_Initiator_Tab, wx.ID_ANY, choices=["Input", "Output", "Unused"], style=wx.CB_DROPDOWN)
-        self.PinX1_7Select.SetSelection(2)
-        self.PinX1_7_Sizer.Add(self.PinX1_7Select, 0, 0, 0)
-
-        self.PinX1_7Description = wx.TextCtrl(self.New_Test_Initiator_Tab, wx.ID_ANY, "Description")
-        self.PinX1_7_Sizer.Add(self.PinX1_7Description, 0, 0, 0)
-
-        self.PinX1_8_Sizer = wx.BoxSizer(wx.HORIZONTAL)
-        self.Pins_Used_Sizer.Add(self.PinX1_8_Sizer, 1, wx.EXPAND, 0)
-
-        self.PinX1_8Label = wx.StaticText(self.New_Test_Initiator_Tab, wx.ID_ANY, "X1_8 (Analog 7)")
-        self.PinX1_8_Sizer.Add(self.PinX1_8Label, 0, 0, 0)
-
-        self.PinX1_8Select = wx.ComboBox(self.New_Test_Initiator_Tab, wx.ID_ANY, choices=["Input", "Output", "Unused"], style=wx.CB_DROPDOWN)
-        self.PinX1_8Select.SetSelection(2)
-        self.PinX1_8_Sizer.Add(self.PinX1_8Select, 0, 0, 0)
-
-        self.PinX1_8Description = wx.TextCtrl(self.New_Test_Initiator_Tab, wx.ID_ANY, "Description")
-        self.PinX1_8_Sizer.Add(self.PinX1_8Description, 0, 0, 0)
-
-        self.PinX1_9_Sizer = wx.BoxSizer(wx.HORIZONTAL)
-        self.Pins_Used_Sizer.Add(self.PinX1_9_Sizer, 1, wx.EXPAND, 0)
-
-        self.PinX1_9Label = wx.StaticText(self.New_Test_Initiator_Tab, wx.ID_ANY, "X1_9 (Analog 8)")
-        self.PinX1_9_Sizer.Add(self.PinX1_9Label, 0, 0, 0)
-
-        self.PinX1_9Select = wx.ComboBox(self.New_Test_Initiator_Tab, wx.ID_ANY, choices=["Input", "Output", "Unused"], style=wx.CB_DROPDOWN)
-        self.PinX1_9Select.SetSelection(2)
-        self.PinX1_9_Sizer.Add(self.PinX1_9Select, 0, 0, 0)
-
-        self.PinX1_9Description = wx.TextCtrl(self.New_Test_Initiator_Tab, wx.ID_ANY, "Description")
-        self.PinX1_9_Sizer.Add(self.PinX1_9Description, 0, 0, 0)
-
-        self.PinX1_10_Sizer = wx.BoxSizer(wx.HORIZONTAL)
-        self.Pins_Used_Sizer.Add(self.PinX1_10_Sizer, 1, wx.EXPAND, 0)
-
-        self.PinX1_10Label = wx.StaticText(self.New_Test_Initiator_Tab, wx.ID_ANY, "X1_10 (Analog 9)")
-        self.PinX1_10_Sizer.Add(self.PinX1_10Label, 0, 0, 0)
-
-        self.PinX1_10Select = wx.ComboBox(self.New_Test_Initiator_Tab, wx.ID_ANY, choices=["Input", "Output", "Unused"], style=wx.CB_DROPDOWN)
-        self.PinX1_10Select.SetSelection(2)
-        self.PinX1_10_Sizer.Add(self.PinX1_10Select, 0, 0, 0)
-
-        self.PinX1_10Description = wx.TextCtrl(self.New_Test_Initiator_Tab, wx.ID_ANY, "Description")
-        self.PinX1_10_Sizer.Add(self.PinX1_10Description, 0, 0, 0)
-
-        self.PinX1_11_Sizer = wx.BoxSizer(wx.HORIZONTAL)
-        self.Pins_Used_Sizer.Add(self.PinX1_11_Sizer, 1, wx.EXPAND, 0)
-
-        self.PinX1_11Label = wx.StaticText(self.New_Test_Initiator_Tab, wx.ID_ANY, "X1_11 (Analog 10)")
-        self.PinX1_11_Sizer.Add(self.PinX1_11Label, 0, 0, 0)
-
-        self.PinX1_11Select = wx.ComboBox(self.New_Test_Initiator_Tab, wx.ID_ANY, choices=["Input", "Output", "Unused"], style=wx.CB_DROPDOWN)
-        self.PinX1_11Select.SetSelection(2)
-        self.PinX1_11_Sizer.Add(self.PinX1_11Select, 0, 0, 0)
-
-        self.PinX1_11Description = wx.TextCtrl(self.New_Test_Initiator_Tab, wx.ID_ANY, "Description")
-        self.PinX1_11_Sizer.Add(self.PinX1_11Description, 0, 0, 0)
-
-        self.PinX1_12_Sizer = wx.BoxSizer(wx.HORIZONTAL)
-        self.Pins_Used_Sizer.Add(self.PinX1_12_Sizer, 1, wx.EXPAND, 0)
-
-        self.PinX1_12Label = wx.StaticText(self.New_Test_Initiator_Tab, wx.ID_ANY, "X1_12 (Analog 11)")
-        self.PinX1_12_Sizer.Add(self.PinX1_12Label, 0, 0, 0)
-
-        self.PinX1_12Select = wx.ComboBox(self.New_Test_Initiator_Tab, wx.ID_ANY, choices=["Input", "Output", "Unused"], style=wx.CB_DROPDOWN)
-        self.PinX1_12Select.SetSelection(2)
-        self.PinX1_12_Sizer.Add(self.PinX1_12Select, 0, 0, 0)
-
-        self.PinX1_12Description = wx.TextCtrl(self.New_Test_Initiator_Tab, wx.ID_ANY, "Description")
-        self.PinX1_12_Sizer.Add(self.PinX1_12Description, 0, 0, 0)
-
-        self.PinX1_13_Sizer = wx.BoxSizer(wx.HORIZONTAL)
-        self.Pins_Used_Sizer.Add(self.PinX1_13_Sizer, 1, wx.EXPAND, 0)
-
-        self.PinX1_13Label = wx.StaticText(self.New_Test_Initiator_Tab, wx.ID_ANY, "X1_13 (PWM 2)")
-        self.PinX1_13_Sizer.Add(self.PinX1_13Label, 0, 0, 0)
-
-        self.PinX1_13Select = wx.ComboBox(self.New_Test_Initiator_Tab, wx.ID_ANY, choices=["Output", "Unused"], style=wx.CB_DROPDOWN)
-        self.PinX1_13Select.SetSelection(1)
-        self.PinX1_13_Sizer.Add(self.PinX1_13Select, 0, 0, 0)
-
-        self.PinX1_13Description = wx.TextCtrl(self.New_Test_Initiator_Tab, wx.ID_ANY, "Description")
-        self.PinX1_13_Sizer.Add(self.PinX1_13Description, 0, 0, 0)
-
-        self.PinX1_14_Sizer = wx.BoxSizer(wx.HORIZONTAL)
-        self.Pins_Used_Sizer.Add(self.PinX1_14_Sizer, 1, wx.EXPAND, 0)
-
-        self.PinX1_14Label = wx.StaticText(self.New_Test_Initiator_Tab, wx.ID_ANY, "X1_14 (PWM 3)")
-        self.PinX1_14_Sizer.Add(self.PinX1_14Label, 0, 0, 0)
-
-        self.PinX1_14Select = wx.ComboBox(self.New_Test_Initiator_Tab, wx.ID_ANY, choices=["Output", "Unused"], style=wx.CB_DROPDOWN)
-        self.PinX1_14Select.SetSelection(1)
-        self.PinX1_14_Sizer.Add(self.PinX1_14Select, 0, 0, 0)
-
-        self.PinX1_14Description = wx.TextCtrl(self.New_Test_Initiator_Tab, wx.ID_ANY, "Description")
-        self.PinX1_14_Sizer.Add(self.PinX1_14Description, 0, 0, 0)
-
-        self.PinX1_15_Sizer = wx.BoxSizer(wx.HORIZONTAL)
-        self.Pins_Used_Sizer.Add(self.PinX1_15_Sizer, 1, wx.EXPAND, 0)
-
-        self.PinX1_15Label = wx.StaticText(self.New_Test_Initiator_Tab, wx.ID_ANY, "X1_15 (PWM 4)")
-        self.PinX1_15_Sizer.Add(self.PinX1_15Label, 0, 0, 0)
-
-        self.PinX1_15Select = wx.ComboBox(self.New_Test_Initiator_Tab, wx.ID_ANY, choices=["Output", "Unused"], style=wx.CB_DROPDOWN)
-        self.PinX1_15Select.SetSelection(1)
-        self.PinX1_15_Sizer.Add(self.PinX1_15Select, 0, 0, 0)
-
-        self.PinX1_15Description = wx.TextCtrl(self.New_Test_Initiator_Tab, wx.ID_ANY, "Description")
-        self.PinX1_15_Sizer.Add(self.PinX1_15Description, 0, 0, 0)
-
-        self.PinX1_16_Sizer = wx.BoxSizer(wx.HORIZONTAL)
-        self.Pins_Used_Sizer.Add(self.PinX1_16_Sizer, 1, wx.EXPAND, 0)
-
-        self.PinX1_16Label = wx.StaticText(self.New_Test_Initiator_Tab, wx.ID_ANY, "X1_16 (PWM 5)")
-        self.PinX1_16_Sizer.Add(self.PinX1_16Label, 0, 0, 0)
-
-        self.PinX1_16Select = wx.ComboBox(self.New_Test_Initiator_Tab, wx.ID_ANY, choices=["Output", "Unused"], style=wx.CB_DROPDOWN)
-        self.PinX1_16Select.SetSelection(1)
-        self.PinX1_16_Sizer.Add(self.PinX1_16Select, 0, 0, 0)
-
-        self.PinX1_16Description = wx.TextCtrl(self.New_Test_Initiator_Tab, wx.ID_ANY, "Description")
-        self.PinX1_16_Sizer.Add(self.PinX1_16Description, 0, 0, 0)
-
-        self.PinX1_17_Sizer = wx.BoxSizer(wx.HORIZONTAL)
-        self.Pins_Used_Sizer.Add(self.PinX1_17_Sizer, 1, wx.EXPAND, 0)
-
-        self.PinX1_17Label = wx.StaticText(self.New_Test_Initiator_Tab, wx.ID_ANY, "X1_17 (PWM 6)")
-        self.PinX1_17_Sizer.Add(self.PinX1_17Label, 0, 0, 0)
-
-        self.PinX1_17Select = wx.ComboBox(self.New_Test_Initiator_Tab, wx.ID_ANY, choices=["Output", "Unused"], style=wx.CB_DROPDOWN)
-        self.PinX1_17Select.SetSelection(1)
-        self.PinX1_17_Sizer.Add(self.PinX1_17Select, 0, 0, 0)
-
-        self.PinX1_17Description = wx.TextCtrl(self.New_Test_Initiator_Tab, wx.ID_ANY, "Description")
-        self.PinX1_17_Sizer.Add(self.PinX1_17Description, 0, 0, 0)
-
-        self.PinX2_1_Sizer = wx.BoxSizer(wx.HORIZONTAL)
-        self.Pins_Used_Sizer.Add(self.PinX2_1_Sizer, 1, wx.EXPAND, 0)
-
-        self.PinX2_1Label = wx.StaticText(self.New_Test_Initiator_Tab, wx.ID_ANY, "X2_1 (K1 - 12V)")
-        self.PinX2_1_Sizer.Add(self.PinX2_1Label, 0, 0, 0)
-
-        self.PinX2_1Select = wx.ComboBox(self.New_Test_Initiator_Tab, wx.ID_ANY, choices=["Output", "Unused"], style=wx.CB_DROPDOWN)
-        self.PinX2_1Select.SetSelection(1)
-        self.PinX2_1_Sizer.Add(self.PinX2_1Select, 0, 0, 0)
-
-        self.PinX2_1Description = wx.TextCtrl(self.New_Test_Initiator_Tab, wx.ID_ANY, "Description")
-        self.PinX2_1_Sizer.Add(self.PinX2_1Description, 0, 0, 0)
-
-        self.PinX2_2_Sizer = wx.BoxSizer(wx.HORIZONTAL)
-        self.Pins_Used_Sizer.Add(self.PinX2_2_Sizer, 1, wx.EXPAND, 0)
-
-        self.PinX2_2Label = wx.StaticText(self.New_Test_Initiator_Tab, wx.ID_ANY, "X2_2 (K2 - 12V)")
-        self.PinX2_2_Sizer.Add(self.PinX2_2Label, 0, 0, 0)
-
-        self.PinX2_2Select = wx.ComboBox(self.New_Test_Initiator_Tab, wx.ID_ANY, choices=["Output", "Unused"], style=wx.CB_DROPDOWN)
-        self.PinX2_2Select.SetSelection(1)
-        self.PinX2_2_Sizer.Add(self.PinX2_2Select, 0, 0, 0)
-
-        self.PinX2_2Description = wx.TextCtrl(self.New_Test_Initiator_Tab, wx.ID_ANY, "Description")
-        self.PinX2_2_Sizer.Add(self.PinX2_2Description, 0, 0, 0)
-
-        self.PinX2_3_Sizer = wx.BoxSizer(wx.HORIZONTAL)
-        self.Pins_Used_Sizer.Add(self.PinX2_3_Sizer, 1, wx.EXPAND, 0)
-
-        self.PinX2_3Label = wx.StaticText(self.New_Test_Initiator_Tab, wx.ID_ANY, "X2_3 (K3 - 12V)")
-        self.PinX2_3_Sizer.Add(self.PinX2_3Label, 0, 0, 0)
-
-        self.PinX2_3Select = wx.ComboBox(self.New_Test_Initiator_Tab, wx.ID_ANY, choices=["Output", "Unused"], style=wx.CB_DROPDOWN)
-        self.PinX2_3Select.SetSelection(1)
-        self.PinX2_3_Sizer.Add(self.PinX2_3Select, 0, 0, 0)
-
-        self.PinX2_3Description = wx.TextCtrl(self.New_Test_Initiator_Tab, wx.ID_ANY, "Description")
-        self.PinX2_3_Sizer.Add(self.PinX2_3Description, 0, 0, 0)
-
-        self.PinX2_4_Sizer = wx.BoxSizer(wx.HORIZONTAL)
-        self.Pins_Used_Sizer.Add(self.PinX2_4_Sizer, 1, wx.EXPAND, 0)
-
-        self.PinX2_4Label = wx.StaticText(self.New_Test_Initiator_Tab, wx.ID_ANY, "X2_4 (K4 - 12V)")
-        self.PinX2_4_Sizer.Add(self.PinX2_4Label, 0, 0, 0)
-
-        self.PinX2_4Select = wx.ComboBox(self.New_Test_Initiator_Tab, wx.ID_ANY, choices=["Output", "Unused"], style=wx.CB_DROPDOWN)
-        self.PinX2_4Select.SetSelection(1)
-        self.PinX2_4_Sizer.Add(self.PinX2_4Select, 0, 0, 0)
-
-        self.PinX2_4Description = wx.TextCtrl(self.New_Test_Initiator_Tab, wx.ID_ANY, "Description")
-        self.PinX2_4_Sizer.Add(self.PinX2_4Description, 0, 0, 0)
-
-        self.PinX2_5_Sizer = wx.BoxSizer(wx.HORIZONTAL)
-        self.Pins_Used_Sizer.Add(self.PinX2_5_Sizer, 1, wx.EXPAND, 0)
-
-        self.PinX2_5Label = wx.StaticText(self.New_Test_Initiator_Tab, wx.ID_ANY, "X2_5 (K5 - 24V)")
-        self.PinX2_5_Sizer.Add(self.PinX2_5Label, 0, 0, 0)
-
-        self.PinX2_5Select = wx.ComboBox(self.New_Test_Initiator_Tab, wx.ID_ANY, choices=["Output", "Unused"], style=wx.CB_DROPDOWN)
-        self.PinX2_5Select.SetSelection(1)
-        self.PinX2_5_Sizer.Add(self.PinX2_5Select, 0, 0, 0)
-
-        self.PinX2_5Description = wx.TextCtrl(self.New_Test_Initiator_Tab, wx.ID_ANY, "Description")
-        self.PinX2_5_Sizer.Add(self.PinX2_5Description, 0, 0, 0)
-
-        self.PinX2_6_Sizer = wx.BoxSizer(wx.HORIZONTAL)
-        self.Pins_Used_Sizer.Add(self.PinX2_6_Sizer, 1, wx.EXPAND, 0)
-
-        self.PinX2_6Label = wx.StaticText(self.New_Test_Initiator_Tab, wx.ID_ANY, "X2_6 (K6 - 24V)")
-        self.PinX2_6_Sizer.Add(self.PinX2_6Label, 0, 0, 0)
-
-        self.PinX2_6Select = wx.ComboBox(self.New_Test_Initiator_Tab, wx.ID_ANY, choices=["Output", "Unused"], style=wx.CB_DROPDOWN)
-        self.PinX2_6Select.SetSelection(1)
-        self.PinX2_6_Sizer.Add(self.PinX2_6Select, 0, 0, 0)
-
-        self.PinX2_6Description = wx.TextCtrl(self.New_Test_Initiator_Tab, wx.ID_ANY, "Description")
-        self.PinX2_6_Sizer.Add(self.PinX2_6Description, 0, 0, 0)
-
-        self.PinX2_7_Sizer = wx.BoxSizer(wx.HORIZONTAL)
-        self.Pins_Used_Sizer.Add(self.PinX2_7_Sizer, 1, wx.EXPAND, 0)
-
-        self.PinX2_7Label = wx.StaticText(self.New_Test_Initiator_Tab, wx.ID_ANY, "X2_7 (K7 - 24V)")
-        self.PinX2_7_Sizer.Add(self.PinX2_7Label, 0, 0, 0)
-
-        self.PinX2_7Select = wx.ComboBox(self.New_Test_Initiator_Tab, wx.ID_ANY, choices=["Output", "Unused"], style=wx.CB_DROPDOWN)
-        self.PinX2_7Select.SetSelection(1)
-        self.PinX2_7_Sizer.Add(self.PinX2_7Select, 0, 0, 0)
-
-        self.PinX2_7Description = wx.TextCtrl(self.New_Test_Initiator_Tab, wx.ID_ANY, "Description")
-        self.PinX2_7_Sizer.Add(self.PinX2_7Description, 0, 0, 0)
-
-        self.PinX2_8_Sizer = wx.BoxSizer(wx.HORIZONTAL)
-        self.Pins_Used_Sizer.Add(self.PinX2_8_Sizer, 1, wx.EXPAND, 0)
-
-        self.PinX2_8Label = wx.StaticText(self.New_Test_Initiator_Tab, wx.ID_ANY, "X2_8 (K8 - 24V)")
-        self.PinX2_8_Sizer.Add(self.PinX2_8Label, 0, 0, 0)
-
-        self.PinX2_8Select = wx.ComboBox(self.New_Test_Initiator_Tab, wx.ID_ANY, choices=["Output", "Unused"], style=wx.CB_DROPDOWN)
-        self.PinX2_8Select.SetSelection(1)
-        self.PinX2_8_Sizer.Add(self.PinX2_8Select, 0, 0, 0)
-
-        self.PinX2_8Description = wx.TextCtrl(self.New_Test_Initiator_Tab, wx.ID_ANY, "Description")
-        self.PinX2_8_Sizer.Add(self.PinX2_8Description, 0, 0, 0)
-
-        self.Pins_Used_Sizer.Add((0, 0), 0, 0, 0)
 
         self.Pins_Used_Sizer.Add((0, 0), 0, 0, 0)
 
@@ -706,7 +436,8 @@ class MainWindow(wx.Frame):
 
             
         #self.PinControl.stopUIThread()
-        self.DisconnectSerialPushed(None)
+        if self.PinControl.getSerialActive():
+            self.DisconnectSerialPushed(None)
         self.PinControl.closeSelf()
         self.Destroy()
         exit(0)
@@ -843,6 +574,7 @@ class MainWindow(wx.Frame):
         #Disable the connect button.
     
     def DisconnectSerialPushed(self, events):
+        self.PinControl.FullReset(None)
         self.PinControl.ExternalStopSerial()
         self.Connect_Button.Enable(True)
 
@@ -894,6 +626,7 @@ class MainWindow(wx.Frame):
             return
         
         self.clearCurrentTest()
+        self.FullReset(None)
         self.DisconnectSerialPushed(None) #Disconnect serial on test close.
 
 #######################################################################################################################################
@@ -1003,7 +736,7 @@ class MainWindow(wx.Frame):
         if self.current_mode==0:
             
             #Check to make sure this test doesn't already exist:
-            for x in List_Of_Tests:
+            for x in self.List_Of_Tests.GetStrings():
                 if x == self.TestNameTextbox.GetValue():
                     wx.MessageBox("Unable to create test - Test with that name already exists!", "Unable to create test",  wx.OK | wx.ICON_INFORMATION)
                     return False
@@ -1065,9 +798,6 @@ class MainWindow(wx.Frame):
             if eval("self.PinX1_{}Select.GetSelection()".format(x))==0:
                 exec("self.test.TestPinsList.addPin({}, self.PinX1_{}Select.GetSelection(), 0, self.PinX1_{}Description.GetValue())".format(x+53, x, x))
                 exec("self.PinX1_{}_Stage_Mode_Select.Enable(True)".format(x))
-                exec("self.PinX1_{}_Stage_Value.Enable(True)".format(x))
-            elif eval("self.PinX1_{}Select.GetSelection()".format(x))==1:
-                exec("self.test.TestPinsList.addPin({}, self.PinX1_{}Select.GetSelection(), 0, self.PinX1_{}Description.GetValue())".format(x+53, x, x))
                 exec("self.PinX1_{}_Stage_Value.Enable(True)".format(x))
 
         for x in range(13, 18):

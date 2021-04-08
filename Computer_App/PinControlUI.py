@@ -18,6 +18,14 @@ import time
 # end wxGlade
 
 '''
+Mega PWM Pins: 2-13, 44-46
+Mega Analog Pins: A0-A14
+
+
+'''
+
+
+'''
 Box Pin Layout - as of 2/8/21 
 X1_1 - AD0 - 54
 X1_2 - AD1 - 55
@@ -992,6 +1000,7 @@ class Pin_Control(wx.Frame):
         #Perform a full reset on all pins.
         print("Performing full reset, clearing pins list and resetting elegoo.")
         self.SerialLine.fullReset()
+        print("FullReset finished in PinControlUI")
 
     def StartSerialComms(self, events):
         #Get the values for the COM port

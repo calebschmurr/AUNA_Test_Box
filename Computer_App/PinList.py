@@ -132,6 +132,7 @@ class PinsList:
     #Change the output value of an input pin.
 
     def getFullResetCmd(self):
+        print("full reset command accessed.")
         return "4"
 
     def changePinOutputVal(self):

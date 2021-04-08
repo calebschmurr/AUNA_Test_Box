@@ -85,6 +85,8 @@ public:
 };
 
 PinValSender PinValueSender;
+void(* resetFunc) (void) = 0; //Declare reset function.
+
 
 void setup() {
   inputArray.reserve(200);
@@ -95,7 +97,6 @@ void setup() {
   }
   Serial.println("Open2.\n");
 }
-void(* resetFunc) (void) = 0; //Declare reset function.
 
 
 void loop() {
@@ -377,6 +378,7 @@ int configureSetup(){
         }
     } else if (inputArray[0] == '4'){
       //Perform full reset:
+      Serial.println("Full Reset...");
       resetFunc();
     } else {
       Serial.println("Command not recognized.");

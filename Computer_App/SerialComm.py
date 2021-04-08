@@ -81,6 +81,7 @@ class SerialHandler():
 
     def fullReset(self):
         self.write(self.PinsList.getFullResetCmd())
+        print("Full reset command written.")
 
     def InitializePins(self):
         #Initializing pins

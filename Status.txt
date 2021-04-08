@@ -32,5 +32,19 @@ Design a box in Solidworks for the system.
 
 Test the system w/ 12V Supply.
 
-Look at certain connectors.
+Look at certain connectors. (DONE - connectors chosen.)
 
+4/8/21: 9:30 AM - 3:00 PM
+
+CHANGES Required:
+
+ - Pins X1_1 through X1_12 are now input only.
+ - Pinx X1_13 through X1_18 are now output only.
+ - Validate that Pins X2_1 through X2_8 are output only.
+
+ - Update the Test Creation process to accomodate for the input changes:
+  - Make the program detect when to send the input and output commands.
+
+DONE:
+ - Changed the Test Creation Menu
+  - Chagned the test creation process to display properly.
