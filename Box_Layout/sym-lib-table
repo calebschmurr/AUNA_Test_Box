@@ -1,3 +1,4 @@
 (sym_lib_table
   (lib (name TestBoxLibrary)(type Legacy)(uri ${KIPRJMOD}/TestBoxLibrary.lib)(options "")(descr ""))
+  (lib (name Box_Layout-rescue)(type Legacy)(uri ${KIPRJMOD}/Box_Layout-rescue.lib)(options "")(descr ""))
 )
