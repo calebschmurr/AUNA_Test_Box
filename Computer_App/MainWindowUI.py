@@ -423,7 +423,7 @@ class MainWindow(wx.Frame):
                 #Remove the folder that was created and everything inside it.
                 for x in self.test.folderPath.iterdir():
                     x.unlink()
-                self.folderPath.rmdir()
+                self.test.folderPath.rmdir()
                 #TODO: Delete test object.
                 
         if self.current_mode==3:
@@ -829,7 +829,8 @@ class MainWindow(wx.Frame):
         #Change this storage up to use the currentStage class??
 
         #Save Stage - depending on if we are in the last stage or a previous stage, save differently.
-        if self.test.current_test==(len(self.test.testStages)): #Append a new stage
+        if ((self.test.current_test == len(self.test.testStages)) and len(self.test.testStages)==0) or (self.test.current_test == len(self.test.testStages) - 1):
+            
             self.test.testStages.append(TestSequence.testStage(self.test.current_test, self.NewTestCreatorDescription.GetValue(), "img{}.png".format(self.test.current_test), self.getNewTestCreatorPins(), self.NewTestCreatorErrorMessage.GetValue(), None))
             self.test.current_test+=1
             #Clear currentImgPath
@@ -845,6 +846,7 @@ class MainWindow(wx.Frame):
         #Increment stage levels
         print("Test stage {} saved.".format(self.test.current_test-1))
         print(self.test.exportJsonFile())
+        self.updateNewTestUI()
 
     def onNewTestDeleteStage(self, event):
         #Delete stage
@@ -866,9 +868,11 @@ class MainWindow(wx.Frame):
         #else:
         #self.test.testStages[self.test.current_test] = TestSequence.testStage(self.test.current_test, self.NewTestCreatorDescription.GetValue(), self.test.currentImgPath, self.getNewTestCreatorPins(), self.NewTestCreatorErrorMessage.GetValue(), None)
         
-        self.test.current_test-=1
+        self.test.current_test -= 1
         #self.test.testStages[self.test.current_test]
         self.testCreatorLoadInValues()
+
+        self.updateNewTestUI()
        
         print("Navigated backwards.")
 
@@ -891,6 +895,7 @@ class MainWindow(wx.Frame):
     def updateNewTestUI(self):
         self.updateNewTestCreatorNumber()
         self.drawNewTestImage()
+        print("updateNewTestUI called, finished.")
 
     #Return a dict with all pins and values.
     def getNewTestCreatorPins(self):
@@ -966,25 +971,6 @@ class MainWindow(wx.Frame):
             print("Pin {} set to code {}".format(self.translatePinToConnector(pin['pin']), pin['check_code']))
         
         print("Pin {} set to {}".format(str(self.translatePinToConnector(pin['pin'])), str(pin['value'])))
-        
-    def onNewTestPreviousStage(self, event):
-        #First check if there is a previous stage
-        if self.test.current_test==0:
-            wx.MessageBox("Currently at the starting test stage, there are no previous tests to choose from.", "No Previous Tests",  wx.OK | wx.ICON_INFORMATION)
-            return
-        
-        #If not, save current test stage:
-        #if self.test.current_test>(len(self.test.testStages)-1):
-            #self.test.testStages.append(TestSequence.testStage(self.test.current_test, self.NewTestCreatorDescription.GetValue(), self.test.currentImgPath, self.getNewTestCreatorPins(), self.NewTestCreatorErrorMessage.GetValue(), None))
-        #else:
-        #self.test.testStages[self.test.current_test] = TestSequence.testStage(self.test.current_test, self.NewTestCreatorDescription.GetValue(), self.test.currentImgPath, self.getNewTestCreatorPins(), self.NewTestCreatorErrorMessage.GetValue(), None)
-        
-        self.test.current_test-=1
-        #self.test.testStages[self.test.current_test]
-        self.testCreatorLoadInValues();
-
-       
-        print("Navigated backwards.")
 
     def enableModifyTestPins(self):
         for z in self.test.TestPinsList.PinList:
@@ -1017,13 +1003,14 @@ class MainWindow(wx.Frame):
             self.setNewTestCreatorPinVal(z)
         
         #Update the image on screen:
-        self.drawNewTestImage()
+        #self.drawNewTestImage()
 
         print("Finished loading in previously-made test creator stage {}.".format(self.test.current_test))
         print(self.test.testStages[self.test.current_test].getDict())
 
     def updateNewTestCreatorNumber(self):
         self.NewTestCreatorStageNumber.SetLabelText("Stage: {}/{}".format(self.test.current_test, len(self.test.testStages)))
+        print("updateNewTestCreatorNumber Called - finished.")
 
     def saveTest(self):
         with open("{}/{}.txt".format(self.test.folderPath, self.test.name), 'w') as outfile:

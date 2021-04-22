@@ -39,8 +39,8 @@ X1_9 - AD8 - 62
 X1_10 - AD9 - 63
 X1_11 - AD10 - 64
 X1_12 - AD11 - 65
-X1_13 - PWM2 - 2
-X1_14 - PWM3 - 3
+X1_13 - PWM2 - 2  Variable Voltage Out 1
+X1_14 - PWM3 - 3  Variable Voltage Out 2
 X1_15 - PWM4 - 4
 X1_16 - PWM5 - 5
 X1_17 - PWM6 - 6

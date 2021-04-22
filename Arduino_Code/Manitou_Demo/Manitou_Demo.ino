@@ -3,6 +3,8 @@
 #include <VariableTimedAction.h>
 #include <math.h>
 
+#include <Adafruit_DS3502.h>
+
 //Declare input array of size 200;
 //For Serial input:  
 
@@ -24,6 +26,11 @@ int outputTime;
 
 //1:23.I;24.I;25.I;26.I;27.I;28.O;!
 PinsList pin_list;
+
+
+//Declare the ds3502 devices:
+Adafruit_DS3502 varOut1 = Adafruit_DS3502();
+Adafruit_DS3502 varOut2 = Adafruit_DS3502();
 
 
 /*
@@ -96,6 +103,23 @@ void setup() {
     
   }
   Serial.println("Open2.\n");
+
+
+  //https://learn.adafruit.com/ds3502-i2c-potentiometer/arduino
+  //Initialize the two DS3502 pins:
+  if (!varOut1.begin(0x29)){
+    Serial.println("Couldn't find DS3502 chip for varOut1.");
+    while (1);
+  }
+  if (!varOut2.begin(0x29)){//Start on address line 0x29.
+    Serial.println("Couldn't find DS3502 chip for varOut2.");
+    while (1);
+  } //varOut2.setWiper(0);  
+
+  //Set the output to 0:
+  varOut1.setWiper(127);
+  varOut2.setWiper(127);
+  //Finished setup.
 }
 
 
@@ -138,7 +162,6 @@ void serialEvent(){ //This is automatically called at the end of the loop,
  */
 int configureSetup(){
 
-
     if (inputArray[0] == '0'){
       //Reset - clear active pins, clear pin list, etc.
       if (Debug){
@@ -167,7 +190,7 @@ int configureSetup(){
         //Start off getting the pin number:
         pin_num[0] = inputArray[loc];
         pin_num[1] = inputArray[loc+1];
-        pin_num[2] = inputArray[loc+2];  
+        pin_num[2] = inputArray[loc+2];
         loc+=4;
         u_pin_num = atoi(pin_num);
         
@@ -347,9 +370,17 @@ int configureSetup(){
           if (pin_list.getPinIndex(new_pin_num) != -1){
              //Pin is a valid output pin.
              if(new_pin_num > 1 && new_pin_num < 14){
-               //New pin is PWM
-               analogWrite(new_pin_num, new_pin_val);
-               
+                //If the new pin is pin X1_13 or X1_14 (2 or 3) - use the DS3502.
+                //Wiper value can be set between 0 and 127. 0 = Max Resistance. 127 = Min Resistance.
+                //LM2596 gets value from 24V - so scale accordingly.
+                if (new_pin_num == 2){
+                  varOut1.setWiper(new_pin_val * 5.291);
+                }else if (new_pin_num == 3){
+                  varOut2.setWiper(new_pin_val * 5.291);
+                } else {
+                  //New pin is PWM
+                  analogWrite(new_pin_num, new_pin_val);
+                }
              } else if (new_pin_num > 21 && new_pin_num < 70){
               //New pin is standard GPIO
               Serial.println(new_pin_val);
