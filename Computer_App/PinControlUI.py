@@ -24,6 +24,13 @@ Mega Analog Pins: A0-A14
 
 '''
 
+'''
+Pin Modes:
+0 - Input.
+1 - Output.
+
+'''
+
 
 '''
 Box Pin Layout - as of 2/8/21 

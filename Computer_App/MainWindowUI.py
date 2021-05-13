@@ -802,7 +802,7 @@ class MainWindow(wx.Frame):
 
         for x in range(13, 18):
             if eval("self.PinX1_{}Select.GetSelection()".format(x))!=1:
-                exec("self.test.TestPinsList.addPin({}, self.PinX1_{}Select.GetSelection(), 0, self.PinX1_{}Description.GetValue())".format(x-11, x, x))
+                exec("self.test.TestPinsList.addPin({}, self.PinX1_{}Select.GetSelection()+1, 0, self.PinX1_{}Description.GetValue())".format(x-11, x, x))
                 exec("self.PinX1_{}_Stage_Value.Enable(True)".format(x))
 
         for z in range(1,9):
@@ -829,7 +829,7 @@ class MainWindow(wx.Frame):
         #Change this storage up to use the currentStage class??
 
         #Save Stage - depending on if we are in the last stage or a previous stage, save differently.
-        if ((self.test.current_test == len(self.test.testStages)) and len(self.test.testStages)==0) or (self.test.current_test == len(self.test.testStages) - 1):
+        if ((self.test.current_test == len(self.test.testStages)) and len(self.test.testStages)==0) or (self.test.current_test == len(self.test.testStages)):
             
             self.test.testStages.append(TestSequence.testStage(self.test.current_test, self.NewTestCreatorDescription.GetValue(), "img{}.png".format(self.test.current_test), self.getNewTestCreatorPins(), self.NewTestCreatorErrorMessage.GetValue(), None))
             self.test.current_test+=1
@@ -907,7 +907,7 @@ class MainWindow(wx.Frame):
                     wx.MessageBox("Please check values for pin X1_{} in order to save stage.".format(x), "Check values",  wx.OK | wx.ICON_INFORMATION)
                 else:
                     returnDict.append(self.getPinObject("X1_{}".format(x)))
-        for x in range(14, 18):
+        for x in range(13, 18):
             if eval("self.PinX1_{}_Stage_Value.IsEnabled()".format(x)):
                 if eval("self.PinX1_{}_Stage_Value.GetValue()==''".format(x)):
                     #send message that there needs to be a value in this value box before saving

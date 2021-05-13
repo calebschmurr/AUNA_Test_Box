@@ -107,7 +107,7 @@ void setup() {
 
   //https://learn.adafruit.com/ds3502-i2c-potentiometer/arduino
   //Initialize the two DS3502 pins:
-  if (!varOut1.begin(0x29)){
+  if (!varOut1.begin(0x28)){
     Serial.println("Couldn't find DS3502 chip for varOut1.");
     while (1);
   }
@@ -117,8 +117,8 @@ void setup() {
   } //varOut2.setWiper(0);  
 
   //Set the output to 0:
-  varOut1.setWiper(127);
-  varOut2.setWiper(127);
+  varOut1.setWiper(127); //Max Voltage
+  varOut2.setWiper(127); //Max Voltage
   //Finished setup.
 }
 
