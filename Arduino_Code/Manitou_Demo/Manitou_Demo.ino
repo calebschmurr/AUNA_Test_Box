@@ -111,14 +111,14 @@ void setup() {
     Serial.println("Couldn't find DS3502 chip for varOut1.");
     while (1);
   }
-  if (!varOut2.begin(0x29)){//Start on address line 0x29.
-    Serial.println("Couldn't find DS3502 chip for varOut2.");
-    while (1);
-  } //varOut2.setWiper(0);  
+  //if (!varOut2.begin(0x29)){//Start on address line 0x29.
+ //   Serial.println("Couldn't find DS3502 chip for varOut2.");
+ //   while (1);
+ // } //varOut2.setWiper(0);  
 
   //Set the output to 0:
-  varOut1.setWiper(127); //Max Voltage
-  varOut2.setWiper(127); //Max Voltage
+  varOut1.setWiper(0); //Max Voltage
+  varOut2.setWiper(0); //Max Voltage
   //Finished setup.
 }
 
@@ -374,9 +374,11 @@ int configureSetup(){
                 //Wiper value can be set between 0 and 127. 0 = Max Resistance. 127 = Min Resistance.
                 //LM2596 gets value from 24V - so scale accordingly.
                 if (new_pin_num == 2){
-                  varOut1.setWiper(new_pin_val * 5.291);
+                  varOut1.setWiper(new_pin_val);
+                  Serial.println("Set Wiper varOut1 to ");
+                  Serial.println(new_pin_val);
                 }else if (new_pin_num == 3){
-                  varOut2.setWiper(new_pin_val * 5.291);
+                  varOut2.setWiper(new_pin_val);
                 } else {
                   //New pin is PWM
                   analogWrite(new_pin_num, new_pin_val);

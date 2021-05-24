@@ -972,12 +972,6 @@ Wire Wire Line
 	4700 5900 4700 5000
 Connection ~ 6300 5900
 Wire Wire Line
-	2550 3350 3300 3350
-Wire Wire Line
-	3350 3300 3350 3450
-Wire Wire Line
-	2550 3450 3350 3450
-Wire Wire Line
 	6650 1900 7300 1900
 Wire Wire Line
 	7300 1900 7300 4050
@@ -1039,17 +1033,6 @@ F 3 "" H 4700 3775 50  0001 C CNN
 	1    4700 3775
 	0    -1   -1   0   
 $EndComp
-$Comp
-L TestBoxLibrary:LM2596_ADJ V?
-U 1 1 6085500A
-P 3975 2675
-F 0 "V?" H 4100 2410 50  0000 C CNN
-F 1 "LM2596_ADJ" H 4100 2501 50  0000 C CNN
-F 2 "" H 3975 2675 50  0001 C CNN
-F 3 "" H 3975 2675 50  0001 C CNN
-	1    3975 2675
-	-1   0    0    1   
-$EndComp
 Wire Wire Line
 	3200 6600 5500 6600
 $Comp
@@ -1063,77 +1046,116 @@ F 3 "" H 4675 3050 50  0001 C CNN
 	1    4675 3050
 	0    -1   -1   0   
 $EndComp
-$Comp
-L TestBoxLibrary:LM2596_ADJ V?
-U 1 1 608EEB19
-P 4000 3300
-F 0 "V?" H 4125 3035 50  0000 C CNN
-F 1 "LM2596_ADJ" H 4125 3126 50  0000 C CNN
-F 2 "" H 4000 3300 50  0001 C CNN
-F 3 "" H 4000 3300 50  0001 C CNN
-	1    4000 3300
-	-1   0    0    1   
-$EndComp
-Wire Wire Line
-	4450 3675 3800 3675
-Wire Wire Line
-	3800 3675 3800 3550
-Wire Wire Line
-	3900 3550 3900 3775
 Wire Wire Line
 	3900 3775 4450 3775
 Wire Wire Line
-	4000 3550 4000 3875
-Wire Wire Line
 	4000 3875 4450 3875
 Wire Wire Line
-	4425 3150 3975 3150
-Wire Wire Line
-	3975 3150 3975 2925
-Wire Wire Line
-	4425 3050 3875 3050
-Wire Wire Line
-	3875 3050 3875 2925
-Wire Wire Line
-	4425 2950 3775 2950
-Wire Wire Line
-	3775 2950 3775 2925
-Wire Wire Line
-	4300 3250 4350 3250
-Wire Wire Line
-	4350 3250 4350 2625
-Wire Wire Line
-	4350 2625 4275 2625
-Wire Wire Line
-	4275 2675 4375 2675
-Wire Wire Line
-	4375 2675 4375 3300
-Wire Wire Line
-	4375 3300 4300 3300
-Wire Wire Line
-	4350 4500 4350 3250
-Wire Wire Line
 	4350 4500 4700 4500
-Connection ~ 4350 3250
-Wire Wire Line
-	4375 3300 4375 4350
 Wire Wire Line
 	4375 4350 4225 4350
 Wire Wire Line
 	4225 4350 4225 5000
 Wire Wire Line
 	4225 5000 4700 5000
-Connection ~ 4375 3300
 Wire Wire Line
-	3450 3300 3350 3300
+	4975 3150 5250 3150
 Wire Wire Line
-	3300 2675 3425 2675
+	5550 3150 5550 3450
+Connection ~ 5550 3450
 Wire Wire Line
-	3300 2675 3300 3350
+	5000 3875 5250 3875
 Wire Wire Line
-	3425 2625 3375 2625
+	5250 3875 5250 3150
+Connection ~ 5250 3150
 Wire Wire Line
-	3375 2625 3375 3250
+	5250 3150 5550 3150
 Wire Wire Line
-	3375 3250 3450 3250
+	4975 3250 5150 3250
+Wire Wire Line
+	5150 3250 5150 3575
+Wire Wire Line
+	5150 3975 5000 3975
+Wire Wire Line
+	5150 3250 5150 2600
+Wire Wire Line
+	5150 2600 5650 2600
+Connection ~ 5150 3250
+Wire Wire Line
+	4975 3050 5075 3050
+Wire Wire Line
+	5075 3050 5075 3775
+Wire Wire Line
+	5075 3775 5000 3775
+Connection ~ 5150 3575
+Wire Wire Line
+	5150 3575 5150 3975
+Wire Wire Line
+	5000 3575 5150 3575
+Wire Wire Line
+	5050 3675 5050 2950
+Wire Wire Line
+	5050 2950 4975 2950
+Wire Wire Line
+	5000 3675 5050 3675
+Wire Wire Line
+	5075 3050 5075 800 
+Wire Wire Line
+	5075 800  6875 800 
+Wire Wire Line
+	6875 800  6875 1200
+Wire Wire Line
+	6875 1200 6700 1200
+Connection ~ 5075 3050
+Wire Wire Line
+	5050 2950 5225 2950
+Wire Wire Line
+	5225 2950 5225 650 
+Wire Wire Line
+	5225 650  6925 650 
+Wire Wire Line
+	6925 650  6925 1250
+Wire Wire Line
+	6925 1250 6650 1250
+Connection ~ 5050 2950
+Wire Wire Line
+	4450 3575 4450 3625
+Wire Wire Line
+	4425 2850 4425 2900
+Wire Wire Line
+	4425 3150 4000 3150
+Wire Wire Line
+	4000 3150 4000 3875
+Wire Wire Line
+	4900 5500 4800 5500
+Wire Wire Line
+	4800 5500 4800 5400
+Wire Wire Line
+	4800 5400 4150 5400
+Wire Wire Line
+	4150 5400 4150 3625
+Wire Wire Line
+	4150 3625 4450 3625
+Connection ~ 4900 5500
+Connection ~ 4450 3625
+Wire Wire Line
+	4450 3625 4450 3675
+Wire Wire Line
+	4150 3625 4150 2900
+Wire Wire Line
+	4150 2900 4425 2900
+Connection ~ 4150 3625
+Connection ~ 4425 2900
+Wire Wire Line
+	4425 2900 4425 2950
+Wire Wire Line
+	3900 3775 3900 3450
+Wire Wire Line
+	2550 3450 3900 3450
+Wire Wire Line
+	4425 3050 3550 3050
+Wire Wire Line
+	3550 3050 3550 3350
+Wire Wire Line
+	2550 3350 3550 3350
 $EndSCHEMATC
