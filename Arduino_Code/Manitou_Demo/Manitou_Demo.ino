@@ -109,12 +109,13 @@ void setup() {
   //Initialize the two DS3502 pins:
   if (!varOut1.begin(0x28)){
     Serial.println("Couldn't find DS3502 chip for varOut1.");
-    while (1);
+    //while (1);
   }
-  //if (!varOut2.begin(0x29)){//Start on address line 0x29.
- //   Serial.println("Couldn't find DS3502 chip for varOut2.");
+  if (!varOut2.begin(0x29)){//Start on address line 0x29.
+   Serial.println("Couldn't find DS3502 chip for varOut2.");
  //   while (1);
- // } //varOut2.setWiper(0);  
+  } 
+  varOut2.setWiper(0);  
 
   //Set the output to 0:
   varOut1.setWiper(0); //Max Voltage

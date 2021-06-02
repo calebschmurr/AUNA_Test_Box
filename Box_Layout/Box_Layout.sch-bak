@@ -25,10 +25,10 @@ F 3 "" H 6150 2350 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L TestBoxLibrary:12VPower P?
+L TestBoxLibrary:12VPower P1
 U 1 1 5FEEBCD6
 P 9550 5500
-F 0 "P?" H 9550 5725 50  0000 C CNN
+F 0 "P1" H 9550 5725 50  0000 C CNN
 F 1 "12VPower" H 9550 5634 50  0000 C CNN
 F 2 "" H 9550 5500 50  0001 C CNN
 F 3 "" H 9550 5500 50  0001 C CNN
@@ -36,10 +36,10 @@ F 3 "" H 9550 5500 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L TestBoxLibrary:24vPower P?
+L TestBoxLibrary:24vPower P2
 U 1 1 5FEEC900
 P 9550 5900
-F 0 "P?" H 9550 6125 50  0000 C CNN
+F 0 "P2" H 9550 6125 50  0000 C CNN
 F 1 "24vPower" H 9550 6034 50  0000 C CNN
 F 2 "" H 9550 5900 50  0001 C CNN
 F 3 "" H 9550 5900 50  0001 C CNN
@@ -159,7 +159,7 @@ Wire Wire Line
 Wire Wire Line
 	7150 2850 6700 2850
 Wire Wire Line
-	9250 5500 5950 5500
+	9250 5500 7350 5500
 Wire Wire Line
 	4900 5500 4900 5300
 Wire Wire Line
@@ -177,25 +177,6 @@ Wire Wire Line
 Connection ~ 5950 5500
 Wire Wire Line
 	5950 5500 5600 5500
-Wire Wire Line
-	6650 5300 6650 5900
-Wire Wire Line
-	7000 5300 7000 5900
-Wire Wire Line
-	7350 5300 7350 5900
-Wire Wire Line
-	9250 5900 7350 5900
-Connection ~ 7350 5900
-Wire Wire Line
-	7000 5900 7350 5900
-Connection ~ 7000 5900
-Wire Wire Line
-	7000 5900 6650 5900
-Connection ~ 6650 5900
-Wire Wire Line
-	6300 5900 6650 5900
-Wire Wire Line
-	6300 5900 6300 5300
 Wire Wire Line
 	9850 5500 10400 5500
 Wire Wire Line
@@ -241,12 +222,12 @@ Use AMP 1-967629 as one connector...\nMaybe DTP04 for power...\nThen DT04-12PA a
 $Comp
 L TestBoxLibrary:Ammeter AM1
 U 1 1 5FF584CE
-P 5900 6350
-F 0 "AM1" H 5800 6177 50  0000 C CNN
-F 1 "Ammeter" H 5800 6086 50  0000 C CNN
-F 2 "" H 5900 6350 50  0001 C CNN
-F 3 "" H 5900 6350 50  0001 C CNN
-	1    5900 6350
+P 5900 7500
+F 0 "AM1" H 5800 7327 50  0000 C CNN
+F 1 "Ammeter" H 5800 7236 50  0000 C CNN
+F 2 "" H 5900 7500 50  0001 C CNN
+F 3 "" H 5900 7500 50  0001 C CNN
+	1    5900 7500
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -301,96 +282,38 @@ X1_18
 $Comp
 L TestBoxLibrary:DT04-12P X2
 U 1 1 60002A9C
-P 1900 6100
-F 0 "X2" V 1075 6183 50  0000 C CNN
-F 1 "DT04-12P" V 1166 6183 50  0000 C CNN
-F 2 "" H 1900 6100 50  0001 C CNN
-F 3 "" H 1900 6100 50  0001 C CNN
-	1    1900 6100
+P 825 6100
+F 0 "X2" V 0   6183 50  0000 C CNN
+F 1 "DT04-12P" V 91  6183 50  0000 C CNN
+F 2 "" H 825 6100 50  0001 C CNN
+F 3 "" H 825 6100 50  0001 C CNN
+	1    825  6100
 	0    1    1    0   
 $EndComp
-Text Label 2100 5500 0    50   ~ 0
+Text Label 1425 5500 0    50   ~ 0
 X2_1
-Text Label 2100 5600 0    50   ~ 0
+Text Label 1425 5600 0    50   ~ 0
 X2_2
-Text Label 2100 5700 0    50   ~ 0
+Text Label 1425 5700 0    50   ~ 0
 X2_3
-Text Label 2100 5800 0    50   ~ 0
+Text Label 1425 5800 0    50   ~ 0
 X2_4
-Text Label 2100 5900 0    50   ~ 0
+Text Label 1425 5900 0    50   ~ 0
 X2_5
-Text Label 2100 6000 0    50   ~ 0
+Text Label 1425 6000 0    50   ~ 0
 X2_6
-Text Label 2100 6100 0    50   ~ 0
+Text Label 1425 6100 0    50   ~ 0
 X2_7
-Text Label 2100 6200 0    50   ~ 0
+Text Label 1425 6200 0    50   ~ 0
 X2_8
-Text Label 2100 6300 0    50   ~ 0
+Text Label 1125 6300 0    50   ~ 0
 X2_9
-Text Label 2100 6400 0    50   ~ 0
+Text Label 1125 6400 0    50   ~ 0
 X2_10
-Text Label 2100 6500 0    50   ~ 0
+Text Label 1125 6500 0    50   ~ 0
 X2_11
-Text Label 2100 6600 0    50   ~ 0
+Text Label 1125 6600 0    50   ~ 0
 X2_12
-Wire Wire Line
-	5100 5300 5100 5600
-Wire Wire Line
-	4600 5600 4600 5500
-Wire Wire Line
-	2100 5500 4600 5500
-Wire Wire Line
-	4600 5600 5100 5600
-Wire Wire Line
-	4550 5600 4550 5650
-Wire Wire Line
-	4550 5650 5450 5650
-Wire Wire Line
-	5450 5650 5450 5300
-Wire Wire Line
-	2100 5600 4550 5600
-Wire Wire Line
-	5800 5300 5800 5700
-Wire Wire Line
-	2100 5700 5800 5700
-Wire Wire Line
-	6150 5800 6150 5300
-Wire Wire Line
-	2100 5800 6150 5800
-Wire Wire Line
-	6500 5300 6500 5850
-Wire Wire Line
-	6500 5850 4500 5850
-Wire Wire Line
-	4500 5850 4500 5900
-Wire Wire Line
-	2100 5900 4500 5900
-Wire Wire Line
-	6850 6000 6850 5300
-Wire Wire Line
-	2100 6000 6850 6000
-Wire Wire Line
-	7200 5300 7200 6050
-Wire Wire Line
-	7200 6050 4500 6050
-Wire Wire Line
-	4500 6050 4500 6100
-Wire Wire Line
-	2100 6100 4500 6100
-Wire Wire Line
-	4550 6200 4550 6100
-Wire Wire Line
-	4550 6100 7550 6100
-Wire Wire Line
-	7550 6100 7550 5300
-Wire Wire Line
-	2100 6200 4550 6200
-Wire Wire Line
-	5500 6600 5500 6350
-Wire Wire Line
-	2100 6600 2900 6600
-Wire Wire Line
-	6100 6350 8250 6350
 Wire Wire Line
 	9000 6350 9000 6000
 Wire Wire Line
@@ -401,7 +324,7 @@ Connection ~ 9000 6000
 Wire Wire Line
 	9000 6000 9000 5600
 Wire Wire Line
-	5700 6150 5700 5600
+	5700 7300 5700 5600
 Wire Wire Line
 	5700 5600 8200 5600
 Wire Wire Line
@@ -412,7 +335,7 @@ Connection ~ 6450 4550
 Wire Wire Line
 	6450 4550 6450 4300
 Wire Wire Line
-	5850 6150 5850 5650
+	5850 7300 5850 5650
 Wire Wire Line
 	5850 5650 8250 5650
 Wire Wire Line
@@ -422,25 +345,6 @@ Wire Wire Line
 Connection ~ 5550 4500
 Wire Wire Line
 	5550 4500 5550 4700
-Wire Wire Line
-	3200 6300 3200 6600
-Wire Wire Line
-	2100 6300 3200 6300
-Connection ~ 3200 6600
-Wire Wire Line
-	3100 6400 3100 6600
-Wire Wire Line
-	2100 6400 3100 6400
-Connection ~ 3100 6600
-Wire Wire Line
-	3100 6600 3200 6600
-Wire Wire Line
-	2900 6500 2900 6600
-Wire Wire Line
-	2100 6500 2900 6500
-Connection ~ 2900 6600
-Wire Wire Line
-	2900 6600 3100 6600
 Text Notes 1250 650  0    50   ~ 0
 Inputs for Analog need a voltage divider: 48v -> 5v.
 $Comp
@@ -967,11 +871,6 @@ Wire Wire Line
 	4700 4500 5550 4500
 Connection ~ 4700 2450
 Wire Wire Line
-	6300 5900 4700 5900
-Wire Wire Line
-	4700 5900 4700 5000
-Connection ~ 6300 5900
-Wire Wire Line
 	6650 1900 7300 1900
 Wire Wire Line
 	7300 1900 7300 4050
@@ -1019,7 +918,6 @@ Connection ~ 4700 4500
 Wire Wire Line
 	8250 5650 8250 6350
 Connection ~ 8250 5650
-Connection ~ 8250 6350
 Wire Wire Line
 	8250 6350 9000 6350
 $Comp
@@ -1033,8 +931,6 @@ F 3 "" H 4700 3775 50  0001 C CNN
 	1    4700 3775
 	0    -1   -1   0   
 $EndComp
-Wire Wire Line
-	3200 6600 5500 6600
 $Comp
 L TestBoxLibrary:DS3502 DS?
 U 1 1 60855D57
@@ -1049,15 +945,9 @@ $EndComp
 Wire Wire Line
 	3900 3775 4450 3775
 Wire Wire Line
-	4000 3875 4450 3875
+	4000 3875 4350 3875
 Wire Wire Line
 	4350 4500 4700 4500
-Wire Wire Line
-	4375 4350 4225 4350
-Wire Wire Line
-	4225 4350 4225 5000
-Wire Wire Line
-	4225 5000 4700 5000
 Wire Wire Line
 	4975 3150 5250 3150
 Wire Wire Line
@@ -1158,4 +1048,387 @@ Wire Wire Line
 	3550 3050 3550 3350
 Wire Wire Line
 	2550 3350 3550 3350
+Wire Wire Line
+	4350 4500 4350 3875
+Connection ~ 4350 3875
+Wire Wire Line
+	4350 3875 4450 3875
+Wire Wire Line
+	6100 7500 6925 7500
+Wire Wire Line
+	6925 7500 6925 6350
+Wire Wire Line
+	6925 6350 8250 6350
+Connection ~ 8250 6350
+$Comp
+L Relay:DIPxx-1Cxx-51x K4
+U 1 1 60C1DC1F
+P 3450 5825
+F 0 "K4" V 2883 5825 50  0000 C CNN
+F 1 "DIPxx-1Cxx-51x" V 2974 5825 50  0000 C CNN
+F 2 "Relay_THT:Relay_StandexMeder_DIP_LowProfile" H 3900 5775 50  0001 L CNN
+F 3 "https://standexelectronics.com/wp-content/uploads/datasheet_reed_relay_DIP.pdf" H 3450 5825 50  0001 C CNN
+	1    3450 5825
+	0    1    1    0   
+$EndComp
+$Comp
+L Relay:DIPxx-1Cxx-51x K5
+U 1 1 60C1F64F
+P 2600 6825
+F 0 "K5" V 2033 6825 50  0000 C CNN
+F 1 "DIPxx-1Cxx-51x" V 2124 6825 50  0000 C CNN
+F 2 "Relay_THT:Relay_StandexMeder_DIP_LowProfile" H 3050 6775 50  0001 L CNN
+F 3 "https://standexelectronics.com/wp-content/uploads/datasheet_reed_relay_DIP.pdf" H 2600 6825 50  0001 C CNN
+	1    2600 6825
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	1025 6300 1450 6300
+Wire Wire Line
+	1450 6300 1450 6400
+Wire Wire Line
+	1450 6600 1025 6600
+Wire Wire Line
+	1025 6500 1450 6500
+Connection ~ 1450 6500
+Wire Wire Line
+	1450 6500 1450 6600
+Wire Wire Line
+	1025 6400 1450 6400
+Connection ~ 1450 6400
+Wire Wire Line
+	1450 6400 1450 6500
+Wire Wire Line
+	1450 6600 1650 6600
+Wire Wire Line
+	1650 6600 1650 7500
+Wire Wire Line
+	1650 7500 5500 7500
+Connection ~ 1450 6600
+$Comp
+L Relay:DIPxx-1Cxx-51x K7
+U 1 1 60CB2105
+P 4325 6825
+F 0 "K7" V 3758 6825 50  0000 C CNN
+F 1 "DIPxx-1Cxx-51x" V 3849 6825 50  0000 C CNN
+F 2 "Relay_THT:Relay_StandexMeder_DIP_LowProfile" H 4775 6775 50  0001 L CNN
+F 3 "https://standexelectronics.com/wp-content/uploads/datasheet_reed_relay_DIP.pdf" H 4325 6825 50  0001 C CNN
+	1    4325 6825
+	0    1    1    0   
+$EndComp
+$Comp
+L Relay:DIPxx-1Cxx-51x K8
+U 1 1 60CB275F
+P 5175 6825
+F 0 "K8" V 4608 6825 50  0000 C CNN
+F 1 "DIPxx-1Cxx-51x" V 4699 6825 50  0000 C CNN
+F 2 "Relay_THT:Relay_StandexMeder_DIP_LowProfile" H 5625 6775 50  0001 L CNN
+F 3 "https://standexelectronics.com/wp-content/uploads/datasheet_reed_relay_DIP.pdf" H 5175 6825 50  0001 C CNN
+	1    5175 6825
+	0    1    1    0   
+$EndComp
+$Comp
+L Relay:DIPxx-1Cxx-51x K3
+U 1 1 60CB2FB2
+P 2650 5800
+F 0 "K3" V 2083 5800 50  0000 C CNN
+F 1 "DIPxx-1Cxx-51x" V 2174 5800 50  0000 C CNN
+F 2 "Relay_THT:Relay_StandexMeder_DIP_LowProfile" H 3100 5750 50  0001 L CNN
+F 3 "https://standexelectronics.com/wp-content/uploads/datasheet_reed_relay_DIP.pdf" H 2650 5800 50  0001 C CNN
+	1    2650 5800
+	0    1    1    0   
+$EndComp
+$Comp
+L Relay:DIPxx-1Cxx-51x K1
+U 1 1 60CB3391
+P 2625 4875
+F 0 "K1" V 2058 4875 50  0000 C CNN
+F 1 "DIPxx-1Cxx-51x" V 2149 4875 50  0000 C CNN
+F 2 "Relay_THT:Relay_StandexMeder_DIP_LowProfile" H 3075 4825 50  0001 L CNN
+F 3 "https://standexelectronics.com/wp-content/uploads/datasheet_reed_relay_DIP.pdf" H 2625 4875 50  0001 C CNN
+	1    2625 4875
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	6300 5300 6300 5500
+Connection ~ 6300 5500
+Wire Wire Line
+	6300 5500 5950 5500
+Wire Wire Line
+	6650 5300 6650 5500
+Connection ~ 6650 5500
+Wire Wire Line
+	6650 5500 6300 5500
+Wire Wire Line
+	7000 5300 7000 5500
+Connection ~ 7000 5500
+Wire Wire Line
+	7000 5500 6650 5500
+Wire Wire Line
+	7350 5300 7350 5500
+Connection ~ 7350 5500
+Wire Wire Line
+	7350 5500 7000 5500
+Wire Wire Line
+	6700 5900 6700 7125
+Wire Wire Line
+	6700 7125 5475 7125
+Wire Wire Line
+	6700 5900 9250 5900
+Wire Wire Line
+	5475 7125 5475 7350
+Wire Wire Line
+	5475 7350 4625 7350
+Wire Wire Line
+	2900 7350 2900 7125
+Connection ~ 5475 7125
+Wire Wire Line
+	3750 7125 3750 7350
+Connection ~ 3750 7350
+Wire Wire Line
+	3750 7350 2900 7350
+Wire Wire Line
+	4625 7125 4625 7350
+Connection ~ 4625 7350
+Wire Wire Line
+	4625 7350 3750 7350
+Wire Wire Line
+	2300 7025 1850 7025
+Wire Wire Line
+	1850 7025 1850 5900
+Wire Wire Line
+	1850 5900 1025 5900
+Wire Wire Line
+	3150 7325 2325 7325
+Wire Wire Line
+	2325 7325 2325 7050
+Wire Wire Line
+	2325 7050 1825 7050
+Wire Wire Line
+	1825 7050 1825 6000
+Wire Wire Line
+	1825 6000 1025 6000
+Wire Wire Line
+	4025 7025 3950 7025
+Wire Wire Line
+	3950 7025 3950 7425
+Wire Wire Line
+	3950 7425 2300 7425
+Wire Wire Line
+	2300 7425 2300 7075
+Wire Wire Line
+	2300 7075 1800 7075
+Wire Wire Line
+	1800 6100 1025 6100
+Wire Wire Line
+	1800 7075 1800 6100
+Wire Wire Line
+	4875 7025 4875 7450
+Wire Wire Line
+	4875 7450 2275 7450
+Wire Wire Line
+	2275 7450 2275 7100
+Wire Wire Line
+	2275 7100 1775 7100
+Wire Wire Line
+	1775 7100 1775 6200
+Wire Wire Line
+	1775 6200 1025 6200
+Wire Wire Line
+	2325 5075 1725 5075
+Wire Wire Line
+	1725 5075 1725 5500
+Wire Wire Line
+	1725 5500 1025 5500
+Wire Wire Line
+	1025 5600 1850 5600
+Wire Wire Line
+	1850 5600 1850 5325
+Wire Wire Line
+	1900 6000 1900 5700
+Wire Wire Line
+	1900 5700 1025 5700
+Wire Wire Line
+	1025 5800 1875 5800
+Wire Wire Line
+	1875 5800 1875 6250
+Wire Wire Line
+	1875 6250 3150 6250
+Wire Wire Line
+	3150 6250 3150 6025
+Wire Wire Line
+	1900 6000 2350 6000
+Wire Wire Line
+	2275 5600 2350 5600
+$Comp
+L Relay:DIPxx-1Cxx-51x K2
+U 1 1 60CB3E50
+P 3450 4875
+F 0 "K2" V 2883 4875 50  0000 C CNN
+F 1 "DIPxx-1Cxx-51x" V 2974 4875 50  0000 C CNN
+F 2 "Relay_THT:Relay_StandexMeder_DIP_LowProfile" H 3900 4825 50  0001 L CNN
+F 3 "https://standexelectronics.com/wp-content/uploads/datasheet_reed_relay_DIP.pdf" H 3450 4875 50  0001 C CNN
+	1    3450 4875
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	1850 5325 3150 5325
+Wire Wire Line
+	3150 5325 3150 5075
+Wire Wire Line
+	4150 5400 3850 5400
+Wire Wire Line
+	3850 5400 3850 5175
+Wire Wire Line
+	3850 5175 3750 5175
+Connection ~ 4150 5400
+Wire Wire Line
+	3850 5400 3850 6125
+Wire Wire Line
+	3850 6125 3750 6125
+Connection ~ 3850 5400
+Wire Wire Line
+	3850 5400 3025 5400
+Wire Wire Line
+	3025 5400 3025 5175
+Wire Wire Line
+	3025 5175 2925 5175
+Wire Wire Line
+	3025 5400 3025 6100
+Wire Wire Line
+	3025 6100 2950 6100
+Connection ~ 3025 5400
+$Comp
+L power:GNDREF #PWR?
+U 1 1 610500D7
+P 2950 5600
+F 0 "#PWR?" H 2950 5350 50  0001 C CNN
+F 1 "GNDREF" H 2955 5427 50  0000 C CNN
+F 2 "" H 2950 5600 50  0001 C CNN
+F 3 "" H 2950 5600 50  0001 C CNN
+	1    2950 5600
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GNDREF #PWR?
+U 1 1 61050AB9
+P 2900 6625
+F 0 "#PWR?" H 2900 6375 50  0001 C CNN
+F 1 "GNDREF" H 2905 6452 50  0000 C CNN
+F 2 "" H 2900 6625 50  0001 C CNN
+F 3 "" H 2900 6625 50  0001 C CNN
+	1    2900 6625
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GNDREF #PWR?
+U 1 1 61051002
+P 3750 6625
+F 0 "#PWR?" H 3750 6375 50  0001 C CNN
+F 1 "GNDREF" H 3755 6452 50  0000 C CNN
+F 2 "" H 3750 6625 50  0001 C CNN
+F 3 "" H 3750 6625 50  0001 C CNN
+	1    3750 6625
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GNDREF #PWR?
+U 1 1 610513F1
+P 4625 6625
+F 0 "#PWR?" H 4625 6375 50  0001 C CNN
+F 1 "GNDREF" H 4630 6452 50  0000 C CNN
+F 2 "" H 4625 6625 50  0001 C CNN
+F 3 "" H 4625 6625 50  0001 C CNN
+	1    4625 6625
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GNDREF #PWR?
+U 1 1 610517A7
+P 5475 6625
+F 0 "#PWR?" H 5475 6375 50  0001 C CNN
+F 1 "GNDREF" H 5480 6452 50  0000 C CNN
+F 2 "" H 5475 6625 50  0001 C CNN
+F 3 "" H 5475 6625 50  0001 C CNN
+	1    5475 6625
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GNDREF #PWR?
+U 1 1 61051AF7
+P 2925 4675
+F 0 "#PWR?" H 2925 4425 50  0001 C CNN
+F 1 "GNDREF" H 2930 4502 50  0000 C CNN
+F 2 "" H 2925 4675 50  0001 C CNN
+F 3 "" H 2925 4675 50  0001 C CNN
+	1    2925 4675
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GNDREF #PWR?
+U 1 1 6105222E
+P 3750 4675
+F 0 "#PWR?" H 3750 4425 50  0001 C CNN
+F 1 "GNDREF" H 3755 4502 50  0000 C CNN
+F 2 "" H 3750 4675 50  0001 C CNN
+F 3 "" H 3750 4675 50  0001 C CNN
+	1    3750 4675
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GNDREF #PWR?
+U 1 1 610525B6
+P 3750 5625
+F 0 "#PWR?" H 3750 5375 50  0001 C CNN
+F 1 "GNDREF" H 3755 5452 50  0000 C CNN
+F 2 "" H 3750 5625 50  0001 C CNN
+F 3 "" H 3750 5625 50  0001 C CNN
+	1    3750 5625
+	1    0    0    -1  
+$EndComp
+Text Label 5100 5300 3    50   ~ 0
+K1_88
+Text Label 5450 5300 3    50   ~ 0
+K2_88
+Text Label 5800 5300 3    50   ~ 0
+K3_88
+Text Label 6150 5300 3    50   ~ 0
+K4_88
+Text Label 6500 5300 3    50   ~ 0
+K5_88
+Text Label 6850 5300 3    50   ~ 0
+K6_88
+Text Label 7200 5300 3    50   ~ 0
+K7_88
+Text Label 7550 5300 3    50   ~ 0
+K8_88
+Text Label 2325 4675 2    50   ~ 0
+8RelayK1
+Text Label 3150 4675 1    50   ~ 0
+8RelayK2
+Text Label 2275 5600 1    50   ~ 0
+8RelayK3
+Text Label 3150 5625 1    50   ~ 0
+8RelayK4
+Text Label 2300 6625 1    50   ~ 0
+8RelayK5
+Wire Wire Line
+	3150 7025 3150 7325
+$Comp
+L Relay:DIPxx-1Cxx-51x K6
+U 1 1 60CB1B9B
+P 3450 6825
+F 0 "K6" V 2883 6825 50  0000 C CNN
+F 1 "DIPxx-1Cxx-51x" V 2974 6825 50  0000 C CNN
+F 2 "Relay_THT:Relay_StandexMeder_DIP_LowProfile" H 3900 6775 50  0001 L CNN
+F 3 "https://standexelectronics.com/wp-content/uploads/datasheet_reed_relay_DIP.pdf" H 3450 6825 50  0001 C CNN
+	1    3450 6825
+	0    1    1    0   
+$EndComp
+Text Label 3150 6625 1    50   ~ 0
+8RelayK6
+Text Label 4025 6625 1    50   ~ 0
+8RelayK7
+Text Label 4875 6625 1    50   ~ 0
+8RelayK8
 $EndSCHEMATC
