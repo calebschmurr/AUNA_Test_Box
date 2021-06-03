@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2021-06-03T16:54:44.166Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.77 Safari/537.36" etag="tg2cR-Zm3cs8gFpTyvhs" version="14.7.4" type="github" pages="9">
+<mxfile host="app.diagrams.net" modified="2021-06-03T16:55:03.171Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.77 Safari/537.36" etag="JAGPkWbtRQh7FvWgqfik" version="14.7.4" type="github" pages="9">
   <diagram id="c79iFraRc1DbxDd-72CT" name="Startup">
     <mxGraphModel dx="2370" dy="1270" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
@@ -2287,7 +2287,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="AK4a1LviWpWpr88ILRxK" name="Software Overview">
-    <mxGraphModel dx="1422" dy="762" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" math="0" shadow="0">
+    <mxGraphModel dx="2370" dy="1270" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" math="0" shadow="0">
       <root>
         <mxCell id="vfyKoq8hd8WbVqE_ZUOx-0" />
         <mxCell id="vfyKoq8hd8WbVqE_ZUOx-1" parent="vfyKoq8hd8WbVqE_ZUOx-0" />
@@ -2494,7 +2494,12 @@
           <mxGeometry x="875.94" y="980" width="128.75" height="90" as="geometry" />
         </mxCell>
         <mxCell id="1s7yPhcioXyC0WQXrJAg-76" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="vfyKoq8hd8WbVqE_ZUOx-1" source="1s7yPhcioXyC0WQXrJAg-71" target="1s7yPhcioXyC0WQXrJAg-75">
-          <mxGeometry relative="1" as="geometry" />
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1090" y="1130" />
+              <mxPoint x="1090" y="860" />
+            </Array>
+          </mxGeometry>
         </mxCell>
         <mxCell id="1s7yPhcioXyC0WQXrJAg-71" value="Increment the Stage Number, and Total Number of Stages." style="whiteSpace=wrap;html=1;strokeWidth=2;" vertex="1" parent="vfyKoq8hd8WbVqE_ZUOx-1">
           <mxGeometry x="881.2550000000001" y="1100" width="120" height="60" as="geometry" />
@@ -2509,28 +2514,28 @@
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="1s7yPhcioXyC0WQXrJAg-75" value="Store the TestSequence Object as a JSON file." style="whiteSpace=wrap;html=1;strokeWidth=2;" vertex="1" parent="vfyKoq8hd8WbVqE_ZUOx-1">
-          <mxGeometry x="880.3050000000001" y="1200" width="120" height="60" as="geometry" />
+          <mxGeometry x="1160.005" y="830" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="1s7yPhcioXyC0WQXrJAg-80" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="vfyKoq8hd8WbVqE_ZUOx-1" source="1s7yPhcioXyC0WQXrJAg-77" target="1s7yPhcioXyC0WQXrJAg-79">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="1s7yPhcioXyC0WQXrJAg-77" value="Get Dict of the TestSequence, and each test stage." style="whiteSpace=wrap;html=1;strokeWidth=2;" vertex="1" parent="vfyKoq8hd8WbVqE_ZUOx-1">
-          <mxGeometry x="1080.305" y="1200" width="120" height="60" as="geometry" />
+          <mxGeometry x="1360.005" y="830" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="1s7yPhcioXyC0WQXrJAg-82" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="vfyKoq8hd8WbVqE_ZUOx-1" source="1s7yPhcioXyC0WQXrJAg-79" target="1s7yPhcioXyC0WQXrJAg-81">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="1s7yPhcioXyC0WQXrJAg-79" value="Dump as JSON inside the test folder, saved as (testname).json" style="whiteSpace=wrap;html=1;strokeWidth=2;" vertex="1" parent="vfyKoq8hd8WbVqE_ZUOx-1">
-          <mxGeometry x="1080.305" y="1300" width="120" height="60" as="geometry" />
+          <mxGeometry x="1360.005" y="930" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="1s7yPhcioXyC0WQXrJAg-84" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="vfyKoq8hd8WbVqE_ZUOx-1" source="1s7yPhcioXyC0WQXrJAg-81" target="1s7yPhcioXyC0WQXrJAg-83">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="1s7yPhcioXyC0WQXrJAg-81" value="Clear the values in NewTest tab, and all values in NewTestCreator tab." style="whiteSpace=wrap;html=1;strokeWidth=2;" vertex="1" parent="vfyKoq8hd8WbVqE_ZUOx-1">
-          <mxGeometry x="880.3050000000001" y="1300" width="120" height="60" as="geometry" />
+          <mxGeometry x="1160.005" y="930" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="1s7yPhcioXyC0WQXrJAg-83" value="End Test Creation" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.terminator;whiteSpace=wrap;" vertex="1" parent="vfyKoq8hd8WbVqE_ZUOx-1">
-          <mxGeometry x="890.3" y="1390" width="100" height="60" as="geometry" />
+          <mxGeometry x="1170" y="1020" width="100" height="60" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
