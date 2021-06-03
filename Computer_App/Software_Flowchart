@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2021-06-03T13:04:46.921Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.77 Safari/537.36" etag="R4emtcvrGCn3nF9jIPQL" version="14.7.4" type="github" pages="6">
+<mxfile host="app.diagrams.net" modified="2021-06-03T13:35:22.491Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.77 Safari/537.36" etag="-fdNgZFP-zGjkFp_97bw" version="14.7.4" type="github" pages="6">
   <diagram id="c79iFraRc1DbxDd-72CT" name="Startup">
     <mxGraphModel dx="2370" dy="1270" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
@@ -1325,7 +1325,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="8I6-hXY4jItryAr4Vlzn" name="Pin Setup and Information">
-    <mxGraphModel dx="981" dy="526" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" math="0" shadow="0">
+    <mxGraphModel dx="1422" dy="762" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" math="0" shadow="0">
       <root>
         <mxCell id="zrRKEG3Dv9DlvAElSiNB-0" />
         <mxCell id="zrRKEG3Dv9DlvAElSiNB-1" parent="zrRKEG3Dv9DlvAElSiNB-0" />
@@ -1803,7 +1803,7 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="q5ja4Zn2cgToxAwqfuHv-166" value="Parameters" style="shape=table;html=1;whiteSpace=wrap;startSize=30;container=1;collapsible=0;childLayout=tableLayout;fontStyle=1;align=center;" vertex="1" parent="q5ja4Zn2cgToxAwqfuHv-160">
-          <mxGeometry x="30" y="30" width="340" height="294" as="geometry" />
+          <mxGeometry x="30" y="30" width="340" height="430" as="geometry" />
         </mxCell>
         <mxCell id="q5ja4Zn2cgToxAwqfuHv-167" value="" style="shape=partialRectangle;html=1;whiteSpace=wrap;collapsible=0;dropTarget=0;pointerEvents=0;fillColor=none;top=0;left=0;bottom=0;right=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="q5ja4Zn2cgToxAwqfuHv-166">
           <mxGeometry y="30" width="340" height="44" as="geometry" />
@@ -1844,7 +1844,7 @@
         <mxCell id="q5ja4Zn2cgToxAwqfuHv-179" style="shape=partialRectangle;html=1;whiteSpace=wrap;collapsible=0;dropTarget=0;pointerEvents=0;fillColor=none;top=0;left=0;bottom=0;right=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="q5ja4Zn2cgToxAwqfuHv-166">
           <mxGeometry y="163" width="340" height="43" as="geometry" />
         </mxCell>
-        <mxCell id="q5ja4Zn2cgToxAwqfuHv-180" value="Value" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;overflow=hidden;" vertex="1" parent="q5ja4Zn2cgToxAwqfuHv-179">
+        <mxCell id="q5ja4Zn2cgToxAwqfuHv-180" value="Current_Value" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;overflow=hidden;" vertex="1" parent="q5ja4Zn2cgToxAwqfuHv-179">
           <mxGeometry width="116" height="43" as="geometry" />
         </mxCell>
         <mxCell id="q5ja4Zn2cgToxAwqfuHv-181" value="Current value of the pin." style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;overflow=hidden;" vertex="1" parent="q5ja4Zn2cgToxAwqfuHv-179">
@@ -1866,16 +1866,28 @@
           <mxGeometry x="231" width="109" height="44" as="geometry" />
         </mxCell>
         <mxCell id="OMb3qVRwZ9xh1geRj9H1-0" style="shape=partialRectangle;html=1;whiteSpace=wrap;collapsible=0;dropTarget=0;pointerEvents=0;fillColor=none;top=0;left=0;bottom=0;right=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="q5ja4Zn2cgToxAwqfuHv-166">
-          <mxGeometry y="250" width="340" height="44" as="geometry" />
+          <mxGeometry y="250" width="340" height="90" as="geometry" />
         </mxCell>
-        <mxCell id="OMb3qVRwZ9xh1geRj9H1-1" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;overflow=hidden;" vertex="1" parent="OMb3qVRwZ9xh1geRj9H1-0">
-          <mxGeometry width="116" height="44" as="geometry" />
+        <mxCell id="OMb3qVRwZ9xh1geRj9H1-1" value="Check_Code" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;overflow=hidden;" vertex="1" parent="OMb3qVRwZ9xh1geRj9H1-0">
+          <mxGeometry width="116" height="90" as="geometry" />
         </mxCell>
-        <mxCell id="OMb3qVRwZ9xh1geRj9H1-2" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;overflow=hidden;" vertex="1" parent="OMb3qVRwZ9xh1geRj9H1-0">
-          <mxGeometry x="116" width="115" height="44" as="geometry" />
+        <mxCell id="OMb3qVRwZ9xh1geRj9H1-2" value="What is the check operation." style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;overflow=hidden;" vertex="1" parent="OMb3qVRwZ9xh1geRj9H1-0">
+          <mxGeometry x="116" width="115" height="90" as="geometry" />
         </mxCell>
-        <mxCell id="OMb3qVRwZ9xh1geRj9H1-3" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;overflow=hidden;" vertex="1" parent="OMb3qVRwZ9xh1geRj9H1-0">
-          <mxGeometry x="231" width="109" height="44" as="geometry" />
+        <mxCell id="OMb3qVRwZ9xh1geRj9H1-3" value="0: Invalid/don&#39;t do anything.&lt;br&gt;1: Equal to&lt;br&gt;2: Less than&lt;br&gt;3: Greater than" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;overflow=hidden;" vertex="1" parent="OMb3qVRwZ9xh1geRj9H1-0">
+          <mxGeometry x="231" width="109" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="OMb3qVRwZ9xh1geRj9H1-4" style="shape=partialRectangle;html=1;whiteSpace=wrap;collapsible=0;dropTarget=0;pointerEvents=0;fillColor=none;top=0;left=0;bottom=0;right=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="q5ja4Zn2cgToxAwqfuHv-166">
+          <mxGeometry y="340" width="340" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="OMb3qVRwZ9xh1geRj9H1-5" value="Expected_Value" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;overflow=hidden;" vertex="1" parent="OMb3qVRwZ9xh1geRj9H1-4">
+          <mxGeometry width="116" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="OMb3qVRwZ9xh1geRj9H1-6" value="The value required for the check." style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;overflow=hidden;" vertex="1" parent="OMb3qVRwZ9xh1geRj9H1-4">
+          <mxGeometry x="116" width="115" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="OMb3qVRwZ9xh1geRj9H1-7" value="0-1024" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;overflow=hidden;" vertex="1" parent="OMb3qVRwZ9xh1geRj9H1-4">
+          <mxGeometry x="231" width="109" height="90" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
