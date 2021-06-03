@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2021-06-03T17:44:14.742Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.77 Safari/537.36" etag="_2NedfGrnJQfZl3uTA-I" version="14.7.4" type="github" pages="10">
+<mxfile host="app.diagrams.net" modified="2021-06-03T17:53:26.897Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.77 Safari/537.36" etag="2EM2b5KZ3hyWZIuctfIX" version="14.7.4" type="github" pages="10">
   <diagram id="c79iFraRc1DbxDd-72CT" name="Startup">
-    <mxGraphModel dx="2370" dy="1270" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="1185" dy="635" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="Sx0PQd4uw2xzY1_r_h0o-0" />
         <mxCell id="Sx0PQd4uw2xzY1_r_h0o-1" parent="Sx0PQd4uw2xzY1_r_h0o-0" />
@@ -2748,7 +2748,7 @@
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="8zUie8lEiHHqUMFbfsGc-6" value="Yes" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="gWPKa5nklX5tYn0kDntu-1" source="8zUie8lEiHHqUMFbfsGc-0" target="8zUie8lEiHHqUMFbfsGc-5">
+        <mxCell id="BbUApgtd5s1B4frhagVR-2" value="Yes" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="gWPKa5nklX5tYn0kDntu-1" source="8zUie8lEiHHqUMFbfsGc-0" target="BbUApgtd5s1B4frhagVR-1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="8zUie8lEiHHqUMFbfsGc-0" value="Test is selected" style="rhombus;whiteSpace=wrap;html=1;strokeWidth=2;" vertex="1" parent="gWPKa5nklX5tYn0kDntu-1">
@@ -2764,8 +2764,53 @@
         <mxCell id="8zUie8lEiHHqUMFbfsGc-2" value="Dialog box: Please select a test." style="whiteSpace=wrap;html=1;strokeWidth=2;" vertex="1" parent="gWPKa5nklX5tYn0kDntu-1">
           <mxGeometry x="310" y="250" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="8zUie8lEiHHqUMFbfsGc-5" value="" style="whiteSpace=wrap;html=1;strokeWidth=2;" vertex="1" parent="gWPKa5nklX5tYn0kDntu-1">
-          <mxGeometry x="140" y="570" width="120" height="60" as="geometry" />
+        <mxCell id="BbUApgtd5s1B4frhagVR-4" value="No" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="gWPKa5nklX5tYn0kDntu-1" source="BbUApgtd5s1B4frhagVR-1" target="BbUApgtd5s1B4frhagVR-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="BbUApgtd5s1B4frhagVR-9" value="Yes" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="gWPKa5nklX5tYn0kDntu-1" source="BbUApgtd5s1B4frhagVR-1" target="BbUApgtd5s1B4frhagVR-8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="BbUApgtd5s1B4frhagVR-1" value="Is Serial connected?" style="rhombus;whiteSpace=wrap;html=1;strokeWidth=2;" vertex="1" parent="gWPKa5nklX5tYn0kDntu-1">
+          <mxGeometry x="127.5" y="540" width="145" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="BbUApgtd5s1B4frhagVR-6" value="No" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="gWPKa5nklX5tYn0kDntu-1" source="BbUApgtd5s1B4frhagVR-3" target="BbUApgtd5s1B4frhagVR-5">
+          <mxGeometry x="-0.7037" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="BbUApgtd5s1B4frhagVR-3" value="Is &#39;Ignore Serial&#39; checkbox checked?" style="rhombus;whiteSpace=wrap;html=1;strokeWidth=2;" vertex="1" parent="gWPKa5nklX5tYn0kDntu-1">
+          <mxGeometry x="330" y="535" width="130" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="BbUApgtd5s1B4frhagVR-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="gWPKa5nklX5tYn0kDntu-1" source="BbUApgtd5s1B4frhagVR-5" target="zZyyz8mn_vhM2VQAOnvc-1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="530" y="170" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="BbUApgtd5s1B4frhagVR-5" value="Dialog box:&amp;nbsp; TestBox is not connected.&amp;nbsp; Please connect via Serial." style="whiteSpace=wrap;html=1;strokeWidth=2;" vertex="1" parent="gWPKa5nklX5tYn0kDntu-1">
+          <mxGeometry x="470" y="340" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="BbUApgtd5s1B4frhagVR-11" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="gWPKa5nklX5tYn0kDntu-1" source="BbUApgtd5s1B4frhagVR-8" target="BbUApgtd5s1B4frhagVR-10">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="BbUApgtd5s1B4frhagVR-8" value="Based on the test name, get the absolute file path." style="whiteSpace=wrap;html=1;strokeWidth=2;" vertex="1" parent="gWPKa5nklX5tYn0kDntu-1">
+          <mxGeometry x="140" y="700" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="BbUApgtd5s1B4frhagVR-13" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="gWPKa5nklX5tYn0kDntu-1" source="BbUApgtd5s1B4frhagVR-10" target="BbUApgtd5s1B4frhagVR-12">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="BbUApgtd5s1B4frhagVR-10" value="Load in the JSON file into a TestSequence object." style="whiteSpace=wrap;html=1;strokeWidth=2;" vertex="1" parent="gWPKa5nklX5tYn0kDntu-1">
+          <mxGeometry x="140" y="790" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="BbUApgtd5s1B4frhagVR-15" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="gWPKa5nklX5tYn0kDntu-1" source="BbUApgtd5s1B4frhagVR-12" target="BbUApgtd5s1B4frhagVR-14">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="BbUApgtd5s1B4frhagVR-12" value="Load in each test stage as it&#39;s own test stage object, append to list of test stages." style="whiteSpace=wrap;html=1;strokeWidth=2;" vertex="1" parent="gWPKa5nklX5tYn0kDntu-1">
+          <mxGeometry x="300" y="775" width="150" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="BbUApgtd5s1B4frhagVR-14" value="Load in the list of pins used, store as PinsList." style="whiteSpace=wrap;html=1;strokeWidth=2;" vertex="1" parent="gWPKa5nklX5tYn0kDntu-1">
+          <mxGeometry x="302.5" y="900" width="145" height="80" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
