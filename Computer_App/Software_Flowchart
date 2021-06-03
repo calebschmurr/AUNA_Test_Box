@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2021-06-03T19:47:15.161Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.77 Safari/537.36" etag="Ahw970Pe96dWTLK53VpG" version="14.7.4" type="github" pages="12">
+<mxfile host="app.diagrams.net" modified="2021-06-03T19:47:42.394Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.77 Safari/537.36" etag="JpHTTJ-Ac2vKDPw0q7KD" version="14.7.4" type="github" pages="12">
   <diagram id="c79iFraRc1DbxDd-72CT" name="Startup">
     <mxGraphModel dx="1185" dy="635" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
@@ -3026,6 +3026,9 @@
         </mxCell>
         <mxCell id="wQ12CpeaaqbhjoqBXlZ4-1" value="0: Reset Arduino" style="swimlane;html=1;startSize=20;horizontal=0;" vertex="1" parent="wQ12CpeaaqbhjoqBXlZ4-0">
           <mxGeometry x="20" width="460" height="170" as="geometry" />
+        </mxCell>
+        <mxCell id="wQ12CpeaaqbhjoqBXlZ4-21" value="If the character 0 is sent, perform a reset of Arduino." style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="wQ12CpeaaqbhjoqBXlZ4-1">
+          <mxGeometry x="80" y="60" width="220" height="20" as="geometry" />
         </mxCell>
         <mxCell id="wQ12CpeaaqbhjoqBXlZ4-19" value="1: Setup Pins" style="swimlane;html=1;startSize=20;horizontal=0;" vertex="1" parent="wQ12CpeaaqbhjoqBXlZ4-0">
           <mxGeometry x="20" y="170" width="460" height="170" as="geometry" />
