@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2021-06-03T18:18:48.658Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.77 Safari/537.36" etag="kOTQdGRGTb4Y7TPesETB" version="14.7.4" type="github" pages="11">
+<mxfile host="app.diagrams.net" modified="2021-06-03T18:21:25.522Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.77 Safari/537.36" etag="-xipjgWcIjm0knCaPKXM" version="14.7.4" type="github" pages="11">
   <diagram id="c79iFraRc1DbxDd-72CT" name="Startup">
     <mxGraphModel dx="1185" dy="635" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
@@ -2767,7 +2767,7 @@
         <mxCell id="BbUApgtd5s1B4frhagVR-4" value="No" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="gWPKa5nklX5tYn0kDntu-1" source="BbUApgtd5s1B4frhagVR-1" target="BbUApgtd5s1B4frhagVR-3">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="BbUApgtd5s1B4frhagVR-9" value="Yes" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="gWPKa5nklX5tYn0kDntu-1" source="BbUApgtd5s1B4frhagVR-1" target="BbUApgtd5s1B4frhagVR-8">
+        <mxCell id="AGf3D2iKuN-WzA5p2L0t-44" value="Yes" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="gWPKa5nklX5tYn0kDntu-1" source="BbUApgtd5s1B4frhagVR-1" target="AGf3D2iKuN-WzA5p2L0t-43">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="BbUApgtd5s1B4frhagVR-1" value="Is Serial connected?" style="rhombus;whiteSpace=wrap;html=1;strokeWidth=2;" vertex="1" parent="gWPKa5nklX5tYn0kDntu-1">
@@ -2777,6 +2777,9 @@
           <mxGeometry x="-0.7037" relative="1" as="geometry">
             <mxPoint as="offset" />
           </mxGeometry>
+        </mxCell>
+        <mxCell id="AGf3D2iKuN-WzA5p2L0t-46" value="Yes" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="gWPKa5nklX5tYn0kDntu-1" source="BbUApgtd5s1B4frhagVR-3" target="AGf3D2iKuN-WzA5p2L0t-45">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="BbUApgtd5s1B4frhagVR-3" value="Is &#39;Ignore Serial&#39; checkbox checked?" style="rhombus;whiteSpace=wrap;html=1;strokeWidth=2;" vertex="1" parent="gWPKa5nklX5tYn0kDntu-1">
           <mxGeometry x="330" y="535" width="130" height="130" as="geometry" />
@@ -2795,43 +2798,43 @@
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="BbUApgtd5s1B4frhagVR-8" value="Based on the test name, get the absolute file path." style="whiteSpace=wrap;html=1;strokeWidth=2;" vertex="1" parent="gWPKa5nklX5tYn0kDntu-1">
-          <mxGeometry x="140" y="700" width="120" height="60" as="geometry" />
+          <mxGeometry x="142.5" y="790" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="BbUApgtd5s1B4frhagVR-13" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="gWPKa5nklX5tYn0kDntu-1" source="BbUApgtd5s1B4frhagVR-10" target="BbUApgtd5s1B4frhagVR-12">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="BbUApgtd5s1B4frhagVR-10" value="Load in the JSON file into a TestSequence object." style="whiteSpace=wrap;html=1;strokeWidth=2;" vertex="1" parent="gWPKa5nklX5tYn0kDntu-1">
-          <mxGeometry x="140" y="790" width="120" height="60" as="geometry" />
+          <mxGeometry x="142.5" y="880" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="BbUApgtd5s1B4frhagVR-15" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="gWPKa5nklX5tYn0kDntu-1" source="BbUApgtd5s1B4frhagVR-12" target="BbUApgtd5s1B4frhagVR-14">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="BbUApgtd5s1B4frhagVR-12" value="Load in each test stage as it&#39;s own test stage object, append to list of test stages." style="whiteSpace=wrap;html=1;strokeWidth=2;" vertex="1" parent="gWPKa5nklX5tYn0kDntu-1">
-          <mxGeometry x="300" y="775" width="150" height="90" as="geometry" />
+          <mxGeometry x="302.5" y="865" width="150" height="90" as="geometry" />
         </mxCell>
         <mxCell id="BbUApgtd5s1B4frhagVR-17" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="gWPKa5nklX5tYn0kDntu-1" source="BbUApgtd5s1B4frhagVR-14" target="BbUApgtd5s1B4frhagVR-16">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="BbUApgtd5s1B4frhagVR-14" value="Load in the list of pins used, store as PinsList." style="whiteSpace=wrap;html=1;strokeWidth=2;" vertex="1" parent="gWPKa5nklX5tYn0kDntu-1">
-          <mxGeometry x="302.5" y="900" width="145" height="80" as="geometry" />
+          <mxGeometry x="305" y="980" width="145" height="80" as="geometry" />
         </mxCell>
         <mxCell id="BbUApgtd5s1B4frhagVR-19" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="gWPKa5nklX5tYn0kDntu-1" source="BbUApgtd5s1B4frhagVR-16" target="BbUApgtd5s1B4frhagVR-18">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="BbUApgtd5s1B4frhagVR-16" value="Send Serial Setup command - setup all pins." style="whiteSpace=wrap;html=1;strokeWidth=2;" vertex="1" parent="gWPKa5nklX5tYn0kDntu-1">
-          <mxGeometry x="132.5" y="900" width="140" height="80" as="geometry" />
+          <mxGeometry x="132.5" y="980" width="140" height="80" as="geometry" />
         </mxCell>
         <mxCell id="AGf3D2iKuN-WzA5p2L0t-1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="gWPKa5nklX5tYn0kDntu-1" source="BbUApgtd5s1B4frhagVR-18" target="AGf3D2iKuN-WzA5p2L0t-0">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="BbUApgtd5s1B4frhagVR-18" value="Wait ~1-2 seconds for Arduino to receive and process Serial signal." style="whiteSpace=wrap;html=1;strokeWidth=2;" vertex="1" parent="gWPKa5nklX5tYn0kDntu-1">
-          <mxGeometry x="127.5" y="1010" width="150" height="80" as="geometry" />
+          <mxGeometry x="127.5" y="1085" width="150" height="80" as="geometry" />
         </mxCell>
         <mxCell id="AGf3D2iKuN-WzA5p2L0t-3" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="gWPKa5nklX5tYn0kDntu-1" source="AGf3D2iKuN-WzA5p2L0t-0" target="AGf3D2iKuN-WzA5p2L0t-2">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="AGf3D2iKuN-WzA5p2L0t-0" value="Send Serial signal for state of the first stage." style="whiteSpace=wrap;html=1;strokeWidth=2;" vertex="1" parent="gWPKa5nklX5tYn0kDntu-1">
-          <mxGeometry x="310" y="1005" width="155" height="90" as="geometry" />
+          <mxGeometry x="315" y="1080" width="155" height="90" as="geometry" />
         </mxCell>
         <mxCell id="AGf3D2iKuN-WzA5p2L0t-5" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="gWPKa5nklX5tYn0kDntu-1" source="AGf3D2iKuN-WzA5p2L0t-2" target="AGf3D2iKuN-WzA5p2L0t-4">
           <mxGeometry relative="1" as="geometry">
@@ -2842,7 +2845,7 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="AGf3D2iKuN-WzA5p2L0t-2" value="Update UI - set the Status textbox with the test number.&amp;nbsp; Set Operation with the Description.&amp;nbsp; Set the Current Test name with the name of the test.&amp;nbsp;" style="whiteSpace=wrap;html=1;strokeWidth=2;" vertex="1" parent="gWPKa5nklX5tYn0kDntu-1">
-          <mxGeometry x="510" y="997.5" width="180" height="105" as="geometry" />
+          <mxGeometry x="510" y="960" width="180" height="105" as="geometry" />
         </mxCell>
         <mxCell id="AGf3D2iKuN-WzA5p2L0t-7" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="gWPKa5nklX5tYn0kDntu-1" source="AGf3D2iKuN-WzA5p2L0t-4" target="AGf3D2iKuN-WzA5p2L0t-6">
           <mxGeometry relative="1" as="geometry" />
@@ -2952,6 +2955,18 @@
         </mxCell>
         <mxCell id="AGf3D2iKuN-WzA5p2L0t-38" value="Wait brief time to configure." style="whiteSpace=wrap;html=1;strokeWidth=2;" vertex="1" parent="gWPKa5nklX5tYn0kDntu-1">
           <mxGeometry x="660" y="850" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="AGf3D2iKuN-WzA5p2L0t-50" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="gWPKa5nklX5tYn0kDntu-1" source="AGf3D2iKuN-WzA5p2L0t-43" target="BbUApgtd5s1B4frhagVR-8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="AGf3D2iKuN-WzA5p2L0t-43" value="Set Mode = 1" style="whiteSpace=wrap;html=1;strokeWidth=2;" vertex="1" parent="gWPKa5nklX5tYn0kDntu-1">
+          <mxGeometry x="140" y="700" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="AGf3D2iKuN-WzA5p2L0t-47" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="gWPKa5nklX5tYn0kDntu-1" source="AGf3D2iKuN-WzA5p2L0t-45" target="AGf3D2iKuN-WzA5p2L0t-43">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="AGf3D2iKuN-WzA5p2L0t-45" value="Set Ignore Serial." style="whiteSpace=wrap;html=1;strokeWidth=2;" vertex="1" parent="gWPKa5nklX5tYn0kDntu-1">
+          <mxGeometry x="335" y="700" width="120" height="60" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
