@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2021-06-03T19:54:22.383Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.77 Safari/537.36" etag="uNjRojTiKlry8ii-GEmN" version="14.7.4" type="github" pages="12">
+<mxfile host="app.diagrams.net" modified="2021-06-03T19:56:32.667Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.77 Safari/537.36" etag="62m8U-c4ffPDVqETs4Ez" version="14.7.4" type="github" pages="12">
   <diagram id="c79iFraRc1DbxDd-72CT" name="Startup">
     <mxGraphModel dx="1185" dy="635" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
@@ -2287,7 +2287,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="AK4a1LviWpWpr88ILRxK" name="Test Creation/Modification Flowchart">
-    <mxGraphModel dx="2031" dy="1089" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="900" math="0" shadow="0">
+    <mxGraphModel dx="1673" dy="896" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="900" math="0" shadow="0">
       <root>
         <mxCell id="vfyKoq8hd8WbVqE_ZUOx-0" />
         <mxCell id="vfyKoq8hd8WbVqE_ZUOx-1" parent="vfyKoq8hd8WbVqE_ZUOx-0" />
@@ -2543,67 +2543,67 @@
           <mxGeometry x="1170" y="1020" width="100" height="60" as="geometry" />
         </mxCell>
         <mxCell id="tI2_mZaPJ8JSzSFF8qb5-0" value="Test Creator Buttons" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="vfyKoq8hd8WbVqE_ZUOx-1">
-          <mxGeometry x="1630" y="60" width="140" height="20" as="geometry" />
+          <mxGeometry x="1630" width="140" height="20" as="geometry" />
         </mxCell>
         <mxCell id="tI2_mZaPJ8JSzSFF8qb5-3" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="vfyKoq8hd8WbVqE_ZUOx-1" source="tI2_mZaPJ8JSzSFF8qb5-1" target="tI2_mZaPJ8JSzSFF8qb5-2">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="tI2_mZaPJ8JSzSFF8qb5-1" value="User Selects: Previous Stage" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" vertex="1" parent="vfyKoq8hd8WbVqE_ZUOx-1">
-          <mxGeometry x="1630" y="110" width="120" height="60" as="geometry" />
+          <mxGeometry x="1630" y="50" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="tI2_mZaPJ8JSzSFF8qb5-5" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="vfyKoq8hd8WbVqE_ZUOx-1" source="tI2_mZaPJ8JSzSFF8qb5-2" target="tI2_mZaPJ8JSzSFF8qb5-4">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="tI2_mZaPJ8JSzSFF8qb5-2" value="Clear all values: Description, Error, Image path, and draw blank image.&amp;nbsp; Then clear all pins and values." style="whiteSpace=wrap;html=1;" vertex="1" parent="vfyKoq8hd8WbVqE_ZUOx-1">
-          <mxGeometry x="1620" y="220" width="140" height="90" as="geometry" />
+          <mxGeometry x="1620" y="160" width="140" height="90" as="geometry" />
         </mxCell>
         <mxCell id="tI2_mZaPJ8JSzSFF8qb5-7" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="vfyKoq8hd8WbVqE_ZUOx-1" source="tI2_mZaPJ8JSzSFF8qb5-4" target="tI2_mZaPJ8JSzSFF8qb5-6">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="tI2_mZaPJ8JSzSFF8qb5-4" value="Decrement stage number." style="whiteSpace=wrap;html=1;" vertex="1" parent="vfyKoq8hd8WbVqE_ZUOx-1">
-          <mxGeometry x="1630" y="350" width="120" height="60" as="geometry" />
+          <mxGeometry x="1630" y="290" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="tI2_mZaPJ8JSzSFF8qb5-9" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="vfyKoq8hd8WbVqE_ZUOx-1" source="tI2_mZaPJ8JSzSFF8qb5-6" target="tI2_mZaPJ8JSzSFF8qb5-8">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="tI2_mZaPJ8JSzSFF8qb5-6" value="Load in all previous values:&amp;nbsp; Set description, error, image path, and redraw image." style="whiteSpace=wrap;html=1;" vertex="1" parent="vfyKoq8hd8WbVqE_ZUOx-1">
-          <mxGeometry x="1625" y="450" width="130" height="80" as="geometry" />
+          <mxGeometry x="1625" y="390" width="130" height="80" as="geometry" />
         </mxCell>
         <mxCell id="tI2_mZaPJ8JSzSFF8qb5-11" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="vfyKoq8hd8WbVqE_ZUOx-1" source="tI2_mZaPJ8JSzSFF8qb5-8" target="tI2_mZaPJ8JSzSFF8qb5-10">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="tI2_mZaPJ8JSzSFF8qb5-8" value="Update stage number." style="whiteSpace=wrap;html=1;" vertex="1" parent="vfyKoq8hd8WbVqE_ZUOx-1">
-          <mxGeometry x="1630" y="570" width="120" height="60" as="geometry" />
+          <mxGeometry x="1630" y="510" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="tI2_mZaPJ8JSzSFF8qb5-10" value="End process" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.terminator;whiteSpace=wrap;" vertex="1" parent="vfyKoq8hd8WbVqE_ZUOx-1">
-          <mxGeometry x="1640" y="650" width="100" height="60" as="geometry" />
+          <mxGeometry x="1640" y="590" width="100" height="60" as="geometry" />
         </mxCell>
         <mxCell id="tI2_mZaPJ8JSzSFF8qb5-16" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="vfyKoq8hd8WbVqE_ZUOx-1" source="tI2_mZaPJ8JSzSFF8qb5-12" target="tI2_mZaPJ8JSzSFF8qb5-15">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="tI2_mZaPJ8JSzSFF8qb5-12" value="User selects: &lt;br&gt;Delete Stage" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" vertex="1" parent="vfyKoq8hd8WbVqE_ZUOx-1">
-          <mxGeometry x="1810" y="105" width="120" height="70" as="geometry" />
+          <mxGeometry x="1810" y="45" width="120" height="70" as="geometry" />
         </mxCell>
         <mxCell id="tI2_mZaPJ8JSzSFF8qb5-18" value="No" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="vfyKoq8hd8WbVqE_ZUOx-1" source="tI2_mZaPJ8JSzSFF8qb5-15" target="tI2_mZaPJ8JSzSFF8qb5-17">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="2010" y="265" />
+              <mxPoint x="2010" y="205" />
             </Array>
           </mxGeometry>
         </mxCell>
         <mxCell id="16vxj8YSONsPPe6YH8Pb-9" value="Yes" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.45;entryY=0.008;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="vfyKoq8hd8WbVqE_ZUOx-1" source="tI2_mZaPJ8JSzSFF8qb5-15" target="16vxj8YSONsPPe6YH8Pb-10">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="1870" y="380" as="targetPoint" />
+            <mxPoint x="1870" y="320" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="tI2_mZaPJ8JSzSFF8qb5-15" value="Is current stage saved? (Current Stage &amp;lt; Number of Stages)" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="vfyKoq8hd8WbVqE_ZUOx-1">
-          <mxGeometry x="1805" y="210" width="130" height="110" as="geometry" />
+          <mxGeometry x="1805" y="150" width="130" height="110" as="geometry" />
         </mxCell>
         <mxCell id="tI2_mZaPJ8JSzSFF8qb5-22" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="vfyKoq8hd8WbVqE_ZUOx-1" source="tI2_mZaPJ8JSzSFF8qb5-17" target="tI2_mZaPJ8JSzSFF8qb5-21">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="tI2_mZaPJ8JSzSFF8qb5-17" value="Clear all values, Description, Error, Image path, and draw blank image." style="whiteSpace=wrap;html=1;" vertex="1" parent="vfyKoq8hd8WbVqE_ZUOx-1">
-          <mxGeometry x="2140" y="235" width="120" height="60" as="geometry" />
+          <mxGeometry x="2140" y="175" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="tI2_mZaPJ8JSzSFF8qb5-24" value="No" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="vfyKoq8hd8WbVqE_ZUOx-1" source="tI2_mZaPJ8JSzSFF8qb5-21" target="tI2_mZaPJ8JSzSFF8qb5-23">
           <mxGeometry relative="1" as="geometry" />
@@ -2612,104 +2612,104 @@
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="tI2_mZaPJ8JSzSFF8qb5-21" value="Previous stage exists" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="vfyKoq8hd8WbVqE_ZUOx-1">
-          <mxGeometry x="2147.5" y="327.5" width="105" height="100" as="geometry" />
+          <mxGeometry x="2147.5" y="267.5" width="105" height="100" as="geometry" />
         </mxCell>
         <mxCell id="16vxj8YSONsPPe6YH8Pb-7" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="vfyKoq8hd8WbVqE_ZUOx-1" source="tI2_mZaPJ8JSzSFF8qb5-23" target="16vxj8YSONsPPe6YH8Pb-6">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="tI2_mZaPJ8JSzSFF8qb5-23" value="Clear all pin values in New Test Creator" style="whiteSpace=wrap;html=1;" vertex="1" parent="vfyKoq8hd8WbVqE_ZUOx-1">
-          <mxGeometry x="2310" y="347.5" width="120" height="60" as="geometry" />
+          <mxGeometry x="2310" y="287.5" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="16vxj8YSONsPPe6YH8Pb-1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="vfyKoq8hd8WbVqE_ZUOx-1" source="tI2_mZaPJ8JSzSFF8qb5-25" target="16vxj8YSONsPPe6YH8Pb-0">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="tI2_mZaPJ8JSzSFF8qb5-25" value="Decrement test number" style="whiteSpace=wrap;html=1;" vertex="1" parent="vfyKoq8hd8WbVqE_ZUOx-1">
-          <mxGeometry x="2140" y="470" width="120" height="60" as="geometry" />
+          <mxGeometry x="2140" y="410" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="16vxj8YSONsPPe6YH8Pb-3" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="vfyKoq8hd8WbVqE_ZUOx-1" source="16vxj8YSONsPPe6YH8Pb-0" target="16vxj8YSONsPPe6YH8Pb-2">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="16vxj8YSONsPPe6YH8Pb-0" value="Load in all pin values from that test." style="whiteSpace=wrap;html=1;" vertex="1" parent="vfyKoq8hd8WbVqE_ZUOx-1">
-          <mxGeometry x="2140" y="560" width="120" height="60" as="geometry" />
+          <mxGeometry x="2140" y="500" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="16vxj8YSONsPPe6YH8Pb-30" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="vfyKoq8hd8WbVqE_ZUOx-1" source="16vxj8YSONsPPe6YH8Pb-2" target="16vxj8YSONsPPe6YH8Pb-29">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="16vxj8YSONsPPe6YH8Pb-2" value="Increment test number." style="whiteSpace=wrap;html=1;" vertex="1" parent="vfyKoq8hd8WbVqE_ZUOx-1">
-          <mxGeometry x="2140" y="650" width="120" height="60" as="geometry" />
+          <mxGeometry x="2140" y="590" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="16vxj8YSONsPPe6YH8Pb-4" value="End process" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.terminator;whiteSpace=wrap;" vertex="1" parent="vfyKoq8hd8WbVqE_ZUOx-1">
-          <mxGeometry x="2150" y="830" width="100" height="60" as="geometry" />
+          <mxGeometry x="2150" y="770" width="100" height="60" as="geometry" />
         </mxCell>
         <mxCell id="16vxj8YSONsPPe6YH8Pb-6" value="End process" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.terminator;whiteSpace=wrap;" vertex="1" parent="vfyKoq8hd8WbVqE_ZUOx-1">
-          <mxGeometry x="2320" y="450" width="100" height="60" as="geometry" />
+          <mxGeometry x="2320" y="390" width="100" height="60" as="geometry" />
         </mxCell>
         <mxCell id="16vxj8YSONsPPe6YH8Pb-12" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="vfyKoq8hd8WbVqE_ZUOx-1" source="16vxj8YSONsPPe6YH8Pb-10">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="1875" y="470" as="targetPoint" />
+            <mxPoint x="1875" y="410" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="16vxj8YSONsPPe6YH8Pb-10" value="Clear all values, Description, Error, Image path, and draw blank image." style="whiteSpace=wrap;html=1;" vertex="1" parent="vfyKoq8hd8WbVqE_ZUOx-1">
-          <mxGeometry x="1815" y="387.5" width="120" height="60" as="geometry" />
+          <mxGeometry x="1815" y="300" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="16vxj8YSONsPPe6YH8Pb-17" value="No" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="vfyKoq8hd8WbVqE_ZUOx-1" source="16vxj8YSONsPPe6YH8Pb-13" target="16vxj8YSONsPPe6YH8Pb-15">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="16vxj8YSONsPPe6YH8Pb-19" value="Yes" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="vfyKoq8hd8WbVqE_ZUOx-1" source="16vxj8YSONsPPe6YH8Pb-13" target="16vxj8YSONsPPe6YH8Pb-25">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="1875" y="610" as="targetPoint" />
+            <mxPoint x="1875" y="530" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="16vxj8YSONsPPe6YH8Pb-13" value="Previous stage exists" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="vfyKoq8hd8WbVqE_ZUOx-1">
-          <mxGeometry x="1822.5" y="470" width="105" height="100" as="geometry" />
+          <mxGeometry x="1822.5" y="390" width="105" height="100" as="geometry" />
         </mxCell>
         <mxCell id="16vxj8YSONsPPe6YH8Pb-22" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="vfyKoq8hd8WbVqE_ZUOx-1" source="16vxj8YSONsPPe6YH8Pb-15" target="16vxj8YSONsPPe6YH8Pb-20">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="16vxj8YSONsPPe6YH8Pb-15" value="Clear all pin values in New Test Creator" style="whiteSpace=wrap;html=1;" vertex="1" parent="vfyKoq8hd8WbVqE_ZUOx-1">
-          <mxGeometry x="1970" y="490" width="120" height="60" as="geometry" />
+          <mxGeometry x="1970" y="410" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="16vxj8YSONsPPe6YH8Pb-24" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="vfyKoq8hd8WbVqE_ZUOx-1" source="16vxj8YSONsPPe6YH8Pb-20" target="16vxj8YSONsPPe6YH8Pb-23">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="16vxj8YSONsPPe6YH8Pb-20" value="Pop the current test sequence from TestSequence array" style="whiteSpace=wrap;html=1;" vertex="1" parent="vfyKoq8hd8WbVqE_ZUOx-1">
-          <mxGeometry x="1970" y="590" width="120" height="60" as="geometry" />
+          <mxGeometry x="1970" y="510" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="16vxj8YSONsPPe6YH8Pb-23" value="End process" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.terminator;whiteSpace=wrap;" vertex="1" parent="vfyKoq8hd8WbVqE_ZUOx-1">
-          <mxGeometry x="1980" y="690" width="100" height="60" as="geometry" />
+          <mxGeometry x="1980" y="610" width="100" height="60" as="geometry" />
         </mxCell>
         <mxCell id="16vxj8YSONsPPe6YH8Pb-27" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="vfyKoq8hd8WbVqE_ZUOx-1" source="16vxj8YSONsPPe6YH8Pb-25" target="16vxj8YSONsPPe6YH8Pb-26">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="16vxj8YSONsPPe6YH8Pb-25" value="Pop the current test sequence from TestSequence array" style="whiteSpace=wrap;html=1;" vertex="1" parent="vfyKoq8hd8WbVqE_ZUOx-1">
-          <mxGeometry x="1815" y="620" width="120" height="60" as="geometry" />
+          <mxGeometry x="1815" y="520" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="16vxj8YSONsPPe6YH8Pb-33" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="vfyKoq8hd8WbVqE_ZUOx-1" source="16vxj8YSONsPPe6YH8Pb-26" target="16vxj8YSONsPPe6YH8Pb-32">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="16vxj8YSONsPPe6YH8Pb-26" value="Decrement stage number" style="whiteSpace=wrap;html=1;" vertex="1" parent="vfyKoq8hd8WbVqE_ZUOx-1">
-          <mxGeometry x="1815" y="710" width="120" height="60" as="geometry" />
+          <mxGeometry x="1815" y="595" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="16vxj8YSONsPPe6YH8Pb-31" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="vfyKoq8hd8WbVqE_ZUOx-1" source="16vxj8YSONsPPe6YH8Pb-29" target="16vxj8YSONsPPe6YH8Pb-4">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="16vxj8YSONsPPe6YH8Pb-29" value="Update Stage Numbers UI" style="whiteSpace=wrap;html=1;" vertex="1" parent="vfyKoq8hd8WbVqE_ZUOx-1">
-          <mxGeometry x="2140" y="735" width="120" height="60" as="geometry" />
+          <mxGeometry x="2140" y="675" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="16vxj8YSONsPPe6YH8Pb-37" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="vfyKoq8hd8WbVqE_ZUOx-1" source="16vxj8YSONsPPe6YH8Pb-32" target="16vxj8YSONsPPe6YH8Pb-36">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="16vxj8YSONsPPe6YH8Pb-32" value="Load in all previous pin values" style="whiteSpace=wrap;html=1;" vertex="1" parent="vfyKoq8hd8WbVqE_ZUOx-1">
-          <mxGeometry x="1815" y="810" width="120" height="60" as="geometry" />
+          <mxGeometry x="1815" y="670" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="16vxj8YSONsPPe6YH8Pb-34" value="End process" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.terminator;whiteSpace=wrap;" vertex="1" parent="vfyKoq8hd8WbVqE_ZUOx-1">
-          <mxGeometry x="1825" y="1000" width="100" height="60" as="geometry" />
+          <mxGeometry x="1825" y="835" width="100" height="60" as="geometry" />
         </mxCell>
         <mxCell id="16vxj8YSONsPPe6YH8Pb-38" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="vfyKoq8hd8WbVqE_ZUOx-1" source="16vxj8YSONsPPe6YH8Pb-36" target="16vxj8YSONsPPe6YH8Pb-34">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="16vxj8YSONsPPe6YH8Pb-36" value="Update Stage Numbers UI" style="whiteSpace=wrap;html=1;" vertex="1" parent="vfyKoq8hd8WbVqE_ZUOx-1">
-          <mxGeometry x="1815" y="900" width="120" height="60" as="geometry" />
+          <mxGeometry x="1815" y="750" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="16vxj8YSONsPPe6YH8Pb-41" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="vfyKoq8hd8WbVqE_ZUOx-1" source="16vxj8YSONsPPe6YH8Pb-39" target="1s7yPhcioXyC0WQXrJAg-26">
           <mxGeometry relative="1" as="geometry" />
@@ -2749,20 +2749,38 @@
         <mxCell id="ghj7-D7dwQJvYECxrQDp-5" value="Dialog box: No test selected" style="whiteSpace=wrap;html=1;" vertex="1" parent="vfyKoq8hd8WbVqE_ZUOx-1">
           <mxGeometry x="2690" y="160" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="K9iBrGnwspwUX22_ManP-1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="vfyKoq8hd8WbVqE_ZUOx-1" source="ghj7-D7dwQJvYECxrQDp-8" target="K9iBrGnwspwUX22_ManP-0">
+        <mxCell id="u4BYFBxCGgI4exCksfqx-4" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="vfyKoq8hd8WbVqE_ZUOx-1" source="ghj7-D7dwQJvYECxrQDp-8" target="u4BYFBxCGgI4exCksfqx-0">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="ghj7-D7dwQJvYECxrQDp-8" value="Set mode to 3" style="whiteSpace=wrap;html=1;" vertex="1" parent="vfyKoq8hd8WbVqE_ZUOx-1">
           <mxGeometry x="2520" y="490" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="K9iBrGnwspwUX22_ManP-0" value="" style="whiteSpace=wrap;html=1;" vertex="1" parent="vfyKoq8hd8WbVqE_ZUOx-1">
-          <mxGeometry x="2520" y="590" width="120" height="60" as="geometry" />
+        <mxCell id="u4BYFBxCGgI4exCksfqx-5" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="vfyKoq8hd8WbVqE_ZUOx-1" source="u4BYFBxCGgI4exCksfqx-0" target="u4BYFBxCGgI4exCksfqx-1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="u4BYFBxCGgI4exCksfqx-0" value="Based on the test name, get the absolute file path." style="whiteSpace=wrap;html=1;strokeWidth=2;" vertex="1" parent="vfyKoq8hd8WbVqE_ZUOx-1">
+          <mxGeometry x="2520" y="585" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="u4BYFBxCGgI4exCksfqx-6" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="vfyKoq8hd8WbVqE_ZUOx-1" source="u4BYFBxCGgI4exCksfqx-1" target="u4BYFBxCGgI4exCksfqx-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="u4BYFBxCGgI4exCksfqx-1" value="Load in the JSON file into a TestSequence object." style="whiteSpace=wrap;html=1;strokeWidth=2;" vertex="1" parent="vfyKoq8hd8WbVqE_ZUOx-1">
+          <mxGeometry x="2520" y="675" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="u4BYFBxCGgI4exCksfqx-7" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="vfyKoq8hd8WbVqE_ZUOx-1" source="u4BYFBxCGgI4exCksfqx-2" target="u4BYFBxCGgI4exCksfqx-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="u4BYFBxCGgI4exCksfqx-2" value="Load in each test stage as it&#39;s own test stage object, append to list of test stages." style="whiteSpace=wrap;html=1;strokeWidth=2;" vertex="1" parent="vfyKoq8hd8WbVqE_ZUOx-1">
+          <mxGeometry x="2680" y="660" width="150" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="u4BYFBxCGgI4exCksfqx-3" value="Load in the list of pins used, store as PinsList." style="whiteSpace=wrap;html=1;strokeWidth=2;" vertex="1" parent="vfyKoq8hd8WbVqE_ZUOx-1">
+          <mxGeometry x="2682.5" y="775" width="145" height="80" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
   <diagram id="wa-8kMKjqbM8MYItFD-C" name="Testing Flowchart Overview">
-    <mxGraphModel dx="2031" dy="1089" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="900" math="0" shadow="0">
+    <mxGraphModel dx="1185" dy="635" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="900" math="0" shadow="0">
       <root>
         <mxCell id="gWPKa5nklX5tYn0kDntu-0" />
         <mxCell id="gWPKa5nklX5tYn0kDntu-1" parent="gWPKa5nklX5tYn0kDntu-0" />
