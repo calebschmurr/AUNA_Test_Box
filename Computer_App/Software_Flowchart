@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2021-06-03T19:47:54.743Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.77 Safari/537.36" etag="fWrazH2mPlpOo946RMeq" version="14.7.4" type="github" pages="12">
+<mxfile host="app.diagrams.net" modified="2021-06-03T19:49:08.506Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.77 Safari/537.36" etag="GjLiO50I1A8nD_Y6GV07" version="14.7.4" type="github" pages="12">
   <diagram id="c79iFraRc1DbxDd-72CT" name="Startup">
     <mxGraphModel dx="1185" dy="635" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
@@ -2287,7 +2287,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="AK4a1LviWpWpr88ILRxK" name="Test Creation/Modification Flowchart">
-    <mxGraphModel dx="2370" dy="1270" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" math="0" shadow="0">
+    <mxGraphModel dx="2370" dy="1270" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="900" math="0" shadow="0">
       <root>
         <mxCell id="vfyKoq8hd8WbVqE_ZUOx-0" />
         <mxCell id="vfyKoq8hd8WbVqE_ZUOx-1" parent="vfyKoq8hd8WbVqE_ZUOx-0" />
@@ -2319,7 +2319,7 @@
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="1s7yPhcioXyC0WQXrJAg-7" value="On Initialization:&lt;br&gt;Store test name,&lt;br&gt;description, set the current test name.&amp;nbsp;" style="whiteSpace=wrap;html=1;strokeWidth=2;" vertex="1" parent="vfyKoq8hd8WbVqE_ZUOx-1">
-          <mxGeometry x="262.5" y="740" width="120" height="60" as="geometry" />
+          <mxGeometry x="262.5" y="710" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="1s7yPhcioXyC0WQXrJAg-11" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="vfyKoq8hd8WbVqE_ZUOx-1" source="1s7yPhcioXyC0WQXrJAg-9" target="1s7yPhcioXyC0WQXrJAg-7">
           <mxGeometry relative="1" as="geometry" />
@@ -2355,7 +2355,7 @@
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="1s7yPhcioXyC0WQXrJAg-20" value="Parse the pin inputs.&amp;nbsp; Comb through all the pins in the New Test tab, determine which pins to add to pinlist." style="whiteSpace=wrap;html=1;strokeWidth=2;" vertex="1" parent="vfyKoq8hd8WbVqE_ZUOx-1">
-          <mxGeometry x="258.75" y="830" width="127.5" height="90" as="geometry" />
+          <mxGeometry x="258.75" y="795" width="127.5" height="90" as="geometry" />
         </mxCell>
         <mxCell id="1s7yPhcioXyC0WQXrJAg-25" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="vfyKoq8hd8WbVqE_ZUOx-1" source="1s7yPhcioXyC0WQXrJAg-22" target="1s7yPhcioXyC0WQXrJAg-24">
           <mxGeometry relative="1" as="geometry" />
