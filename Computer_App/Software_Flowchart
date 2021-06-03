@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2021-06-03T18:24:13.899Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.77 Safari/537.36" etag="PBBBU41y0RX9wNDEUd1e" version="14.7.4" type="github" pages="11">
+<mxfile host="app.diagrams.net" modified="2021-06-03T18:26:53.816Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.77 Safari/537.36" etag="8IWkNh_VCg4eOsb8OGDP" version="14.7.4" type="github" pages="11">
   <diagram id="c79iFraRc1DbxDd-72CT" name="Startup">
     <mxGraphModel dx="1185" dy="635" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
@@ -2929,7 +2929,7 @@
         <mxCell id="AGf3D2iKuN-WzA5p2L0t-30" value="Serial comm: Reset Arduino" style="whiteSpace=wrap;html=1;strokeWidth=2;" vertex="1" parent="gWPKa5nklX5tYn0kDntu-1">
           <mxGeometry x="840" y="540" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="AGf3D2iKuN-WzA5p2L0t-35" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="gWPKa5nklX5tYn0kDntu-1" source="AGf3D2iKuN-WzA5p2L0t-32" target="AGf3D2iKuN-WzA5p2L0t-34">
+        <mxCell id="IsmbeSp2yES4-_WxJGJ1-12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="gWPKa5nklX5tYn0kDntu-1" source="AGf3D2iKuN-WzA5p2L0t-32" target="IsmbeSp2yES4-_WxJGJ1-10">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="AGf3D2iKuN-WzA5p2L0t-32" value="Clear TestSequence object" style="whiteSpace=wrap;html=1;strokeWidth=2;" vertex="1" parent="gWPKa5nklX5tYn0kDntu-1">
@@ -2939,10 +2939,10 @@
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="AGf3D2iKuN-WzA5p2L0t-34" value="Set mode to 0" style="whiteSpace=wrap;html=1;strokeWidth=2;" vertex="1" parent="gWPKa5nklX5tYn0kDntu-1">
-          <mxGeometry x="840" y="720" width="120" height="60" as="geometry" />
+          <mxGeometry x="840" y="810" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="AGf3D2iKuN-WzA5p2L0t-36" value="End Test" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.terminator;whiteSpace=wrap;" vertex="1" parent="gWPKa5nklX5tYn0kDntu-1">
-          <mxGeometry x="850" y="805" width="100" height="60" as="geometry" />
+          <mxGeometry x="850" y="895" width="100" height="60" as="geometry" />
         </mxCell>
         <mxCell id="AGf3D2iKuN-WzA5p2L0t-41" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="gWPKa5nklX5tYn0kDntu-1" source="AGf3D2iKuN-WzA5p2L0t-38" target="AGf3D2iKuN-WzA5p2L0t-4">
           <mxGeometry relative="1" as="geometry">
@@ -2980,8 +2980,38 @@
         <mxCell id="IsmbeSp2yES4-_WxJGJ1-3" value="Dialog Box:&amp;nbsp; &lt;br&gt;Are you sure you&lt;br&gt;&amp;nbsp;want to close test?" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" vertex="1" parent="gWPKa5nklX5tYn0kDntu-1">
           <mxGeometry x="1140" y="140" width="140" height="70" as="geometry" />
         </mxCell>
-        <mxCell id="IsmbeSp2yES4-_WxJGJ1-5" value="" style="whiteSpace=wrap;html=1;" vertex="1" parent="gWPKa5nklX5tYn0kDntu-1">
+        <mxCell id="IsmbeSp2yES4-_WxJGJ1-8" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="gWPKa5nklX5tYn0kDntu-1" source="IsmbeSp2yES4-_WxJGJ1-5" target="IsmbeSp2yES4-_WxJGJ1-7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="IsmbeSp2yES4-_WxJGJ1-5" value="Serial comm: Reset Arduino" style="whiteSpace=wrap;html=1;" vertex="1" parent="gWPKa5nklX5tYn0kDntu-1">
           <mxGeometry x="1150" y="260" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="IsmbeSp2yES4-_WxJGJ1-14" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="gWPKa5nklX5tYn0kDntu-1" source="IsmbeSp2yES4-_WxJGJ1-7" target="IsmbeSp2yES4-_WxJGJ1-13">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="IsmbeSp2yES4-_WxJGJ1-7" value="Clear TestSequence Object" style="whiteSpace=wrap;html=1;" vertex="1" parent="gWPKa5nklX5tYn0kDntu-1">
+          <mxGeometry x="1150" y="350" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="IsmbeSp2yES4-_WxJGJ1-11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="gWPKa5nklX5tYn0kDntu-1" source="IsmbeSp2yES4-_WxJGJ1-10" target="AGf3D2iKuN-WzA5p2L0t-34">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="IsmbeSp2yES4-_WxJGJ1-10" value="Clear and Reset Test tab display" style="whiteSpace=wrap;html=1;strokeWidth=2;" vertex="1" parent="gWPKa5nklX5tYn0kDntu-1">
+          <mxGeometry x="840" y="720" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="IsmbeSp2yES4-_WxJGJ1-16" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="gWPKa5nklX5tYn0kDntu-1" source="IsmbeSp2yES4-_WxJGJ1-13" target="IsmbeSp2yES4-_WxJGJ1-15">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="IsmbeSp2yES4-_WxJGJ1-13" value="Clear and reset test tab display" style="whiteSpace=wrap;html=1;" vertex="1" parent="gWPKa5nklX5tYn0kDntu-1">
+          <mxGeometry x="1150" y="440" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="IsmbeSp2yES4-_WxJGJ1-18" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="gWPKa5nklX5tYn0kDntu-1" source="IsmbeSp2yES4-_WxJGJ1-15" target="IsmbeSp2yES4-_WxJGJ1-17">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="IsmbeSp2yES4-_WxJGJ1-15" value="Set Mode to 0" style="whiteSpace=wrap;html=1;" vertex="1" parent="gWPKa5nklX5tYn0kDntu-1">
+          <mxGeometry x="1150" y="530" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="IsmbeSp2yES4-_WxJGJ1-17" value="End Test" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.terminator;whiteSpace=wrap;" vertex="1" parent="gWPKa5nklX5tYn0kDntu-1">
+          <mxGeometry x="1160" y="620" width="100" height="60" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
