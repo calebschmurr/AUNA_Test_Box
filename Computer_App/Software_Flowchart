@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2021-06-03T14:38:03.735Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.77 Safari/537.36" etag="KEX7wCBcR12Rst0Yx0bs" version="14.7.4" type="github" pages="7">
+<mxfile host="app.diagrams.net" modified="2021-06-03T15:20:34.533Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.77 Safari/537.36" etag="mFJDxBPu2r34eVobRBVJ" version="14.7.4" type="github" pages="8">
   <diagram id="c79iFraRc1DbxDd-72CT" name="Startup">
     <mxGraphModel dx="2370" dy="1270" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
@@ -1932,6 +1932,48 @@
         <mxCell id="v2zZswJwngK2Z-_wx1dA-17" value="Operations:&lt;br&gt;For each variable, assign each item&lt;br&gt;appropriately." style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="v2zZswJwngK2Z-_wx1dA-15">
           <mxGeometry y="170" width="200" height="70" as="geometry" />
         </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="PLB8BABxf2TUF1mt12Lc" name="System Overview">
+    <mxGraphModel dx="1673" dy="896" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" math="0" shadow="0">
+      <root>
+        <mxCell id="Lg0bLFIVnlx4oxV7NhL3-0" />
+        <mxCell id="Lg0bLFIVnlx4oxV7NhL3-1" parent="Lg0bLFIVnlx4oxV7NhL3-0" />
+        <mxCell id="Lg0bLFIVnlx4oxV7NhL3-2" value="" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.start_2;whiteSpace=wrap;" vertex="1" parent="Lg0bLFIVnlx4oxV7NhL3-1">
+          <mxGeometry x="120" y="490" width="100" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="Lg0bLFIVnlx4oxV7NhL3-3" value="&lt;h1&gt;System Overview&lt;/h1&gt;&lt;div&gt;&lt;u&gt;Goal&lt;/u&gt;: To provide a solution for testing HVAC systems, their wire harnesses and control panels using a single testing unit.&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;u&gt;Components Required&lt;/u&gt;:&amp;nbsp; Physical Testbox,&amp;nbsp; Adapter Harness, Computer with TestBox Software.&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;" vertex="1" parent="Lg0bLFIVnlx4oxV7NhL3-1">
+          <mxGeometry x="30" y="10" width="750" height="300" as="geometry" />
+        </mxCell>
+        <mxCell id="Lg0bLFIVnlx4oxV7NhL3-4" value="System Overview" style="swimlane;html=1;startSize=20;horizontal=1;containerType=tree;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;startArrow&quot;:&quot;none&quot;,&quot;endArrow&quot;:&quot;none&quot;};" vertex="1" parent="Lg0bLFIVnlx4oxV7NhL3-1">
+          <mxGeometry x="760" y="120" width="610" height="430" as="geometry" />
+        </mxCell>
+        <mxCell id="Lg0bLFIVnlx4oxV7NhL3-5" value="" style="edgeStyle=elbowEdgeStyle;elbow=vertical;startArrow=none;endArrow=none;rounded=0;" edge="1" parent="Lg0bLFIVnlx4oxV7NhL3-4" source="Lg0bLFIVnlx4oxV7NhL3-7" target="Lg0bLFIVnlx4oxV7NhL3-8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Lg0bLFIVnlx4oxV7NhL3-6" value="" style="edgeStyle=elbowEdgeStyle;elbow=vertical;startArrow=none;endArrow=none;rounded=0;" edge="1" parent="Lg0bLFIVnlx4oxV7NhL3-4" source="Lg0bLFIVnlx4oxV7NhL3-7" target="Lg0bLFIVnlx4oxV7NhL3-9">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <UserObject label="Full System&lt;br&gt;Goal:&amp;nbsp; To provide a solution for testing Aurora HVAC systems, wire harnesses, and control panels with a single unit.&amp;nbsp;" treeRoot="1" id="Lg0bLFIVnlx4oxV7NhL3-7">
+          <mxCell style="whiteSpace=wrap;html=1;align=center;treeFolding=1;treeMoving=1;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;startArrow&quot;:&quot;none&quot;,&quot;endArrow&quot;:&quot;none&quot;};" vertex="1" parent="Lg0bLFIVnlx4oxV7NhL3-4">
+            <mxGeometry x="230" y="30" width="170" height="90" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="Lg0bLFIVnlx4oxV7NhL3-8" value="Test Box" style="whiteSpace=wrap;html=1;align=center;verticalAlign=middle;treeFolding=1;treeMoving=1;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;startArrow&quot;:&quot;none&quot;,&quot;endArrow&quot;:&quot;none&quot;};" vertex="1" parent="Lg0bLFIVnlx4oxV7NhL3-4">
+          <mxGeometry x="70" y="180" width="100" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Lg0bLFIVnlx4oxV7NhL3-9" value="Adapter Harnesses" style="whiteSpace=wrap;html=1;align=center;verticalAlign=middle;treeFolding=1;treeMoving=1;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;startArrow&quot;:&quot;none&quot;,&quot;endArrow&quot;:&quot;none&quot;};" vertex="1" parent="Lg0bLFIVnlx4oxV7NhL3-4">
+          <mxGeometry x="265" y="180" width="100" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Lg0bLFIVnlx4oxV7NhL3-13" value="" style="edgeStyle=elbowEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;elbow=vertical;startArrow=none;endArrow=none;" edge="1" source="Lg0bLFIVnlx4oxV7NhL3-7" target="Lg0bLFIVnlx4oxV7NhL3-14" parent="Lg0bLFIVnlx4oxV7NhL3-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <UserObject label="Computer with Test Box Software" treeRoot="1" id="Lg0bLFIVnlx4oxV7NhL3-14">
+          <mxCell style="whiteSpace=wrap;html=1;align=center;treeFolding=1;treeMoving=1;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;startArrow&quot;:&quot;none&quot;,&quot;endArrow&quot;:&quot;none&quot;};" vertex="1" parent="Lg0bLFIVnlx4oxV7NhL3-4">
+            <mxGeometry x="430" y="180" width="120" height="60" as="geometry" />
+          </mxCell>
+        </UserObject>
       </root>
     </mxGraphModel>
   </diagram>
