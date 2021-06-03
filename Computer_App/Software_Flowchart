@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2021-06-03T20:49:43.854Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.77 Safari/537.36" etag="5kgB3wVwiZaTrBGOE4K0" version="14.7.4" type="github" pages="12">
+<mxfile host="app.diagrams.net" modified="2021-06-03T20:50:54.380Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.77 Safari/537.36" etag="-LInC0AkqwNbxKSfBy2Q" version="14.7.4" type="github" pages="12">
   <diagram id="c79iFraRc1DbxDd-72CT" name="Startup">
     <mxGraphModel dx="1185" dy="635" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
@@ -2038,7 +2038,7 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="nY6Y5zprH84wHejIGU__-32" value="_init_()" style="swimlane;fontStyle=1;align=center;verticalAlign=middle;childLayout=stackLayout;horizontal=1;startSize=29;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;" vertex="1" parent="v2zZswJwngK2Z-_wx1dA-1">
-          <mxGeometry x="240" y="385" width="230" height="240" as="geometry" />
+          <mxGeometry x="230" y="385" width="230" height="240" as="geometry" />
         </mxCell>
         <mxCell id="nY6Y5zprH84wHejIGU__-33" value="&lt;div style=&quot;text-align: left&quot;&gt;&lt;span&gt;Parameters:&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left&quot;&gt;&lt;span&gt;&amp;nbsp;- self : self&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left&quot;&gt;&lt;span&gt;&amp;nbsp;- stage_number: int&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left&quot;&gt;&lt;span&gt;- description: text description&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left&quot;&gt;&lt;span&gt;&amp;nbsp;- image: string image path&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left&quot;&gt;&lt;span&gt;&amp;nbsp;- pin_checks: array of the pin_checks&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left&quot;&gt;&lt;span&gt;&amp;nbsp;- error: string error message.&lt;/span&gt;&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="nY6Y5zprH84wHejIGU__-32">
           <mxGeometry y="29" width="230" height="141" as="geometry" />
