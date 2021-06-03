@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2021-06-03T17:31:28.406Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.77 Safari/537.36" etag="OlLW0YPf6xZCrgn35oCh" version="14.7.4" type="github" pages="9">
+<mxfile host="app.diagrams.net" modified="2021-06-03T17:33:11.578Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.77 Safari/537.36" etag="KYv0W0ArdMgeA29UC0N-" version="14.7.4" type="github" pages="9">
   <diagram id="c79iFraRc1DbxDd-72CT" name="Startup">
     <mxGraphModel dx="2370" dy="1270" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
@@ -2363,19 +2363,24 @@
         <mxCell id="1s7yPhcioXyC0WQXrJAg-22" value="Create an empty array of test stages.&lt;br&gt;Set the folder path to the absolute path of the new folder." style="whiteSpace=wrap;html=1;strokeWidth=2;" vertex="1" parent="vfyKoq8hd8WbVqE_ZUOx-1">
           <mxGeometry x="248.75" y="960" width="147.5" height="90" as="geometry" />
         </mxCell>
-        <mxCell id="1s7yPhcioXyC0WQXrJAg-27" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="vfyKoq8hd8WbVqE_ZUOx-1" source="1s7yPhcioXyC0WQXrJAg-24" target="1s7yPhcioXyC0WQXrJAg-26">
+        <mxCell id="16vxj8YSONsPPe6YH8Pb-40" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="vfyKoq8hd8WbVqE_ZUOx-1" source="1s7yPhcioXyC0WQXrJAg-24" target="16vxj8YSONsPPe6YH8Pb-39">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="1s7yPhcioXyC0WQXrJAg-24" value="Inside New Test Stage Creator Tab, enable all the pins that will be used." style="whiteSpace=wrap;html=1;strokeWidth=2;" vertex="1" parent="vfyKoq8hd8WbVqE_ZUOx-1">
           <mxGeometry x="33.75" y="962.5" width="165" height="85" as="geometry" />
         </mxCell>
-        <mxCell id="1s7yPhcioXyC0WQXrJAg-85" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="vfyKoq8hd8WbVqE_ZUOx-1" source="1s7yPhcioXyC0WQXrJAg-26" target="1s7yPhcioXyC0WQXrJAg-30">
+        <mxCell id="1s7yPhcioXyC0WQXrJAg-85" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="vfyKoq8hd8WbVqE_ZUOx-1" source="1s7yPhcioXyC0WQXrJAg-26" target="1s7yPhcioXyC0WQXrJAg-30">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="480" y="130" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="500" y="1130" />
+              <mxPoint x="500" y="60" />
+              <mxPoint x="696" y="60" />
+            </Array>
           </mxGeometry>
         </mxCell>
         <mxCell id="1s7yPhcioXyC0WQXrJAg-26" value="Set the description for each pin being used." style="whiteSpace=wrap;html=1;strokeWidth=2;" vertex="1" parent="vfyKoq8hd8WbVqE_ZUOx-1">
-          <mxGeometry x="51.879999999999995" y="1090" width="128.75" height="70" as="geometry" />
+          <mxGeometry x="262.5" y="1095" width="128.75" height="70" as="geometry" />
         </mxCell>
         <mxCell id="1s7yPhcioXyC0WQXrJAg-33" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="vfyKoq8hd8WbVqE_ZUOx-1" source="1s7yPhcioXyC0WQXrJAg-30" target="1s7yPhcioXyC0WQXrJAg-32">
           <mxGeometry relative="1" as="geometry" />
@@ -2705,6 +2710,12 @@
         </mxCell>
         <mxCell id="16vxj8YSONsPPe6YH8Pb-36" value="Update Stage Numbers UI" style="whiteSpace=wrap;html=1;" vertex="1" parent="vfyKoq8hd8WbVqE_ZUOx-1">
           <mxGeometry x="1815" y="900" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="16vxj8YSONsPPe6YH8Pb-41" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="vfyKoq8hd8WbVqE_ZUOx-1" source="16vxj8YSONsPPe6YH8Pb-39" target="1s7yPhcioXyC0WQXrJAg-26">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="16vxj8YSONsPPe6YH8Pb-39" value="Change tab to Test Stage Creator Tab" style="whiteSpace=wrap;html=1;strokeWidth=2;" vertex="1" parent="vfyKoq8hd8WbVqE_ZUOx-1">
+          <mxGeometry x="51.88" y="1095" width="128.75" height="70" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
