@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2021-06-03T19:18:42.518Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.77 Safari/537.36" etag="ZfbGf6VSJgOgW6O1yHN3" version="14.7.4" type="github" pages="12">
+<mxfile host="app.diagrams.net" modified="2021-06-03T19:47:15.161Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.77 Safari/537.36" etag="Ahw970Pe96dWTLK53VpG" version="14.7.4" type="github" pages="12">
   <diagram id="c79iFraRc1DbxDd-72CT" name="Startup">
     <mxGraphModel dx="1185" dy="635" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
@@ -3022,16 +3022,31 @@
         <mxCell id="VeE7pAMwQkjYGPGOtE7H-0" />
         <mxCell id="VeE7pAMwQkjYGPGOtE7H-1" parent="VeE7pAMwQkjYGPGOtE7H-0" />
         <mxCell id="wQ12CpeaaqbhjoqBXlZ4-0" value="Transmission" style="swimlane;html=1;childLayout=stackLayout;resizeParent=1;resizeParentMax=0;horizontal=0;startSize=20;horizontalStack=0;" vertex="1" parent="VeE7pAMwQkjYGPGOtE7H-1">
-          <mxGeometry x="240" y="60" width="480" height="410" as="geometry" />
+          <mxGeometry x="240" y="60" width="480" height="650" as="geometry" />
         </mxCell>
-        <mxCell id="wQ12CpeaaqbhjoqBXlZ4-1" value="Lane 1" style="swimlane;html=1;startSize=20;horizontal=0;" vertex="1" parent="wQ12CpeaaqbhjoqBXlZ4-0">
-          <mxGeometry x="20" width="460" height="120" as="geometry" />
+        <mxCell id="wQ12CpeaaqbhjoqBXlZ4-1" value="0: Reset Arduino" style="swimlane;html=1;startSize=20;horizontal=0;" vertex="1" parent="wQ12CpeaaqbhjoqBXlZ4-0">
+          <mxGeometry x="20" width="460" height="170" as="geometry" />
         </mxCell>
-        <mxCell id="wQ12CpeaaqbhjoqBXlZ4-2" value="Lane 2" style="swimlane;html=1;startSize=20;horizontal=0;" vertex="1" parent="wQ12CpeaaqbhjoqBXlZ4-0">
-          <mxGeometry x="20" y="120" width="460" height="140" as="geometry" />
+        <mxCell id="wQ12CpeaaqbhjoqBXlZ4-19" value="1: Setup Pins" style="swimlane;html=1;startSize=20;horizontal=0;" vertex="1" parent="wQ12CpeaaqbhjoqBXlZ4-0">
+          <mxGeometry x="20" y="170" width="460" height="170" as="geometry" />
+        </mxCell>
+        <mxCell id="wQ12CpeaaqbhjoqBXlZ4-17" value="[1]:[pin].[pin_type];[pin].[pin_type];!" style="whiteSpace=wrap;html=1;align=left;" vertex="1" parent="wQ12CpeaaqbhjoqBXlZ4-19">
+          <mxGeometry x="30" y="10" width="410" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="wQ12CpeaaqbhjoqBXlZ4-20" value="pin is a two character number.&amp;nbsp; pin_type is a one character I or O for Input or Output.&amp;nbsp; If the pin is PWM, it will always be PWM out.&amp;nbsp; If the pin is Analog, it will always be input." style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="wQ12CpeaaqbhjoqBXlZ4-19">
+          <mxGeometry x="35" y="50" width="400" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="wQ12CpeaaqbhjoqBXlZ4-2" value="2: Configure Time Output" style="swimlane;html=1;startSize=20;horizontal=0;" vertex="1" parent="wQ12CpeaaqbhjoqBXlZ4-0">
+          <mxGeometry x="20" y="340" width="460" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="wQ12CpeaaqbhjoqBXlZ4-15" value="[2]:1.[time]!" style="whiteSpace=wrap;html=1;align=left;" vertex="1" parent="wQ12CpeaaqbhjoqBXlZ4-2">
+          <mxGeometry x="30" y="10" width="410" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="wQ12CpeaaqbhjoqBXlZ4-16" value="Time value is however long is necessary.&amp;nbsp; Max length is 1200.&amp;nbsp; &lt;br&gt;&lt;div style=&quot;text-align: left&quot;&gt;&lt;span&gt;Time is in milliseconds.&lt;/span&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;" vertex="1" parent="wQ12CpeaaqbhjoqBXlZ4-2">
+          <mxGeometry x="30" y="45" width="350" height="30" as="geometry" />
         </mxCell>
         <mxCell id="wQ12CpeaaqbhjoqBXlZ4-3" value="3: Configure Var Output" style="swimlane;html=1;startSize=20;horizontal=0;" vertex="1" parent="wQ12CpeaaqbhjoqBXlZ4-0">
-          <mxGeometry x="20" y="260" width="460" height="150" as="geometry" />
+          <mxGeometry x="20" y="500" width="460" height="150" as="geometry" />
         </mxCell>
         <mxCell id="wQ12CpeaaqbhjoqBXlZ4-14" value="Pin value is 2 characters, value is 3 characters from 0 to 255.&lt;br&gt;When configuring output, choose a value from 0-255 for PWM, or 0 or 255 for digital output pins." style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="wQ12CpeaaqbhjoqBXlZ4-3">
           <mxGeometry x="30" y="50" width="420" height="50" as="geometry" />
@@ -3050,9 +3065,6 @@
         </mxCell>
         <mxCell id="wQ12CpeaaqbhjoqBXlZ4-11" value="Initialize command with #1, then pin_number is a 2-character number.&lt;br&gt;value is a differing size character.&amp;nbsp;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="wQ12CpeaaqbhjoqBXlZ4-5">
           <mxGeometry x="40" y="70" width="400" height="20" as="geometry" />
-        </mxCell>
-        <mxCell id="wQ12CpeaaqbhjoqBXlZ4-12" value="&lt;div&gt;&lt;span&gt;Initialize&lt;/span&gt;&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="wQ12CpeaaqbhjoqBXlZ4-5">
-          <mxGeometry x="50" y="100" width="390" height="20" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
