@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2021-06-03T13:37:29.052Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.77 Safari/537.36" etag="1XYWiGLgD3jhAv_xAZKM" version="14.7.4" type="github" pages="6">
+<mxfile host="app.diagrams.net" modified="2021-06-03T13:58:05.229Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.77 Safari/537.36" etag="uINzWF-jcNEJNRTiYy3J" version="14.7.4" type="github" pages="7">
   <diagram id="c79iFraRc1DbxDd-72CT" name="Startup">
     <mxGraphModel dx="2370" dy="1270" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
@@ -1888,6 +1888,32 @@
         </mxCell>
         <mxCell id="OMb3qVRwZ9xh1geRj9H1-7" value="0-1024" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;overflow=hidden;" vertex="1" parent="OMb3qVRwZ9xh1geRj9H1-4">
           <mxGeometry x="231" width="109" height="90" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="4iKvxuujepMYjtlLgTHk" name="Test Storage">
+    <mxGraphModel dx="1422" dy="762" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" math="0" shadow="0">
+      <root>
+        <mxCell id="v2zZswJwngK2Z-_wx1dA-0" />
+        <mxCell id="v2zZswJwngK2Z-_wx1dA-1" parent="v2zZswJwngK2Z-_wx1dA-0" />
+        <mxCell id="v2zZswJwngK2Z-_wx1dA-2" value="&amp;lt;&amp;lt;keyword&amp;gt;&amp;gt;&lt;br&gt;&lt;b&gt;Class Test_Stage&lt;br&gt;&lt;/b&gt;" style="swimlane;fontStyle=0;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=55;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;" vertex="1" parent="v2zZswJwngK2Z-_wx1dA-1">
+          <mxGeometry x="90" y="80" width="300" height="550" as="geometry" />
+        </mxCell>
+        <mxCell id="v2zZswJwngK2Z-_wx1dA-3" value="attributes" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="v2zZswJwngK2Z-_wx1dA-2">
+          <mxGeometry y="55" width="300" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="v2zZswJwngK2Z-_wx1dA-4" value="Number :: Stage number&lt;br&gt;Description:: Stage description&lt;br&gt;Image:: Stage image.&amp;nbsp; Relative file path related to the folder.&lt;br&gt;Error:&amp;nbsp; String error mesage.&lt;br&gt;Pins:&amp;nbsp; PinList containing all the pins used in the test.&lt;br&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="v2zZswJwngK2Z-_wx1dA-2">
+          <mxGeometry y="75" width="300" height="175" as="geometry" />
+        </mxCell>
+        <mxCell id="v2zZswJwngK2Z-_wx1dA-7" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" vertex="1" parent="v2zZswJwngK2Z-_wx1dA-2">
+          <mxGeometry y="250" width="300" height="260" as="geometry" />
+        </mxCell>
+        <mxCell id="v2zZswJwngK2Z-_wx1dA-8" value="operations" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="v2zZswJwngK2Z-_wx1dA-2">
+          <mxGeometry y="510" width="300" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="v2zZswJwngK2Z-_wx1dA-9" value="operation1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="v2zZswJwngK2Z-_wx1dA-2">
+          <mxGeometry y="530" width="300" height="20" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
