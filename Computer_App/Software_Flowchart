@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2021-06-03T12:03:59.063Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.77 Safari/537.36" etag="0YwwAIw4RN_A1aBQyA1x" version="14.7.4" type="github" pages="6">
+<mxfile host="app.diagrams.net" modified="2021-06-03T12:04:27.532Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.77 Safari/537.36" etag="eryqmxDIirUqOnh2Ezb0" version="14.7.4" type="github" pages="6">
   <diagram id="c79iFraRc1DbxDd-72CT" name="Startup">
     <mxGraphModel dx="1422" dy="762" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
@@ -954,15 +954,134 @@
     </mxGraphModel>
   </diagram>
   <diagram id="SMSFAHEOyso0FMqhiWyN" name="New_Test_Tab">
-    <mxGraphModel dx="1422" dy="762" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" math="0" shadow="0">
+    <mxGraphModel dx="2031" dy="1089" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" math="0" shadow="0">
       <root>
         <mxCell id="UUAGUkRDnq5GgsOfPD1d-0" />
         <mxCell id="UUAGUkRDnq5GgsOfPD1d-1" parent="UUAGUkRDnq5GgsOfPD1d-0" />
-        <mxCell id="1KEqsZlhHp1jb8r1WgQ3-0" value="_NewTest_ CreateNewTestPushed" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.start_2;whiteSpace=wrap;" parent="UUAGUkRDnq5GgsOfPD1d-1" vertex="1">
-          <mxGeometry x="70" y="50" width="130" height="120" as="geometry" />
+        <mxCell id="_lDeF2GLi70l6KvEcnpr-0" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="UUAGUkRDnq5GgsOfPD1d-1" source="_lDeF2GLi70l6KvEcnpr-1" target="_lDeF2GLi70l6KvEcnpr-6">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="1KEqsZlhHp1jb8r1WgQ3-1" value="_NewTest_ ClearAllValuesPushed" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.start_2;whiteSpace=wrap;" parent="UUAGUkRDnq5GgsOfPD1d-1" vertex="1">
-          <mxGeometry x="340" y="50" width="130" height="120" as="geometry" />
+        <mxCell id="_lDeF2GLi70l6KvEcnpr-1" value="Create New Test" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.start_2;whiteSpace=wrap;" vertex="1" parent="UUAGUkRDnq5GgsOfPD1d-1">
+          <mxGeometry x="90" y="80" width="100" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="_lDeF2GLi70l6KvEcnpr-2" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="UUAGUkRDnq5GgsOfPD1d-1" source="_lDeF2GLi70l6KvEcnpr-3" target="_lDeF2GLi70l6KvEcnpr-34">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="_lDeF2GLi70l6KvEcnpr-3" value="Clear All Values" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.start_2;whiteSpace=wrap;" vertex="1" parent="UUAGUkRDnq5GgsOfPD1d-1">
+          <mxGeometry x="630" y="80" width="100" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="_lDeF2GLi70l6KvEcnpr-4" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="UUAGUkRDnq5GgsOfPD1d-1" source="_lDeF2GLi70l6KvEcnpr-6" target="_lDeF2GLi70l6KvEcnpr-22">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="_lDeF2GLi70l6KvEcnpr-5" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="UUAGUkRDnq5GgsOfPD1d-1" source="_lDeF2GLi70l6KvEcnpr-6" target="_lDeF2GLi70l6KvEcnpr-26">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="_lDeF2GLi70l6KvEcnpr-6" value="If current_mode == 0" style="rhombus;whiteSpace=wrap;html=1;strokeWidth=2;" vertex="1" parent="UUAGUkRDnq5GgsOfPD1d-1">
+          <mxGeometry x="65" y="220" width="150" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="_lDeF2GLi70l6KvEcnpr-7" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="UUAGUkRDnq5GgsOfPD1d-1" source="_lDeF2GLi70l6KvEcnpr-8" target="_lDeF2GLi70l6KvEcnpr-10">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="_lDeF2GLi70l6KvEcnpr-8" value="Set current_mode = 2" style="whiteSpace=wrap;html=1;strokeWidth=2;" vertex="1" parent="UUAGUkRDnq5GgsOfPD1d-1">
+          <mxGeometry x="83.13" y="750" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="_lDeF2GLi70l6KvEcnpr-9" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="UUAGUkRDnq5GgsOfPD1d-1" source="_lDeF2GLi70l6KvEcnpr-10" target="_lDeF2GLi70l6KvEcnpr-12">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="_lDeF2GLi70l6KvEcnpr-10" value="test = new TestSequence()" style="whiteSpace=wrap;html=1;strokeWidth=2;" vertex="1" parent="UUAGUkRDnq5GgsOfPD1d-1">
+          <mxGeometry x="83.13" y="850" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="_lDeF2GLi70l6KvEcnpr-11" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="UUAGUkRDnq5GgsOfPD1d-1" source="_lDeF2GLi70l6KvEcnpr-12">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="143.1300000000001" y="1070" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="_lDeF2GLi70l6KvEcnpr-12" value="test.name = self.TestNameTextbox.GetValue()" style="whiteSpace=wrap;html=1;strokeWidth=2;" vertex="1" parent="UUAGUkRDnq5GgsOfPD1d-1">
+          <mxGeometry x="53.13" y="950" width="180" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="_lDeF2GLi70l6KvEcnpr-13" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="UUAGUkRDnq5GgsOfPD1d-1" source="_lDeF2GLi70l6KvEcnpr-14" target="_lDeF2GLi70l6KvEcnpr-16">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="_lDeF2GLi70l6KvEcnpr-14" value="test.Description = self.Test_Description.GetValue()" style="whiteSpace=wrap;html=1;strokeWidth=2;" vertex="1" parent="UUAGUkRDnq5GgsOfPD1d-1">
+          <mxGeometry x="50.63" y="1070" width="175" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="_lDeF2GLi70l6KvEcnpr-15" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="UUAGUkRDnq5GgsOfPD1d-1" source="_lDeF2GLi70l6KvEcnpr-16" target="_lDeF2GLi70l6KvEcnpr-18">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="_lDeF2GLi70l6KvEcnpr-16" value="test.current_test = 0" style="whiteSpace=wrap;html=1;strokeWidth=2;" vertex="1" parent="UUAGUkRDnq5GgsOfPD1d-1">
+          <mxGeometry x="53.13" y="1210" width="170" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="_lDeF2GLi70l6KvEcnpr-17" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="UUAGUkRDnq5GgsOfPD1d-1" source="_lDeF2GLi70l6KvEcnpr-18" target="_lDeF2GLi70l6KvEcnpr-20">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="_lDeF2GLi70l6KvEcnpr-18" value="getTestPinsList()" style="whiteSpace=wrap;html=1;strokeWidth=2;" vertex="1" parent="UUAGUkRDnq5GgsOfPD1d-1">
+          <mxGeometry x="58.13" y="1330" width="160" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="_lDeF2GLi70l6KvEcnpr-19" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="UUAGUkRDnq5GgsOfPD1d-1" source="_lDeF2GLi70l6KvEcnpr-20" target="_lDeF2GLi70l6KvEcnpr-36">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="_lDeF2GLi70l6KvEcnpr-20" value="Get the folderPath for the new test, make the required directory." style="whiteSpace=wrap;html=1;strokeWidth=2;" vertex="1" parent="UUAGUkRDnq5GgsOfPD1d-1">
+          <mxGeometry x="46.88" y="1440" width="182.5" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="_lDeF2GLi70l6KvEcnpr-21" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="UUAGUkRDnq5GgsOfPD1d-1" source="_lDeF2GLi70l6KvEcnpr-22" target="_lDeF2GLi70l6KvEcnpr-23">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="_lDeF2GLi70l6KvEcnpr-22" value="MessageBox &quot;Unable to create new test.&quot;" style="ellipse;whiteSpace=wrap;html=1;strokeWidth=2;" vertex="1" parent="UUAGUkRDnq5GgsOfPD1d-1">
+          <mxGeometry x="270" y="240" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="_lDeF2GLi70l6KvEcnpr-23" value="End Loop" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.terminator;whiteSpace=wrap;" vertex="1" parent="UUAGUkRDnq5GgsOfPD1d-1">
+          <mxGeometry x="420" y="250" width="100" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="_lDeF2GLi70l6KvEcnpr-24" value="X exists" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="UUAGUkRDnq5GgsOfPD1d-1" source="_lDeF2GLi70l6KvEcnpr-26" target="_lDeF2GLi70l6KvEcnpr-29">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="_lDeF2GLi70l6KvEcnpr-25" value="X does not exist" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="UUAGUkRDnq5GgsOfPD1d-1" source="_lDeF2GLi70l6KvEcnpr-26" target="_lDeF2GLi70l6KvEcnpr-8">
+          <mxGeometry x="-0.5944" relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="480" y="430" />
+              <mxPoint x="480" y="710" />
+              <mxPoint x="143" y="710" />
+            </Array>
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="_lDeF2GLi70l6KvEcnpr-26" value="For x in TestList" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;strokeWidth=2;" vertex="1" parent="UUAGUkRDnq5GgsOfPD1d-1">
+          <mxGeometry x="80" y="390" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="_lDeF2GLi70l6KvEcnpr-27" value="No" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="UUAGUkRDnq5GgsOfPD1d-1" source="_lDeF2GLi70l6KvEcnpr-29" target="_lDeF2GLi70l6KvEcnpr-26">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="_lDeF2GLi70l6KvEcnpr-28" value="Yes" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="UUAGUkRDnq5GgsOfPD1d-1" source="_lDeF2GLi70l6KvEcnpr-29" target="_lDeF2GLi70l6KvEcnpr-31">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="260" y="670" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="140" y="650" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="_lDeF2GLi70l6KvEcnpr-29" value="If x.Name = TestNameTextbox.GetValue" style="rhombus;whiteSpace=wrap;html=1;strokeWidth=2;" vertex="1" parent="UUAGUkRDnq5GgsOfPD1d-1">
+          <mxGeometry x="100" y="520" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="_lDeF2GLi70l6KvEcnpr-30" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="UUAGUkRDnq5GgsOfPD1d-1" source="_lDeF2GLi70l6KvEcnpr-31" target="_lDeF2GLi70l6KvEcnpr-32">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="_lDeF2GLi70l6KvEcnpr-31" value="MessageBox: Test already exists, cannot create test." style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="UUAGUkRDnq5GgsOfPD1d-1">
+          <mxGeometry x="180" y="610" width="130" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="_lDeF2GLi70l6KvEcnpr-32" value="End Loop" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.terminator;whiteSpace=wrap;" vertex="1" parent="UUAGUkRDnq5GgsOfPD1d-1">
+          <mxGeometry x="350" y="620" width="100" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="_lDeF2GLi70l6KvEcnpr-33" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="UUAGUkRDnq5GgsOfPD1d-1" source="_lDeF2GLi70l6KvEcnpr-34" target="_lDeF2GLi70l6KvEcnpr-35">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="_lDeF2GLi70l6KvEcnpr-34" value="Reset all values in the TestCreator Tab" style="whiteSpace=wrap;html=1;strokeWidth=2;" vertex="1" parent="UUAGUkRDnq5GgsOfPD1d-1">
+          <mxGeometry x="620" y="230" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="_lDeF2GLi70l6KvEcnpr-35" value="End Loop" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.terminator;whiteSpace=wrap;" vertex="1" parent="UUAGUkRDnq5GgsOfPD1d-1">
+          <mxGeometry x="630" y="320" width="100" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="_lDeF2GLi70l6KvEcnpr-36" value="End Loop" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.terminator;whiteSpace=wrap;" vertex="1" parent="UUAGUkRDnq5GgsOfPD1d-1">
+          <mxGeometry x="88.13" y="1560" width="100" height="60" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
