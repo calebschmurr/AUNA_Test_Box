@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2021-06-03T18:26:53.816Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.77 Safari/537.36" etag="8IWkNh_VCg4eOsb8OGDP" version="14.7.4" type="github" pages="11">
+<mxfile host="app.diagrams.net" modified="2021-06-03T18:38:57.374Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.77 Safari/537.36" etag="2u2WS3RyF0GJE_E0LCdL" version="14.7.4" type="github" pages="12">
   <diagram id="c79iFraRc1DbxDd-72CT" name="Startup">
     <mxGraphModel dx="1185" dy="635" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
@@ -2721,7 +2721,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="wa-8kMKjqbM8MYItFD-C" name="Testing Flowchart Overview">
-    <mxGraphModel dx="1185" dy="635" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" math="0" shadow="0">
+    <mxGraphModel dx="2031" dy="1089" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" math="0" shadow="0">
       <root>
         <mxCell id="gWPKa5nklX5tYn0kDntu-0" />
         <mxCell id="gWPKa5nklX5tYn0kDntu-1" parent="gWPKa5nklX5tYn0kDntu-0" />
@@ -3017,10 +3017,52 @@
     </mxGraphModel>
   </diagram>
   <diagram id="tymG0ddQVNB89iAb9HVC" name="Serial Communication Protocol">
-    <mxGraphModel dx="1422" dy="762" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" math="0" shadow="0">
+    <mxGraphModel dx="2031" dy="1089" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" math="0" shadow="0">
       <root>
         <mxCell id="VeE7pAMwQkjYGPGOtE7H-0" />
         <mxCell id="VeE7pAMwQkjYGPGOtE7H-1" parent="VeE7pAMwQkjYGPGOtE7H-0" />
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="I2YtFASMkG4ahn39ouU3" name="Software Overview">
+    <mxGraphModel dx="1422" dy="762" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" math="0" shadow="0">
+      <root>
+        <mxCell id="GCmztnnYO3bL7F0aS7Pc-0" />
+        <mxCell id="GCmztnnYO3bL7F0aS7Pc-1" parent="GCmztnnYO3bL7F0aS7Pc-0" />
+        <mxCell id="GCmztnnYO3bL7F0aS7Pc-2" value="Computer App Software" style="swimlane;html=1;startSize=20;horizontal=1;childLayout=treeLayout;horizontalTree=0;resizable=0;containerType=tree;" vertex="1" parent="GCmztnnYO3bL7F0aS7Pc-1">
+          <mxGeometry x="130" y="90" width="396" height="280" as="geometry" />
+        </mxCell>
+        <mxCell id="GCmztnnYO3bL7F0aS7Pc-3" value="Main Window UI" style="whiteSpace=wrap;html=1;" vertex="1" parent="GCmztnnYO3bL7F0aS7Pc-2">
+          <mxGeometry x="183" y="40" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="GCmztnnYO3bL7F0aS7Pc-4" value="PinControlUI" style="whiteSpace=wrap;html=1;" vertex="1" parent="GCmztnnYO3bL7F0aS7Pc-2">
+          <mxGeometry x="90" y="130" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="GCmztnnYO3bL7F0aS7Pc-5" value="" style="edgeStyle=elbowEdgeStyle;elbow=vertical;html=1;rounded=0;" edge="1" parent="GCmztnnYO3bL7F0aS7Pc-2" source="GCmztnnYO3bL7F0aS7Pc-3" target="GCmztnnYO3bL7F0aS7Pc-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="GCmztnnYO3bL7F0aS7Pc-6" value="TestSequence" style="whiteSpace=wrap;html=1;" vertex="1" parent="GCmztnnYO3bL7F0aS7Pc-2">
+          <mxGeometry x="286" y="130" width="90" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="GCmztnnYO3bL7F0aS7Pc-7" value="" style="edgeStyle=elbowEdgeStyle;elbow=vertical;html=1;rounded=0;" edge="1" parent="GCmztnnYO3bL7F0aS7Pc-2" source="GCmztnnYO3bL7F0aS7Pc-3" target="GCmztnnYO3bL7F0aS7Pc-6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="GCmztnnYO3bL7F0aS7Pc-8" value="" style="edgeStyle=elbowEdgeStyle;elbow=vertical;html=1;rounded=0;" edge="1" target="GCmztnnYO3bL7F0aS7Pc-9" source="GCmztnnYO3bL7F0aS7Pc-4" parent="GCmztnnYO3bL7F0aS7Pc-2">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-5" y="170" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GCmztnnYO3bL7F0aS7Pc-9" value="SerialComm" style="whiteSpace=wrap;html=1;" vertex="1" parent="GCmztnnYO3bL7F0aS7Pc-2">
+          <mxGeometry x="20" y="220" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="GCmztnnYO3bL7F0aS7Pc-12" value="" style="edgeStyle=elbowEdgeStyle;elbow=vertical;html=1;rounded=0;" edge="1" target="GCmztnnYO3bL7F0aS7Pc-13" source="GCmztnnYO3bL7F0aS7Pc-4" parent="GCmztnnYO3bL7F0aS7Pc-2">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="130" y="170" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GCmztnnYO3bL7F0aS7Pc-13" value="SerialMonitor" style="whiteSpace=wrap;html=1;" vertex="1" parent="GCmztnnYO3bL7F0aS7Pc-2">
+          <mxGeometry x="160" y="220" width="100" height="40" as="geometry" />
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
