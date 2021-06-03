@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2021-06-03T15:31:00.111Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.77 Safari/537.36" etag="sL30PJ9Pw--CR6SWGrW9" version="14.7.4" type="github" pages="9">
+<mxfile host="app.diagrams.net" modified="2021-06-03T15:36:15.687Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.77 Safari/537.36" etag="nHR2Z2qaI79yvTKPAWsK" version="14.7.4" type="github" pages="9">
   <diagram id="c79iFraRc1DbxDd-72CT" name="Startup">
     <mxGraphModel dx="2370" dy="1270" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
@@ -1936,7 +1936,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="PLB8BABxf2TUF1mt12Lc" name="System Overview">
-    <mxGraphModel dx="2031" dy="1089" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" math="0" shadow="0">
+    <mxGraphModel dx="1422" dy="762" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" math="0" shadow="0">
       <root>
         <mxCell id="Lg0bLFIVnlx4oxV7NhL3-0" />
         <mxCell id="Lg0bLFIVnlx4oxV7NhL3-1" parent="Lg0bLFIVnlx4oxV7NhL3-0" />
@@ -2112,6 +2112,33 @@
               <mxPoint x="80" y="610" />
             </Array>
           </mxGeometry>
+        </mxCell>
+        <mxCell id="eyrZ9lnToPIVJQ1mXgXV-4" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.02;entryY=0.51;entryDx=0;entryDy=0;entryPerimeter=0;shape=link;" edge="1" parent="Lg0bLFIVnlx4oxV7NhL3-1" source="eyrZ9lnToPIVJQ1mXgXV-1" target="eyrZ9lnToPIVJQ1mXgXV-2">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="340" y="875" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="eyrZ9lnToPIVJQ1mXgXV-5" value="Communicate via Serial" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="eyrZ9lnToPIVJQ1mXgXV-4">
+          <mxGeometry x="-0.1667" relative="1" as="geometry">
+            <mxPoint x="-1" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="eyrZ9lnToPIVJQ1mXgXV-1" value="Computer" style="fontColor=#0066CC;verticalAlign=top;verticalLabelPosition=bottom;labelPosition=center;align=center;html=1;outlineConnect=0;fillColor=#CCCCCC;strokeColor=#6881B3;gradientColor=none;gradientDirection=north;strokeWidth=2;shape=mxgraph.networks.pc;" vertex="1" parent="Lg0bLFIVnlx4oxV7NhL3-1">
+          <mxGeometry x="150" y="840" width="100" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="eyrZ9lnToPIVJQ1mXgXV-8" style="edgeStyle=orthogonalEdgeStyle;shape=link;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.98;exitY=0.51;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="Lg0bLFIVnlx4oxV7NhL3-1" source="eyrZ9lnToPIVJQ1mXgXV-2" target="eyrZ9lnToPIVJQ1mXgXV-7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="eyrZ9lnToPIVJQ1mXgXV-9" value="Wire Harness Adapter" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="eyrZ9lnToPIVJQ1mXgXV-8">
+          <mxGeometry x="0.1557" y="-4" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="eyrZ9lnToPIVJQ1mXgXV-2" value="Test Box" style="fontColor=#0066CC;verticalAlign=top;verticalLabelPosition=bottom;labelPosition=center;align=center;html=1;outlineConnect=0;fillColor=#CCCCCC;strokeColor=#6881B3;gradientColor=none;gradientDirection=north;strokeWidth=2;shape=mxgraph.networks.patch_panel;" vertex="1" parent="Lg0bLFIVnlx4oxV7NhL3-1">
+          <mxGeometry x="550" y="857.5" width="100" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="eyrZ9lnToPIVJQ1mXgXV-7" value="" style="aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;spacingTop=3;image;image=img/lib/active_directory/windows_server.svg;" vertex="1" parent="Lg0bLFIVnlx4oxV7NhL3-1">
+          <mxGeometry x="830" y="850" width="41" height="50" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
