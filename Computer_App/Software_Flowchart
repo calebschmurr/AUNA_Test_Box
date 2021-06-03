@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2021-06-03T19:57:31.689Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.77 Safari/537.36" etag="HfZ4LbyqQtuLWwdo6o6-" version="14.7.4" type="github" pages="12">
+<mxfile host="app.diagrams.net" modified="2021-06-03T20:05:03.852Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.77 Safari/537.36" etag="Y31ubyHlj4oHm6QOAysp" version="14.7.4" type="github" pages="12">
   <diagram id="c79iFraRc1DbxDd-72CT" name="Startup">
     <mxGraphModel dx="1185" dy="635" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
@@ -2287,7 +2287,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="AK4a1LviWpWpr88ILRxK" name="Test Creation/Modification Flowchart">
-    <mxGraphModel dx="2031" dy="1089" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="900" math="0" shadow="0">
+    <mxGraphModel dx="2370" dy="1270" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="900" math="0" shadow="0">
       <root>
         <mxCell id="vfyKoq8hd8WbVqE_ZUOx-0" />
         <mxCell id="vfyKoq8hd8WbVqE_ZUOx-1" parent="vfyKoq8hd8WbVqE_ZUOx-0" />
@@ -2468,7 +2468,7 @@
         </mxCell>
         <mxCell id="1s7yPhcioXyC0WQXrJAg-57" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="vfyKoq8hd8WbVqE_ZUOx-1" source="1s7yPhcioXyC0WQXrJAg-55">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="520" y="120" as="targetPoint" />
+            <mxPoint x="500" y="190" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="1s7yPhcioXyC0WQXrJAg-55" value="Increment the Stage Number, and Total Number of Stages." style="whiteSpace=wrap;html=1;strokeWidth=2;" vertex="1" parent="vfyKoq8hd8WbVqE_ZUOx-1">
@@ -2779,8 +2779,22 @@
         <mxCell id="u4BYFBxCGgI4exCksfqx-3" value="Load in the list of pins used, store as PinsList." style="whiteSpace=wrap;html=1;strokeWidth=2;" vertex="1" parent="vfyKoq8hd8WbVqE_ZUOx-1">
           <mxGeometry x="2682.5" y="775" width="145" height="80" as="geometry" />
         </mxCell>
+        <mxCell id="u4BYFBxCGgI4exCksfqx-11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.568;entryY=-0.002;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="vfyKoq8hd8WbVqE_ZUOx-1" source="u4BYFBxCGgI4exCksfqx-8" target="u4BYFBxCGgI4exCksfqx-10">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="2880" y="130" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="2580" y="870" />
+              <mxPoint x="2890" y="870" />
+              <mxPoint x="2890" y="70" />
+              <mxPoint x="3008" y="70" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
         <mxCell id="u4BYFBxCGgI4exCksfqx-8" value="Set current stage number = 0" style="whiteSpace=wrap;html=1;strokeWidth=2;" vertex="1" parent="vfyKoq8hd8WbVqE_ZUOx-1">
           <mxGeometry x="2520" y="785" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="u4BYFBxCGgI4exCksfqx-10" value="Set mode to 3" style="whiteSpace=wrap;html=1;" vertex="1" parent="vfyKoq8hd8WbVqE_ZUOx-1">
+          <mxGeometry x="2940" y="100" width="120" height="60" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
