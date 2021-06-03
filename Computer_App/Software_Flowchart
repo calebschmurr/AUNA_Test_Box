@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2021-06-03T15:37:14.490Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.77 Safari/537.36" etag="PhYL01dBB9SbtyL8pyHI" version="14.7.4" type="github" pages="9">
+<mxfile host="app.diagrams.net" modified="2021-06-03T15:41:34.232Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.77 Safari/537.36" etag="dFBVZj3Yh03iA3Eb6wt-" version="14.7.4" type="github" pages="9">
   <diagram id="c79iFraRc1DbxDd-72CT" name="Startup">
     <mxGraphModel dx="2370" dy="1270" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
@@ -2040,7 +2040,7 @@
             <mxPoint x="630" y="380" as="sourcePoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="Lg0bLFIVnlx4oxV7NhL3-28" value="Power Connector:" style="whiteSpace=wrap;html=1;align=center;verticalAlign=middle;treeFolding=1;treeMoving=1;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;startArrow&quot;:&quot;none&quot;,&quot;endArrow&quot;:&quot;none&quot;};" vertex="1" parent="Lg0bLFIVnlx4oxV7NhL3-4">
+        <mxCell id="Lg0bLFIVnlx4oxV7NhL3-28" value="Power Connector: X2" style="whiteSpace=wrap;html=1;align=center;verticalAlign=middle;treeFolding=1;treeMoving=1;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;startArrow&quot;:&quot;none&quot;,&quot;endArrow&quot;:&quot;none&quot;};" vertex="1" parent="Lg0bLFIVnlx4oxV7NhL3-4">
           <mxGeometry x="510.00000000000045" y="370" width="100" height="60" as="geometry" />
         </mxCell>
         <mxCell id="Lg0bLFIVnlx4oxV7NhL3-29" value="" style="edgeStyle=elbowEdgeStyle;elbow=vertical;startArrow=none;endArrow=none;rounded=0;" edge="1" target="Lg0bLFIVnlx4oxV7NhL3-30" source="Lg0bLFIVnlx4oxV7NhL3-26" parent="Lg0bLFIVnlx4oxV7NhL3-4">
@@ -2048,7 +2048,7 @@
             <mxPoint x="630" y="380" as="sourcePoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="Lg0bLFIVnlx4oxV7NhL3-30" value="Data Connector" style="whiteSpace=wrap;html=1;align=center;verticalAlign=middle;treeFolding=1;treeMoving=1;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;startArrow&quot;:&quot;none&quot;,&quot;endArrow&quot;:&quot;none&quot;};" vertex="1" parent="Lg0bLFIVnlx4oxV7NhL3-4">
+        <mxCell id="Lg0bLFIVnlx4oxV7NhL3-30" value="Data Connector: X1" style="whiteSpace=wrap;html=1;align=center;verticalAlign=middle;treeFolding=1;treeMoving=1;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;startArrow&quot;:&quot;none&quot;,&quot;endArrow&quot;:&quot;none&quot;};" vertex="1" parent="Lg0bLFIVnlx4oxV7NhL3-4">
           <mxGeometry x="630.0000000000005" y="370" width="100" height="60" as="geometry" />
         </mxCell>
         <mxCell id="Lg0bLFIVnlx4oxV7NhL3-31" value="" style="edgeStyle=elbowEdgeStyle;elbow=vertical;startArrow=none;endArrow=none;rounded=0;" edge="1" target="Lg0bLFIVnlx4oxV7NhL3-32" source="Lg0bLFIVnlx4oxV7NhL3-16" parent="Lg0bLFIVnlx4oxV7NhL3-4">
@@ -2150,6 +2150,27 @@
         </mxCell>
         <mxCell id="eyrZ9lnToPIVJQ1mXgXV-10" value="" style="pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.signal_sources.source;aspect=fixed;points=[[0.5,0,0],[1,0.5,0],[0.5,1,0],[0,0.5,0]];elSignalType=ac;" vertex="1" parent="Lg0bLFIVnlx4oxV7NhL3-1">
           <mxGeometry x="660" y="700" width="60" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="_JyKcwrCA6OeDwC5Rntz-6" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="Lg0bLFIVnlx4oxV7NhL3-1" source="_JyKcwrCA6OeDwC5Rntz-0" target="_JyKcwrCA6OeDwC5Rntz-5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="_JyKcwrCA6OeDwC5Rntz-0" value="General Usage" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="Lg0bLFIVnlx4oxV7NhL3-1">
+          <mxGeometry x="120" y="1030" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="_JyKcwrCA6OeDwC5Rntz-4" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="Lg0bLFIVnlx4oxV7NhL3-1" source="_JyKcwrCA6OeDwC5Rntz-1" target="_JyKcwrCA6OeDwC5Rntz-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="_JyKcwrCA6OeDwC5Rntz-1" value="Create a Test using the Test Creator on Software" style="whiteSpace=wrap;html=1;rounded=1;" vertex="1" parent="Lg0bLFIVnlx4oxV7NhL3-1">
+          <mxGeometry x="520" y="1030" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="_JyKcwrCA6OeDwC5Rntz-3" value="Perform test on unit." style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="Lg0bLFIVnlx4oxV7NhL3-1">
+          <mxGeometry x="740" y="1030" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="_JyKcwrCA6OeDwC5Rntz-7" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="Lg0bLFIVnlx4oxV7NhL3-1" source="_JyKcwrCA6OeDwC5Rntz-5" target="_JyKcwrCA6OeDwC5Rntz-1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="_JyKcwrCA6OeDwC5Rntz-5" value="Determine what needs to be tested, which pins will be required" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="Lg0bLFIVnlx4oxV7NhL3-1">
+          <mxGeometry x="320" y="1030" width="120" height="60" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
