@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2021-06-04T15:00:58.200Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.77 Safari/537.36" etag="TraxEnFTtM1-oezjVbu_" version="14.7.6" type="github" pages="12">
+<mxfile host="app.diagrams.net" modified="2021-06-04T15:20:46.600Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.77 Safari/537.36" etag="irDwJEf8v71CW8gbBdDO" version="14.7.6" type="github" pages="12">
   <diagram id="c79iFraRc1DbxDd-72CT" name="Startup">
     <mxGraphModel dx="2130" dy="1040" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
@@ -204,7 +204,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="6a731a19-8d31-9384-78a2-239565b7b9f0" name="Main_Tab">
-    <mxGraphModel dx="1826" dy="891" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" background="#ffffff" math="0" shadow="0">
+    <mxGraphModel dx="3195" dy="1560" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" background="#ffffff" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -1325,7 +1325,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="8I6-hXY4jItryAr4Vlzn" name="Pin Setup and Information">
-    <mxGraphModel dx="1826" dy="891" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" math="0" shadow="0">
+    <mxGraphModel dx="1278" dy="624" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" math="0" shadow="0">
       <root>
         <mxCell id="zrRKEG3Dv9DlvAElSiNB-0" />
         <mxCell id="zrRKEG3Dv9DlvAElSiNB-1" parent="zrRKEG3Dv9DlvAElSiNB-0" />
@@ -3387,7 +3387,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="tymG0ddQVNB89iAb9HVC" name="Serial Communication Protocol">
-    <mxGraphModel dx="1826" dy="891" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" math="0" shadow="0">
+    <mxGraphModel dx="1065" dy="520" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" math="0" shadow="0">
       <root>
         <mxCell id="VeE7pAMwQkjYGPGOtE7H-0" />
         <mxCell id="VeE7pAMwQkjYGPGOtE7H-1" parent="VeE7pAMwQkjYGPGOtE7H-0" />
@@ -3403,11 +3403,11 @@
         <mxCell id="wQ12CpeaaqbhjoqBXlZ4-19" value="1: Setup Pins" style="swimlane;html=1;startSize=20;horizontal=0;" parent="wQ12CpeaaqbhjoqBXlZ4-0" vertex="1">
           <mxGeometry x="20" y="170" width="460" height="170" as="geometry" />
         </mxCell>
-        <mxCell id="wQ12CpeaaqbhjoqBXlZ4-17" value="[1]:[pin].[pin_type];[pin].[pin_type];!" style="whiteSpace=wrap;html=1;align=left;" parent="wQ12CpeaaqbhjoqBXlZ4-19" vertex="1">
+        <mxCell id="wQ12CpeaaqbhjoqBXlZ4-17" value="[1]:[pin];[pin];[pin];[pin];!" style="whiteSpace=wrap;html=1;align=left;" parent="wQ12CpeaaqbhjoqBXlZ4-19" vertex="1">
           <mxGeometry x="30" y="10" width="410" height="20" as="geometry" />
         </mxCell>
-        <mxCell id="wQ12CpeaaqbhjoqBXlZ4-20" value="pin is a two character number.&amp;nbsp; pin_type is a one character I or O for Input or Output.&amp;nbsp; If the pin is PWM, it will always be PWM out.&amp;nbsp; If the pin is Analog, it will always be input." style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="wQ12CpeaaqbhjoqBXlZ4-19" vertex="1">
-          <mxGeometry x="35" y="50" width="400" height="20" as="geometry" />
+        <mxCell id="wQ12CpeaaqbhjoqBXlZ4-20" value="pin is a two character number.&amp;nbsp; &amp;nbsp;If the pin is PWM, it will always be PWM out.&amp;nbsp; If the pin is Analog, it will always be input.&amp;nbsp; If the pin is a voltage source, it will always be output.&amp;nbsp; If the pin is variable voltage out, it will always be output." style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="wQ12CpeaaqbhjoqBXlZ4-19" vertex="1">
+          <mxGeometry x="35" y="30" width="400" height="90" as="geometry" />
         </mxCell>
         <mxCell id="wQ12CpeaaqbhjoqBXlZ4-2" value="2: Configure Time Output" style="swimlane;html=1;startSize=20;horizontal=0;" parent="wQ12CpeaaqbhjoqBXlZ4-0" vertex="1">
           <mxGeometry x="20" y="340" width="460" height="160" as="geometry" />
