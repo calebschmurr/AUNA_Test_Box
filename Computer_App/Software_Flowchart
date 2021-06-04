@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2021-06-04T13:50:47.586Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.77 Safari/537.36" etag="SP8wAT6DrcKWmpk_f09r" version="14.7.6" type="github" pages="12">
+<mxfile host="app.diagrams.net" modified="2021-06-04T14:00:20.140Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.77 Safari/537.36" etag="O-wHFaJIgxjKvVd8P89F" version="14.7.6" type="github" pages="12">
   <diagram id="c79iFraRc1DbxDd-72CT" name="Startup">
-    <mxGraphModel dx="2130" dy="965" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="2130" dy="1040" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="Sx0PQd4uw2xzY1_r_h0o-0" />
         <mxCell id="Sx0PQd4uw2xzY1_r_h0o-1" parent="Sx0PQd4uw2xzY1_r_h0o-0" />
@@ -204,7 +204,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="6a731a19-8d31-9384-78a2-239565b7b9f0" name="Main_Tab">
-    <mxGraphModel dx="2370" dy="1270" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" background="#ffffff" math="0" shadow="0">
+    <mxGraphModel dx="1278" dy="624" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" background="#ffffff" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -755,7 +755,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="oTMPqpchAL877kF9N_FF" name="Test_Tab">
-    <mxGraphModel dx="1244" dy="1524" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" math="0" shadow="0">
+    <mxGraphModel dx="226" dy="891" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" math="0" shadow="0">
       <root>
         <mxCell id="KdpddDH9nwrAEuhVS6P6-0" />
         <mxCell id="KdpddDH9nwrAEuhVS6P6-1" parent="KdpddDH9nwrAEuhVS6P6-0" />
@@ -2462,7 +2462,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="AK4a1LviWpWpr88ILRxK" name="Test Creation/Modification Flowchart">
-    <mxGraphModel dx="2130" dy="1040" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="900" math="0" shadow="0">
+    <mxGraphModel dx="1278" dy="624" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="900" math="0" shadow="0">
       <root>
         <mxCell id="vfyKoq8hd8WbVqE_ZUOx-0" />
         <mxCell id="vfyKoq8hd8WbVqE_ZUOx-1" parent="vfyKoq8hd8WbVqE_ZUOx-0" />
@@ -2478,7 +2478,7 @@
         <mxCell id="1s7yPhcioXyC0WQXrJAg-1" value="User inputs:&lt;br&gt;Test Name&lt;br&gt;Description&lt;br&gt;Select pins used, and their description.&amp;nbsp;" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;strokeWidth=2;" parent="vfyKoq8hd8WbVqE_ZUOx-1" vertex="1">
           <mxGeometry x="17.5" y="150" width="175" height="120" as="geometry" />
         </mxCell>
-        <mxCell id="1s7yPhcioXyC0WQXrJAg-13" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="vfyKoq8hd8WbVqE_ZUOx-1" source="1s7yPhcioXyC0WQXrJAg-3" target="1s7yPhcioXyC0WQXrJAg-12" edge="1">
+        <mxCell id="SNgEtEXJfM-APiSImj9B-4" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="vfyKoq8hd8WbVqE_ZUOx-1" source="1s7yPhcioXyC0WQXrJAg-3" target="SNgEtEXJfM-APiSImj9B-3">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="1s7yPhcioXyC0WQXrJAg-3" value="User selects: &lt;br&gt;Create New Test" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;strokeWidth=2;" parent="vfyKoq8hd8WbVqE_ZUOx-1" vertex="1">
@@ -2488,33 +2488,28 @@
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="1s7yPhcioXyC0WQXrJAg-5" value="Create a new TestSequence Object" style="whiteSpace=wrap;html=1;strokeWidth=2;" parent="vfyKoq8hd8WbVqE_ZUOx-1" vertex="1">
-          <mxGeometry x="37.5" y="620" width="135" height="80" as="geometry" />
+          <mxGeometry x="41.25" y="705" width="135" height="80" as="geometry" />
         </mxCell>
         <mxCell id="1s7yPhcioXyC0WQXrJAg-21" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="vfyKoq8hd8WbVqE_ZUOx-1" source="1s7yPhcioXyC0WQXrJAg-7" target="1s7yPhcioXyC0WQXrJAg-20" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="1s7yPhcioXyC0WQXrJAg-7" value="On Initialization:&lt;br&gt;Store test name,&lt;br&gt;description, set the current test name.&amp;nbsp;" style="whiteSpace=wrap;html=1;strokeWidth=2;" parent="vfyKoq8hd8WbVqE_ZUOx-1" vertex="1">
-          <mxGeometry x="262.5" y="710" width="120" height="60" as="geometry" />
+          <mxGeometry x="276.25" y="795" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="1s7yPhcioXyC0WQXrJAg-11" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="vfyKoq8hd8WbVqE_ZUOx-1" source="1s7yPhcioXyC0WQXrJAg-9" target="1s7yPhcioXyC0WQXrJAg-7" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="1s7yPhcioXyC0WQXrJAg-9" value="Create a directory in tests folder named after the new test" style="whiteSpace=wrap;html=1;strokeWidth=2;" parent="vfyKoq8hd8WbVqE_ZUOx-1" vertex="1">
-          <mxGeometry x="262.5" y="630" width="120" height="60" as="geometry" />
+          <mxGeometry x="276.25" y="715" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="1s7yPhcioXyC0WQXrJAg-16" value="Yes" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="vfyKoq8hd8WbVqE_ZUOx-1" source="1s7yPhcioXyC0WQXrJAg-12" target="1s7yPhcioXyC0WQXrJAg-15" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="1s7yPhcioXyC0WQXrJAg-18" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="vfyKoq8hd8WbVqE_ZUOx-1" source="1s7yPhcioXyC0WQXrJAg-12" target="1s7yPhcioXyC0WQXrJAg-5" edge="1">
+        <mxCell id="SNgEtEXJfM-APiSImj9B-9" value="No" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="vfyKoq8hd8WbVqE_ZUOx-1" source="1s7yPhcioXyC0WQXrJAg-12" target="1s7yPhcioXyC0WQXrJAg-5">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="1s7yPhcioXyC0WQXrJAg-19" value="No" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="1s7yPhcioXyC0WQXrJAg-18" vertex="1" connectable="0">
-          <mxGeometry x="-0.2727" y="-2" relative="1" as="geometry">
-            <mxPoint as="offset" />
-          </mxGeometry>
-        </mxCell>
         <mxCell id="1s7yPhcioXyC0WQXrJAg-12" value="TestName exists" style="rhombus;whiteSpace=wrap;html=1;strokeWidth=2;" parent="vfyKoq8hd8WbVqE_ZUOx-1" vertex="1">
-          <mxGeometry x="65" y="460" width="80" height="80" as="geometry" />
+          <mxGeometry x="66.88" y="560" width="80" height="80" as="geometry" />
         </mxCell>
         <mxCell id="1s7yPhcioXyC0WQXrJAg-17" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="vfyKoq8hd8WbVqE_ZUOx-1" source="1s7yPhcioXyC0WQXrJAg-15" target="1s7yPhcioXyC0WQXrJAg-3" edge="1">
           <mxGeometry relative="1" as="geometry">
@@ -2524,25 +2519,25 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="1s7yPhcioXyC0WQXrJAg-15" value="Dialog box: Test name already exists, please select a new name." style="whiteSpace=wrap;html=1;strokeWidth=2;" parent="vfyKoq8hd8WbVqE_ZUOx-1" vertex="1">
-          <mxGeometry x="262.5" y="470" width="120" height="60" as="geometry" />
+          <mxGeometry x="266.26" y="570" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="1s7yPhcioXyC0WQXrJAg-23" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="vfyKoq8hd8WbVqE_ZUOx-1" source="1s7yPhcioXyC0WQXrJAg-20" target="1s7yPhcioXyC0WQXrJAg-22" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="1s7yPhcioXyC0WQXrJAg-20" value="Parse the pin inputs.&amp;nbsp; Comb through all the pins in the New Test tab, determine which pins to add to pinlist." style="whiteSpace=wrap;html=1;strokeWidth=2;" parent="vfyKoq8hd8WbVqE_ZUOx-1" vertex="1">
-          <mxGeometry x="258.75" y="795" width="127.5" height="90" as="geometry" />
+          <mxGeometry x="272.5" y="880" width="127.5" height="90" as="geometry" />
         </mxCell>
         <mxCell id="1s7yPhcioXyC0WQXrJAg-25" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="vfyKoq8hd8WbVqE_ZUOx-1" source="1s7yPhcioXyC0WQXrJAg-22" target="1s7yPhcioXyC0WQXrJAg-24" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="1s7yPhcioXyC0WQXrJAg-22" value="Create an empty array of test stages.&lt;br&gt;Set the folder path to the absolute path of the new folder." style="whiteSpace=wrap;html=1;strokeWidth=2;" parent="vfyKoq8hd8WbVqE_ZUOx-1" vertex="1">
-          <mxGeometry x="248.75" y="960" width="147.5" height="90" as="geometry" />
+          <mxGeometry x="262.5" y="1045" width="147.5" height="90" as="geometry" />
         </mxCell>
         <mxCell id="16vxj8YSONsPPe6YH8Pb-40" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="vfyKoq8hd8WbVqE_ZUOx-1" source="1s7yPhcioXyC0WQXrJAg-24" target="16vxj8YSONsPPe6YH8Pb-39" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="1s7yPhcioXyC0WQXrJAg-24" value="Inside New Test Stage Creator Tab, enable all the pins that will be used." style="whiteSpace=wrap;html=1;strokeWidth=2;" parent="vfyKoq8hd8WbVqE_ZUOx-1" vertex="1">
-          <mxGeometry x="33.75" y="962.5" width="165" height="85" as="geometry" />
+          <mxGeometry x="48.75" y="1047.5" width="165" height="85" as="geometry" />
         </mxCell>
         <mxCell id="1s7yPhcioXyC0WQXrJAg-85" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="vfyKoq8hd8WbVqE_ZUOx-1" source="1s7yPhcioXyC0WQXrJAg-26" target="1s7yPhcioXyC0WQXrJAg-30" edge="1">
           <mxGeometry relative="1" as="geometry">
@@ -2555,7 +2550,7 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="1s7yPhcioXyC0WQXrJAg-26" value="Set the description for each pin being used." style="whiteSpace=wrap;html=1;strokeWidth=2;" parent="vfyKoq8hd8WbVqE_ZUOx-1" vertex="1">
-          <mxGeometry x="262.5" y="1095" width="128.75" height="70" as="geometry" />
+          <mxGeometry x="276.25" y="1180" width="128.75" height="70" as="geometry" />
         </mxCell>
         <mxCell id="1s7yPhcioXyC0WQXrJAg-33" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="vfyKoq8hd8WbVqE_ZUOx-1" source="1s7yPhcioXyC0WQXrJAg-30" target="1s7yPhcioXyC0WQXrJAg-32" edge="1">
           <mxGeometry relative="1" as="geometry" />
@@ -2894,7 +2889,7 @@
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="16vxj8YSONsPPe6YH8Pb-39" value="Change tab to Test Stage Creator Tab" style="whiteSpace=wrap;html=1;strokeWidth=2;" parent="vfyKoq8hd8WbVqE_ZUOx-1" vertex="1">
-          <mxGeometry x="51.88" y="1095" width="128.75" height="70" as="geometry" />
+          <mxGeometry x="66.88" y="1180" width="128.75" height="70" as="geometry" />
         </mxCell>
         <mxCell id="ghj7-D7dwQJvYECxrQDp-2" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="vfyKoq8hd8WbVqE_ZUOx-1" source="ghj7-D7dwQJvYECxrQDp-0" target="ghj7-D7dwQJvYECxrQDp-1" edge="1">
           <mxGeometry relative="1" as="geometry" />
@@ -3019,6 +3014,24 @@
         </mxCell>
         <mxCell id="iyAISQck8cvq4EXra9eZ-16" value="Process continues in Test Editor section." style="strokeWidth=2;html=1;shape=mxgraph.flowchart.terminator;whiteSpace=wrap;" parent="vfyKoq8hd8WbVqE_ZUOx-1" vertex="1">
           <mxGeometry x="2530" y="980" width="100" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="SNgEtEXJfM-APiSImj9B-0" value="Set mode = 0" style="whiteSpace=wrap;html=1;strokeWidth=2;" vertex="1" parent="vfyKoq8hd8WbVqE_ZUOx-1">
+          <mxGeometry x="57.5" y="840" width="135" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="SNgEtEXJfM-APiSImj9B-5" value="Yes" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="vfyKoq8hd8WbVqE_ZUOx-1" source="SNgEtEXJfM-APiSImj9B-3" target="1s7yPhcioXyC0WQXrJAg-12">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="SNgEtEXJfM-APiSImj9B-7" value="No" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="vfyKoq8hd8WbVqE_ZUOx-1" source="SNgEtEXJfM-APiSImj9B-3" target="SNgEtEXJfM-APiSImj9B-6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="SNgEtEXJfM-APiSImj9B-3" value="In Mode 0" style="rhombus;whiteSpace=wrap;html=1;strokeWidth=2;" vertex="1" parent="vfyKoq8hd8WbVqE_ZUOx-1">
+          <mxGeometry x="65" y="440" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="SNgEtEXJfM-APiSImj9B-8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="vfyKoq8hd8WbVqE_ZUOx-1" source="SNgEtEXJfM-APiSImj9B-6" target="1s7yPhcioXyC0WQXrJAg-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="SNgEtEXJfM-APiSImj9B-6" value="Dialog box: Unable to create a new test." style="whiteSpace=wrap;html=1;strokeWidth=2;" vertex="1" parent="vfyKoq8hd8WbVqE_ZUOx-1">
+          <mxGeometry x="192.5" y="395" width="120" height="60" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
