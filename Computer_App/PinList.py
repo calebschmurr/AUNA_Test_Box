@@ -7,41 +7,46 @@ Each pin also has associated properties: Input or Output, Pin Number, Value.
 '''
 import json
 
-#mode: 0 is input, 1 is output.
+#mode: 0 is unused, 1 is input, 2 is output.
 class pin:
     pin=0
     mode=0
-    value=0
+    current_value=0
     description = ""
+    check_code = 0
+    expected_value = 0
 
-    def __init__(self, num, mode, value, description=""):
-        self.pin = num
+    def __init__(self, pin, mode, expected_value, description=""):
+        self.pin = pin
         self.mode = mode
-        self.value = value
+        self.expected_value = expected_value
         self.description = description
 
-    def getValue(self):
-        return self.value
+    def getCurrentValue(self):
+        return self.current_value
+    
+    def getExpectedValue(self):
+        return self.expected_value
+
     def getMode(self):
         return self.mode
-    def getPinNumber(self):
+    
+    def getPinNumber(self):  #Make sure getPinNumber returns an int.
         return int(self.pin)
+    
     def getDescription(self):
         return self.description
 
-    def setValue(self, value):
-        if self.mode:
-            self.value = value
+    def setExpectedValue(self, value):
+        if self.mode==2:
+            self.expected_value = value
             return True
         #Throw error - pin not the right value.
         return False
 
     def getDict(self):
-        return {"pin": self.pin, "mode": self.mode, "description": self.description, "value":self.value}
-
-   # def getJson(self):
-  #      return json.dumps({"pin": self.pin_number, "mode": self.mode, "description": self.description})
-
+        return {"pin": self.pin, "mode": self.mode, "description": self.description, "check_code" : self.check_code, "expected_value": self.expected_value}
+        #Do not store the current_Value when getting dictionary value - the current value only matters within pin structure.
 
 class PinsList:
     PinList = []
@@ -49,12 +54,12 @@ class PinsList:
     #addPin() - method to add pin values.
     #Pretty simple addPin method.
 
-    def addPin(self, num, mode, val=0, desc=""):
+    def addPin(self, pin, mode, val=0, desc=""):
         #Check to see if pin already exists:
         for x in self.PinList:
-            if x.getPinNumber()==num:
+            if x.getPinNumber()==pin:
                 return False
-        self.PinList.append(pin(num, mode, val, desc))
+        self.PinList.append(pin(pin, mode, val, desc))
         return True
 
     #removePin() - method to remove a pin from the internal pin list.
@@ -65,18 +70,34 @@ class PinsList:
                 return True
         return False
 
-    #changePinValue - find the pin in internal list, change the stored
+    #changePinExpectedValue - find the pin in internal list, change the stored
     #value of pin.
-    def changePinValue(self, num, value):
+    def changePinExpectedValue(self, num, value):
         for x in self.PinList:
             if x.getPinNumber()==num:
-                return x.setValue(value)
+                return x.setExpectedValue(value)
         return False
 
-    def getPinValue(self, num):
+    #changeCurrentValue - find the pin in internal list, and update
+    #the CurrentValue accordingly.
+    #CurrentValue is just the value of the pin itself.
+    def changePinCurrentValue(self, num, value):
         for x in self.PinList:
             if x.getPinNumber()==num:
-                return x.getValue()
+                return x.setCurrentValue(value)
+        return False
+
+
+    def getPinCurrentValue(self, num):
+        for x in self.PinList:
+            if x.getPinNumber()==num:
+                return x.getCurrentValue()
+        return -1
+    
+    def getPinExpectedValue(self, num):
+        for x in self.PinList:
+            if x.getPinNumber()==num:
+                return x.getExpectedValue()
         return -1
 
     #checkIfPin() - method to see if the pin exists.
@@ -107,21 +128,9 @@ class PinsList:
         for x in self.PinList:
             if x.getPinNumber()<10:
                 output+="0"
-                output+="0"
                 output+=f"{x.getPinNumber()}"
-            elif x.getPinNumber()>79:
-                if x.getPinNumber()<100:
-                    output+="0"
-                output+="A"
-                output+=f"{x.getPinNumber()%10}"
             else:
-                output+="0"
                 output+=f"{x.getPinNumber()}"
-            output+="."
-            if x.getMode()==0:
-                output+="I"
-            else:
-                output+="O"
             output+=";"
         output+="!\n"
         return output
@@ -178,7 +187,7 @@ class PinsList:
                     elif z[0][1]=='A':
                         z[0][1]=8
                     if self.checkIfPin(int(z[0])):
-                        self.changePinValue(int(z[0]), float(z[1]))
+                        self.changePinCurrentValue(int(z[0]), float(z[1]))
                     else:
                         print("Error - unable to change value of pin {}".format(z[0]))
                 except:

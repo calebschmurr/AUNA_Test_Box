@@ -115,7 +115,6 @@ void setup() {
    Serial.println("Couldn't find DS3502 chip for varOut2.");
  //   while (1);
   } 
-  varOut2.setWiper(0);  
 
   //Set the output to 0:
   varOut1.setWiper(0); //Max Voltage
@@ -128,7 +127,7 @@ void loop() {
   // put your main code here, to run repeatedly:
 
     if (stringComplete){
-      configureSetup();
+      processInput();
     }
 
     VariableTimedAction::updateActions();
@@ -157,21 +156,31 @@ void serialEvent(){ //This is automatically called at the end of the loop,
  */
 
 /*
- * configureSetup() method
+ * processInput() method
  * Used to receive inputs from Serial communication
  * 
  */
-int configureSetup(){
+int processInput(){
 
+    ////***********************////////
+    //// Receive Pin Reset Command [0] ////
     if (inputArray[0] == '0'){
       //Reset - clear active pins, clear pin list, etc.
       if (Debug){
           Serial.println("Reset called.");
       }
       
+      //For each pin in the pin list,
+      //reset the pin by setting it to input, the default state.
+      for (int i = 0; i < pin_list.active_pin_list_size; i++){
+        pinMode(i, INPUT);
+      }
+      //Clear the pins list.
       pin_list.clear_pin_list();
       delay(10);
       
+    ///**************************/////
+    //Receive Pin Setup Command [1] /////////
     } else if (inputArray[0] == '1'){
       if (Debug) {
         Serial.println("Setup Pins command called.");

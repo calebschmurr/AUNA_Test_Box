@@ -825,7 +825,7 @@ class MainWindow(wx.Frame):
             return False
         #Check for pins actually having values.
 
-        #Store all the values into the test stag object
+        #Store all the values into the test stage object
         #Change this storage up to use the currentStage class??
 
         #Save Stage - depending on if we are in the last stage or a previous stage, save differently.
