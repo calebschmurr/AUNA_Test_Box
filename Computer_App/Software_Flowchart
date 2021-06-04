@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2021-06-04T13:33:33.251Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.77 Safari/537.36" etag="nZTdUGH_fJNGGkjmJlrx" version="14.7.6" type="github" pages="12">
+<mxfile host="app.diagrams.net" modified="2021-06-04T13:33:42.705Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.77 Safari/537.36" etag="qHqhaTpcqzqmBdLD-zJN" version="14.7.6" type="github" pages="12">
   <diagram id="c79iFraRc1DbxDd-72CT" name="Startup">
     <mxGraphModel dx="2130" dy="965" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
@@ -1893,7 +1893,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="4iKvxuujepMYjtlLgTHk" name="Test Storage Format">
-    <mxGraphModel dx="2665" dy="483" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" math="0" shadow="0">
+    <mxGraphModel dx="3104" dy="681" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" math="0" shadow="0">
       <root>
         <mxCell id="v2zZswJwngK2Z-_wx1dA-0" />
         <mxCell id="v2zZswJwngK2Z-_wx1dA-1" parent="v2zZswJwngK2Z-_wx1dA-0" />
@@ -2082,7 +2082,9 @@
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="nY6Y5zprH84wHejIGU__-48" value="Pin" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;" parent="nY6Y5zprH84wHejIGU__-47" vertex="1">
-          <mxGeometry x="20" y="45" width="430" height="120" as="geometry" />
+          <mxGeometry x="20" y="45" width="430" height="120" as="geometry">
+            <mxRectangle x="20" y="45" width="50" height="26" as="alternateBounds" />
+          </mxGeometry>
         </mxCell>
         <mxCell id="nY6Y5zprH84wHejIGU__-49" value="pin : int - the pin number&#xa;check_code : int - the code used for determining if the pin passes the test.&#xa;    Standards: 0 - do nothing. 1 - less than. 2 - greater than, 3 - equal to.&#xa;value : int - the expected value for the pin.&#xa;&#xa;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="nY6Y5zprH84wHejIGU__-48" vertex="1">
           <mxGeometry y="26" width="430" height="94" as="geometry" />
