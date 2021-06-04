@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2021-06-04T13:43:18.743Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.77 Safari/537.36" etag="I42y8isSbv_5XaTU4BjF" version="14.7.6" type="github" pages="12">
+<mxfile host="app.diagrams.net" modified="2021-06-04T13:44:31.038Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.77 Safari/537.36" etag="Xv2D4fkjIhpebwsYC2P4" version="14.7.6" type="github" pages="12">
   <diagram id="c79iFraRc1DbxDd-72CT" name="Startup">
     <mxGraphModel dx="2130" dy="965" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
@@ -1325,7 +1325,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="8I6-hXY4jItryAr4Vlzn" name="Pin Setup and Information">
-    <mxGraphModel dx="1826" dy="827" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" math="0" shadow="0">
+    <mxGraphModel dx="1504" dy="734" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" math="0" shadow="0">
       <root>
         <mxCell id="zrRKEG3Dv9DlvAElSiNB-0" />
         <mxCell id="zrRKEG3Dv9DlvAElSiNB-1" parent="zrRKEG3Dv9DlvAElSiNB-0" />
@@ -1874,7 +1874,7 @@
         <mxCell id="OMb3qVRwZ9xh1geRj9H1-2" value="What is the check operation." style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;overflow=hidden;" parent="OMb3qVRwZ9xh1geRj9H1-0" vertex="1">
           <mxGeometry x="116" width="115" height="90" as="geometry" />
         </mxCell>
-        <mxCell id="OMb3qVRwZ9xh1geRj9H1-3" value="0: Invalid/don&#39;t do anything.&lt;br&gt;1: Equal to&lt;br&gt;2: Less than&lt;br&gt;3: Greater than" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;overflow=hidden;" parent="OMb3qVRwZ9xh1geRj9H1-0" vertex="1">
+        <mxCell id="OMb3qVRwZ9xh1geRj9H1-3" value="0: Invalid/don&#39;t do anything.&lt;br&gt;1: Less than&lt;br&gt;2: Greater Than&lt;br&gt;3: Equal To" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;overflow=hidden;" parent="OMb3qVRwZ9xh1geRj9H1-0" vertex="1">
           <mxGeometry x="231" width="109" height="90" as="geometry" />
         </mxCell>
         <mxCell id="OMb3qVRwZ9xh1geRj9H1-4" style="shape=partialRectangle;html=1;whiteSpace=wrap;collapsible=0;dropTarget=0;pointerEvents=0;fillColor=none;top=0;left=0;bottom=0;right=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="q5ja4Zn2cgToxAwqfuHv-166" vertex="1">
@@ -1893,7 +1893,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="4iKvxuujepMYjtlLgTHk" name="Test Storage Format">
-    <mxGraphModel dx="3104" dy="681" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" math="0" shadow="0">
+    <mxGraphModel dx="3104" dy="734" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" math="0" shadow="0">
       <root>
         <mxCell id="v2zZswJwngK2Z-_wx1dA-0" />
         <mxCell id="v2zZswJwngK2Z-_wx1dA-1" parent="v2zZswJwngK2Z-_wx1dA-0" />
@@ -2086,7 +2086,7 @@
             <mxRectangle x="20" y="45" width="50" height="26" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="nY6Y5zprH84wHejIGU__-49" value="pin : int - the pin number&#xa;check_code : int - the code used for determining if the pin passes the test.&#xa;    Standards: 0 - do nothing. 1 - less than. 2 - greater than, 3 - equal to.&#xa;value : int - the expected value for the pin.&#xa;&#xa;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="nY6Y5zprH84wHejIGU__-48" vertex="1">
+        <mxCell id="nY6Y5zprH84wHejIGU__-49" value="pin : int - the pin number&#xa;check_code : int - the code used for determining if the pin passes the test.&#xa;    Standards: 0 - do nothing. 1 - less than. 2 - greater than, 3 - equal to.&#xa;value : int - the expected value for the pin.&#xa;&#xa;SEE Pin Setup and Storage for clearly defined standards.&#xa;&#xa;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="nY6Y5zprH84wHejIGU__-48" vertex="1">
           <mxGeometry y="26" width="430" height="94" as="geometry" />
         </mxCell>
         <mxCell id="W7o8nPpH2juDSY3hljmx-6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.501;exitY=1.01;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitPerimeter=0;" edge="1" parent="nY6Y5zprH84wHejIGU__-47" source="W7o8nPpH2juDSY3hljmx-1" target="W7o8nPpH2juDSY3hljmx-2">
@@ -2459,7 +2459,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="AK4a1LviWpWpr88ILRxK" name="Test Creation/Modification Flowchart">
-    <mxGraphModel dx="1278" dy="579" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="900" math="0" shadow="0">
+    <mxGraphModel dx="2130" dy="1040" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="900" math="0" shadow="0">
       <root>
         <mxCell id="vfyKoq8hd8WbVqE_ZUOx-0" />
         <mxCell id="vfyKoq8hd8WbVqE_ZUOx-1" parent="vfyKoq8hd8WbVqE_ZUOx-0" />
@@ -3021,7 +3021,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="wa-8kMKjqbM8MYItFD-C" name="Testing Flowchart Overview">
-    <mxGraphModel dx="2130" dy="965" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="900" math="0" shadow="0">
+    <mxGraphModel dx="2130" dy="1040" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="900" math="0" shadow="0">
       <root>
         <mxCell id="gWPKa5nklX5tYn0kDntu-0" />
         <mxCell id="gWPKa5nklX5tYn0kDntu-1" parent="gWPKa5nklX5tYn0kDntu-0" />
@@ -3317,7 +3317,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="tymG0ddQVNB89iAb9HVC" name="Serial Communication Protocol">
-    <mxGraphModel dx="1278" dy="579" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" math="0" shadow="0">
+    <mxGraphModel dx="1278" dy="624" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" math="0" shadow="0">
       <root>
         <mxCell id="VeE7pAMwQkjYGPGOtE7H-0" />
         <mxCell id="VeE7pAMwQkjYGPGOtE7H-1" parent="VeE7pAMwQkjYGPGOtE7H-0" />
