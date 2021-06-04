@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2021-06-04T13:48:25.129Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.77 Safari/537.36" etag="g07OPbSZcTRWfrCt5p2J" version="14.7.6" type="github" pages="12">
+<mxfile host="app.diagrams.net" modified="2021-06-04T13:50:47.586Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.77 Safari/537.36" etag="SP8wAT6DrcKWmpk_f09r" version="14.7.6" type="github" pages="12">
   <diagram id="c79iFraRc1DbxDd-72CT" name="Startup">
     <mxGraphModel dx="2130" dy="965" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
@@ -2044,7 +2044,7 @@
         <mxCell id="nY6Y5zprH84wHejIGU__-41" value="passPinCheck()" style="swimlane;fontStyle=1;align=center;verticalAlign=middle;childLayout=stackLayout;horizontal=1;startSize=29;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;" parent="v2zZswJwngK2Z-_wx1dA-1" vertex="1">
           <mxGeometry x="260" y="690" width="170" height="170" as="geometry" />
         </mxCell>
-        <mxCell id="nY6Y5zprH84wHejIGU__-42" value="&lt;div style=&quot;text-align: left&quot;&gt;&lt;br&gt;&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="nY6Y5zprH84wHejIGU__-41" vertex="1">
+        <mxCell id="nY6Y5zprH84wHejIGU__-42" value="&lt;div style=&quot;text-align: left&quot;&gt;Check each pin in the PinsList&lt;/div&gt;&lt;div style=&quot;text-align: left&quot;&gt;determine if it passes the pin&lt;/div&gt;&lt;div style=&quot;text-align: left&quot;&gt;check if there is a valid one.&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="nY6Y5zprH84wHejIGU__-41" vertex="1">
           <mxGeometry y="29" width="170" height="141" as="geometry" />
         </mxCell>
         <mxCell id="nY6Y5zprH84wHejIGU__-45" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.504;exitY=0.999;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitPerimeter=0;" parent="v2zZswJwngK2Z-_wx1dA-1" source="v2zZswJwngK2Z-_wx1dA-4" target="nY6Y5zprH84wHejIGU__-38" edge="1">
@@ -2103,6 +2103,9 @@
         </mxCell>
         <mxCell id="W7o8nPpH2juDSY3hljmx-3" value="name : string - the name of the test&#xa;description : string - the test description.&#xa;pins : PinsList - all the pins used in the test.  Important information:&#xa;    Whether it is input or output.&#xa;tests : list - all test stage objects." style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="W7o8nPpH2juDSY3hljmx-2">
           <mxGeometry y="26" width="430" height="94" as="geometry" />
+        </mxCell>
+        <mxCell id="60HyqtwJn-PF896a_5-m-0" value="Note:&amp;nbsp; All pin lists should be stored as PinsLists.&amp;nbsp; Use the GetDict method to return a json list when storing pins." style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="v2zZswJwngK2Z-_wx1dA-1">
+          <mxGeometry x="1610" y="100" width="180" height="100" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
