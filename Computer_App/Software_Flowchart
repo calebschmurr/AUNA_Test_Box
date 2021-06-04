@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2021-06-04T16:53:03.318Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.77 Safari/537.36" etag="Rg1XTz1tV3uKFm2GQ1d8" version="14.7.6" type="github" pages="13">
+<mxfile host="app.diagrams.net" modified="2021-06-04T16:57:17.218Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.77 Safari/537.36" etag="AVXWKWZwenXQsZm4aOq9" version="14.7.6" type="github" pages="13">
   <diagram id="c79iFraRc1DbxDd-72CT" name="Startup">
     <mxGraphModel dx="2130" dy="1040" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
@@ -3527,7 +3527,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="z_zXgQNtc8BN1voucDLv" name="Arduino Software Architecture">
-    <mxGraphModel dx="2556" dy="1248" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="1826" dy="891" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="yOUnKlWmc1Mxo8oZwD-C-0" />
         <mxCell id="yOUnKlWmc1Mxo8oZwD-C-1" parent="yOUnKlWmc1Mxo8oZwD-C-0" />
