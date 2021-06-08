@@ -182,83 +182,79 @@ int processInput(){
     ///**************************/////
     //Receive Pin Setup Command [1] /////////
     } else if (inputArray[0] == '1'){
+      
+      //Debug Message.
       if (Debug) {
         Serial.println("Setup Pins command called.");
         Serial.println(inputArray);
       }
-      //parse the input until reached end of command.
+
+
       loc = 2; //declare location
-      char pin_num[4]; //holder for pin value
-      char pin_type[3]; //holder for the pin type.
-      unsigned pinTypeLen = 0;
+      
+      //Below are all the input variables for parsing system input.
+      char pin_num[3]; //holder for pin value
       unsigned u_pin_num = 0;
       pin_num[3] = '\0';
       i = 0;
       
-      //While the input is not terminating parse input:
+      //While there are more pins to input:
       while (inputArray[loc] != '!'){
         //Start off getting the pin number:
         pin_num[0] = inputArray[loc];
         pin_num[1] = inputArray[loc+1];
-        pin_num[2] = inputArray[loc+2];
-        loc+=4;
+
+        loc+=3;  //Increment by 3, moving to the next pin number.
         u_pin_num = atoi(pin_num);
         
         if (Debug) {
           Serial.print("Pin_num: ");
           Serial.println(pin_num);
         }
-        //Get the length of the pin type parameters
-        pinTypeLen = 0;
-        while (inputArray[loc] != ';'){
-          loc++;
-          pinTypeLen++;
-        }
 
-        if (Debug) {
-          Serial.print("PinTypeLen: ");
-          Serial.println(pinTypeLen);
-        }
-        
-        //Store the pin type.
-        for (i = 1; i < pinTypeLen + 1; i++) {
-          pin_type[pinTypeLen-i] = inputArray[loc-i];
-        }
-        if (Debug) {
-          Serial.print("Pin_Type: ");
-          Serial.println(pin_type);
-        }
-        //PinMode assignment based on pin_type
-        if (pin_type[0] == 'I') {
-            //Check to see if digital or analog:
+        //PinMode assignment based on the pin number.
+        //If pin is less than 8, the pin is PWM/Digital Output.
+        //So, set it up to be PWM.
+        if (u_pin_num < 8) {
+          //Set pin to Output mode
+          pinMode(u_pin_num, OUTPUT);
+          pin_list.add_pin(u_pin_num, PinOutput);
 
-          if (u_pin_num >= 54 && u_pin_num <= 69){
-            pinMode(u_pin_num, INPUT_PULLUP);
-            pin_list.add_pin(u_pin_num, PinAnalogInput);
-            if (Debug) {
-              Serial.print("Pin ");
-              Serial.print(u_pin_num);
-              Serial.print(" is set to Analog Input.\n");
-            }
-          } else {
-            pinMode(u_pin_num, INPUT_PULLUP);
-            pin_list.add_pin(u_pin_num, PinDigitalInput);
-            if (Debug) {
-              Serial.print("Pin ");
-              Serial.print(u_pin_num);
-              Serial.print(" is set to Digital Input.\n");
-            }
+          if (Debug){
+            Serial.print("Pin ");
+            Serial.print(u_pin_num);
+            Serial.print(" is set to be PWM/Digital output.");
           }
 
-        } else if (pin_type[0] == 'O'){
+        //If the pin number is less than 30, the pin is a GPIO pin.
+        //Setup as GPIO output.  These are for 12V and 24V output relay control.
+        } else if (u_pin_num < 30){
               pinMode(u_pin_num, OUTPUT);
-             // add_pin(&activePinsListSize, activePinsList, atoi(pin_num),0);
               pin_list.add_pin(u_pin_num, PinOutput);
             if (Debug) {
               Serial.print("Pin ");
               Serial.print(u_pin_num);
               Serial.print(" is set to Output.\n");
             }
+
+        //If the pin number is less than 66, then the pin is Analog Input.
+        //Setup the pin as an analog input.
+        } else if (u_pin_num < 66){
+            pinMode(u_pin_num, INPUT_PULLUP);
+            pin_list.add_pin(u_pin_num, PinAnalogInput);
+
+            if(Debug){
+              Serial.print("Pin ");
+              Serial.print(u_pin_num);
+              Serial.print(" is set to Analog Input.");
+            }
+        }
+
+        //If the pin is less than 77, then the pin is for the DS11 chip.
+        //Don't do anything here...
+
+        } else if (u_pin_num < 77){
+            //Nothing to do here.  The pin is defaulted to be on.
 
         }else {
           //ERROR CASE
@@ -268,12 +264,11 @@ int processInput(){
         //Reset Iterators.
         memset(pin_num, 0, sizeof pin_num);
         memset(pin_type, 0, sizeof pin_type);
-        loc++;
       }
 
     /*
      * List pins
-     * 
+     *  On finish parsing the pins, it lists all the pins.
      * 
      */
 
@@ -288,24 +283,32 @@ int processInput(){
 
 //Finish listing pins.
 
+/**************************************/
 
+/****************************************/
+
+  //Receive the command to adjust the Arduino Serial Output.
   } else if (inputArray[0] == '2'){
-   //Setup output Command:
-    //2:1.4500!
+
     if (Debug) {
         Serial.println("Setup Output Called");
         Serial.println(inputArray);
     }
-    loc=2;
-    unsigned sizeofTime = 0;
-    char inputChar[1];
 
-    //Need output mode, time for output.
+    //Assign location.
+    loc=2;
+    unsigned sizeofTime = 0; //Declare the size of the time char.
+    char inputChar[2]; //Declare the input char.
+    inputChar[1] = '\0'; //Set termination.
+
+    //Receive the code for starting or stopping time output.
     inputChar[0] = inputArray[loc];
-    //Serial.println(inputChar);
-    //Serial.println(atoi(inputChar));
-     output_mode = atoi(inputChar);
-     loc=4; //loc=4
+
+    output_mode = atoi(inputChar); //Set the output mode variable.
+     
+    loc = 5;
+
+    //Parse through the char that contains the time between transmissions
      while (inputArray[loc] != '!') {
           loc++;
           sizeofTime++;
@@ -314,20 +317,29 @@ int processInput(){
             break;
           }
      }
+
+      //Once we have the length of the time var, parse the actual time var.
+
      for (i = 1; i < sizeofTime+1; i++){
+
       if (Debug) {
         Serial.println(inputArray[loc-i]);
       }
+
       inputChar[0] = inputArray[loc-i];
+
+      //Add to the outputTime variable, multiplying by a power of 10 for each addition.
       outputTime += (atoi(inputChar) * pow(10,i-1))+1; //For some reason, have to include +1 on the operation, otherwise time var does not update properly.
+      
       if (Debug) {
           Serial.print("pow: ");
           Serial.println(pow(10,i-1));
           Serial.println(outputTime);
           Serial.println("restart_loop");
         }
+     
      }
-     if (output_mode) {
+     if (output_mode==1) {
       PinValueSender.start(outputTime);
      } else {
       PinValueSender.stop();
@@ -339,6 +351,10 @@ int processInput(){
         Serial.print(", and output time: ");
         Serial.println(outputTime);
      }
+
+
+/*************************************************************************/
+
 
     //COMMAND 3 //Configure the output of pins////////////////////////////////////
     //3:02.0,13.4!
@@ -365,7 +381,7 @@ int processInput(){
       
       //While the input is not terminating parse input:
       while (inputArray[loc] != '!'){
-        //Start off getting the pin number:
+        //Get the pin number, and value to change it to.
         pin_num[0] = inputArray[loc];
         pin_num[1] = inputArray[loc+1];  
         pin_value[0] = inputArray[loc+3];
@@ -379,29 +395,23 @@ int processInput(){
         //cycle through active pins.           
           if (pin_list.getPinIndex(new_pin_num) != -1){
              //Pin is a valid output pin.
+             
+             //If the new pin is a PWM pin::
              if(new_pin_num > 1 && new_pin_num < 14){
-                //If the new pin is pin X1_13 or X1_14 (2 or 3) - use the DS3502.
-                //Wiper value can be set between 0 and 127. 0 = Max Resistance. 127 = Min Resistance.
-                //LM2596 gets value from 24V - so scale accordingly.
-                if (new_pin_num == 2){
-                  varOut1.setWiper(new_pin_val);
-                  Serial.println("Set Wiper varOut1 to ");
-                  Serial.println(new_pin_val);
-                }else if (new_pin_num == 3){
-                  varOut2.setWiper(new_pin_val);
-                } else {
+
                   //New pin is PWM
                   analogWrite(new_pin_num, new_pin_val);
-                }
+                
              } else if (new_pin_num > 21 && new_pin_num < 70){
               //New pin is standard GPIO
+
               Serial.println(new_pin_val);
                 if(new_pin_val > 0){
                   digitalWrite(new_pin_num, HIGH);
                   Serial.println("Pin ");
                   Serial.println(new_pin_num);
                   Serial.println("Set to HIGH");
-                }else{
+                } else {
                   digitalWrite(new_pin_num, LOW);
                   Serial.println("Pin ");
                   Serial.println(new_pin_num);
@@ -413,6 +423,23 @@ int processInput(){
               Serial.print(new_pin_num);
               Serial.println(" is not a valid GPIO/PWM pin.");
              }
+
+          }else if (new_pin_num == 75 || new_pin_num == 76){
+
+                //If the new pin is pin X1_13 or X1_14 (2 or 3) - use the DS3502.
+                //Wiper value can be set between 0 and 127. 0 = Max Resistance. 127 = Min Resistance.
+                //LM2596 gets value from 24V - so scale accordingly.
+                if (new_pin_num == 75){
+                  varOut1.setWiper(new_pin_val);
+                  Serial.println("Set Wiper varOut1 to ");
+                  Serial.println(new_pin_val);
+                }else if (new_pin_num == 76){
+                  varOut2.setWiper(new_pin_val);
+                } else {
+                  //Should not be able to get here.
+                  break;
+                }
+
           }else{
             Serial.print("Pin ");
             Serial.print(new_pin_num);

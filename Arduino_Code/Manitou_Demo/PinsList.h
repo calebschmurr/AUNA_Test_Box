@@ -15,7 +15,7 @@ struct pin{
 	//struct pin *next;
 };
 
-  const static int num_of_pins = 70;
+  const static int num_of_pins = 80;
 
 public:
 
