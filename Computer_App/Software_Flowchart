@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2021-06-04T17:02:24.696Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.77 Safari/537.36" etag="EOMSoi2b93QWfk_cunG1" version="14.7.6" type="github" pages="13">
+<mxfile host="app.diagrams.net" modified="2021-06-08T20:33:58.827Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.77 Safari/537.36" etag="ITsJMKXTR67LJ88kvqHF" version="14.7.4" type="github" pages="13">
   <diagram id="c79iFraRc1DbxDd-72CT" name="Startup">
-    <mxGraphModel dx="2130" dy="1040" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="1422" dy="762" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="Sx0PQd4uw2xzY1_r_h0o-0" />
         <mxCell id="Sx0PQd4uw2xzY1_r_h0o-1" parent="Sx0PQd4uw2xzY1_r_h0o-0" />
@@ -1325,7 +1325,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="8I6-hXY4jItryAr4Vlzn" name="Pin Setup and Information">
-    <mxGraphModel dx="1278" dy="624" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" math="0" shadow="0">
+    <mxGraphModel dx="1422" dy="762" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" math="0" shadow="0">
       <root>
         <mxCell id="zrRKEG3Dv9DlvAElSiNB-0" />
         <mxCell id="zrRKEG3Dv9DlvAElSiNB-1" parent="zrRKEG3Dv9DlvAElSiNB-0" />
@@ -1893,7 +1893,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="4iKvxuujepMYjtlLgTHk" name="Test Storage Format">
-    <mxGraphModel dx="2130" dy="1040" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" math="0" shadow="0">
+    <mxGraphModel dx="2031" dy="1089" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" math="0" shadow="0">
       <root>
         <mxCell id="v2zZswJwngK2Z-_wx1dA-0" />
         <mxCell id="v2zZswJwngK2Z-_wx1dA-1" parent="v2zZswJwngK2Z-_wx1dA-0" />
@@ -2078,7 +2078,7 @@
         <mxCell id="nY6Y5zprH84wHejIGU__-47" value="JSON File Storage Standard" style="swimlane;" parent="v2zZswJwngK2Z-_wx1dA-1" vertex="1">
           <mxGeometry x="1130" y="60" width="460" height="475" as="geometry" />
         </mxCell>
-        <mxCell id="W7o8nPpH2juDSY3hljmx-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.499;exitY=0.997;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitPerimeter=0;" edge="1" parent="nY6Y5zprH84wHejIGU__-47" source="nY6Y5zprH84wHejIGU__-49" target="W7o8nPpH2juDSY3hljmx-0">
+        <mxCell id="W7o8nPpH2juDSY3hljmx-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.499;exitY=0.997;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitPerimeter=0;" parent="nY6Y5zprH84wHejIGU__-47" source="nY6Y5zprH84wHejIGU__-49" target="W7o8nPpH2juDSY3hljmx-0" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="nY6Y5zprH84wHejIGU__-48" value="Pin" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;" parent="nY6Y5zprH84wHejIGU__-47" vertex="1">
@@ -2089,31 +2089,31 @@
         <mxCell id="nY6Y5zprH84wHejIGU__-49" value="pin : int - the pin number&#xa;check_code : int - the code used for determining if the pin passes the test.&#xa;    Standards: 0 - do nothing. 1 - less than. 2 - greater than, 3 - equal to.&#xa;value : int - the expected value for the pin.&#xa;&#xa;SEE Pin Setup and Storage for clearly defined standards.&#xa;&#xa;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="nY6Y5zprH84wHejIGU__-48" vertex="1">
           <mxGeometry y="26" width="430" height="94" as="geometry" />
         </mxCell>
-        <mxCell id="W7o8nPpH2juDSY3hljmx-6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.501;exitY=1.01;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitPerimeter=0;" edge="1" parent="nY6Y5zprH84wHejIGU__-47" source="W7o8nPpH2juDSY3hljmx-1" target="W7o8nPpH2juDSY3hljmx-2">
+        <mxCell id="W7o8nPpH2juDSY3hljmx-6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.501;exitY=1.01;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitPerimeter=0;" parent="nY6Y5zprH84wHejIGU__-47" source="W7o8nPpH2juDSY3hljmx-1" target="W7o8nPpH2juDSY3hljmx-2" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="W7o8nPpH2juDSY3hljmx-0" value="Test Stage" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;" vertex="1" parent="nY6Y5zprH84wHejIGU__-47">
+        <mxCell id="W7o8nPpH2juDSY3hljmx-0" value="Test Stage" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;" parent="nY6Y5zprH84wHejIGU__-47" vertex="1">
           <mxGeometry x="20" y="185" width="430" height="120" as="geometry" />
         </mxCell>
-        <mxCell id="W7o8nPpH2juDSY3hljmx-1" value="number : int - the stage number&#xa;description : string - the description of the test stage&#xa;image : string - the relative path to the image.&#xa;error : string - the error message&#xa;pin_check : PinsList - status for all pins in this test&#xa;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="W7o8nPpH2juDSY3hljmx-0">
+        <mxCell id="W7o8nPpH2juDSY3hljmx-1" value="number : int - the stage number&#xa;description : string - the description of the test stage&#xa;image : string - the relative path to the image.&#xa;error : string - the error message&#xa;pin_check : PinsList - status for all pins in this test&#xa;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="W7o8nPpH2juDSY3hljmx-0" vertex="1">
           <mxGeometry y="26" width="430" height="94" as="geometry" />
         </mxCell>
-        <mxCell id="W7o8nPpH2juDSY3hljmx-2" value="Test Sequence" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;" vertex="1" parent="nY6Y5zprH84wHejIGU__-47">
+        <mxCell id="W7o8nPpH2juDSY3hljmx-2" value="Test Sequence" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;" parent="nY6Y5zprH84wHejIGU__-47" vertex="1">
           <mxGeometry x="20" y="335" width="430" height="120" as="geometry">
             <mxRectangle x="20" y="335" width="110" height="26" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="W7o8nPpH2juDSY3hljmx-3" value="name : string - the name of the test&#xa;description : string - the test description.&#xa;pins : PinsList - all the pins used in the test.  Important information:&#xa;    Whether it is input or output.&#xa;tests : list - all test stage objects." style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="W7o8nPpH2juDSY3hljmx-2">
+        <mxCell id="W7o8nPpH2juDSY3hljmx-3" value="name : string - the name of the test&#xa;description : string - the test description.&#xa;pins : PinsList - all the pins used in the test.  Important information:&#xa;    Whether it is input or output.&#xa;tests : list - all test stage objects." style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="W7o8nPpH2juDSY3hljmx-2" vertex="1">
           <mxGeometry y="26" width="430" height="94" as="geometry" />
         </mxCell>
-        <mxCell id="60HyqtwJn-PF896a_5-m-0" value="Note:&amp;nbsp; All pin lists should be stored as PinsLists.&amp;nbsp; Use the GetDict method to return a json list when storing pins." style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="v2zZswJwngK2Z-_wx1dA-1">
+        <mxCell id="60HyqtwJn-PF896a_5-m-0" value="Note:&amp;nbsp; All pin lists should be stored as PinsLists.&amp;nbsp; Use the GetDict method to return a json list when storing pins." style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="v2zZswJwngK2Z-_wx1dA-1" vertex="1">
           <mxGeometry x="1270" y="570" width="180" height="100" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
   <diagram id="PLB8BABxf2TUF1mt12Lc" name="System Overview">
-    <mxGraphModel dx="2130" dy="1040" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="900" math="0" shadow="0">
+    <mxGraphModel dx="3555" dy="1905" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="900" math="0" shadow="0">
       <root>
         <mxCell id="Lg0bLFIVnlx4oxV7NhL3-0" />
         <mxCell id="Lg0bLFIVnlx4oxV7NhL3-1" parent="Lg0bLFIVnlx4oxV7NhL3-0" />
@@ -2383,88 +2383,92 @@
           <mxGeometry x="220" y="970" width="870" height="20" as="geometry" />
         </mxCell>
         <mxCell id="_JyKcwrCA6OeDwC5Rntz-38" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="Lg0bLFIVnlx4oxV7NhL3-1" source="_JyKcwrCA6OeDwC5Rntz-19" target="_JyKcwrCA6OeDwC5Rntz-37" edge="1">
-          <mxGeometry relative="1" as="geometry" />
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1305" y="1280" />
+              <mxPoint x="317" y="1280" />
+            </Array>
+          </mxGeometry>
         </mxCell>
         <mxCell id="_JyKcwrCA6OeDwC5Rntz-19" value="Create the test stages.&amp;nbsp; The first stage should be the default state.&lt;br&gt;Next stages should only change one variable/state at a time." style="whiteSpace=wrap;html=1;strokeWidth=2;" parent="Lg0bLFIVnlx4oxV7NhL3-1" vertex="1">
-          <mxGeometry x="1220" y="1120" width="230" height="140" as="geometry" />
+          <mxGeometry x="1190" y="1120" width="230" height="140" as="geometry" />
         </mxCell>
         <mxCell id="_JyKcwrCA6OeDwC5Rntz-24" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="Lg0bLFIVnlx4oxV7NhL3-1" source="_JyKcwrCA6OeDwC5Rntz-21" target="_JyKcwrCA6OeDwC5Rntz-23" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="_JyKcwrCA6OeDwC5Rntz-21" value="When finished, hit &#39;Next Stage&#39; a final time, then click &#39;Save Test.&#39;" style="whiteSpace=wrap;html=1;strokeWidth=2;" parent="Lg0bLFIVnlx4oxV7NhL3-1" vertex="1">
-          <mxGeometry x="1477.5" y="1140" width="210" height="100" as="geometry" />
+          <mxGeometry x="911" y="1315" width="210" height="100" as="geometry" />
         </mxCell>
         <mxCell id="_JyKcwrCA6OeDwC5Rntz-23" value="Complete." style="strokeWidth=2;html=1;shape=mxgraph.flowchart.terminator;whiteSpace=wrap;" parent="Lg0bLFIVnlx4oxV7NhL3-1" vertex="1">
-          <mxGeometry x="1760" y="1160" width="100" height="60" as="geometry" />
+          <mxGeometry x="1210" y="1335" width="100" height="60" as="geometry" />
         </mxCell>
         <mxCell id="_JyKcwrCA6OeDwC5Rntz-27" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="Lg0bLFIVnlx4oxV7NhL3-1" source="_JyKcwrCA6OeDwC5Rntz-25" target="_JyKcwrCA6OeDwC5Rntz-26" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="_JyKcwrCA6OeDwC5Rntz-25" value="&lt;b&gt;Testing a Unit&lt;/b&gt;" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.start_2;whiteSpace=wrap;" parent="Lg0bLFIVnlx4oxV7NhL3-1" vertex="1">
-          <mxGeometry x="30" y="1490" width="100" height="100" as="geometry" />
+          <mxGeometry x="30" y="2165" width="100" height="100" as="geometry" />
         </mxCell>
         <mxCell id="_JyKcwrCA6OeDwC5Rntz-29" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="Lg0bLFIVnlx4oxV7NhL3-1" source="_JyKcwrCA6OeDwC5Rntz-26" target="_JyKcwrCA6OeDwC5Rntz-28" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="_JyKcwrCA6OeDwC5Rntz-26" value="Connect the adapter to the unit and test box." style="whiteSpace=wrap;html=1;strokeWidth=2;" parent="Lg0bLFIVnlx4oxV7NhL3-1" vertex="1">
-          <mxGeometry x="220" y="1485" width="170" height="110" as="geometry" />
+          <mxGeometry x="220" y="2160" width="170" height="110" as="geometry" />
         </mxCell>
         <mxCell id="_JyKcwrCA6OeDwC5Rntz-31" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="Lg0bLFIVnlx4oxV7NhL3-1" source="_JyKcwrCA6OeDwC5Rntz-28" target="_JyKcwrCA6OeDwC5Rntz-30" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="_JyKcwrCA6OeDwC5Rntz-28" value="Plug the test box in, and connect the test box via USB to the computer unit." style="whiteSpace=wrap;html=1;strokeWidth=2;" parent="Lg0bLFIVnlx4oxV7NhL3-1" vertex="1">
-          <mxGeometry x="440" y="1470" width="170" height="140" as="geometry" />
+          <mxGeometry x="440" y="2145" width="170" height="140" as="geometry" />
         </mxCell>
         <mxCell id="_JyKcwrCA6OeDwC5Rntz-33" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="Lg0bLFIVnlx4oxV7NhL3-1" source="_JyKcwrCA6OeDwC5Rntz-30" target="_JyKcwrCA6OeDwC5Rntz-32" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="_JyKcwrCA6OeDwC5Rntz-30" value="In the software, select the Serial Comm port in the list of connections.&amp;nbsp; If nothing appears, hit refresh." style="whiteSpace=wrap;html=1;strokeWidth=2;" parent="Lg0bLFIVnlx4oxV7NhL3-1" vertex="1">
-          <mxGeometry x="668.75" y="1465" width="182.5" height="150" as="geometry" />
+          <mxGeometry x="668.75" y="2140" width="182.5" height="150" as="geometry" />
         </mxCell>
         <mxCell id="_JyKcwrCA6OeDwC5Rntz-43" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="Lg0bLFIVnlx4oxV7NhL3-1" source="_JyKcwrCA6OeDwC5Rntz-32" target="_JyKcwrCA6OeDwC5Rntz-42" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="_JyKcwrCA6OeDwC5Rntz-32" value="Select connect." style="whiteSpace=wrap;html=1;strokeWidth=2;" parent="Lg0bLFIVnlx4oxV7NhL3-1" vertex="1">
-          <mxGeometry x="910" y="1470" width="170" height="140" as="geometry" />
+          <mxGeometry x="910" y="2145" width="170" height="140" as="geometry" />
         </mxCell>
         <mxCell id="_JyKcwrCA6OeDwC5Rntz-40" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="Lg0bLFIVnlx4oxV7NhL3-1" source="_JyKcwrCA6OeDwC5Rntz-37" target="_JyKcwrCA6OeDwC5Rntz-39" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="_JyKcwrCA6OeDwC5Rntz-37" value="For each stage, change the status of the pins as desired for the required change in state." style="whiteSpace=wrap;html=1;strokeWidth=2;" parent="Lg0bLFIVnlx4oxV7NhL3-1" vertex="1">
-          <mxGeometry x="1255" y="1290" width="160" height="130" as="geometry" />
+          <mxGeometry x="260" y="1300" width="160" height="130" as="geometry" />
         </mxCell>
-        <mxCell id="_JyKcwrCA6OeDwC5Rntz-41" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" parent="Lg0bLFIVnlx4oxV7NhL3-1" source="_JyKcwrCA6OeDwC5Rntz-39" target="_JyKcwrCA6OeDwC5Rntz-21" edge="1">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint x="1760" y="1320" as="targetPoint" />
-            <Array as="points">
-              <mxPoint x="1583" y="1265" />
-              <mxPoint x="1583" y="1265" />
-            </Array>
-          </mxGeometry>
+        <mxCell id="_7K19JVmGEhEtVS3CbAX-0" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="Lg0bLFIVnlx4oxV7NhL3-1" source="_JyKcwrCA6OeDwC5Rntz-39" target="_JyKcwrCA6OeDwC5Rntz-21">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="_JyKcwrCA6OeDwC5Rntz-39" value="Provide a stage description, select the image for the stage, and an error message to display. (The image will be automatically resized and stored in the appropriate folder.)" style="whiteSpace=wrap;html=1;strokeWidth=2;" parent="Lg0bLFIVnlx4oxV7NhL3-1" vertex="1">
-          <mxGeometry x="1500" y="1290" width="165" height="130" as="geometry" />
+          <mxGeometry x="620" y="1300" width="165" height="130" as="geometry" />
         </mxCell>
         <mxCell id="_JyKcwrCA6OeDwC5Rntz-45" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="Lg0bLFIVnlx4oxV7NhL3-1" source="_JyKcwrCA6OeDwC5Rntz-42" target="_JyKcwrCA6OeDwC5Rntz-44" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="_JyKcwrCA6OeDwC5Rntz-42" value="Select the appropriate test from the list of tests, hit &#39;Load Test&#39;" style="whiteSpace=wrap;html=1;strokeWidth=2;" parent="Lg0bLFIVnlx4oxV7NhL3-1" vertex="1">
-          <mxGeometry x="1160" y="1465" width="169.25" height="150" as="geometry" />
+          <mxGeometry x="1160" y="2140" width="169.25" height="150" as="geometry" />
         </mxCell>
         <mxCell id="_JyKcwrCA6OeDwC5Rntz-47" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="Lg0bLFIVnlx4oxV7NhL3-1" source="_JyKcwrCA6OeDwC5Rntz-44" target="_JyKcwrCA6OeDwC5Rntz-46" edge="1">
-          <mxGeometry relative="1" as="geometry" />
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1450" y="2325" />
+              <mxPoint x="296" y="2325" />
+            </Array>
+          </mxGeometry>
         </mxCell>
         <mxCell id="_JyKcwrCA6OeDwC5Rntz-44" value="Once the test loads, proceed through the test as shown on the pictures and described in the &#39;description&#39; section.&amp;nbsp; Make each change before pressing the &#39;next&#39; button." style="whiteSpace=wrap;html=1;strokeWidth=2;" parent="Lg0bLFIVnlx4oxV7NhL3-1" vertex="1">
-          <mxGeometry x="1360" y="1455" width="180.75" height="170" as="geometry" />
+          <mxGeometry x="1360" y="2130" width="180.75" height="170" as="geometry" />
         </mxCell>
         <mxCell id="_JyKcwrCA6OeDwC5Rntz-49" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="Lg0bLFIVnlx4oxV7NhL3-1" source="_JyKcwrCA6OeDwC5Rntz-46" target="_JyKcwrCA6OeDwC5Rntz-48" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="_JyKcwrCA6OeDwC5Rntz-46" value="Once the test is finished, a dialog box will appear stating that the test has been completed." style="whiteSpace=wrap;html=1;strokeWidth=2;" parent="Lg0bLFIVnlx4oxV7NhL3-1" vertex="1">
-          <mxGeometry x="1610" y="1460" width="188.13" height="160" as="geometry" />
+          <mxGeometry x="201.8699999999999" y="2365" width="188.13" height="160" as="geometry" />
         </mxCell>
         <mxCell id="_JyKcwrCA6OeDwC5Rntz-48" value="Complete." style="strokeWidth=2;html=1;shape=mxgraph.flowchart.terminator;whiteSpace=wrap;" parent="Lg0bLFIVnlx4oxV7NhL3-1" vertex="1">
-          <mxGeometry x="1870" y="1510" width="100" height="60" as="geometry" />
+          <mxGeometry x="520" y="2415" width="100" height="60" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
