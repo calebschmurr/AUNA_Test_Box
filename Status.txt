@@ -55,3 +55,12 @@ DONE:
   When Refresh Serial is hit in the main menu, it doesn't adjust the PinControlUI Serial port.
 
  - Fix reset on Arduino:  Add ability to clear list, and reset all outputs.
+
+
+
+6/9/21:
+
+TODO:
+Focus on documentation.  Document how the Computer App Software is organized.
+Design software so there is always only one PinList.  Every change to pin Status
+makes a change on the Master PinList, which is stored within PinControlUI.

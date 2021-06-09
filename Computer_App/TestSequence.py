@@ -10,46 +10,6 @@ logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %
 #Below - get rid of all log messages.
 #logging.basicConfig(format='%(asctime)s - %(levelname)s - %(message)s')
 
-class testPin:
-    pin = 0
-    check_code = 0
-    value = 0
-    RealPinsList = None
-
-    EqualValueVariant = 100
-
-    def __init__(self, pin, check_code, value, RealPinsList):
-        print("on init testPin number: {}".format(pin))
-        self.pin = pin
-        self.check_code = check_code
-        self.value = value
-        self.RealPinsList = RealPinsList
-    
-    def __getitem__(self, val):
-        return getattr(self,val)
-
-    #create method to perform check
-    #Pin Check Codes:
-    # -1 - invalid/not to do.
-    # 0 - less than
-    # 1 - greater than
-    # 2 - equal to
-
-    def checkPin(self):
-        if self.check_code==0:
-            return self.RealPinsList.getPinValue(self.pin) < self.value
-        elif self.check_code==1:
-            return self.RealPinsList.getPinValue(self.pin) > self.value
-        elif self.check_code==2:
-            return (self.RealPinsList.getPinValue(self.pin) > (self.value - self.EqualValueVariant)) and (self.RealPinsList.getPinValue(self.number) < (self.value + self.EqualValueVariant))
-        return True
-    #create methods to change all values as well.
-    def getDict(self):
-        #print("testPin getDict number: {}".format(self.pin))
-
-        #3-9-2021:: Removed the RealPinsList from this getDict.
-        return {'pin': self.pin, 'check_code': self.check_code,
-        'value': self.value}
 
 class testStage:
     number = 0

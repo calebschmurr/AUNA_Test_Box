@@ -4,11 +4,23 @@ Store the pin list:
 Keep track of active pins by name
 Each pin also has associated properties: Input or Output, Pin Number, Value.
 
+Also contains the methods for retrieiving commands that send information
+between Computer and TestBox Arduino.
+
 '''
 import json
 
 #mode: 0 is unused, 1 is input, 2 is output.
 class pin:
+    #CONSTANTS
+    #The EqualValueVariant is used when checking if the pin is 'equal' to its
+    #expected value.  This gives the software a little 'wiggle room', to account for
+    #slight acceptable inconsistencies.  Lower or raise this tolerance for greater
+    #or lesser accuracy.
+    EqualValueVariant = 25
+
+
+    #CLASS VARIABLES
     pin=0
     mode=0
     current_value=0
@@ -43,6 +55,27 @@ class pin:
             return True
         #Throw error - pin not the right value.
         return False
+
+    #Check Code Standards:
+    # 0 - do nothing
+    # 1 - less than
+    # 2 - greater than
+    # 3 - equal to
+    def checkPin(self):
+        if self.check_code == 0:
+            return True
+        elif self.check_code == 1:
+            return self.current_value < self.expected_value
+        elif self.check_code == 2:
+            return self.current_value > self.expected_value
+        elif self.check_code == 3:
+            return (self.current_value - self.EqualValueVariant > self.expected_value) or (self.current_value + self.EqualValueVariant > self.expected_value)
+        else:
+            #Error - return false.
+            return False
+
+    def __getitem__(self, val):
+        return getattr(self, val)
 
     def getDict(self):
         return {"pin": self.pin, "mode": self.mode, "description": self.description, "check_code" : self.check_code, "expected_value": self.expected_value}
@@ -123,6 +156,7 @@ class PinsList:
 
     #getPinsInitializeCmd() - 
     #Return the pins initialize cmd.
+    #Fixed 6/9/21 to match new standard.
     def getPinsInitializeCmd(self):
         output = "1:"
         for x in self.PinList:

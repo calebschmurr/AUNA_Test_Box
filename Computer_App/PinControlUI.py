@@ -1134,7 +1134,7 @@ class Pin_Control(wx.Frame):
         exec('self.Pin_{}_Status.SetValue(\"{}\")'.format(pin, status))
 
     #ExternalStartSerial - start the serial comms port from outside.  Update UI Accordingly.
-    def ExternalStartSerial(self, port_num, rate=9600):
+    def ExternalStartSerial(self, port_num, rate=115200):
         self.PortComboBox.SetSelection(port_num)
         self.StartSerialComms(None)
 
