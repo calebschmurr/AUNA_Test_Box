@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2021-06-09T14:07:14.277Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.77 Safari/537.36" etag="PPq2O2TJBQC1FC74UBa4" version="14.7.6" type="github" pages="13">
+<mxfile host="app.diagrams.net" modified="2021-06-09T20:36:58.744Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.77 Safari/537.36" etag="DsGISO5kSGxzx4U7Ee8X" version="14.7.6" type="github" pages="13">
   <diagram id="c79iFraRc1DbxDd-72CT" name="Startup">
-    <mxGraphModel dx="2370" dy="1270" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="1422" dy="762" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="Sx0PQd4uw2xzY1_r_h0o-0" />
         <mxCell id="Sx0PQd4uw2xzY1_r_h0o-1" parent="Sx0PQd4uw2xzY1_r_h0o-0" />
@@ -2113,7 +2113,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="PLB8BABxf2TUF1mt12Lc" name="System Overview">
-    <mxGraphModel dx="1422" dy="762" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="900" math="0" shadow="0">
+    <mxGraphModel dx="2031" dy="1089" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="900" math="0" shadow="0">
       <root>
         <mxCell id="Lg0bLFIVnlx4oxV7NhL3-0" />
         <mxCell id="Lg0bLFIVnlx4oxV7NhL3-1" parent="Lg0bLFIVnlx4oxV7NhL3-0" />
@@ -3090,7 +3090,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="wa-8kMKjqbM8MYItFD-C" name="Testing Flowchart Overview">
-    <mxGraphModel dx="2031" dy="1089" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="900" math="0" shadow="0">
+    <mxGraphModel dx="2370" dy="1270" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="900" math="0" shadow="0">
       <root>
         <mxCell id="gWPKa5nklX5tYn0kDntu-0" />
         <mxCell id="gWPKa5nklX5tYn0kDntu-1" parent="gWPKa5nklX5tYn0kDntu-0" />
@@ -3455,14 +3455,26 @@
         <mxCell id="2PvyYen9-OM6Q1PHAKAy-0" value="&lt;h1&gt;Supplemental Information:&lt;/h1&gt;&lt;div&gt;Baud Rate : 115200&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;" parent="VeE7pAMwQkjYGPGOtE7H-1" vertex="1">
           <mxGeometry x="940" y="260" width="370" height="120" as="geometry" />
         </mxCell>
-        <mxCell id="fFNlyfIXxqadiubjYrch-1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="VeE7pAMwQkjYGPGOtE7H-1" source="krLdMdQtuuuUn4G_5-YP-0" target="fFNlyfIXxqadiubjYrch-0">
+        <mxCell id="fFNlyfIXxqadiubjYrch-1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="VeE7pAMwQkjYGPGOtE7H-1" source="krLdMdQtuuuUn4G_5-YP-0" target="fFNlyfIXxqadiubjYrch-0" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="krLdMdQtuuuUn4G_5-YP-0" value="Computer Receive Serial from Arduino" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.terminator;whiteSpace=wrap;" vertex="1" parent="VeE7pAMwQkjYGPGOtE7H-1">
+        <mxCell id="krLdMdQtuuuUn4G_5-YP-0" value="Computer Receive Serial from Arduino" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.terminator;whiteSpace=wrap;" parent="VeE7pAMwQkjYGPGOtE7H-1" vertex="1">
           <mxGeometry x="70" y="1250" width="100" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="fFNlyfIXxqadiubjYrch-0" value="" style="whiteSpace=wrap;html=1;strokeWidth=2;" vertex="1" parent="VeE7pAMwQkjYGPGOtE7H-1">
+        <mxCell id="V7DqSI0dM6c69DlHfGZB-1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="VeE7pAMwQkjYGPGOtE7H-1" source="fFNlyfIXxqadiubjYrch-0" target="V7DqSI0dM6c69DlHfGZB-0">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="fFNlyfIXxqadiubjYrch-0" value="Parse through Arduino inputs" style="whiteSpace=wrap;html=1;strokeWidth=2;" parent="VeE7pAMwQkjYGPGOtE7H-1" vertex="1">
           <mxGeometry x="60" y="1370" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="V7DqSI0dM6c69DlHfGZB-3" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="VeE7pAMwQkjYGPGOtE7H-1" source="V7DqSI0dM6c69DlHfGZB-0" target="V7DqSI0dM6c69DlHfGZB-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="V7DqSI0dM6c69DlHfGZB-0" value="Update MainPinsList with current values for all pins selected." style="whiteSpace=wrap;html=1;strokeWidth=2;" vertex="1" parent="VeE7pAMwQkjYGPGOtE7H-1">
+          <mxGeometry x="60" y="1510" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="V7DqSI0dM6c69DlHfGZB-2" value="End Loop" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.terminator;whiteSpace=wrap;" vertex="1" parent="VeE7pAMwQkjYGPGOtE7H-1">
+          <mxGeometry x="70" y="1630" width="100" height="60" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
@@ -3484,7 +3496,7 @@
         <mxCell id="GCmztnnYO3bL7F0aS7Pc-5" value="" style="edgeStyle=elbowEdgeStyle;elbow=vertical;html=1;rounded=0;" parent="GCmztnnYO3bL7F0aS7Pc-2" source="GCmztnnYO3bL7F0aS7Pc-3" target="GCmztnnYO3bL7F0aS7Pc-4" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="8A3Djouow_pzQuqEai9X-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;shape=link;" edge="1" parent="GCmztnnYO3bL7F0aS7Pc-2" source="GCmztnnYO3bL7F0aS7Pc-6" target="8A3Djouow_pzQuqEai9X-1">
+        <mxCell id="8A3Djouow_pzQuqEai9X-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;shape=link;" parent="GCmztnnYO3bL7F0aS7Pc-2" source="GCmztnnYO3bL7F0aS7Pc-6" target="8A3Djouow_pzQuqEai9X-1" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="GCmztnnYO3bL7F0aS7Pc-6" value="TestSequence" style="whiteSpace=wrap;html=1;" parent="GCmztnnYO3bL7F0aS7Pc-2" vertex="1">
@@ -3509,12 +3521,12 @@
         <mxCell id="GCmztnnYO3bL7F0aS7Pc-13" value="SerialMonitor" style="whiteSpace=wrap;html=1;" parent="GCmztnnYO3bL7F0aS7Pc-2" vertex="1">
           <mxGeometry x="160" y="220" width="100" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="8A3Djouow_pzQuqEai9X-0" value="" style="edgeStyle=elbowEdgeStyle;elbow=vertical;html=1;rounded=0;" edge="1" target="8A3Djouow_pzQuqEai9X-1" source="GCmztnnYO3bL7F0aS7Pc-4" parent="GCmztnnYO3bL7F0aS7Pc-2">
+        <mxCell id="8A3Djouow_pzQuqEai9X-0" value="" style="edgeStyle=elbowEdgeStyle;elbow=vertical;html=1;rounded=0;" parent="GCmztnnYO3bL7F0aS7Pc-2" source="GCmztnnYO3bL7F0aS7Pc-4" target="8A3Djouow_pzQuqEai9X-1" edge="1">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="200" y="170" as="sourcePoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="8A3Djouow_pzQuqEai9X-1" value="PinList" style="whiteSpace=wrap;html=1;" vertex="1" parent="GCmztnnYO3bL7F0aS7Pc-2">
+        <mxCell id="8A3Djouow_pzQuqEai9X-1" value="PinList" style="whiteSpace=wrap;html=1;" parent="GCmztnnYO3bL7F0aS7Pc-2" vertex="1">
           <mxGeometry x="300" y="220" width="100" height="40" as="geometry" />
         </mxCell>
         <mxCell id="JYGDpHprpJ1fjHqAasqr-0" value="Software Modes" style="shape=table;html=1;whiteSpace=wrap;startSize=30;container=1;collapsible=0;childLayout=tableLayout;fixedRows=1;rowLines=0;fontStyle=1;align=center;" parent="GCmztnnYO3bL7F0aS7Pc-1" vertex="1">
@@ -3547,53 +3559,65 @@
         <mxCell id="JYGDpHprpJ1fjHqAasqr-9" value="New test being created/Test being Modified" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;" parent="JYGDpHprpJ1fjHqAasqr-7" vertex="1">
           <mxGeometry x="50" width="160" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="p96pCwrwZcqv7Baqk6IW-0" value="Computer App Software - Object Organization" style="swimlane;html=1;startSize=20;horizontal=1;childLayout=treeLayout;horizontalTree=0;resizable=0;containerType=tree;" vertex="1" parent="GCmztnnYO3bL7F0aS7Pc-1">
-          <mxGeometry x="40" y="440" width="522" height="280" as="geometry" />
-        </mxCell>
-        <mxCell id="p96pCwrwZcqv7Baqk6IW-1" value="Main Window UI" style="whiteSpace=wrap;html=1;" vertex="1" parent="p96pCwrwZcqv7Baqk6IW-0">
-          <mxGeometry x="281" y="40" width="100" height="40" as="geometry" />
-        </mxCell>
-        <mxCell id="p96pCwrwZcqv7Baqk6IW-2" value="PinControlUI" style="whiteSpace=wrap;html=1;" vertex="1" parent="p96pCwrwZcqv7Baqk6IW-0">
-          <mxGeometry x="160" y="130" width="100" height="40" as="geometry" />
-        </mxCell>
-        <mxCell id="p96pCwrwZcqv7Baqk6IW-3" value="" style="edgeStyle=elbowEdgeStyle;elbow=vertical;html=1;rounded=0;" edge="1" parent="p96pCwrwZcqv7Baqk6IW-0" source="p96pCwrwZcqv7Baqk6IW-1" target="p96pCwrwZcqv7Baqk6IW-2">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="p96pCwrwZcqv7Baqk6IW-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;shape=link;" edge="1" parent="p96pCwrwZcqv7Baqk6IW-0" source="p96pCwrwZcqv7Baqk6IW-5" target="p96pCwrwZcqv7Baqk6IW-12">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="p96pCwrwZcqv7Baqk6IW-5" value="TestSequence" style="whiteSpace=wrap;html=1;" vertex="1" parent="p96pCwrwZcqv7Baqk6IW-0">
-          <mxGeometry x="412" y="130" width="90" height="40" as="geometry" />
-        </mxCell>
-        <mxCell id="p96pCwrwZcqv7Baqk6IW-6" value="" style="edgeStyle=elbowEdgeStyle;elbow=vertical;html=1;rounded=0;" edge="1" parent="p96pCwrwZcqv7Baqk6IW-0" source="p96pCwrwZcqv7Baqk6IW-1" target="p96pCwrwZcqv7Baqk6IW-5">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="p96pCwrwZcqv7Baqk6IW-7" value="" style="edgeStyle=elbowEdgeStyle;elbow=vertical;html=1;rounded=0;" edge="1" parent="p96pCwrwZcqv7Baqk6IW-0" source="p96pCwrwZcqv7Baqk6IW-2" target="p96pCwrwZcqv7Baqk6IW-8">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint x="-168" y="170" as="sourcePoint" />
+        <mxCell id="p96pCwrwZcqv7Baqk6IW-0" value="Computer App Software - Object Organization" style="swimlane;html=1;startSize=20;horizontal=1;childLayout=treeLayout;horizontalTree=0;resizable=0;containerType=tree;" parent="GCmztnnYO3bL7F0aS7Pc-1" vertex="1">
+          <mxGeometry x="40" y="440" width="558" height="370" as="geometry">
+            <mxRectangle x="40" y="440" width="290" height="20" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="p96pCwrwZcqv7Baqk6IW-8" value="SerialLine - instance of SerialComm" style="whiteSpace=wrap;html=1;" vertex="1" parent="p96pCwrwZcqv7Baqk6IW-0">
+        <mxCell id="p96pCwrwZcqv7Baqk6IW-1" value="Main Window UI" style="whiteSpace=wrap;html=1;" parent="p96pCwrwZcqv7Baqk6IW-0" vertex="1">
+          <mxGeometry x="309" y="40" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="p96pCwrwZcqv7Baqk6IW-2" value="PinControlUI" style="whiteSpace=wrap;html=1;" parent="p96pCwrwZcqv7Baqk6IW-0" vertex="1">
+          <mxGeometry x="180" y="130" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="p96pCwrwZcqv7Baqk6IW-3" value="" style="edgeStyle=elbowEdgeStyle;elbow=vertical;html=1;rounded=0;" parent="p96pCwrwZcqv7Baqk6IW-0" source="p96pCwrwZcqv7Baqk6IW-1" target="p96pCwrwZcqv7Baqk6IW-2" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p96pCwrwZcqv7Baqk6IW-4" value="On Load Test - TestSequence assigns pins to MasterPinList,&lt;br&gt;On Save Test - TestSequence receives pins from MasterPinList" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;shape=link;" parent="p96pCwrwZcqv7Baqk6IW-0" source="p96pCwrwZcqv7Baqk6IW-5" target="p96pCwrwZcqv7Baqk6IW-12" edge="1">
+          <mxGeometry x="-0.5472" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="p96pCwrwZcqv7Baqk6IW-5" value="TestSequence" style="whiteSpace=wrap;html=1;" parent="p96pCwrwZcqv7Baqk6IW-0" vertex="1">
+          <mxGeometry x="448" y="130" width="90" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="p96pCwrwZcqv7Baqk6IW-6" value="" style="edgeStyle=elbowEdgeStyle;elbow=vertical;html=1;rounded=0;" parent="p96pCwrwZcqv7Baqk6IW-0" source="p96pCwrwZcqv7Baqk6IW-1" target="p96pCwrwZcqv7Baqk6IW-5" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p96pCwrwZcqv7Baqk6IW-7" value="" style="edgeStyle=elbowEdgeStyle;elbow=vertical;html=1;rounded=0;" parent="p96pCwrwZcqv7Baqk6IW-0" source="p96pCwrwZcqv7Baqk6IW-2" target="p96pCwrwZcqv7Baqk6IW-8" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-140" y="170" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="p96pCwrwZcqv7Baqk6IW-8" value="SerialLine - instance of SerialComm" style="whiteSpace=wrap;html=1;" parent="p96pCwrwZcqv7Baqk6IW-0" vertex="1">
           <mxGeometry x="20" y="220" width="100" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="p96pCwrwZcqv7Baqk6IW-9" value="" style="edgeStyle=elbowEdgeStyle;elbow=vertical;html=1;rounded=0;" edge="1" parent="p96pCwrwZcqv7Baqk6IW-0" source="p96pCwrwZcqv7Baqk6IW-2" target="p96pCwrwZcqv7Baqk6IW-10">
+        <mxCell id="p96pCwrwZcqv7Baqk6IW-9" value="" style="edgeStyle=elbowEdgeStyle;elbow=vertical;html=1;rounded=0;" parent="p96pCwrwZcqv7Baqk6IW-0" source="p96pCwrwZcqv7Baqk6IW-2" target="p96pCwrwZcqv7Baqk6IW-10" edge="1">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="-33" y="170" as="sourcePoint" />
+            <mxPoint x="-5" y="170" as="sourcePoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="p96pCwrwZcqv7Baqk6IW-10" value="SerialMonitor" style="whiteSpace=wrap;html=1;" vertex="1" parent="p96pCwrwZcqv7Baqk6IW-0">
-          <mxGeometry x="160" y="220" width="100" height="40" as="geometry" />
+        <mxCell id="p96pCwrwZcqv7Baqk6IW-10" value="SerialMonitor - instance of SerialMonitor Class." style="whiteSpace=wrap;html=1;" parent="p96pCwrwZcqv7Baqk6IW-0" vertex="1">
+          <mxGeometry x="160" y="220" width="120" height="70" as="geometry" />
         </mxCell>
-        <mxCell id="p96pCwrwZcqv7Baqk6IW-11" value="" style="edgeStyle=elbowEdgeStyle;elbow=vertical;html=1;rounded=0;" edge="1" parent="p96pCwrwZcqv7Baqk6IW-0" source="p96pCwrwZcqv7Baqk6IW-2" target="p96pCwrwZcqv7Baqk6IW-12">
+        <mxCell id="p96pCwrwZcqv7Baqk6IW-11" value="" style="edgeStyle=elbowEdgeStyle;elbow=vertical;html=1;rounded=0;" parent="p96pCwrwZcqv7Baqk6IW-0" source="p96pCwrwZcqv7Baqk6IW-2" target="p96pCwrwZcqv7Baqk6IW-12" edge="1">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="200" y="170" as="sourcePoint" />
+            <mxPoint x="228" y="170" as="sourcePoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="p96pCwrwZcqv7Baqk6IW-12" value="MasterPinsList - instance of PinList." style="whiteSpace=wrap;html=1;" vertex="1" parent="p96pCwrwZcqv7Baqk6IW-0">
-          <mxGeometry x="300" y="220" width="100" height="40" as="geometry" />
+        <mxCell id="p96pCwrwZcqv7Baqk6IW-12" value="MasterPinsList - instance of PinList." style="whiteSpace=wrap;html=1;" parent="p96pCwrwZcqv7Baqk6IW-0" vertex="1">
+          <mxGeometry x="320" y="220" width="120" height="59" as="geometry" />
         </mxCell>
-        <mxCell id="p96pCwrwZcqv7Baqk6IW-13" value="&lt;u&gt;Object Organization Requirements:&lt;/u&gt;&lt;br&gt;&lt;div&gt;&lt;span&gt;&amp;nbsp;- 1 PinsList - This pins list has all active pins for the test.&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span&gt;This pins list will be stored in one place, and accessed by all parts of the program.&amp;nbsp; Every time a test is loaded, all the pins in that test will be added to this pinslist.&amp;nbsp; When the test is completed, this pins list will be cleared.&amp;nbsp; When modifying a test, all pins will be added to this pinslist, and all pins removed when this pinslist is cleared.&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;For test storage, the dict of the current PinsList will be retrieved, and stored as part of the test stage.&amp;nbsp; The actual PinsList will not be saved.&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&amp;nbsp;- 1 SerialLine.&amp;nbsp; This is the class that constantly receives messages from the Arduino.&amp;nbsp; Only one of these, located under MainWindowUI -&amp;gt; PinControlUI -&amp;gt; SerialLine.&lt;/div&gt;&lt;div&gt;&lt;span&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="GCmztnnYO3bL7F0aS7Pc-1">
-          <mxGeometry x="680" y="440" width="370" height="290" as="geometry" />
+        <mxCell id="7YP3TO44DZMGbcxpWfZs-1" value="" style="edgeStyle=elbowEdgeStyle;elbow=vertical;html=1;rounded=0;" edge="1" target="7YP3TO44DZMGbcxpWfZs-2" source="p96pCwrwZcqv7Baqk6IW-8" parent="p96pCwrwZcqv7Baqk6IW-0">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="270" y="610" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="7YP3TO44DZMGbcxpWfZs-2" value="ReceiverThread()" style="whiteSpace=wrap;html=1;" vertex="1" parent="p96pCwrwZcqv7Baqk6IW-0">
+          <mxGeometry x="20" y="310" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="p96pCwrwZcqv7Baqk6IW-13" value="&lt;u&gt;Object Organization Requirements:&lt;/u&gt;&lt;br&gt;&lt;div&gt;&lt;span&gt;&amp;nbsp;- 1 PinsList - This pins list has all active pins for the test.&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span&gt;This pins list will be stored in one place, and accessed by all parts of the program.&amp;nbsp; Every time a test is loaded, all the pins in that test will be added to this pinslist.&amp;nbsp; When the test is completed, this pins list will be cleared.&amp;nbsp; When modifying a test, all pins will be added to this pinslist, and all pins removed when this pinslist is cleared.&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;For test storage, the dict of the current PinsList will be retrieved, and stored as part of the test stage.&amp;nbsp; The actual PinsList will not be saved.&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&amp;nbsp;- 1 SerialLine.&amp;nbsp; This is the class that constantly receives messages from the Arduino.&amp;nbsp; Only one of these, located under MainWindowUI -&amp;gt; PinControlUI -&amp;gt; SerialLine.&lt;/div&gt;&lt;div&gt;&lt;span&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="GCmztnnYO3bL7F0aS7Pc-1" vertex="1">
+          <mxGeometry x="780" y="440" width="370" height="290" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
