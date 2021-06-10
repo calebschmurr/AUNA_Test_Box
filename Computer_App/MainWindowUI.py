@@ -426,7 +426,7 @@ class MainWindow(wx.Frame):
                 self.test.folderPath.rmdir()
                 #TODO: Delete test object.
                 
-        if self.current_mode==3:
+        if self.current_mode==2:
             if wx.MessageBox("Test not finished being modified, abort and write current progress?", "Please choose below.", wx.ICON_QUESTION | wx.YES_NO) != wx.YES:
                 event.veto()
                 return
@@ -453,7 +453,7 @@ class MainWindow(wx.Frame):
                     if x.suffix == '.txt':
                         logging.debug("txt file found.")
                         self.test = TestSequence.TestSequence()
-                        if not self.test.initialLoadIn(self.PinControl.SerialLine.PinsList, x):  #If this fails, does not return true, error.
+                        if not self.test.initialLoadIn(self.PinControl.MasterPinsList, x):  #If this fails, does not return true, error.
                             return False
                         else:
                             logging.info("Test loaded.")
@@ -467,12 +467,8 @@ class MainWindow(wx.Frame):
         #Find the .txt, then parse in as json
         #If fails, return False.  loadTestSequence failed.
 
-
-        preferred_index = -1
-        self.Port_Connect.Clear()
-        for n, (portname, desc, hwid) in enumerate(sorted(PinControlUI.SerialComm.serial.tools.list_ports.comports())):
-            self.Port_Connect.Append(u'{} - {}'.format(portname, desc))
-        self.Port_Connect.SetSelection(preferred_index)
+        #reload serial.
+        self.ReloadSerialPorts()
 
 #######################################################################################################################################
 ############################          Main Tab Control Buttons         ################################################################
@@ -533,9 +529,8 @@ class MainWindow(wx.Frame):
             wx.MessageBox("Unable to modify test, error loading test.", "Error loading test",  wx.OK | wx.ICON_INFORMATION)
             return False
 
-        self.current_mode = 3
+        self.current_mode = 2
         self.test.current_test = 0
-        self.test.folderPath = p
         self.testCreatorLoadInValues()
 
         #Set the active tab to tbe the test creator tab
@@ -734,6 +729,12 @@ class MainWindow(wx.Frame):
 
     def onCreateNewTest(self, event):
         if self.current_mode==0:
+
+            #Check to make sure that the user input a test name and description.
+            if self.TestNameTextbox.GetValue()=="":
+                return False
+            if self.Test_Description.GetValue()=="":
+                return False
             
             #Check to make sure this test doesn't already exist:
             for x in self.List_Of_Tests.GetStrings():
@@ -746,20 +747,16 @@ class MainWindow(wx.Frame):
             #Make a new test object,
             #Store in the pins used, name and description.
 
-            self.test = TestSequence.TestSequence()
-            self.test.name = self.TestNameTextbox.GetValue()
-            self.test.description = self.Test_Description.GetValue()
-            self.test.current_test = 0
+            self.test = TestSequence.TestSequence(self.TestNameTextbox.GetValue(), self.Test_Description.GetValue())
             self.getTestPinsList() #Load in the pins that will be used for this test
+
+            #Make a new folder for the test:
+            self.test.folderPath.mkdir()
 
             self.test.currentImgPath = None
             #Set up the test creation tab
             self.NewTestCreatorTestName.SetLabelText("Test Name: {}".format(self.test.name))
 
-            #Make a folder for this new test
-            self.test.folderPath = Path('.') #Using pathlib - replacement of os.
-            self.test.folderPath = self.test.folderPath / "Tests" /self.test.name
-            self.test.folderPath.mkdir()
             self.Notebook.SetSelection(3)
         
         else:
@@ -791,23 +788,28 @@ class MainWindow(wx.Frame):
 
     #getTestPinsList() -
     #On creating a new test, this goes through and finds each active pin
-    #that will be used.
+    #that will be used.  The pins are stored in the MasterPinsList.
     #Also enables the pins in the stage creation menu.
     def getTestPinsList(self):
         for x in range(1,13):
-            if eval("self.PinX1_{}Select.GetSelection()".format(x))==0:
-                exec("self.test.TestPinsList.addPin({}, self.PinX1_{}Select.GetSelection(), 0, self.PinX1_{}Description.GetValue())".format(x+53, x, x))
+            if eval("self.PinX1_{}Select.GetSelection()".format(x))!=1:
+                exec("self.PinControl.MasterPinsList.addPin({}, 1, 0, self.PinX1_{}Description.GetValue())".format(x+53, x, x))
                 exec("self.PinX1_{}_Stage_Mode_Select.Enable(True)".format(x))
                 exec("self.PinX1_{}_Stage_Value.Enable(True)".format(x))
 
-        for x in range(13, 18):
+        for x in range(13, 15):
             if eval("self.PinX1_{}Select.GetSelection()".format(x))!=1:
-                exec("self.test.TestPinsList.addPin({}, self.PinX1_{}Select.GetSelection()+1, 0, self.PinX1_{}Description.GetValue())".format(x-11, x, x))
+                exec("self.PinControl.MasterPinsList.addPin({}, 2, 0, self.PinX1_{}Description.GetValue())".format(x+62, x, x))
+                exec("self.PinX1_{}_Stage_Value.Enable(True)".format(x))
+
+        for x in range(15, 18):
+            if eval("self.PinX1_{}Select.GetSelection()".format(x))!=1:
+                exec("self.PinControl.MasterPinsList.addPin({}, 2, 0, self.PinX1_{}Description.GetValue())".format(x-11, x, x))
                 exec("self.PinX1_{}_Stage_Value.Enable(True)".format(x))
 
         for z in range(1,9):
             if eval("self.PinX2_{}Select.GetSelection()".format(z))!=1:
-                exec("self.test.TestPinsList.addPin({}, self.PinX2_{}Select.GetSelection()+1, 0, self.PinX2_{}Description.GetValue())".format(z+21, z, z))
+                exec("self.PinControl.MasterPinsList.addPin({}, 2, 0, self.PinX2_{}Description.GetValue())".format(z+21, z, z))
                 exec("self.PinX2_{}_Stage_Mode_Select.Enable(True)".format(z))
 
 
@@ -824,6 +826,9 @@ class MainWindow(wx.Frame):
             wx.MessageBox("No image selected, please select an image", "No image selected",  wx.OK | wx.ICON_INFORMATION)
             return False
         #Check for pins actually having values.
+        #Adjust all pin values in the MasterPinList based on the 
+        #changes made in the NewTestCreator.
+        self.updateMasterPinList_fromNewTestCreator()
 
         #Store all the values into the test stage object
         #Change this storage up to use the currentStage class??
@@ -831,13 +836,13 @@ class MainWindow(wx.Frame):
         #Save Stage - depending on if we are in the last stage or a previous stage, save differently.
         if ((self.test.current_test == len(self.test.testStages)) and len(self.test.testStages)==0) or (self.test.current_test == len(self.test.testStages)):
             
-            self.test.testStages.append(TestSequence.testStage(self.test.current_test, self.NewTestCreatorDescription.GetValue(), "img{}.png".format(self.test.current_test), self.getNewTestCreatorPins(), self.NewTestCreatorErrorMessage.GetValue(), None))
+            self.test.testStages.append(TestSequence.testStage(self.test.current_test, self.NewTestCreatorDescription.GetValue(), "img{}.png".format(self.test.current_test), self.PinControl.MasterPinsList.getTestStageDict(), self.NewTestCreatorErrorMessage.GetValue(), None))
             self.test.current_test+=1
             #Clear currentImgPath
             self.test.currentImgPath = None
 
         else: #Save current stage, load old stage.
-            self.test.testStages[self.test.current_test] = TestSequence.testStage(self.test.current_test, self.NewTestCreatorDescription.GetValue(), "img{}.png".format(self.test.current_test), self.getNewTestCreatorPins(), self.NewTestCreatorErrorMessage.GetValue(), None)
+            self.test.testStages[self.test.current_test] = TestSequence.testStage(self.test.current_test, self.NewTestCreatorDescription.GetValue(), "img{}.png".format(self.test.current_test), self.PinControl.MasterPinsList.getTestStageDict(), self.NewTestCreatorErrorMessage.GetValue(), None)
             #Also, load in the next test status.
             self.test.current_test+=1
             self.testCreatorLoadInValues()
@@ -845,7 +850,7 @@ class MainWindow(wx.Frame):
 
         #Increment stage levels
         print("Test stage {} saved.".format(self.test.current_test-1))
-        print(self.test.exportJsonFile())
+        print(self.test.exportJsonFile(self.PinControl.MasterPinsList.getTestSequenceDict()))
         self.updateNewTestUI()
 
     def onNewTestDeleteStage(self, event):
@@ -888,6 +893,26 @@ class MainWindow(wx.Frame):
         self.loadTests()
         self.Notebook.SetSelection(0)
 
+    def onNewTestSelectImage(self, event):
+        #Open a box to select the image for a certain stage.
+        with wx.FileDialog(self, "Open Image", wildcard = "Image files (*.png;*.gif;*.jpeg;*.jpg)|*.png;*.gif;*.jpeg;*.jpg",
+            style=wx.FD_OPEN | wx.FD_FILE_MUST_EXIST) as fileDialog:
+            if fileDialog.ShowModal() == wx.ID_CANCEL:
+                return
+            pathname = fileDialog.GetPath()
+            self.test.currentImgPath = pathname
+            img = Image.open(self.test.currentImgPath)
+            #Get size of original image:
+            width, height = img.size
+            #Scale so that the width is 500:
+            scale = 500 / width
+            img = img.resize((int(width * scale), int(height * scale))) #resize the image to 500x500.
+            img.save("{}\img{}.png".format(self.test.folderPath.resolve(), self.test.current_test))
+        #Also draw image to screen:
+        self.drawNewTestImage()
+
+
+
 #######################################################################################################################################
 ################################        End New Test Creator Tab Control Buttons         ##############################################
 #######################################################################################################################################
@@ -898,39 +923,34 @@ class MainWindow(wx.Frame):
         print("updateNewTestUI called, finished.")
 
     #Return a dict with all pins and values.
-    def getNewTestCreatorPins(self):
-        returnDict = []
+    def updateMasterPinList_fromNewTestCreator(self):
         for x in range(1,13):
             if eval("self.PinX1_{}_Stage_Value.IsEnabled()".format(x)):
                 if eval("self.PinX1_{}_Stage_Value.GetValue()==''".format(x,x)):
                     #send message that there needs to be a value in this value box before saving
                     wx.MessageBox("Please check values for pin X1_{} in order to save stage.".format(x), "Check values",  wx.OK | wx.ICON_INFORMATION)
                 else:
-                    returnDict.append(self.getPinObject("X1_{}".format(x)))
+                    #format: changePinExpectedValue(pin, value)
+                    self.PinControl.MasterPinsList.changePinExpectedValue(self.getPinObject("X1_{}".format(x)).pin, self.getPinObject("X1_{}".format(x)).value)
+                    #format: changePinCheckCode(pin, check_code)
+                    self.PinControl.MasterPinsList.changePinCheckCode(self.getPinObject("X1_{}".format(x)).pin, self.getPinObject("X1_{}".format(x)).check_code)
         for x in range(13, 18):
             if eval("self.PinX1_{}_Stage_Value.IsEnabled()".format(x)):
                 if eval("self.PinX1_{}_Stage_Value.GetValue()==''".format(x)):
                     #send message that there needs to be a value in this value box before saving
                     wx.MessageBox("Please check values for pin X1_{} in order to save stage.".format(x), "Check values",  wx.OK | wx.ICON_INFORMATION)
                 else:
-                    returnDict.append(self.getPinObject("X1_{}".format(x)))
+                    self.PinControl.MasterPinsList.changePinExpectedValue(self.getPinObject("X1_{}".format(x)).pin, self.getPinObject("X1_{}".format(x)).value)
 
         for x in range(1, 9):
             if eval("self.PinX2_{}_Stage_Mode_Select.IsEnabled()".format(x)):
                 if eval("self.PinX2_{}_Stage_Mode_Select.GetValue()==''".format(x)):
                     wx.MessageBox("Please check values for pin X2_{} in order to save stage.".format(x), "Check values",  wx.OK | wx.ICON_INFORMATION)
                 else:
-                    returnDict.append(self.getPinObject("X2_{}".format(x)))
-        
-        
-        print("getNewTestCreatorPinsReturn:")
-        for z in returnDict:
-           print(z.getDict())
-
-        return returnDict
+                    self.PinControl.MasterPinsList.changePinExpectedValue(self.getPinObject("X2_{}".format(x)).pin, self.getPinObject("X2_{}".format(x)).value)
 
     def getPinObject(self, PinID):
-        ret = TestSequence.testPin(0,0,0,None)
+        ret = PinList.pin(0,0,0,None)
         ret.pin = self.translateConnectorToPin(PinID)
         if ret.pin<53:
             ret.check_code = -1
@@ -973,9 +993,11 @@ class MainWindow(wx.Frame):
         print("Pin {} set to {}".format(str(self.translatePinToConnector(pin['pin'])), str(pin['value'])))
 
     def enableModifyTestPins(self):
-        for z in self.test.TestPinsList.PinList:
-            if z.pin>53:
-                if z.mode==0: #Input
+        for z in self.PinControl.MasterPinsList.PinList:
+            if z.mode==0: #ignore
+                return
+            elif z.pin>53:
+                if z.mode==1: #Input
                     exec("self.Pin{}_Stage_Mode_Select.Enable(True)".format(self.translatePinToConnector(z.pin)))
                     exec("self.Pin{}_Stage_Value.Enable(True)".format(self.translatePinToConnector(z.pin)))
                 else:
@@ -987,7 +1009,6 @@ class MainWindow(wx.Frame):
 
     def testCreatorLoadInValues(self):
          #Load in the previous test values:
-        #Number:
         #Description
         self.NewTestCreatorDescription.SetValue(self.test.testStages[self.test.current_test].getDict()['description'])
         #Error
@@ -1014,25 +1035,13 @@ class MainWindow(wx.Frame):
 
     def saveTest(self):
         with open("{}/{}.txt".format(self.test.folderPath, self.test.name), 'w') as outfile:
-            outfile.write(self.test.exportJsonFile())
+            outfile.write(self.test.exportJsonFile(self.PinControl.MasterPinsList.getTestSequenceDict()))
             outfile.close()
         
     def onResultViewer(self, event):
         #
         pass
 
-    def onNewTestSelectImage(self, event):
-        #Open a box to select the image for a certain stage.
-        with wx.FileDialog(self, "Open Image", wildcard = "Image files (*.png;*.gif;*.jpeg;*.jpg)|*.png;*.gif;*.jpeg;*.jpg",
-            style=wx.FD_OPEN | wx.FD_FILE_MUST_EXIST) as fileDialog:
-            if fileDialog.ShowModal() == wx.ID_CANCEL:
-                return
-            pathname = fileDialog.GetPath()
-            self.test.currentImgPath = pathname
-            img = Image.open(self.test.currentImgPath)
-            img.save("{}\img{}.png".format(self.test.folderPath.resolve(), self.test.current_test))
-        #Also draw image to screen:
-        self.drawNewTestImage()
 
     def drawNewTestImage(self):
         for x in self.test.folderPath.iterdir():
@@ -1048,6 +1057,11 @@ class MainWindow(wx.Frame):
         self.TestCreatorCurrentImg.ClearBackground()
 
 ###############################################################################################################################################
+
+################################  Miscellaneous Functions  ##############################################
+
+
+
 
 class MyApp(wx.App):
     def OnInit(self):

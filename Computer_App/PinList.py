@@ -28,7 +28,7 @@ class pin:
     check_code = 0
     expected_value = 0
 
-    def __init__(self, pin, mode, expected_value, description=""):
+    def __init__(self, pin, mode, expected_value, description="", check_code = 0):
         self.pin = pin
         self.mode = mode
         self.expected_value = expected_value
@@ -54,6 +54,12 @@ class pin:
             self.expected_value = value
             return True
         #Throw error - pin not the right value.
+        return False
+    def setCheckCode(self, code):
+        if self.mode==1:
+            self.check_code = code
+            return True
+        #Else - throw error, return false.
         return False
 
     #Check Code Standards:
@@ -81,18 +87,27 @@ class pin:
         return {"pin": self.pin, "mode": self.mode, "description": self.description, "check_code" : self.check_code, "expected_value": self.expected_value}
         #Do not store the current_Value when getting dictionary value - the current value only matters within pin structure.
 
+    #Store the pin number, the check code, and the expected value.
+    def getTestStageDict(self):
+        return {"pin": self.pin, "check_code": self.check_code, "expected_value": self.expected_value}
+
+    #testSequenceDict - store the pins used and their description.
+    def getTestSequenceDict(self):
+        return {"pin": self.pin, "description": self.description}
+
+
 class PinsList:
     PinList = []
 
     #addPin() - method to add pin values.
     #Pretty simple addPin method.
 
-    def addPin(self, pin, mode, val=0, desc=""):
+    def addPin(self, pin_num, mode, val=0, desc="", check_code=0):
         #Check to see if pin already exists:
         for x in self.PinList:
-            if x.getPinNumber()==pin:
+            if x.getPinNumber()==pin_num:
                 return False
-        self.PinList.append(pin(pin, mode, val, desc))
+        self.PinList.append(pin(pin_num, mode, val, desc))
         return True
 
     #removePin() - method to remove a pin from the internal pin list.
@@ -103,12 +118,21 @@ class PinsList:
                 return True
         return False
 
+    def clearList(self):
+        #Clear all pins on the pinlist.
+        self.pinList = []
     #changePinExpectedValue - find the pin in internal list, change the stored
     #value of pin.
     def changePinExpectedValue(self, num, value):
         for x in self.PinList:
             if x.getPinNumber()==num:
                 return x.setExpectedValue(value)
+        return False
+
+    def changePinCheckCode(self, num, check_code):
+        for x in self.PinList:
+            if x.getPinNumber()==num:
+                return x.setCheckCode(check_code)
         return False
 
     #changeCurrentValue - find the pin in internal list, and update
@@ -234,9 +258,23 @@ class PinsList:
                 #If yes, then change the value.
 
         #Update UI?
+
+
     def getDict(self):
         output = {"pins":[]}
         for x in self.PinList:
             output["pins"].append(x.getDict())
         
+        return output
+
+    def getTestStageDict(self):
+        output = {"pins":[]}
+        for x in self.PinList:
+            output["pins"].append(x.getTestStageDict())
+        return output
+
+    def getTestSequenceDict(self):
+        output = {"pins":[]}
+        for x in self.PinList:
+            output["pins"].append(x.getTestSequenceDict())
         return output

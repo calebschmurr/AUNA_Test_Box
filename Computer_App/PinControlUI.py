@@ -8,6 +8,7 @@ import wx
 import SerialComm
 import threading
 import SerialMonitor
+import PinList
 
 import time
 
@@ -85,6 +86,7 @@ class Pin_Control(wx.Frame):
 
         self.SerialMonitor = SerialMonitor.Serial_Monitor(None, wx.ID_ANY, "")
 
+        self.MasterPinsList = PinList.PinsList()
 
         self.thread = None
         self.alive = threading.Event()

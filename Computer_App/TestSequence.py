@@ -2,6 +2,9 @@
 import PinList
 import json
 
+from pathlib import Path
+
+
 import logging
 
 #Below - enable logging.
@@ -21,27 +24,19 @@ class testStage:
 
     def __init__(self, number, description, image, pin_checks, error, RealPinsList):
         #self.testPins.clear()
-        self.testPins=[]
+        self.testPins = pin_checks
         self.number = number
         self.description = description
         self.image = image
         self.error = error
-        self.parsePinChecks(pin_checks, RealPinsList)
 
-    def parsePinChecks(self, pin_checks, RealPinsList):
-        for x in pin_checks:
-            self.testPins.append(testPin(x['pin'], x['check_code'], x['value'], RealPinsList))
-            print("Pin {} saved w/ value {} and code {}".format(x['pin'], x['value'], x['check_code']))
+
 
     def getDict(self):
         x = {'number': self.number, 'description': self.description,
         'image': self.image, 'error': self.error}
-        x['pin_check'] = []
-        for z in self.testPins:
-            x['pin_check'].append(z.getDict())
-            logging.debug("adding to pin_check:")
-            logging.debug(z.getDict())
-
+        x['pin_check'] = self.testPins
+ 
         logging.debug("Full dictionary:")
         logging.debug(x)
         return x
@@ -58,26 +53,24 @@ class testStage:
 class TestSequence:
 
 
-    def __init__(self):
-        self.name = ""
-        self.description = ""
-        self.TestPinsList = None
-        self.TestPinsList = PinList.PinsList()
+    def __init__(self, name = "", description = ""):
+        self.name = name
+        self.description = description
         self.testStages = []
         self.RealPinsList = None
-        self.current_test = -1
-        self.folderPath = None
+        self.current_test = 0
+        self.folderPath = Path('.')
+        self.folderPath = self.folderPath / "Tests" / self.name
 
-    def initialLoadIn(self, ActualPinsList, FilePath):
-        self.RealPinsList = ActualPinsList
-        if not self.LoadInTests(FilePath):
+    def initialLoadIn(self, FilePath, MasterPinList):
+        if not self.LoadInTests(FilePath, MasterPinList):
             return False
         logging.info('Initializing pins list.')
         
         return True
 
 
-    def LoadInTests(self, FilePath):
+    def LoadInTests(self, FilePath, MasterPinList):
         with open(FilePath) as f:
             testData = json.load(f)
             logging.debug(testData)
@@ -91,15 +84,12 @@ class TestSequence:
         
         #Reset TestPinsList, and testStages
         self.testStages.clear()
-        self.TestPinsList = None
-        self.TestPinsList = PinList.PinsList()
+        MasterPinList.clearList()
         
-        #Mode pin setting:  0 = input, 1=output.
+        #Mode pin setting:  0 = do nothing, 1 = input, 2 = output.
         try:
             for x in testData['pins']:
-                self.TestPinsList.addPin(x['pin'], x['mode'], 0, x['description'])
-                #logging.debug("Adding pin")
-                #logging.debug(x['pin'])
+                MasterPinList.addPin(x['pin'], x['mode'], 0, x['description'])
             for z in testData['tests']:
                 self.testStages.append(testStage(z['number'], z['description'], z['image'], z['pin_check'], z['error'], self.RealPinsList))
         except:
@@ -123,21 +113,15 @@ class TestSequence:
     def getNumStages(self):
         return len(self.testStages)-1
 
-    def exportJsonFile(self):
+    def exportJsonFile(self, pinDict):
         output={}
         output['name'] = self.name
         output['description'] = self.description
         output['pins'] = []
         output['tests'] = []
         logging.debug("Here")
-        for x in self.TestPinsList.PinList:
-            output['pins'].append(x.getDict())
+        output['pins'] = pinDict
         
-        logging.debug("testPinsList Dict:  ")
-        for x in self.TestPinsList.PinList:
-            print(x.getDict())
-            pass
-        print("done.")
         
         for x in self.testStages:
             output['tests'].append(x.getDict())

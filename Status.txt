@@ -64,3 +64,43 @@ TODO:
 Focus on documentation.  Document how the Computer App Software is organized.
 Design software so there is always only one PinList.  Every change to pin Status
 makes a change on the Master PinList, which is stored within PinControlUI.
+[Done]
+
+
+6/10/21:
+
+TODO:
+Analyze Computer software - make sure it follows software standards laid out in
+flowchart.
+
+Go through the test creation - make sure all standards are followed. [Done]
+
+Go through test modification - make sure all standards are followed, works thoroughly. [Done]
+
+Go through test testing - make sure all standards are followed. [Started]
+
+
+Done:
+ - Went through MainWindowUI.onNewTestNextStage
+  - Went through MainWindowUI.testCreatorLoadInValues()
+   - Added in image resizing on selecting and saving an image.
+
+- Changed getTestPinsList to reflect new standards
+- Went through MainWindowUI.onCreateNewTest
+   - went through MainWindowUI.getTestPinsList()
+
+   -Went through MainWindowUI.enableModifyTestPins()
+   - Went through MainWindowUI.setNewTestCreatorPins()
+ - Determine where test pins are initially loaded, make sure it fits
+ new standard.
+
+  - Go through ModifyTestPushed
+  - Go through MainWindowUI.loadTestSequence
+  - Go through testsequence.initialLoadIn
+
+  - Fix the image resizing - keep the aspect ratio, fit to 500 x 250. [Done]
+
+  -NEXT STEP:  Fix the loading of the test.
+   - Lots of bugs with saving on next stage.  Make sure the MasterPinsList
+   gets updated properly on saving the next test stage.  Lots of issues with this.
+   Issues are particularly with the Analog pins that have a check code.  Fix this.
