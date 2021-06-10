@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2021-06-10T14:08:46.651Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.77 Safari/537.36" etag="XjUGM4TvmIx28iywaMX7" version="14.7.6" type="github" pages="13">
+<mxfile host="app.diagrams.net" modified="2021-06-10T16:02:38.150Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.77 Safari/537.36" etag="q7PA47BKDUc6x4fjq1pn" version="14.7.6" type="github" pages="13">
   <diagram id="c79iFraRc1DbxDd-72CT" name="Startup">
     <mxGraphModel dx="1826" dy="891" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
@@ -1286,7 +1286,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="8I6-hXY4jItryAr4Vlzn" name="Pin Setup and Information">
-    <mxGraphModel dx="1278" dy="624" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" math="0" shadow="0">
+    <mxGraphModel dx="1826" dy="891" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" math="0" shadow="0">
       <root>
         <mxCell id="zrRKEG3Dv9DlvAElSiNB-0" />
         <mxCell id="zrRKEG3Dv9DlvAElSiNB-1" parent="zrRKEG3Dv9DlvAElSiNB-0" />
@@ -2064,7 +2064,7 @@
             <mxRectangle x="20" y="335" width="110" height="26" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="W7o8nPpH2juDSY3hljmx-3" value="name : string - the name of the test&#xa;description : string - the test description.&#xa;pins : PinsList - all the pins used in the test.  Important information:&#xa;    Whether it is input or output.&#xa;tests : list - all test stage objects." style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="W7o8nPpH2juDSY3hljmx-2" vertex="1">
+        <mxCell id="W7o8nPpH2juDSY3hljmx-3" value="name : string - the name of the test&#xa;description : string - the test description.&#xa;pins : PinsList - all the pins used in the test.  Important information:&#xa;    Pin Number and Pin Type.&#xa;tests : list - all test stage objects." style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="W7o8nPpH2juDSY3hljmx-2" vertex="1">
           <mxGeometry y="26" width="430" height="94" as="geometry" />
         </mxCell>
         <mxCell id="60HyqtwJn-PF896a_5-m-0" value="Note:&amp;nbsp; All pin lists should be stored as PinsLists.&amp;nbsp; Use the GetDict method to return a json list when storing pins." style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="v2zZswJwngK2Z-_wx1dA-1" vertex="1">
@@ -2074,7 +2074,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="PLB8BABxf2TUF1mt12Lc" name="System Overview">
-    <mxGraphModel dx="2130" dy="1040" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="900" math="0" shadow="0">
+    <mxGraphModel dx="1826" dy="891" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="900" math="0" shadow="0">
       <root>
         <mxCell id="Lg0bLFIVnlx4oxV7NhL3-0" />
         <mxCell id="Lg0bLFIVnlx4oxV7NhL3-1" parent="Lg0bLFIVnlx4oxV7NhL3-0" />
@@ -2435,7 +2435,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="AK4a1LviWpWpr88ILRxK" name="Test Creation/Modification Flowchart">
-    <mxGraphModel dx="1278" dy="624" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="900" math="0" shadow="0">
+    <mxGraphModel dx="1826" dy="891" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="900" math="0" shadow="0">
       <root>
         <mxCell id="vfyKoq8hd8WbVqE_ZUOx-0" />
         <mxCell id="vfyKoq8hd8WbVqE_ZUOx-1" parent="vfyKoq8hd8WbVqE_ZUOx-0" />
@@ -2497,7 +2497,7 @@
         <mxCell id="1s7yPhcioXyC0WQXrJAg-23" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="vfyKoq8hd8WbVqE_ZUOx-1" source="1s7yPhcioXyC0WQXrJAg-20" target="1s7yPhcioXyC0WQXrJAg-22" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="1s7yPhcioXyC0WQXrJAg-20" value="Parse the pin inputs.&amp;nbsp; Comb through all the pins in the New Test tab, determine which pins to add to pinlist." style="whiteSpace=wrap;html=1;strokeWidth=2;" parent="vfyKoq8hd8WbVqE_ZUOx-1" vertex="1">
+        <mxCell id="1s7yPhcioXyC0WQXrJAg-20" value="Parse the pin inputs.&amp;nbsp; Comb through all the pins in the New Test tab, determine which pins to add to Master PinsList." style="whiteSpace=wrap;html=1;strokeWidth=2;" parent="vfyKoq8hd8WbVqE_ZUOx-1" vertex="1">
           <mxGeometry x="763.75" y="310" width="127.5" height="90" as="geometry" />
         </mxCell>
         <mxCell id="1s7yPhcioXyC0WQXrJAg-25" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="vfyKoq8hd8WbVqE_ZUOx-1" source="1s7yPhcioXyC0WQXrJAg-22" target="1s7yPhcioXyC0WQXrJAg-24" edge="1">
@@ -3020,7 +3020,7 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="SNgEtEXJfM-APiSImj9B-0" value="Set mode = 2" style="whiteSpace=wrap;html=1;strokeWidth=2;" parent="vfyKoq8hd8WbVqE_ZUOx-1" vertex="1">
-          <mxGeometry x="286.25" y="680" width="100" height="55" as="geometry" />
+          <mxGeometry x="276.26" y="717.5" width="100" height="55" as="geometry" />
         </mxCell>
         <mxCell id="SNgEtEXJfM-APiSImj9B-5" value="Yes" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="vfyKoq8hd8WbVqE_ZUOx-1" source="SNgEtEXJfM-APiSImj9B-3" target="1s7yPhcioXyC0WQXrJAg-12" edge="1">
           <mxGeometry relative="1" as="geometry" />
@@ -3047,7 +3047,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="wa-8kMKjqbM8MYItFD-C" name="Testing Flowchart Overview">
-    <mxGraphModel dx="1278" dy="624" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="900" math="0" shadow="0">
+    <mxGraphModel dx="1826" dy="891" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="900" math="0" shadow="0">
       <root>
         <mxCell id="gWPKa5nklX5tYn0kDntu-0" />
         <mxCell id="gWPKa5nklX5tYn0kDntu-1" parent="gWPKa5nklX5tYn0kDntu-0" />
@@ -3524,7 +3524,7 @@
         <mxCell id="p96pCwrwZcqv7Baqk6IW-1" value="Main Window UI" style="whiteSpace=wrap;html=1;" parent="p96pCwrwZcqv7Baqk6IW-0" vertex="1">
           <mxGeometry x="309" y="40" width="100" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="p96pCwrwZcqv7Baqk6IW-2" value="PinControlUI" style="whiteSpace=wrap;html=1;" parent="p96pCwrwZcqv7Baqk6IW-0" vertex="1">
+        <mxCell id="p96pCwrwZcqv7Baqk6IW-2" value="PinControlUI&lt;br&gt;name: self.PinControl" style="whiteSpace=wrap;html=1;" parent="p96pCwrwZcqv7Baqk6IW-0" vertex="1">
           <mxGeometry x="180" y="130" width="100" height="40" as="geometry" />
         </mxCell>
         <mxCell id="p96pCwrwZcqv7Baqk6IW-3" value="" style="edgeStyle=elbowEdgeStyle;elbow=vertical;html=1;rounded=0;" parent="p96pCwrwZcqv7Baqk6IW-0" source="p96pCwrwZcqv7Baqk6IW-1" target="p96pCwrwZcqv7Baqk6IW-2" edge="1">
