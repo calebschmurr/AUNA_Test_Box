@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2021-06-10T16:02:38.150Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.77 Safari/537.36" etag="q7PA47BKDUc6x4fjq1pn" version="14.7.6" type="github" pages="13">
+<mxfile host="app.diagrams.net" modified="2021-06-10T18:32:24.294Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.77 Safari/537.36" etag="vMp9CVJRB0MCzYR-Ezli" version="14.7.6" type="github" pages="13">
   <diagram id="c79iFraRc1DbxDd-72CT" name="Startup">
     <mxGraphModel dx="1826" dy="891" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
@@ -2949,7 +2949,7 @@
         <mxCell id="u4BYFBxCGgI4exCksfqx-9" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="vfyKoq8hd8WbVqE_ZUOx-1" source="u4BYFBxCGgI4exCksfqx-3" target="u4BYFBxCGgI4exCksfqx-8" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="u4BYFBxCGgI4exCksfqx-3" value="Load in the list of pins used, store as PinsList." style="whiteSpace=wrap;html=1;strokeWidth=2;" parent="vfyKoq8hd8WbVqE_ZUOx-1" vertex="1">
+        <mxCell id="u4BYFBxCGgI4exCksfqx-3" value="Load in the list of Pins used, store in MasterPinList.&amp;nbsp; Update the UI accordingly." style="whiteSpace=wrap;html=1;strokeWidth=2;" parent="vfyKoq8hd8WbVqE_ZUOx-1" vertex="1">
           <mxGeometry x="2802.5" y="1585" width="145" height="80" as="geometry" />
         </mxCell>
         <mxCell id="iyAISQck8cvq4EXra9eZ-15" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="vfyKoq8hd8WbVqE_ZUOx-1" source="u4BYFBxCGgI4exCksfqx-8" target="iyAISQck8cvq4EXra9eZ-14" edge="1">
