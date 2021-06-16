@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2021-06-16T18:46:04.756Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.101 Safari/537.36" etag="2ViC8px-uNBd3m1FXx3T" version="14.7.7" type="github" pages="13">
+<mxfile host="app.diagrams.net" modified="2021-06-16T20:29:51.320Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.101 Safari/537.36" etag="ogrpiwfKHJ9CBH6vBjMM" version="14.7.7" type="github" pages="13">
   <diagram id="c79iFraRc1DbxDd-72CT" name="Startup">
     <mxGraphModel dx="1278" dy="579" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
@@ -1760,7 +1760,7 @@
         </mxCell>
         <mxCell id="q5ja4Zn2cgToxAwqfuHv-160" value="Pin Storage" style="swimlane;" parent="zrRKEG3Dv9DlvAElSiNB-1" vertex="1">
           <mxGeometry x="590" y="20" width="740" height="560" as="geometry">
-            <mxRectangle x="750" y="80" width="100" height="23" as="alternateBounds" />
+            <mxRectangle x="590" y="20" width="100" height="23" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
         <mxCell id="q5ja4Zn2cgToxAwqfuHv-166" value="Parameters" style="shape=table;html=1;whiteSpace=wrap;startSize=30;container=1;collapsible=0;childLayout=tableLayout;fontStyle=1;align=center;" parent="q5ja4Zn2cgToxAwqfuHv-160" vertex="1">
@@ -3354,7 +3354,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="tymG0ddQVNB89iAb9HVC" name="Serial Communication Protocol">
-    <mxGraphModel dx="1826" dy="891" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" math="0" shadow="0">
+    <mxGraphModel dx="1278" dy="624" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" math="0" shadow="0">
       <root>
         <mxCell id="VeE7pAMwQkjYGPGOtE7H-0" />
         <mxCell id="VeE7pAMwQkjYGPGOtE7H-1" parent="VeE7pAMwQkjYGPGOtE7H-0" />
