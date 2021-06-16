@@ -453,7 +453,7 @@ class MainWindow(wx.Frame):
                     if x.suffix == '.txt':
                         logging.debug("txt file found.")
                         self.test = TestSequence.TestSequence()
-                        if not self.test.initialLoadIn(self.PinControl.MasterPinsList, x):  #If this fails, does not return true, error.
+                        if not self.test.initialLoadIn(x, self.PinControl.MasterPinsList):  #If this fails, does not return true, error.
                             return False
                         else:
                             logging.info("Test loaded.")
@@ -529,6 +529,8 @@ class MainWindow(wx.Frame):
             wx.MessageBox("Unable to modify test, error loading test.", "Error loading test",  wx.OK | wx.ICON_INFORMATION)
             return False
 
+
+        self.test.folderPath = p
         self.current_mode = 2
         self.test.current_test = 0
         self.testCreatorLoadInValues()
@@ -640,8 +642,8 @@ class MainWindow(wx.Frame):
         if not self.Serial_Enabled_Checkbox.GetValue():
             #self.PinControl.externalResetPins()
             time.sleep(1.0)
-        for x in self.test.TestPinsList.PinList:
-            self.PinControl.externalAddPin(x.getDict()['pin'], x.getDict()['mode'], x.getDict()['value'])
+        for x in self.PinControl.MasterPinsList.PinList:
+            self.PinControl.externalAddPin(x.getDict()['pin'], x.getDict()['mode'], x.getDict()['expected_value'])
         #Start sending back pin status:
         if not self.Serial_Enabled_Checkbox.GetValue():
             self.PinControl.ConfigurePinIO(None)
@@ -650,10 +652,10 @@ class MainWindow(wx.Frame):
             self.PinControl.ConfigOutputTime(None)
 
     def isOutputPin(self, pin):
-        for x in self.test.TestPinsList.PinList:
-            if (x.getPinNumber()==pin.pin):
+        for x in self.PinControl.MasterPinsList.PinList:
+            if (x['pin']==pin.pin):
                 #If is output pin, return true.
-                if (x.getMode() == 1):
+                if (x['mode'] == 1):
                     return True
                 #Unfinished.
                 return False
@@ -671,6 +673,7 @@ class MainWindow(wx.Frame):
 
 
         #Load in the image
+        logging.debug("The folderpath: {}".format(str(self.test.folderPath)))
         for x in self.test.folderPath.iterdir():
             logging.debug("Checking for image {}".format(self.currentStage.image))
             if x.is_file():
@@ -769,7 +772,7 @@ class MainWindow(wx.Frame):
         for x in range(1,14):
             exec("self.PinX1_{}Select.SetSelection(2)".format(x))
             exec("self.PinX1_{}Description.SetValue('Description')".format(x))
-            if x!=13:
+            if x!=13 or x!=14:
                 exec("self.PinX1_{}_Stage_Mode_Select.Enable(False)".format(x))
             exec("self.PinX1_{}_Stage_Value.Enable(False)".format(x))
         for x in range(14, 18):
@@ -804,7 +807,7 @@ class MainWindow(wx.Frame):
 
         for x in range(15, 18):
             if eval("self.PinX1_{}Select.GetSelection()".format(x))!=1:
-                exec("self.PinControl.MasterPinsList.addPin({}, 2, 0, self.PinX1_{}Description.GetValue())".format(x-11, x, x))
+                exec("self.PinControl.MasterPinsList.addPin({}, 2, 0, self.PinX1_{}Description.GetValue())".format(x-13, x, x))
                 exec("self.PinX1_{}_Stage_Value.Enable(True)".format(x))
 
         for z in range(1,9):
@@ -952,10 +955,10 @@ class MainWindow(wx.Frame):
     def getPinObject(self, PinID):
         ret = PinList.pin(0,0,0,None)
         ret.pin = self.translateConnectorToPin(PinID)
-        if ret.pin<53:
-            ret.check_code = -1
+        if ret.pin<53 or ret.pin > 74:
+            ret.check_code = 0
         else:
-            ret.check_code = eval("self.Pin{}_Stage_Mode_Select.GetSelection()".format(PinID))
+            ret.check_code = eval("self.Pin{}_Stage_Mode_Select.GetSelection()".format(PinID))+1
         if not PinID.split("_")[0]=="X2":
             ret.value = eval("self.Pin{}_Stage_Value.GetValue()".format(PinID))
         else:
@@ -965,32 +968,40 @@ class MainWindow(wx.Frame):
     def translateConnectorToPin(self, PinID):
         if int(PinID[1])==1:
             if int(PinID.split("_")[1])<13:
-                return int(PinID.split("_")[1])+53
+                return int(PinID.split("_")[1]) + 53
+            elif int(PinID.split("_")[1]) == 13 or int(PinID.split("_")[1]) == 14:
+                return int(PinID.split("_")[1]) + 62
             else:
-                return int(PinID.split("_")[1])-11
+                return int(PinID.split("_")[1]) - 13
         else:
-            return int(PinID.split("_")[1])+21
+            return int(PinID.split("_")[1]) + 21
 
     def translatePinToConnector(self, PinNumber):
         if PinNumber>53:
-            return "X1_{}".format(PinNumber-53)
+            if PinNumber > 74:
+                return "X1_{}".format(PinNumber - 62)
+            else:
+                return "X1_{}".format(PinNumber-53)
         elif PinNumber>21:
             return "X2_{}".format(PinNumber-21)
-        return "X1_{}".format(PinNumber+11)
+        return "X1_{}".format(PinNumber+13)
         
     def setNewTestCreatorPinVal(self, pin): #Used in navigating backwards in pin system.
         
         #Check to see if this stage value should be set - make sure it's not an X2 first.
         if not (pin['pin']>21 and pin['pin']<30):
-            exec("self.Pin{}_Stage_Value.SetValue(\"{}\")".format(str(self.translatePinToConnector(pin['pin'])), str(pin['value'])))
+            exec("self.Pin{}_Stage_Value.SetValue(\"{}\")".format(str(self.translatePinToConnector(pin['pin'])), str(pin['expected_value'])))
         
-        #Finish this check here - make sure this pin is within required values.
-        if pin['pin']>21:
+        #If the pin has a dropdown, and is an analog input:
+        if (pin['pin']>53) and (pin['pin'] != 75 and pin['pin'] != 76):
             print("Pin {} is {}".format(pin['pin'], self.translatePinToConnector(pin['pin'])))
             exec("self.Pin{}_Stage_Mode_Select.SetSelection({})".format(str(self.translatePinToConnector(pin['pin'])), str(pin['check_code'])))
             print("Pin {} set to code {}".format(self.translatePinToConnector(pin['pin']), pin['check_code']))
-        
-        print("Pin {} set to {}".format(str(self.translatePinToConnector(pin['pin'])), str(pin['value'])))
+        elif (pin['pin'] > 21) and (pin['pin'] != 75 and pin['pin'] != 76):
+            exec("self.Pin{}_Stage_Mode_Select.SetSelection({})".format(str(self.translatePinToConnector(pin['pin'])), str(not pin['expected_value'])))
+
+
+        print("Pin {} set to {}".format(str(self.translatePinToConnector(pin['pin'])), str(pin['expected_value'])))
 
     def enableModifyTestPins(self):
         for z in self.PinControl.MasterPinsList.PinList:
@@ -1023,11 +1034,12 @@ class MainWindow(wx.Frame):
         for z in self.test.testStages[self.test.current_test].getDict()['pin_check']:
             self.setNewTestCreatorPinVal(z)
         
-        #Update the image on screen:
-        #self.drawNewTestImage()
+        self.drawNewTestImage()
+        self.updateNewTestCreatorNumber()
 
         print("Finished loading in previously-made test creator stage {}.".format(self.test.current_test))
-        print(self.test.testStages[self.test.current_test].getDict())
+        #print(self.test.testStages[self.test.current_test].getDict())
+
 
     def updateNewTestCreatorNumber(self):
         self.NewTestCreatorStageNumber.SetLabelText("Stage: {}/{}".format(self.test.current_test, len(self.test.testStages)))
@@ -1044,6 +1056,7 @@ class MainWindow(wx.Frame):
 
 
     def drawNewTestImage(self):
+        logging.debug("Folder path : {}".format(self.test.folderPath))
         for x in self.test.folderPath.iterdir():
             logging.debug("Checking for image {}".format("img{}.png".format(self.test.current_test)))
             if x.is_file():

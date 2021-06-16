@@ -87,14 +87,22 @@ class TestSequence:
         MasterPinList.clearList()
         
         #Mode pin setting:  0 = do nothing, 1 = input, 2 = output.
-        try:
-            for x in testData['pins']:
-                MasterPinList.addPin(x['pin'], x['mode'], 0, x['description'])
-            for z in testData['tests']:
-                self.testStages.append(testStage(z['number'], z['description'], z['image'], z['pin_check'], z['error'], self.RealPinsList))
-        except:
-            print("Error parsing in test pins and adding to test stages.")
-            return False    
+     #   try:
+        for x in testData['pins']:
+            logging.debug("Found testData['pins']")
+            #If the pin is between 54 and 65, add as an input.
+            #Otherwise, add as an output.
+            if (int(x['pin']) > 53) and (int(x['pin']) < 66):
+                MasterPinList.addPin(int(x['pin']), 1, 0, x['description'])
+            else:
+                MasterPinList.addPin(int(x['pin']), 2, 0, x['description'])
+            
+        for z in testData['tests']:
+            logging.debug("Found testData['tests']")
+            self.testStages.append(testStage(int(z['number']), z['description'], z['image'], z['pin_check'], z['error'], self.RealPinsList))
+#    except:
+ #           print("Error parsing in test pins and adding to test stages.")
+ #           return False    
         return True
         
     def getNextTest(self):

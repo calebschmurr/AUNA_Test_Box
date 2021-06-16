@@ -104,3 +104,31 @@ Done:
    - Lots of bugs with saving on next stage.  Make sure the MasterPinsList
    gets updated properly on saving the next test stage.  Lots of issues with this.
    Issues are particularly with the Analog pins that have a check code.  Fix this.
+
+   6/16/21:
+   On next stage hit - update the expected value and check code
+   for each pin
+   based on the value filled out in the NewTestCreator tab
+
+  -----
+  Currently the masterPinsList updates for X1_17 and the X2 pins, but
+  not for the X1_13 and X1_14.  Fix this.  Done.
+  ----
+  Check codes are still not updating for Analog Input pins. fix this.  (Fixed.)
+  Pin 24, the X2_3 did not change to 'On' status.  Fix this. (Is it supposed to be like this?)
+  Also, Pin X1_17 thinks it is pin 6. Fix this.  Make sure the ConnectorToPin function returns proper values based on the Pin Setup page of Software_Flowchart. [Done]
+
+----
+Just pressed modify test - got error.
+Fix how the test is being saved - the pins are saved in two levels of a json file.  Fix this.
+
+---
+Fix the image being drawn in.  The image does not show up on Modify test pushed.
+Make sure it loads the image properly. (Done).
+
+Also, make sure the Check_Code gets updated properly for Analog Inputs. (Done)
+----
+On loading test, fix the problem with TestSequence having no attribute
+TestPinsList.
+
+Left off on loading test for actual testing and issues with that.

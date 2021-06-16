@@ -50,14 +50,20 @@ class pin:
         return self.description
 
     def setExpectedValue(self, value):
-        if self.mode==2:
+        if self.mode!=0:
             self.expected_value = value
+            print("New value set of ")
+            print(value)
             return True
         #Throw error - pin not the right value.
+        print("Error not the right mode for ")
+        print(self.pin)
         return False
+
     def setCheckCode(self, code):
         if self.mode==1:
             self.check_code = code
+            print("Check code set for {} to {}".format(self.pin, code))
             return True
         #Else - throw error, return false.
         return False
@@ -106,8 +112,10 @@ class PinsList:
         #Check to see if pin already exists:
         for x in self.PinList:
             if x.getPinNumber()==pin_num:
+                print("Unable to add pin {} to list, it already exists.".format(pin_num))
                 return False
         self.PinList.append(pin(pin_num, mode, val, desc))
+        print("Added pin {} to PinList with mode {} val {}.".format(pin_num, mode, val))
         return True
 
     #removePin() - method to remove a pin from the internal pin list.
@@ -126,13 +134,19 @@ class PinsList:
     def changePinExpectedValue(self, num, value):
         for x in self.PinList:
             if x.getPinNumber()==num:
+                print("Reached change pin expected value for:")
+                print(num)
                 return x.setExpectedValue(value)
+        print("Error setting expected value for ")
+        print(num)
         return False
 
     def changePinCheckCode(self, num, check_code):
         for x in self.PinList:
             if x.getPinNumber()==num:
+                print("Reached setting check code for {} to {}".format(num, check_code))
                 return x.setCheckCode(check_code)
+        print("Error setting check code for {}".format(num))
         return False
 
     #changeCurrentValue - find the pin in internal list, and update
@@ -261,20 +275,20 @@ class PinsList:
 
 
     def getDict(self):
-        output = {"pins":[]}
+        output = []
         for x in self.PinList:
-            output["pins"].append(x.getDict())
+            output.append(x.getDict())
         
         return output
 
     def getTestStageDict(self):
-        output = {"pins":[]}
+        output = []
         for x in self.PinList:
-            output["pins"].append(x.getTestStageDict())
+            output.append(x.getTestStageDict())
         return output
 
     def getTestSequenceDict(self):
-        output = {"pins":[]}
+        output = []
         for x in self.PinList:
-            output["pins"].append(x.getTestSequenceDict())
+            output.append(x.getTestSequenceDict())
         return output
