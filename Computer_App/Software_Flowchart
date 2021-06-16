@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2021-06-10T19:44:47.345Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.77 Safari/537.36" etag="eAXAyKNJ85AU5_WuBOCl" version="14.7.6" type="github" pages="13">
+<mxfile host="app.diagrams.net" modified="2021-06-16T17:41:52.947Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.101 Safari/537.36" etag="8xvLNY8KOSXSTsqTHrzR" version="14.7.7" type="github" pages="13">
   <diagram id="c79iFraRc1DbxDd-72CT" name="Startup">
-    <mxGraphModel dx="1826" dy="891" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="1278" dy="579" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="Sx0PQd4uw2xzY1_r_h0o-0" />
         <mxCell id="Sx0PQd4uw2xzY1_r_h0o-1" parent="Sx0PQd4uw2xzY1_r_h0o-0" />
@@ -911,7 +911,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="SMSFAHEOyso0FMqhiWyN" name="New_Test_Tab">
-    <mxGraphModel dx="2556" dy="1248" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" math="0" shadow="0">
+    <mxGraphModel dx="1826" dy="891" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" math="0" shadow="0">
       <root>
         <mxCell id="UUAGUkRDnq5GgsOfPD1d-0" />
         <mxCell id="UUAGUkRDnq5GgsOfPD1d-1" parent="UUAGUkRDnq5GgsOfPD1d-0" />
@@ -1286,7 +1286,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="8I6-hXY4jItryAr4Vlzn" name="Pin Setup and Information">
-    <mxGraphModel dx="1826" dy="891" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" math="0" shadow="0">
+    <mxGraphModel dx="1278" dy="624" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" math="0" shadow="0">
       <root>
         <mxCell id="zrRKEG3Dv9DlvAElSiNB-0" />
         <mxCell id="zrRKEG3Dv9DlvAElSiNB-1" parent="zrRKEG3Dv9DlvAElSiNB-0" />
@@ -1854,7 +1854,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="4iKvxuujepMYjtlLgTHk" name="Test Storage Format">
-    <mxGraphModel dx="1278" dy="624" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" math="0" shadow="0">
+    <mxGraphModel dx="2130" dy="1040" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" math="0" shadow="0">
       <root>
         <mxCell id="v2zZswJwngK2Z-_wx1dA-0" />
         <mxCell id="v2zZswJwngK2Z-_wx1dA-1" parent="v2zZswJwngK2Z-_wx1dA-0" />
@@ -1888,7 +1888,7 @@
         <mxCell id="nY6Y5zprH84wHejIGU__-3" value="_init_(self)" style="swimlane;fontStyle=1;align=center;verticalAlign=middle;childLayout=stackLayout;horizontal=1;startSize=29;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;" parent="v2zZswJwngK2Z-_wx1dA-1" vertex="1">
           <mxGeometry x="520" y="521" width="200" height="49" as="geometry" />
         </mxCell>
-        <mxCell id="B5Zhz0zupzmS-1uGftqP-0" value="Initialize all vaiables" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;" vertex="1" parent="nY6Y5zprH84wHejIGU__-3">
+        <mxCell id="B5Zhz0zupzmS-1uGftqP-0" value="Initialize all vaiables" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;" parent="nY6Y5zprH84wHejIGU__-3" vertex="1">
           <mxGeometry y="29" width="200" height="20" as="geometry" />
         </mxCell>
         <mxCell id="nY6Y5zprH84wHejIGU__-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0.46;exitY=0.993;exitDx=0;exitDy=0;exitPerimeter=0;" parent="v2zZswJwngK2Z-_wx1dA-1" source="nY6Y5zprH84wHejIGU__-2" target="nY6Y5zprH84wHejIGU__-3" edge="1">
@@ -2435,7 +2435,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="AK4a1LviWpWpr88ILRxK" name="Test Creation/Modification Flowchart">
-    <mxGraphModel dx="1826" dy="891" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="900" math="0" shadow="0">
+    <mxGraphModel dx="1278" dy="624" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="900" math="0" shadow="0">
       <root>
         <mxCell id="vfyKoq8hd8WbVqE_ZUOx-0" />
         <mxCell id="vfyKoq8hd8WbVqE_ZUOx-1" parent="vfyKoq8hd8WbVqE_ZUOx-0" />
@@ -2463,13 +2463,13 @@
         <mxCell id="1s7yPhcioXyC0WQXrJAg-5" value="Create a new TestSequence Object" style="whiteSpace=wrap;html=1;strokeWidth=2;" parent="vfyKoq8hd8WbVqE_ZUOx-1" vertex="1">
           <mxGeometry x="41.25" y="705" width="135" height="80" as="geometry" />
         </mxCell>
-        <mxCell id="MxmWPGCyel11NB49hLlH-1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="vfyKoq8hd8WbVqE_ZUOx-1" source="1s7yPhcioXyC0WQXrJAg-7" target="1s7yPhcioXyC0WQXrJAg-9">
+        <mxCell id="MxmWPGCyel11NB49hLlH-1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="vfyKoq8hd8WbVqE_ZUOx-1" source="1s7yPhcioXyC0WQXrJAg-7" target="1s7yPhcioXyC0WQXrJAg-9" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="1s7yPhcioXyC0WQXrJAg-7" value="On Initialization:&lt;br&gt;Store test name,&lt;br&gt;description, set the current test name.&amp;nbsp;" style="whiteSpace=wrap;html=1;strokeWidth=2;" parent="vfyKoq8hd8WbVqE_ZUOx-1" vertex="1">
           <mxGeometry x="550" y="190" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="MxmWPGCyel11NB49hLlH-2" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="vfyKoq8hd8WbVqE_ZUOx-1" source="1s7yPhcioXyC0WQXrJAg-9" target="1s7yPhcioXyC0WQXrJAg-20">
+        <mxCell id="MxmWPGCyel11NB49hLlH-2" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="vfyKoq8hd8WbVqE_ZUOx-1" source="1s7yPhcioXyC0WQXrJAg-9" target="1s7yPhcioXyC0WQXrJAg-20" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="1s7yPhcioXyC0WQXrJAg-9" value="Create a directory in tests folder named after the new test" style="whiteSpace=wrap;html=1;strokeWidth=2;" parent="vfyKoq8hd8WbVqE_ZUOx-1" vertex="1">
@@ -2589,7 +2589,7 @@
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="1s7yPhcioXyC0WQXrJAg-48" value="Yes" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="vfyKoq8hd8WbVqE_ZUOx-1" source="1s7yPhcioXyC0WQXrJAg-41" target="1s7yPhcioXyC0WQXrJAg-47" edge="1">
+        <mxCell id="2OLvA7oXGMSRv1qROAjD-2" value="Yes" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="vfyKoq8hd8WbVqE_ZUOx-1" source="1s7yPhcioXyC0WQXrJAg-41" target="2OLvA7oXGMSRv1qROAjD-1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="1s7yPhcioXyC0WQXrJAg-41" value="User input values for Description, Error, and selected Image." style="rhombus;whiteSpace=wrap;html=1;strokeWidth=2;" parent="vfyKoq8hd8WbVqE_ZUOx-1" vertex="1">
@@ -2605,19 +2605,19 @@
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="1s7yPhcioXyC0WQXrJAg-47" value="Create a new TestStage object, storing the description, error, relative image path." style="whiteSpace=wrap;html=1;strokeWidth=2;" parent="vfyKoq8hd8WbVqE_ZUOx-1" vertex="1">
-          <mxGeometry x="1741.88" y="460" width="178.75" height="90" as="geometry" />
+          <mxGeometry x="1737.81" y="512.5" width="187.19" height="62.5" as="geometry" />
         </mxCell>
         <mxCell id="iyAISQck8cvq4EXra9eZ-1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="vfyKoq8hd8WbVqE_ZUOx-1" source="1s7yPhcioXyC0WQXrJAg-49" target="iyAISQck8cvq4EXra9eZ-0" edge="1">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="2030" y="635" />
+              <mxPoint x="2030" y="658" />
               <mxPoint x="2030" y="140" />
               <mxPoint x="2240" y="140" />
             </Array>
           </mxGeometry>
         </mxCell>
         <mxCell id="1s7yPhcioXyC0WQXrJAg-49" value="Loop through all the pins being used, store their status/values inside of a new PinsList." style="whiteSpace=wrap;html=1;strokeWidth=2;" parent="vfyKoq8hd8WbVqE_ZUOx-1" vertex="1">
-          <mxGeometry x="1740" y="585" width="180.63" height="100" as="geometry" />
+          <mxGeometry x="1740.93" y="607.5" width="180.63" height="100" as="geometry" />
         </mxCell>
         <mxCell id="1s7yPhcioXyC0WQXrJAg-56" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="vfyKoq8hd8WbVqE_ZUOx-1" source="1s7yPhcioXyC0WQXrJAg-53" target="1s7yPhcioXyC0WQXrJAg-55" edge="1">
           <mxGeometry relative="1" as="geometry" />
@@ -3014,7 +3014,7 @@
         <mxCell id="iyAISQck8cvq4EXra9eZ-16" value="Process continues in Test Editor section." style="strokeWidth=2;html=1;shape=mxgraph.flowchart.terminator;whiteSpace=wrap;" parent="vfyKoq8hd8WbVqE_ZUOx-1" vertex="1">
           <mxGeometry x="2825" y="1695" width="100" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="MxmWPGCyel11NB49hLlH-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="vfyKoq8hd8WbVqE_ZUOx-1" source="SNgEtEXJfM-APiSImj9B-0" target="1s7yPhcioXyC0WQXrJAg-7">
+        <mxCell id="MxmWPGCyel11NB49hLlH-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="vfyKoq8hd8WbVqE_ZUOx-1" source="SNgEtEXJfM-APiSImj9B-0" target="1s7yPhcioXyC0WQXrJAg-7" edge="1">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="440" y="220" as="targetPoint" />
           </mxGeometry>
@@ -3042,6 +3042,12 @@
         </mxCell>
         <mxCell id="SNgEtEXJfM-APiSImj9B-11" value="Set Mode to 0" style="whiteSpace=wrap;html=1;strokeWidth=2;" parent="vfyKoq8hd8WbVqE_ZUOx-1" vertex="1">
           <mxGeometry x="2809.995" y="250" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="2OLvA7oXGMSRv1qROAjD-3" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="vfyKoq8hd8WbVqE_ZUOx-1" source="2OLvA7oXGMSRv1qROAjD-1" target="1s7yPhcioXyC0WQXrJAg-47">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="2OLvA7oXGMSRv1qROAjD-1" value="Update MasterPinsList ExpectedValue and CheckCode." style="whiteSpace=wrap;html=1;strokeWidth=2;" vertex="1" parent="vfyKoq8hd8WbVqE_ZUOx-1">
+          <mxGeometry x="1771.4" y="415" width="120" height="60" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
