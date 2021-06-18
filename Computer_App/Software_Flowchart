@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2021-06-17T13:48:06.720Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.106 Safari/537.36" etag="j6taPPNWl74Rc1u-mTRk" version="14.7.10" type="github" pages="14">
+<mxfile host="app.diagrams.net" modified="2021-06-18T14:33:29.175Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.106 Safari/537.36" etag="3VCtBozQAeMw9zXGCjA4" version="14.7.10" type="github" pages="14">
   <diagram id="c79iFraRc1DbxDd-72CT" name="Startup">
     <mxGraphModel dx="1038" dy="521" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
@@ -1850,6 +1850,9 @@
         <mxCell id="OMb3qVRwZ9xh1geRj9H1-7" value="0-1024" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;overflow=hidden;" parent="OMb3qVRwZ9xh1geRj9H1-4" vertex="1">
           <mxGeometry x="231" width="109" height="90" as="geometry" />
         </mxCell>
+        <mxCell id="QL0-pzalOhRNeaz4EU4w-1" value="&lt;h1&gt;Possible Analog Values:&lt;/h1&gt;&lt;div&gt;Arduino outputs range from 0-1023 for Voltage Input.&amp;nbsp; This ranges from 0-5V.&lt;/div&gt;&lt;div&gt;There is a voltage divider that steps down the voltage by a factor of 10.&lt;/div&gt;&lt;div&gt;Equation:&lt;/div&gt;&lt;div&gt;[Value] = (Voltage Input / 10) * (1023/5)&lt;/div&gt;&lt;div&gt;Or,&lt;/div&gt;&lt;div&gt;[Value] = Voltage Input&amp;nbsp; * 20.46&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;" vertex="1" parent="zrRKEG3Dv9DlvAElSiNB-1">
+          <mxGeometry x="590" y="700" width="280" height="210" as="geometry" />
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
@@ -3443,7 +3446,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="I2YtFASMkG4ahn39ouU3" name="Software Architecture Overview">
-    <mxGraphModel dx="2130" dy="1040" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="900" math="0" shadow="0">
+    <mxGraphModel dx="1038" dy="624" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="900" math="0" shadow="0">
       <root>
         <mxCell id="GCmztnnYO3bL7F0aS7Pc-0" />
         <mxCell id="GCmztnnYO3bL7F0aS7Pc-1" parent="GCmztnnYO3bL7F0aS7Pc-0" />
@@ -3586,7 +3589,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="z_zXgQNtc8BN1voucDLv" name="Arduino Software Architecture">
-    <mxGraphModel dx="1278" dy="624" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="1038" dy="624" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="yOUnKlWmc1Mxo8oZwD-C-0" />
         <mxCell id="yOUnKlWmc1Mxo8oZwD-C-1" parent="yOUnKlWmc1Mxo8oZwD-C-0" />
