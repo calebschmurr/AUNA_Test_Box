@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2021-06-18T14:33:54.876Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.106 Safari/537.36" etag="mEmTHQhXi3biFOO5dc29" version="14.7.10" type="github" pages="14">
+<mxfile host="app.diagrams.net" modified="2021-06-18T14:34:26.646Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.106 Safari/537.36" etag="mFvjs9aFMzMulD9E9KFP" version="14.7.10" type="github" pages="14">
   <diagram id="c79iFraRc1DbxDd-72CT" name="Startup">
     <mxGraphModel dx="1038" dy="521" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
@@ -1759,7 +1759,7 @@
           <mxGeometry x="310" width="140" height="35" as="geometry" />
         </mxCell>
         <mxCell id="q5ja4Zn2cgToxAwqfuHv-160" value="Pin Storage" style="swimlane;" parent="zrRKEG3Dv9DlvAElSiNB-1" vertex="1">
-          <mxGeometry x="520" y="100" width="370" height="560" as="geometry">
+          <mxGeometry x="520" y="100" width="370" height="520" as="geometry">
             <mxRectangle x="590" y="20" width="100" height="23" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
@@ -1851,7 +1851,7 @@
           <mxGeometry x="231" width="109" height="90" as="geometry" />
         </mxCell>
         <mxCell id="QL0-pzalOhRNeaz4EU4w-1" value="&lt;h1&gt;Possible Analog Values:&lt;/h1&gt;&lt;div&gt;Arduino outputs range from 0-1023 for Voltage Input.&amp;nbsp; This ranges from 0-5V.&lt;/div&gt;&lt;div&gt;There is a voltage divider that steps down the voltage by a factor of 10.&lt;/div&gt;&lt;div&gt;Equation:&lt;/div&gt;&lt;div&gt;[Value] = (Voltage Input / 10) * (1023/5)&lt;/div&gt;&lt;div&gt;Or,&lt;/div&gt;&lt;div&gt;[Value] = Voltage Input&amp;nbsp; * 20.46&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;" vertex="1" parent="zrRKEG3Dv9DlvAElSiNB-1">
-          <mxGeometry x="590" y="700" width="280" height="210" as="geometry" />
+          <mxGeometry x="540" y="695" width="280" height="210" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
