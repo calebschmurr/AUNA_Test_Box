@@ -79,14 +79,15 @@ class Pin_Control(wx.Frame):
     
     def __init__(self, *args, **kwds):
         # begin wxGlade: Pin_Control.__init__
-        self.SerialLine = SerialComm.SerialHandler()
-        self.SerialLine.point_to_main = self
 
         self.SerialMonitor = None
 
         self.SerialMonitor = SerialMonitor.Serial_Monitor(None, wx.ID_ANY, "")
 
         self.MasterPinsList = PinList.PinsList()
+        self.SerialLine = SerialComm.SerialHandler(self.MasterPinsList)
+        self.SerialLine.point_to_main = self
+
 
         self.thread = None
         self.alive = threading.Event()
@@ -960,7 +961,7 @@ class Pin_Control(wx.Frame):
 
     def getOnCheck(self, arg):
         def PinChange(event):
-            if(event.IsChecked()):
+            if (event.IsChecked()):
                 print("adding pin {}".format(arg))
                 #If the checkbox was checked, add pin.
                 #sel = self.Pin_22_Mode_Box.GetSelection()
@@ -987,8 +988,8 @@ class Pin_Control(wx.Frame):
     def UpdatePinOutput(self, events):
         print("Updating pin output values")
         #TODO: Comb through all pins, update their values.
-        for x in self.SerialLine.PinsList.PinList:
-            if x.mode==1:
+        for x in self.MasterPinsList.PinList:  ##LEFT OFF HERE
+            if x.mode==2:
                 x.value = float(eval('self.Pin_{}_Status.GetValue()'.format(x.pin)))
         self.SerialLine.ChangeOutputPinValue()
 
@@ -998,10 +999,22 @@ class Pin_Control(wx.Frame):
 
     def ResetPins(self, events):
         #Remove all pins from list, and clear all their stored values.
-        for x in range(22, 70):
+        for x in range(22, 66):
             exec("self.Pin_{}_Enable.SetValue(False)".format(x))
             exec("self.Pin_{}_Mode_Box.SetSelection(-1)".format(x))
             exec("self.Pin_{}_Status.SetValue(\"\")".format(x))
+
+        for x in range(68, 70):
+            exec("self.Pin_{}_Enable.SetValue(False)".format(x))
+            exec("self.Pin_{}_Mode_Box.SetSelection(-1)".format(x))
+            exec("self.Pin_{}_Status.SetValue(\"\")".format(x))
+            
+        for x in range(75, 77):
+            exec("self.Pin_{}_Enable.SetValue(False)".format(x))
+            exec("self.Pin_{}_Mode_Box.SetSelection(-1)".format(x))
+            exec("self.Pin_{}_Status.SetValue(\"\")".format(x))
+            
+
         for x in range(2, 14):
             exec("self.Pin_{}_Enable.SetValue(False)".format(x))
             exec("self.Pin_{}_Status.SetValue(\"\")".format(x))
@@ -1070,24 +1083,25 @@ class Pin_Control(wx.Frame):
     def UpdateUIThread(self):
         while self.alive.isSet():
             time.sleep(0.25)
-            if self.SerialLine.UI_Update_Flag:
-                self.SerialLine.UI_Update_Flag=False
-                self.UpdateUI_Inputs()
-            if self.SerialMonitor!=None:
-                #TODO: Update the text box with text from serial comm
-                if self.SerialLine.SerialCommListUpdated:
-                    self.SerialLine.SerialCommListUpdated = False
-                    self.SerialMonitor.TextView.AppendText(self.SerialLine.SerialCommList[len(self.SerialLine.SerialCommList)-1])
-                    self.SerialMonitor.TextView.AppendText("\n")
-            if self.SerialLine.alive.isSet():
-                self.Connection_Status_Display.ChangeValue("Connected")
-            else:
-                try:
-                    #For some reason this part is causing the issue.
-                    if self.alive.isSet():  
-                        self.Connection_Status_Display.ChangeValue("Disconnected")
-                except:
-                    print("couldn't change last value thats fine tho.")
+            if self.alive.isSet():
+                if self.SerialLine.UI_Update_Flag:
+                    self.SerialLine.UI_Update_Flag=False
+                    self.UpdateUI_Inputs()
+                if self.SerialMonitor!=None:
+                    #TODO: Update the text box with text from serial comm
+                    if self.SerialLine.SerialCommListUpdated:
+                        self.SerialLine.SerialCommListUpdated = False
+                        self.SerialMonitor.TextView.AppendText(self.SerialLine.SerialCommList[len(self.SerialLine.SerialCommList)-1])
+                        self.SerialMonitor.TextView.AppendText("\n")
+                if self.SerialLine.alive.isSet():
+                    self.Connection_Status_Display.ChangeValue("Connected")
+                else:
+                    try:
+                        #For some reason this part is causing the issue.
+                        if self.alive.isSet():  
+                            self.Connection_Status_Display.ChangeValue("Disconnected")
+                    except:
+                        print("couldn't change last value thats fine tho.")
 
         print("done executing.")
 
@@ -1154,8 +1168,17 @@ class Pin_Control(wx.Frame):
     def getPinValue(self, pin):
         return self.SerialLine.PinsList.getPinValue(pin)
 
+
     def getSerialActive(self):
         return self.SerialLine.getSerialActive()
+
+
+#Basd on the expected value in the MasterPinsList
+#Update the pins values.
+    def updatePinValues(self):
+        for x in self.MasterPinsList.PinList:
+            if x.mode == 2: #If the pin is an output pin
+                self.ExternalChangePinStatus(x.pin, x.expected_value)
 
 
 class MyApp(wx.App):

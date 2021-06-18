@@ -97,12 +97,16 @@ void(* resetFunc) (void) = 0; //Declare reset function.
 
 void setup() {
   inputArray.reserve(200);
+  //Declare pins 22-29 as outputs.
+  for (int i = 22; i < 30; i++){
+    pinMode(i, OUTPUT);
+  }
   Serial.begin(115200);
 
   while(!Serial){
     
   }
-  Serial.println("Open2.\n");
+  Serial.println("Open.\n");
 
 
   //https://learn.adafruit.com/ds3502-i2c-potentiometer/arduino
@@ -173,11 +177,20 @@ int processInput(){
       //For each pin in the pin list,
       //reset the pin by setting it to input, the default state.
       for (int i = 0; i < pin_list.active_pin_list_size; i++){
-        pinMode(i, INPUT);
+        digitalWrite(pin_list.getPinNumber(i), LOW);
+        delay(5);
+        pinMode(pin_list.getPinNumber(i), INPUT);
       }
+      Serial.println("Wrote all pins to low.");
       //Clear the pins list.
       pin_list.clear_pin_list();
+       //Set all relay pins to output.
+       for (int i = 22; i < 30; i++){
+         pinMode(i, OUTPUT);
+       }
       delay(10);
+
+
       
     ///**************************/////
     //Receive Pin Setup Command [1] /////////
@@ -248,7 +261,7 @@ int processInput(){
               Serial.print(u_pin_num);
               Serial.print(" is set to Analog Input.");
             }
-        }
+        
 
         //If the pin is less than 77, then the pin is for the DS11 chip.
         //Don't do anything here...
@@ -263,7 +276,7 @@ int processInput(){
         }
         //Reset Iterators.
         memset(pin_num, 0, sizeof pin_num);
-        memset(pin_type, 0, sizeof pin_type);
+
       }
 
     /*

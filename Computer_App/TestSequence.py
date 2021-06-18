@@ -22,7 +22,7 @@ class testStage:
     testPins = []
     FolderPath = None
 
-    def __init__(self, number, description, image, pin_checks, error, RealPinsList):
+    def __init__(self, number, description, image, pin_checks, error):
         #self.testPins.clear()
         self.testPins = pin_checks
         self.number = number
@@ -31,6 +31,10 @@ class testStage:
         self.error = error
 
 
+    def getPinExpectedValue(self, number):
+        for x in self.testPins:
+            if x.pin == number:
+                return x.expected_value
 
     def getDict(self):
         x = {'number': self.number, 'description': self.description,
@@ -98,8 +102,8 @@ class TestSequence:
                 MasterPinList.addPin(int(x['pin']), 2, 0, x['description'])
             
         for z in testData['tests']:
-            logging.debug("Found testData['tests']")
-            self.testStages.append(testStage(int(z['number']), z['description'], z['image'], z['pin_check'], z['error'], self.RealPinsList))
+            logging.debug("Found testData['tests']")  #todo:  Fix the pin_check parsing, change to load in the individual pins as pin
+            self.testStages.append(testStage(int(z['number']), z['description'], z['image'], PinList.getPinsFromDict(z['pin_check']), z['error']))
 #    except:
  #           print("Error parsing in test pins and adding to test stages.")
  #           return False    

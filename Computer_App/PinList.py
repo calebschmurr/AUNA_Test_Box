@@ -10,6 +10,20 @@ between Computer and TestBox Arduino.
 '''
 import json
 
+def getPinsFromDict(dict):
+    #In the dict, create a new pin for each item.
+    retVal = []
+    for x in dict:
+        if (x['pin'] > 53) and (x['pin'] < 66): #Pin is an input pin.
+            retVal.append(pin(x['pin'], 1, x['expected_value'], "", x['check_code']))
+        else: #Pin is an output pin.
+            retVal.append(pin(x['pin'], 2, x['expected_value'], "", 0))
+
+    return retVal
+
+    
+
+
 #mode: 0 is unused, 1 is input, 2 is output.
 class pin:
     #CONSTANTS
@@ -208,27 +222,27 @@ class PinsList:
         return output
         
     def getPinsResetCmd(self):
-        return "0"
+        return "0\n"
     #changePinOutputVal() - 
     #Change the output value of an input pin.
 
     def getFullResetCmd(self):
         print("full reset command accessed.")
-        return "4"
+        return "4\n"
 
     def changePinOutputVal(self):
         output="3:"
         for x in self.PinList:
-            if x.getMode()==1:
+            if x.getMode()==2:
                 if x.getPinNumber()<10:
                     output+="0"
                 output+=str(x.getPinNumber())
                 output+="."
-                if x.getValue()<100:
+                if x.getExpectedValue()<100:
                     output+="0"
-                if x.getValue()<10:
+                if x.getExpectedValue()<10:
                     output+="0"
-                output+=str(int(x.getValue()))
+                output+=str(int(x.getExpectedValue()))
                 output+=","
         output+="!\n"
         return output

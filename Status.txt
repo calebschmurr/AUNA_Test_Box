@@ -1,5 +1,15 @@
 Project Status and Goals:
 
+
+General TODO:
+ - Create an install file - compile a list of 
+ Python libraries required.
+
+
+
+
+
+
 Goal for 4/6/21:
  - Update the Serial Communication System - make it faster, use a different baud rate,
  read up on Arduino site about Serial comms.
@@ -132,3 +142,32 @@ On loading test, fix the problem with TestSequence having no attribute
 TestPinsList.
 
 Left off on loading test for actual testing and issues with that.
+
+6/17/21:
+
+On failing to load a test for modifying, make sure the system clears
+variables and goes back to mode 0. [I think this is done - needs verification.]
+
+ Fix the UpdateUI_Inputs.
+ Basically, go through the PinControlUI and make sure
+ all the methods match the new standard of using the MasterPinList. [Done]
+	Learned that SerialComm has it's own PinList.  Remove this PinList, and force
+	it to use the MasterPinList instead. [Done]
+
+- Fix bug in getPinExpectedValue().  Determine what format self.testPins is in for TestSequence TestStage class.
+It's a dict object.  Fix this. [Done].
+
+Updated the Arduino software and flashed to MEGA.
+
+On finishing test, gets the ListindexOutOfRange error. fix this.
+This is because the UpdateUI thread is still called sometimes after the thread has been killed due to the 1/4 second pause.
+Not sure how to account for this.
+
+PinList::parseInputInfo - error parsing input.  Gets the error-retrying later message. fix this.
+
+Fixed the Arduino Resetting the pins. [Done]
+
+When 'Clear All Values' inside New Test Creator tab is pushed, throws an error. Fix this.
+
+
+ 

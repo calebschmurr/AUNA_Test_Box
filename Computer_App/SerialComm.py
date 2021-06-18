@@ -18,11 +18,11 @@ Full Serial manager.
 
 class SerialHandler():
 
-    def __init__(self):
+    def __init__(self, MasterPinList):
         #On initiating - pull in main class.
         #Main reference class must have a class to handle
         #receiving the messages.
-        self.PinsList = PinList.PinsList()
+        self.PinsList = MasterPinList
         self.serial = serial.Serial()
         self.alive = threading.Event()
         self.thread = None
@@ -81,6 +81,7 @@ class SerialHandler():
 
     def fullReset(self):
         self.write(self.PinsList.getFullResetCmd())
+        time.sleep(0.5)
         print("Full reset command written.")
 
     def InitializePins(self):

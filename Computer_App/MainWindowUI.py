@@ -9,7 +9,7 @@ import wx
 ###########################################################################
 ######Include this as well in the MainWindowUI#############################
 import PinList
-import SerialMonitor
+import SerialMonitor  #Does this need to be included?
 import TestSequence
 import PinControlUI
 
@@ -527,14 +527,14 @@ class MainWindow(wx.Frame):
         logging.debug(p)
         if not self.loadTestSequence(p):
             wx.MessageBox("Unable to modify test, error loading test.", "Error loading test",  wx.OK | wx.ICON_INFORMATION)
+            
             return False
 
-
+        logging.debug("Test is loaded, about to change current mode.")
         self.test.folderPath = p
-        self.current_mode = 2
         self.test.current_test = 0
         self.testCreatorLoadInValues()
-
+        self.current_mode = 2
         #Set the active tab to tbe the test creator tab
         self.Notebook.SetSelection(3)
 
@@ -571,7 +571,8 @@ class MainWindow(wx.Frame):
         #Disable the connect button.
     
     def DisconnectSerialPushed(self, events):
-        self.PinControl.FullReset(None)
+        self.PinControl.ResetPins(None)
+        time.sleep(1)
         self.PinControl.ExternalStopSerial()
         self.Connect_Button.Enable(True)
 
@@ -637,6 +638,8 @@ class MainWindow(wx.Frame):
         self.InitializePins()
         #Check if connected to Serial or not:
         self.loadNextTestStage()
+        self.serialUpdatePinOutput()
+
 
     def InitializePins(self):
         if not self.Serial_Enabled_Checkbox.GetValue():
@@ -653,9 +656,9 @@ class MainWindow(wx.Frame):
 
     def isOutputPin(self, pin):
         for x in self.PinControl.MasterPinsList.PinList:
-            if (x['pin']==pin.pin):
+            if (x.pin==pin.pin):
                 #If is output pin, return true.
-                if (x['mode'] == 1):
+                if (x.mode == 2):
                     return True
                 #Unfinished.
                 return False
@@ -664,12 +667,20 @@ class MainWindow(wx.Frame):
         self.currentStage = self.test.getNextTest()
         
         #Update the pins in the PinControlUI.
-        for x in self.currentStage.testPins:
+        #for x in self.currentStage.testPins:
             #If the pin is an output pin on the testpins list:
-            if self.isOutputPin(x):
+         #   if self.isOutputPin(x):
                 #Change the pin output value:
                 #TODO:  Finish This - below line is not working.
-                self.PinControl.ExternalChangePinStatus(x.pin, x.value)
+          #      self.PinControl.ExternalChangePinStatus(x.pin, x.value)
+
+        #For each pin in the MasterPinsList,
+        for x in self.PinControl.MasterPinsList.PinList:
+            x.setExpectedValue(self.currentStage.getPinExpectedValue(x.pin))
+        #Iterate through, if the pin is output.
+        #Update the expected value from the current stage.
+        #Then update the pin values.
+        self.PinControl.updatePinValues()
 
 
         #Load in the image
@@ -687,11 +698,11 @@ class MainWindow(wx.Frame):
         self.Stage_Description_Label.SetLabel("{}".format(self.currentStage.description))
 
     def serialUpdatePinOutput(self):
-        for x in self.test.TestPinsList.PinList:
+        for x in self.PinControl.MasterPinsList.PinList:
             print("Pin {} is mode {}".format(x.getPinNumber(), x.getMode()))
-            if x.getMode()==1: #Here - issue with properly updating?
-                #self.PinControl.ExternalChangePinStatus(x.getPinNumber(), x.getValue())
-                print("Class SerialUpdatePinOutput::  Pin {} set to {}".format(x.getPinNumber(), x.getValue()))
+            if x.getMode()==2: #Here - issue with properly updating?
+                self.PinControl.ExternalChangePinStatus(x.getPinNumber(), x.getExpectedValue())
+                print("Class SerialUpdatePinOutput::  Pin {} set to {}".format(x.getPinNumber(), x.getExpectedValue()))
         self.PinControl.UpdatePinOutput(None)
         time.sleep(0.5)
 
@@ -772,7 +783,7 @@ class MainWindow(wx.Frame):
         for x in range(1,14):
             exec("self.PinX1_{}Select.SetSelection(2)".format(x))
             exec("self.PinX1_{}Description.SetValue('Description')".format(x))
-            if x!=13 or x!=14:
+            if x!=13 and x!=14:
                 exec("self.PinX1_{}_Stage_Mode_Select.Enable(False)".format(x))
             exec("self.PinX1_{}_Stage_Value.Enable(False)".format(x))
         for x in range(14, 18):
@@ -839,13 +850,13 @@ class MainWindow(wx.Frame):
         #Save Stage - depending on if we are in the last stage or a previous stage, save differently.
         if ((self.test.current_test == len(self.test.testStages)) and len(self.test.testStages)==0) or (self.test.current_test == len(self.test.testStages)):
             
-            self.test.testStages.append(TestSequence.testStage(self.test.current_test, self.NewTestCreatorDescription.GetValue(), "img{}.png".format(self.test.current_test), self.PinControl.MasterPinsList.getTestStageDict(), self.NewTestCreatorErrorMessage.GetValue(), None))
+            self.test.testStages.append(TestSequence.testStage(self.test.current_test, self.NewTestCreatorDescription.GetValue(), "img{}.png".format(self.test.current_test), self.PinControl.MasterPinsList.getTestStageDict(), self.NewTestCreatorErrorMessage.GetValue()))
             self.test.current_test+=1
             #Clear currentImgPath
             self.test.currentImgPath = None
 
         else: #Save current stage, load old stage.
-            self.test.testStages[self.test.current_test] = TestSequence.testStage(self.test.current_test, self.NewTestCreatorDescription.GetValue(), "img{}.png".format(self.test.current_test), self.PinControl.MasterPinsList.getTestStageDict(), self.NewTestCreatorErrorMessage.GetValue(), None)
+            self.test.testStages[self.test.current_test] = TestSequence.testStage(self.test.current_test, self.NewTestCreatorDescription.GetValue(), "img{}.png".format(self.test.current_test), self.PinControl.MasterPinsList.getTestStageDict(), self.NewTestCreatorErrorMessage.GetValue())
             #Also, load in the next test status.
             self.test.current_test+=1
             self.testCreatorLoadInValues()
