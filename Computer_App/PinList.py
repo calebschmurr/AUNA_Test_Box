@@ -9,16 +9,24 @@ between Computer and TestBox Arduino.
 
 '''
 import json
+import logging
+
+#logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
+
 
 def getPinsFromDict(dict):
     #In the dict, create a new pin for each item.
     retVal = []
     for x in dict:
         if (x['pin'] > 53) and (x['pin'] < 66): #Pin is an input pin.
+            logging.debug("Got the pin check code into retVal for pin {} as {}".format(x['pin'], x['check_code']))
             retVal.append(pin(x['pin'], 1, x['expected_value'], "", x['check_code']))
         else: #Pin is an output pin.
             retVal.append(pin(x['pin'], 2, x['expected_value'], "", 0))
 
+    logging.debug("retVal Output:")
+    for x in retVal:
+        logging.debug("Pin: {}, Check_Code: {}".format(x.getPinNumber(), x.getCheckCode()))
     return retVal
 
     
@@ -47,12 +55,16 @@ class pin:
         self.mode = mode
         self.expected_value = expected_value
         self.description = description
+        self.check_code = check_code
 
     def getCurrentValue(self):
         return self.current_value
     
     def getExpectedValue(self):
         return self.expected_value
+
+    def getCheckCode(self):
+        return self.check_code
 
     def getMode(self):
         return self.mode
@@ -65,7 +77,7 @@ class pin:
 
     def setExpectedValue(self, value):
         if self.mode!=0:
-            self.expected_value = value
+            self.expected_value = int(value)
             print("New value set of ")
             print(value)
             return True
@@ -73,6 +85,9 @@ class pin:
         print("Error not the right mode for ")
         print(self.pin)
         return False
+    
+    def setCurrentValue(self, value):
+        self.current_value = int(value)
 
     def setCheckCode(self, code):
         if self.mode==1:
@@ -88,13 +103,19 @@ class pin:
     # 2 - greater than
     # 3 - equal to
     def checkPin(self):
+        logging.debug("CheckPin Called for pin {}".format(self.pin))
+        logging.debug("Values found are: current_value {}, expected_value {}".format(self.current_value, self.expected_value))
         if self.check_code == 0:
+            logging.debug("Check code is 0 for pin {}".format(self.pin))
             return True
         elif self.check_code == 1:
+            logging.debug("Check code is 1 for pin {}".format(self.pin))
             return self.current_value < self.expected_value
         elif self.check_code == 2:
+            logging.debug("Check code is 2 for pin {}".format(self.pin))
             return self.current_value > self.expected_value
         elif self.check_code == 3:
+            logging.debug("Check code is 3 for pin {}".format(self.pin))
             return (self.current_value - self.EqualValueVariant > self.expected_value) or (self.current_value + self.EqualValueVariant > self.expected_value)
         else:
             #Error - return false.
@@ -167,8 +188,10 @@ class PinsList:
     #the CurrentValue accordingly.
     #CurrentValue is just the value of the pin itself.
     def changePinCurrentValue(self, num, value):
+        logging.debug("changePinCurrentValue called within PinList")
         for x in self.PinList:
             if x.getPinNumber()==num:
+                logging.debug("Changing value of pin {} to {}".format(num, value))
                 return x.setCurrentValue(value)
         return False
 
@@ -183,6 +206,12 @@ class PinsList:
         for x in self.PinList:
             if x.getPinNumber()==num:
                 return x.getExpectedValue()
+        return -1
+
+    def getPinCheckCode(self, num):
+        for x in self.PinList:
+            if x.getPinNumber()==num:
+                return x.getCheckCode()
         return -1
 
     #checkIfPin() - method to see if the pin exists.
@@ -234,13 +263,13 @@ class PinsList:
         output="3:"
         for x in self.PinList:
             if x.getMode()==2:
-                if x.getPinNumber()<10:
+                if int(x.getPinNumber())<10:
                     output+="0"
                 output+=str(x.getPinNumber())
                 output+="."
-                if x.getExpectedValue()<100:
+                if int(x.getExpectedValue())<100:
                     output+="0"
-                if x.getExpectedValue()<10:
+                if int(x.getExpectedValue())<10:
                     output+="0"
                 output+=str(int(x.getExpectedValue()))
                 output+=","
@@ -252,9 +281,11 @@ class PinsList:
 #Decode into usable info.
 
     def parseInputInfo(self, inputstr):
+        logging.debug("Reached parseInputInfo.")
         #Parse the input from Arduino:
-        #Sample input:   * #1;01:2.2;02:3.2;05:1.2;07:1.8;
+        #Sample input:   * 1;01:2.2;02:3.2;05:1.2;07:1.8;
         if (inputstr[0:2]=="#1"):
+            logging.debug("Beginning to parse pins.")
             #If the input command is starting with one,
             #Cut out the beginning of the string:
             inputstr = inputstr[3:len(inputstr)]
@@ -268,12 +299,11 @@ class PinsList:
                     if(z[0]=='!'):
                         break
                     z = z.split(":")
-                    if z[0][0]=='A':
-                        z[0][0]=8
-                    elif z[0][1]=='A':
-                        z[0][1]=8
+                    logging.debug("Pin received: {}".format(z[0]))
                     if self.checkIfPin(int(z[0])):
+                        logging.debug("Pin is a valid pin....")
                         self.changePinCurrentValue(int(z[0]), float(z[1]))
+                        logging.debug("Finished changePinCurrentValue for {}".format(z[0]))
                     else:
                         print("Error - unable to change value of pin {}".format(z[0]))
                 except:

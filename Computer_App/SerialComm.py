@@ -64,7 +64,7 @@ class SerialHandler():
 
     def receiverThread(self):
         while self.alive.isSet():
-            time.sleep(0.2)
+            time.sleep(0.3)
             b=self.serial.read(self.serial.in_waiting or 1).decode('UTF-8', 'replace')
             if b:
                 self.PinsList.parseInputInfo(b)

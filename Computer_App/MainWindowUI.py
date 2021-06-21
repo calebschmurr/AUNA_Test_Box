@@ -452,7 +452,7 @@ class MainWindow(wx.Frame):
                     logging.debug("x is file")
                     if x.suffix == '.txt':
                         logging.debug("txt file found.")
-                        self.test = TestSequence.TestSequence()
+                        self.test = TestSequence.TestSequence(self.PinControl.MasterPinsList)
                         if not self.test.initialLoadIn(x, self.PinControl.MasterPinsList):  #If this fails, does not return true, error.
                             return False
                         else:
@@ -535,7 +535,7 @@ class MainWindow(wx.Frame):
         self.test.current_test = 0
         self.testCreatorLoadInValues()
         self.current_mode = 2
-        #Set the active tab to tbe the test creator tab
+        #Set the active tab to be the test creator tab
         self.Notebook.SetSelection(3)
 
     def DeleteTestPushed(self, event):
@@ -603,6 +603,7 @@ class MainWindow(wx.Frame):
         if self.current_mode==1:
             if self.test.isNextTest():
                 if not self.Serial_Enabled_Checkbox.GetValue(): #If not ignoring serial:
+                    logging.debug("About to call passPinCheck()")
                     if not self.currentStage.passPinCheck():  #If not passing pin check
                         if wx.MessageBox("Pins do not pass pin check.  Error w/ pins.  Continue?", "Pins do not pass check.", wx.ICON_QUESTION | wx.YES_NO) != wx.YES:
                             return #Not continuing.
@@ -635,6 +636,8 @@ class MainWindow(wx.Frame):
     def startTest(self):
         self.Current_Test_Label.SetLabel("Current Test: {}".format(self.test.name))
         #Initialize Pins
+        self.test.current_test -= 1
+
         self.InitializePins()
         #Check if connected to Serial or not:
         self.loadNextTestStage()
@@ -645,8 +648,8 @@ class MainWindow(wx.Frame):
         if not self.Serial_Enabled_Checkbox.GetValue():
             #self.PinControl.externalResetPins()
             time.sleep(1.0)
-        for x in self.PinControl.MasterPinsList.PinList:
-            self.PinControl.externalAddPin(x.getDict()['pin'], x.getDict()['mode'], x.getDict()['expected_value'])
+        #for x in self.PinControl.MasterPinsList.PinList:
+            #self.PinControl.externalAddPin(x.getDict()['pin'], x.getDict()['mode'], x.getDict()['expected_value'])
         #Start sending back pin status:
         if not self.Serial_Enabled_Checkbox.GetValue():
             self.PinControl.ConfigurePinIO(None)
@@ -665,6 +668,8 @@ class MainWindow(wx.Frame):
 
     def loadNextTestStage(self):
         self.currentStage = self.test.getNextTest()
+        logging.debug("Current Test:")
+        logging.debug(self.currentStage.getDict())
         
         #Update the pins in the PinControlUI.
         #for x in self.currentStage.testPins:
@@ -676,7 +681,9 @@ class MainWindow(wx.Frame):
 
         #For each pin in the MasterPinsList,
         for x in self.PinControl.MasterPinsList.PinList:
-            x.setExpectedValue(self.currentStage.getPinExpectedValue(x.pin))
+            logging.debug("loadNextTestStage() :: modifying pin {}".format(x.getPinNumber()))
+            x.setExpectedValue(self.currentStage.getPinExpectedValue(x.getPinNumber()))
+            x.setCheckCode(self.currentStage.getPinCheckCode(x.getPinNumber()))
         #Iterate through, if the pin is output.
         #Update the expected value from the current stage.
         #Then update the pin values.
@@ -918,8 +925,8 @@ class MainWindow(wx.Frame):
             img = Image.open(self.test.currentImgPath)
             #Get size of original image:
             width, height = img.size
-            #Scale so that the width is 500:
-            scale = 500 / width
+            #Scale so that the height is 300:
+            scale = 300 / height
             img = img.resize((int(width * scale), int(height * scale))) #resize the image to 500x500.
             img.save("{}\img{}.png".format(self.test.folderPath.resolve(), self.test.current_test))
         #Also draw image to screen:

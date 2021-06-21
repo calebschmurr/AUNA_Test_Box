@@ -8,7 +8,7 @@ from pathlib import Path
 import logging
 
 #Below - enable logging.
-logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
+#logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
 
 #Below - get rid of all log messages.
 #logging.basicConfig(format='%(asctime)s - %(levelname)s - %(message)s')
@@ -22,19 +22,26 @@ class testStage:
     testPins = []
     FolderPath = None
 
-    def __init__(self, number, description, image, pin_checks, error):
+    def __init__(self, number, description, image, pin_checks, error, MasterPinList):
         #self.testPins.clear()
         self.testPins = pin_checks
         self.number = number
         self.description = description
         self.image = image
         self.error = error
+        self.MasterPinList = MasterPinList
 
 
     def getPinExpectedValue(self, number):
         for x in self.testPins:
             if x.pin == number:
                 return x.expected_value
+    
+    def getPinCheckCode(self, number):
+        for x in self.testPins:
+            if x.pin == number:
+                logging.debug("Check code in getPinCheckCode for pin {} is {}".format(number, x.check_code))
+                return x.check_code
 
     def getDict(self):
         x = {'number': self.number, 'description': self.description,
@@ -47,9 +54,11 @@ class testStage:
 
     #Check each pin to make sure it is passing the required check for stage.
     def passPinCheck(self):
-        for z in self.testPins:
+        logging.debug("passPinCheck Called.")
+        for z in self.MasterPinList.PinList:
+            logging.debug("Checking pin {} within passPinCheck loop".format(z.pin))
             if not z.checkPin():
-                print("Error: Pin {} did not pass check.  Code: {}, Value: {}".format(z.pin, z.check_code, z.value))
+                print("Error: Pin {} did not pass check.  Code: {}, Value: {}".format(z.pin, z.check_code, z.expected_value))
                 return False
         return True
 
@@ -57,7 +66,7 @@ class testStage:
 class TestSequence:
 
 
-    def __init__(self, name = "", description = ""):
+    def __init__(self, MasterPinList, name = "", description = ""):
         self.name = name
         self.description = description
         self.testStages = []
@@ -65,11 +74,12 @@ class TestSequence:
         self.current_test = 0
         self.folderPath = Path('.')
         self.folderPath = self.folderPath / "Tests" / self.name
+        self.MasterPinList = MasterPinList
 
     def initialLoadIn(self, FilePath, MasterPinList):
         if not self.LoadInTests(FilePath, MasterPinList):
             return False
-        logging.info('Initializing pins list.')
+        logging.info('Load in tests complete.')
         
         return True
 
@@ -78,7 +88,7 @@ class TestSequence:
         with open(FilePath) as f:
             testData = json.load(f)
             logging.debug(testData)
-            logging.debug(testData['name'])
+           # logging.debug(testData['name'])
         try:
             self.name = testData['name']
             self.description = testData['description']
@@ -93,7 +103,7 @@ class TestSequence:
         #Mode pin setting:  0 = do nothing, 1 = input, 2 = output.
      #   try:
         for x in testData['pins']:
-            logging.debug("Found testData['pins']")
+            #logging.debug("Found testData['pins']")
             #If the pin is between 54 and 65, add as an input.
             #Otherwise, add as an output.
             if (int(x['pin']) > 53) and (int(x['pin']) < 66):
@@ -102,8 +112,8 @@ class TestSequence:
                 MasterPinList.addPin(int(x['pin']), 2, 0, x['description'])
             
         for z in testData['tests']:
-            logging.debug("Found testData['tests']")  #todo:  Fix the pin_check parsing, change to load in the individual pins as pin
-            self.testStages.append(testStage(int(z['number']), z['description'], z['image'], PinList.getPinsFromDict(z['pin_check']), z['error']))
+            logging.debug("Found testData['tests']")  
+            self.testStages.append(testStage(int(z['number']), z['description'], z['image'], PinList.getPinsFromDict(z['pin_check']), z['error'], self.MasterPinList))
 #    except:
  #           print("Error parsing in test pins and adding to test stages.")
  #           return False    

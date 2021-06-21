@@ -184,4 +184,9 @@ Fix the issues with load test.
 Install the current sensor, hook it up to power.
 
 
- 
+  - When performing pin check, the current_value is not getting updated
+  from serial line input.  Make sure the MasterPinList is getting
+  updated. [Done]
+   - On loading the test next stage, the check code is not being loaded 
+	into the MasterPinList. Fix this. [Done].
+
