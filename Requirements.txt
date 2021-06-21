@@ -14,3 +14,35 @@ These are the following requirements for the Test Box Software:
 	- serial
 	- json
 	- logging
+
+
+Automated Installation:
+Install Python 3.8.3 from either Windows Store or Python's website.
+
+Using Command prompt or Powershell, navigate to the download location.
+Run the following command:
+python install.py
+
+
+
+
+Manual Installation:
+
+
+Installation:
+ - Install Python.  This can be done from Python's website or the Microsoft Store.
+ - Install wxPython using the following command on command prompt or Powershell:
+pip install -U wxPython
+ - Install PIL using the following command on command prompt or Powershell:
+pip install pillow
+ - Install serial using the following command on command prompt or Powershell:
+pip install pyserial
+
+ 
+
+
+ - [OPTIONAL] Install logging using the following command:
+pip install logging    (This is for debugging. Not necessary for production.)
+
+
+
