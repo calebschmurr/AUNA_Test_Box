@@ -190,3 +190,8 @@ Install the current sensor, hook it up to power.
    - On loading the test next stage, the check code is not being loaded 
 	into the MasterPinList. Fix this. [Done].
 
+ - ON creating new tests, the description is saved as the test name.  Fix this. [Fixed]
+
+  - If there is an error creating the test, it saves the folder but not the file.  Make sure the folder is deleted.
+
+   - Un-Invert the On/Off for X2.  [Fixed.]

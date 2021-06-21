@@ -454,6 +454,7 @@ class MainWindow(wx.Frame):
                         logging.debug("txt file found.")
                         self.test = TestSequence.TestSequence(self.PinControl.MasterPinsList)
                         if not self.test.initialLoadIn(x, self.PinControl.MasterPinsList):  #If this fails, does not return true, error.
+                            logging.debug("Error loading test.")
                             return False
                         else:
                             logging.info("Test loaded.")
@@ -768,7 +769,7 @@ class MainWindow(wx.Frame):
             #Make a new test object,
             #Store in the pins used, name and description.
 
-            self.test = TestSequence.TestSequence(self.TestNameTextbox.GetValue(), self.Test_Description.GetValue())
+            self.test = TestSequence.TestSequence(self.PinControl.MasterPinsList, self.TestNameTextbox.GetValue(), self.Test_Description.GetValue())
             self.getTestPinsList() #Load in the pins that will be used for this test
 
             #Make a new folder for the test:
@@ -857,13 +858,13 @@ class MainWindow(wx.Frame):
         #Save Stage - depending on if we are in the last stage or a previous stage, save differently.
         if ((self.test.current_test == len(self.test.testStages)) and len(self.test.testStages)==0) or (self.test.current_test == len(self.test.testStages)):
             
-            self.test.testStages.append(TestSequence.testStage(self.test.current_test, self.NewTestCreatorDescription.GetValue(), "img{}.png".format(self.test.current_test), self.PinControl.MasterPinsList.getTestStageDict(), self.NewTestCreatorErrorMessage.GetValue()))
+            self.test.testStages.append(TestSequence.testStage(self.test.current_test, self.NewTestCreatorDescription.GetValue(), "img{}.png".format(self.test.current_test), self.PinControl.MasterPinsList.getTestStageDict(), self.NewTestCreatorErrorMessage.GetValue(), self.PinControl.MasterPinsList))
             self.test.current_test+=1
             #Clear currentImgPath
             self.test.currentImgPath = None
 
         else: #Save current stage, load old stage.
-            self.test.testStages[self.test.current_test] = TestSequence.testStage(self.test.current_test, self.NewTestCreatorDescription.GetValue(), "img{}.png".format(self.test.current_test), self.PinControl.MasterPinsList.getTestStageDict(), self.NewTestCreatorErrorMessage.GetValue())
+            self.test.testStages[self.test.current_test] = TestSequence.testStage(self.test.current_test, self.NewTestCreatorDescription.GetValue(), "img{}.png".format(self.test.current_test), self.PinControl.MasterPinsList.getTestStageDict(), self.NewTestCreatorErrorMessage.GetValue(), self.PinControl.MasterPinsList)
             #Also, load in the next test status.
             self.test.current_test+=1
             self.testCreatorLoadInValues()
@@ -968,7 +969,7 @@ class MainWindow(wx.Frame):
                 if eval("self.PinX2_{}_Stage_Mode_Select.GetValue()==''".format(x)):
                     wx.MessageBox("Please check values for pin X2_{} in order to save stage.".format(x), "Check values",  wx.OK | wx.ICON_INFORMATION)
                 else:
-                    self.PinControl.MasterPinsList.changePinExpectedValue(self.getPinObject("X2_{}".format(x)).pin, self.getPinObject("X2_{}".format(x)).value)
+                    self.PinControl.MasterPinsList.changePinExpectedValue(self.getPinObject("X2_{}".format(x)).pin, not self.getPinObject("X2_{}".format(x)).value)
 
     def getPinObject(self, PinID):
         ret = PinList.pin(0,0,0,None)
@@ -1016,7 +1017,7 @@ class MainWindow(wx.Frame):
             exec("self.Pin{}_Stage_Mode_Select.SetSelection({})".format(str(self.translatePinToConnector(pin['pin'])), str(pin['check_code'])))
             print("Pin {} set to code {}".format(self.translatePinToConnector(pin['pin']), pin['check_code']))
         elif (pin['pin'] > 21) and (pin['pin'] != 75 and pin['pin'] != 76):
-            exec("self.Pin{}_Stage_Mode_Select.SetSelection({})".format(str(self.translatePinToConnector(pin['pin'])), str(not pin['expected_value'])))
+            exec("self.Pin{}_Stage_Mode_Select.SetSelection({})".format(str(self.translatePinToConnector(pin['pin'])), str(pin['expected_value'])))
 
 
         print("Pin {} set to {}".format(str(self.translatePinToConnector(pin['pin'])), str(pin['expected_value'])))
