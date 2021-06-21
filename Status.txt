@@ -169,5 +169,19 @@ Fixed the Arduino Resetting the pins. [Done]
 
 When 'Clear All Values' inside New Test Creator tab is pushed, throws an error. Fix this.
 
+6/21/21:
+
+Goals:
+Fix the DS3502 chips [done]
+Compile a list of libraries/requirements. [Done]
+
+Install on one of the outside computers, run a test.
+
+Demonstrate a test.
+
+Fix the issues with load test.
+
+Install the current sensor, hook it up to power.
+
 
  

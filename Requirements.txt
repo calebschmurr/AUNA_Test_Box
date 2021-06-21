@@ -1,0 +1,16 @@
+--------------Requirements----------------
+
+These are the following requirements for the Test Box Software:
+
+ - Python 3.8.3 or above. (3.9.2)
+
+ - The following libraries:
+	- wx
+	- threading
+	- time
+	- pathlib
+	- PIL
+	- codecs
+	- serial
+	- json
+	- logging
