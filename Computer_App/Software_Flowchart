@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2021-06-18T14:34:50.789Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.106 Safari/537.36" etag="yqDHYMhfW86BZachIi1B" version="14.7.10" type="github" pages="14">
+<mxfile host="app.diagrams.net" modified="2021-06-21T15:16:15.400Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.106 Safari/537.36" etag="OaP3boWqBZRTgM8RHEBe" version="14.8.0" type="github" pages="14">
   <diagram id="c79iFraRc1DbxDd-72CT" name="Startup">
-    <mxGraphModel dx="1038" dy="521" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="1038" dy="579" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="Sx0PQd4uw2xzY1_r_h0o-0" />
         <mxCell id="Sx0PQd4uw2xzY1_r_h0o-1" parent="Sx0PQd4uw2xzY1_r_h0o-0" />
@@ -1286,7 +1286,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="8I6-hXY4jItryAr4Vlzn" name="Pin Setup and Information">
-    <mxGraphModel dx="1038" dy="624" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="900" pageHeight="1600" math="0" shadow="0">
+    <mxGraphModel dx="1038" dy="579" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="900" pageHeight="1600" math="0" shadow="0">
       <root>
         <mxCell id="zrRKEG3Dv9DlvAElSiNB-0" />
         <mxCell id="zrRKEG3Dv9DlvAElSiNB-1" parent="zrRKEG3Dv9DlvAElSiNB-0" />
@@ -1850,8 +1850,8 @@
         <mxCell id="OMb3qVRwZ9xh1geRj9H1-7" value="0-1024" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;overflow=hidden;" parent="OMb3qVRwZ9xh1geRj9H1-4" vertex="1">
           <mxGeometry x="231" width="109" height="90" as="geometry" />
         </mxCell>
-        <mxCell id="QL0-pzalOhRNeaz4EU4w-1" value="&lt;h1&gt;Possible Analog Values:&lt;/h1&gt;&lt;div&gt;Arduino outputs range from 0-1023 for Voltage Input.&amp;nbsp; This ranges from 0-5V.&lt;/div&gt;&lt;div&gt;There is a voltage divider that steps down the voltage by a factor of 10.&lt;/div&gt;&lt;div&gt;Equation:&lt;/div&gt;&lt;div&gt;[Value] = (Voltage Input / 10) * (1023/5)&lt;/div&gt;&lt;div&gt;Or,&lt;/div&gt;&lt;div&gt;[Value] = Voltage Input&amp;nbsp; * 20.46&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;" vertex="1" parent="zrRKEG3Dv9DlvAElSiNB-1">
-          <mxGeometry x="540" y="695" width="280" height="210" as="geometry" />
+        <mxCell id="QL0-pzalOhRNeaz4EU4w-1" value="&lt;h1&gt;Possible Analog Values:&lt;/h1&gt;&lt;div&gt;Arduino outputs range from 0-1023 for Voltage Input.&amp;nbsp; This ranges from 0-5V.&lt;/div&gt;&lt;div&gt;There is a voltage divider that steps down the voltage by a factor of 10.&lt;/div&gt;&lt;div&gt;Equation:&lt;/div&gt;&lt;div&gt;[Value] = (Voltage Input / 10) * (1023/5)&lt;/div&gt;&lt;div&gt;Or,&lt;/div&gt;&lt;div&gt;[Value] = Voltage Input&amp;nbsp; * 20.46&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Variable Voltage Output Equation:&lt;/div&gt;&lt;div&gt;Output between 0 and 127 for 12 volts.&lt;/div&gt;&lt;div&gt;So, equation is:&lt;/div&gt;&lt;div&gt;[Value] = Voltage * [127/12]&lt;/div&gt;&lt;div&gt;Or,&lt;/div&gt;&lt;div&gt;[Value] = Voltage * 10.5833&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;" parent="zrRKEG3Dv9DlvAElSiNB-1" vertex="1">
+          <mxGeometry x="540" y="695" width="280" height="355" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
@@ -3056,7 +3056,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="wa-8kMKjqbM8MYItFD-C" name="Testing Flowchart Overview">
-    <mxGraphModel dx="1038" dy="624" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="900" math="0" shadow="0">
+    <mxGraphModel dx="1038" dy="579" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="900" math="0" shadow="0">
       <root>
         <mxCell id="gWPKa5nklX5tYn0kDntu-0" />
         <mxCell id="gWPKa5nklX5tYn0kDntu-1" parent="gWPKa5nklX5tYn0kDntu-0" />
@@ -3736,7 +3736,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="gZwKe8WnfENCmvYMSNLB" name="Pin Control UI Architecture">
-    <mxGraphModel dx="1038" dy="624" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="900" pageHeight="1600" math="0" shadow="0">
+    <mxGraphModel dx="1038" dy="579" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="900" pageHeight="1600" math="0" shadow="0">
       <root>
         <mxCell id="zi7rl2rdXC7NKAGLTzPf-0" />
         <mxCell id="zi7rl2rdXC7NKAGLTzPf-1" parent="zi7rl2rdXC7NKAGLTzPf-0" />
