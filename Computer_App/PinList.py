@@ -163,7 +163,7 @@ class PinsList:
 
     def clearList(self):
         #Clear all pins on the pinlist.
-        self.pinList = []
+        self.PinList = []
     #changePinExpectedValue - find the pin in internal list, change the stored
     #value of pin.
     def changePinExpectedValue(self, num, value):

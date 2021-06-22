@@ -723,6 +723,7 @@ class MainWindow(wx.Frame):
         self.test = None
         self.current_mode = 0
         self.currentStage = None
+        self.PinControl.MasterPinsList.clearList()
         self.Notebook.SetSelection(0)
         #If not ignoring serial, reset Elegoo:
         #TODO Insert reset protocol here.
