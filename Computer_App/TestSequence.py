@@ -52,6 +52,31 @@ class testStage:
         logging.debug(x)
         return x
 
+    def getSaveDict(self):
+        x = {'number': self.number, 'description': self.description,
+        'image': self.image, 'error': self.error, 'pin_check' : self.testPins}
+        #x['pin_check'] = self.testPins  #This needs to be a dictionary object.
+
+        logging.debug("getSaveDict testPins:")
+        logging.debug(self.testPins)
+
+    #    pins_checker = []
+     #   for y in self.testPins:
+      #      pins_checker.append(y.getTestStageDict())
+
+       # x['pin_check'] = pins_checker
+ 
+        logging.debug("getSaveDict testPins 2:")
+        logging.debug(self.testPins)
+
+        logging.debug("getSaveDict pin_check:")
+        logging.debug(x['pin_check'])
+       #
+
+        logging.debug("Full dictionary:")
+        logging.debug(x)
+        return x
+
     #Check each pin to make sure it is passing the required check for stage.
     def passPinCheck(self):
         logging.debug("passPinCheck Called.")
@@ -144,10 +169,12 @@ class TestSequence:
         logging.debug("Here")
         output['pins'] = pinDict
         
+        logging.debug("pinDict in exportJsonFile:")
+        logging.debug(pinDict)
         
         for x in self.testStages:
-            output['tests'].append(x.getDict())
-            print(x.getDict())
+            output['tests'].append(x.getSaveDict())
+            print(x.getSaveDict())
         print("Done - testStages Append")
 
         return json.dumps(output)

@@ -872,7 +872,7 @@ class MainWindow(wx.Frame):
 
         #Increment stage levels
         print("Test stage {} saved.".format(self.test.current_test-1))
-        print(self.test.exportJsonFile(self.PinControl.MasterPinsList.getTestSequenceDict()))
+       # print(self.test.exportJsonFile(self.PinControl.MasterPinsList.getTestSequenceDict()))
         self.updateNewTestUI()
 
     def onNewTestDeleteStage(self, event):
@@ -1014,7 +1014,7 @@ class MainWindow(wx.Frame):
         #If the pin has a dropdown, and is an analog input:
         if (pin['pin']>53) and (pin['pin'] != 75 and pin['pin'] != 76):
             print("Pin {} is {}".format(pin['pin'], self.translatePinToConnector(pin['pin'])))
-            exec("self.Pin{}_Stage_Mode_Select.SetSelection({})".format(str(self.translatePinToConnector(pin['pin'])), str(pin['check_code'])))
+            exec("self.Pin{}_Stage_Mode_Select.SetSelection({})".format(str(self.translatePinToConnector(pin['pin'])), int(pin['check_code'])-1))
             print("Pin {} set to code {}".format(self.translatePinToConnector(pin['pin']), pin['check_code']))
         elif (pin['pin'] > 21) and (pin['pin'] != 75 and pin['pin'] != 76):
             exec("self.Pin{}_Stage_Mode_Select.SetSelection({})".format(str(self.translatePinToConnector(pin['pin'])), str(pin['expected_value'])))
